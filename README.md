@@ -4,7 +4,7 @@
 
 ## Script status
 
-![Version v2.4.7](https://img.shields.io/badge/version-v2.4.7-lightgrey.svg?style=flat-square) ![BSD 3-Clause License](https://img.shields.io/badge/license-BSD%203--Clause%20License-blue.svg?style=flat-square)
+![Version v3.0.0](https://img.shields.io/badge/version-v3.0.0-lightgrey.svg?style=flat-square) ![BSD 3-Clause License](https://img.shields.io/badge/license-BSD%203--Clause%20License-blue.svg?style=flat-square)
 
 #### Debian Builds
 ![Debian 9 Passing](https://img.shields.io/badge/Debian%209-passing-brightgreen.svg?style=flat-square) ![Debian 10 Passing](https://img.shields.io/badge/Debian%2010-passing-brightgreen.svg?style=flat-square)
