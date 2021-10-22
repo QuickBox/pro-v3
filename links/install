@@ -4,7 +4,7 @@
 # @project_name: quickbox_pro_v3
 # @file_name: install
 # @description: Downloads installation script.
-# @version: 1.0.9
+# @version: 1.0.12
 #
 # @save_tasks:
 #  automated_versioning: true
@@ -21,7 +21,7 @@
 
 ################################################################################
 # @name: setup::download
-# @description: checks the environment before continuing
+# @description: setup the environment and download quickboxv3
 #
 # @args:
 #  $@ quickbox install arguments
@@ -30,6 +30,8 @@ setup::download() {
   [[ $(whoami) != "root" ]] && { printf -- "%s\n" "ERROR: Install as root or via sudo." && exit 1; }
   cd "${HOME}" || { printf -- "%s\n" "Error: Unable to move to ${HOME}" && exit 1; }
   rm -f /root/quickbox_install
+  DEBIAN_FRONTEND=noninteractive apt-get -yqq -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" update >/dev/null 2>&1
+  apt-get -y install wget --allow-unauthenticated >/dev/null 2>&1 |
   wget -q https://lab.quickbox.io/QuickBox/pro-v3/raw/main/quickbox_install && chmod +x quickbox_install
   [[ -f /root/quickbox_install ]] && /root/quickbox_install $@ && exit 0
   exit 1
