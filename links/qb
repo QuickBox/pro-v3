@@ -71,14 +71,17 @@ qb::environment::setup() {
 # @name: qb::host::update
 # @description: Updates this file
 #
+# @args:
+#  $@ initial arguments
+#
 # @global_variables:
-#  qbhost_version
+#  qb_host_version
 ################################################################################
 qb::host::update() {
   declare latest_version
-  declare -g qbhost_version=1.0.64
+  declare -g qb_host_version=1.0.67
   latest_version=$(curl -s "https://lab.quickbox.io/QuickBox/pro-v3/raw/main/version%2Fqb_host")
-  if [[ "${qbhost_version}" != "${latest_version}" ]]; then
+  if [[ "${qb_host_version}" != "${latest_version}" ]]; then
     printf -- "information: updating qb_host to: %s\n" "${latest_version}"
     curl -s "https://lab.quickbox.io/QuickBox/pro-v3/raw/main/links%2Fqb" > "${qb_base}/bin/qb_host.update"
     cp -f "${qb_base}/bin/qb_host.update" "${qb_base}/bin/qb_host"
