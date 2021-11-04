@@ -1,0 +1,64 @@
+#!/bin/bash
+################################################################################
+# <START METADATA>
+# @project_name: quickbox_pro_v3
+# @file_name: quickbox_download
+# @description: Downloads installation script.
+# @version: 1.0.5
+#
+# @save_tasks:
+#  automated_versioning: true
+#
+# @author: Jamie Dobbs (Mschf)
+# @author_contact: jamie.dobbs@mschf.dev
+#
+# @license: BSD-3 Clause (Included in LICENSE)
+# Copyright (C) 2019-2021, QuickBox | Jamie Dobbs
+# All rights reserved.
+# <END METADATA>
+# shellcheck disable=SC1091,SC2093
+################################################################################
+
+setup::args::process() {
+  while [[ $# -gt 0 ]]; do
+    case "${1}" in
+      --non-interactive)
+        declare -g non_interactive="1"; shift;;
+      --reboot)
+        declare -g setup_reboot="1"; shift;;
+      -h | --help)
+        script::help::print;;
+      -d* | --domain*)
+        declare -g domain_ssl=1 domain="${2}"; shift; shift
+        [[ -n "${domain}" && $(echo "${domain}" | grep -P '(?=^.{5,254}$)(^(?:(?!\d+\.)[a-zA-Z0-9_\-]{1,63}\.?)+\.(?:[a-z]{2,})$)') == "" ]] && { printf -- "%s\n" "ERROR: ${domain} is not a valid domain." && exit 1; };;
+      -e* | --email*)
+        declare -g email="${2}"; shift; shift;;
+      -ftp* | --ftp*)
+        declare -g  ftp_port="${2}"; shift; shift
+        [[ -n "${ftp_port}" && "${ftp_port}" != ?(-)+([0-9]) ]] && { printf -- "%s\n" "ERROR: FTP port can not be empty, and must be a valid port number" && exit 1; };;
+      -k* | --api-key*)
+        declare -g api_key="${2}"; shift; shift;;
+      -m* | --mount*)
+        declare -g mount="${2}"; shift; shift;;
+      -p* | --password*)
+        declare -g password="${2}"; shift; shift
+        [[ "${password}" =~ ['!@#$%^&*()_+'] ]] && { printf -- "%s\n" "ERROR: Password can not contain special characters for install." && exit 1; };;
+      -ssh* | --ssh-port*)
+        declare -g ssh_port="${2}"; shift; shift
+        [[ -n "${ssh_port}"  && "${ssh_port}" != ?(-)+([0-9]) ]] && { printf -- "%s\n" "ERROR: SSH port can not be empty, and must be a valid port number" && exit 1; };;
+      -t* | --trackers*)
+        declare -g tracker_settings="${2}"; shift; shift
+        [[ "${tracker_settings}" != "allowed" && "${tracker_settings}" != "blocked" ]] && { printf -- "%s\n" "ERROR: Tracker settings must either be allowed or blocked." && exit 1; };;
+      -u* | --username*)
+        declare -g username="${2,,}"; shift; shift
+        [[ "${username}" =~ ^[0-9] || "${username:${#username}-1}" =~ ^[0-9] || "${username}" =~ ['!@#$%^&*()_+'] ]] && { printf -- "%s\n" "ERROR: Username can not start or end with a numeric character, or contain special characters" && exit 1; };; 
+    esac
+  done
+  [[ -z "${username}" || -z "${password}" || -z "${api_key}" ]] && { printf -- "%s\n" "ERROR: Username, Password and API Key can not be empty." && exit 1; }
+  echo $username
+  echo $password
+  echo $api_key
+  echo $non_interactive
+}
+
+setup::args::process "$@"
