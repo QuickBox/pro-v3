@@ -4,7 +4,7 @@
 # @project_name: quickbox_pro_v3
 # @file_name: qb
 # @description: Docker Management.
-# @version: 1.0.68
+# @version: 1.0.64
 #
 # @save_tasks:
 #  automated_versioning: true
@@ -22,13 +22,9 @@
 ################################################################################
 # @name: qb::environment::setup
 # @description: checks server and sets up the enviroment
-#
-# @global_variables
-#  qb_base
-#  qb_container
 ################################################################################
 qb::environment::setup() {
-  declare -g qb_base="/opt/quickbox"; declare -g qb_container="quickbox"
+  declare -g qb_base="/opt/quickbox"
   [[ $(uname -m) != "x86_64" ]] && printf -- "error: quickbox only supports 64-bit architecture.\n" && exit 1
   [[ $(whoami) != "root" ]] && printf -- "error: run as root or via sudo.\n" && exit 1
   if [[ ! -r "${qb_base}/bin/qb_host" ]]; then
@@ -103,7 +99,7 @@ qb::host::update() {
 ################################################################################
 qb::args::process() {
   declare -gi docker_installed; hash docker 2> /dev/null && docker_installed=1
-  [[ "${docker_installed}" -eq 1 ]] && declare -g name_check; name_check=$(docker ps --format "{{.Names}}" | grep ${qb_container})
+  [[ "${docker_installed}" -eq 1 ]] && declare -g name_check; name_check=$(docker ps --format "{{.Names}}" | grep quickbox)
   if [[ $(type -t "qb::docker::${1}") == function ]]; then
     "qb::docker::${1}" $@
   else
@@ -140,7 +136,7 @@ qb::docker::check() {
 # @description: starts quickbox v3
 ################################################################################
 qb::docker::start() {
-  docker start "${qb_container}" > /dev/null && docker exec -it quickbox bash -c "systemctl daemon-reexec"
+  docker start quickbox > /dev/null && docker exec -it quickbox bash -c "systemctl daemon-reexec"
 }
 
 ################################################################################
@@ -149,7 +145,7 @@ qb::docker::start() {
 ################################################################################
 qb::docker::stop() {
   qb::docker::check
-  docker stop "${qb_container}" > /dev/null
+  docker stop quickbox > /dev/null
 }
 
 ################################################################################
@@ -167,7 +163,7 @@ qb::docker::restart() {
 ################################################################################
 qb::docker::remove() {
   qb::docker::stop
-  docker rm "${qb_container}" > /dev/null
+  docker rm quickbox > /dev/null
 }
 
 ################################################################################
@@ -188,7 +184,7 @@ qb::docker::rebuild() {
 ################################################################################
 qb::docker::enter() {
   qb::docker::check
-  docker exec -it -w /root "${qb_container}" /bin/bash -c "sudo su -"
+  docker exec -it -w /root quickbox /bin/bash -c "sudo su -"
 }
 
 ################################################################################
@@ -197,7 +193,7 @@ qb::docker::enter() {
 ################################################################################
 qb::docker::stat() {
   qb::docker::check
-  docker stats --no-stream "${qb_container}"
+  docker stats --no-stream quickbox
 }
 
 ################################################################################
@@ -206,7 +202,7 @@ qb::docker::stat() {
 ################################################################################
 qb::docker::log() {
   qb::docker::check
-  docker log "${qb_container}"
+  docker log quickbox
 }
 
 ################################################################################
