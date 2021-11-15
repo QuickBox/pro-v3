@@ -4,7 +4,7 @@
 # @project_name: quickbox_pro_v3
 # @file_name: qb
 # @description: Docker Management.
-# @version: 1.0.64
+# @version: 1.0.63
 #
 # @save_tasks:
 #  automated_versioning: true
@@ -72,7 +72,7 @@ qb::environment::setup() {
 ################################################################################
 qb::host::update() {
   declare latest_version
-  declare -g qbhost_version=1.0.64
+  declare -g qbhost_version=1.0.63
   latest_version=$(curl -s "https://lab.quickbox.io/QuickBox/pro-v3/raw/main/version%2Fqb_host")
   if [[ "${qbhost_version}" != "${latest_version}" ]]; then
     printf -- "information: updating qb_host to: %s\n" "${latest_version}"
@@ -117,7 +117,7 @@ qb::args::process() {
 qb::docker::build() {
   mkdir -p /tmp/quickbox
   cd "/tmp/quickbox" || { printf -- "error: unable to move to /tmp/quickbox\n" && exit 1; }
-  [[ -n "${name_check}" ]] && printf -- "error: quickbox container already exists - use qb rebuild/qb remove\n" && exit 1
+  [[ -n "${name_check}" ]] && printf -- "error: quickbox container already exists - use qb rebuild/qb remove" && exit 1
   # insert download links
   #[[ -f "/tmp/quickbox/quickbox_host" ]] && "/tmp/quickbox_host" $@ && exit 0
   exit 1
@@ -128,7 +128,7 @@ qb::docker::build() {
 # @description: checks for quickbox v3 docker
 ################################################################################
 qb::docker::check() {
-  [[ -z "${name_check}" ]] && printf -- "error: no quickbox container found\n" && exit 1
+  [[ -z "${name_check}" ]] && printf -- "error: no quickbox container found" && exit 1
 }
 
 ################################################################################
