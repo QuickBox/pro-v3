@@ -4,7 +4,7 @@
 # @project_name: quickbox_pro_v3
 # @file_name: quickbox_download
 # @description: Downloads installation script.
-# @version: 1.0.5
+# @version: 1.0.6
 #
 # @save_tasks:
 #  automated_versioning: true
@@ -55,10 +55,6 @@ setup::args::process() {
     esac
   done
   [[ -z "${username}" || -z "${password}" || -z "${api_key}" ]] && { printf -- "%s\n" "ERROR: Username, Password and API Key can not be empty." && exit 1; }
-  echo $username
-  echo $password
-  echo $api_key
-  echo $non_interactive
 }
 
 setup::args::process "$@"
