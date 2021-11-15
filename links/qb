@@ -1,0 +1,218 @@
+#!/bin/bash
+################################################################################
+# <START METADATA>
+# @project_name: quickbox_pro_v3
+# @file_name: qb
+# @description: Docker Management.
+# @version: 1.0.68
+#
+# @save_tasks:
+#  automated_versioning: true
+#
+# @author: Jamie Dobbs (Mschf)
+# @author_contact: jamie.dobbs@mschf.dev
+#
+# @license: BSD-3 Clause (Included in LICENSE)
+# Copyright (C) 2019-2021, QuickBox | Jamie Dobbs
+# All rights reserved.
+# <END METADATA>
+# shellcheck disable=SC2068
+################################################################################
+
+################################################################################
+# @name: qb::environment::setup
+# @description: checks server and sets up the enviroment
+#
+# @global_variables
+#  qb_base
+#  qb_container
+################################################################################
+qb::environment::setup() {
+  declare -g qb_base="/opt/quickbox"; declare -g qb_container="quickbox"
+  [[ $(uname -m) != "x86_64" ]] && printf -- "error: quickbox only supports 64-bit architecture.\n" && exit 1
+  [[ $(whoami) != "root" ]] && printf -- "error: run as root or via sudo.\n" && exit 1
+  if [[ ! -r "${qb_base}/bin/qb_host" ]]; then
+    printf -- "information: installing qb_host\n"
+    mkdir -p "${qb_base}/bin/"
+    cp "$(readlink -f "$0")" "${qb_base}/bin/qb_host"
+    chmod +x "${qb_base}/bin/qb_host"
+    rm -f "/usr/local/bin/qb"
+    ln -s "${qb_base}/bin/qb_host" "/usr/local/bin/qb"
+    "${qb_base}/bin/qb_host" "$@"
+    rm -f -- "$0"
+    exit 0
+  fi
+  declare -a script_dependencies depend_list
+  script_dependencies=( "apt-transport-https" "ca-certificates" "gnupg2" "software-properties-common" "sudo" "lsb-release" "curl" "wget" "docker-ce" )
+  for depend in "${script_dependencies[@]}"; do
+    [[ $(dpkg-query -W -f='${Status}' "${depend}" 2>/dev/null | grep -c "ok installed") != "1" ]] && depend_list+=("$depend")
+  done
+  [[ -n "${depend_list[*]}" ]] && printf -- "Installing: "
+  for install in "${depend_list[@]}"; do
+    if  [[ "${install}" == "${depend_list[0]}" ]]; then
+      printf -- "%s" "${install}"
+    else
+      printf -- " %s" "| ${install}"
+    fi
+    if [[ "${install}" == "docker-ce" ]]; then
+      declare distro; distro=$(lsb_release -sd | awk '{print $1}' | tr "[:upper:]" "[:lower:]")
+      curl -fsSL "https://download.docker.com/linux/${distro}/gpg" | sudo apt-key add - > /dev/null  2>&1
+      add-apt-repository "deb [arch=$(dpkg --print-architecture) https://download.docker.com/linux/${distro} $(lsb_release -cs) stable"
+      DEBIAN_FRONTEND=noninteractive apt-get -yqq update >/dev/null 2>&1
+      apt-get -y install docker-ce --allow-unauthenticated >/dev/null 2>&1 || { printf -- "error: Unable to install %s\n" "${install}" && exit 1; }
+    else
+      apt-get -y install "${install}" --allow-unauthenticated >/dev/null 2>&1 || { printf -- "error: Unable to install %s\n" "${install}" && exit 1; }
+    fi
+    install_list+=("${install}")
+  done
+}
+
+################################################################################
+# @name: qb::host::update
+# @description: Updates this file
+#
+# @global_variables:
+#  qbhost_version
+################################################################################
+qb::host::update() {
+  declare latest_version
+  declare -g qbhost_version=1.0.64
+  latest_version=$(curl -s "https://lab.quickbox.io/QuickBox/pro-v3/raw/main/version%2Fqb_host")
+  if [[ "${qbhost_version}" != "${latest_version}" ]]; then
+    printf -- "information: updating qb_host to: %s\n" "${latest_version}"
+    curl -s "https://lab.quickbox.io/QuickBox/pro-v3/raw/main/links%2Fqb" > "${qb_base}/bin/qb_host.update"
+    cp -f "${qb_base}/bin/qb_host.update" "${qb_base}/bin/qb_host"
+    rm -f "/usr/local/bin/qb"
+    ln -s "${qb_base}/bin/qb_host" "/usr/local/bin/qb"
+    "${qb_base}/bin/qb_host.update" "$@"
+    rm -f -- "${qb_base}/bin/qb_host.update"
+    exit 0
+  fi
+}
+
+################################################################################
+# @name: qb::args::process
+# @description: parses arguments/variables and verifies them
+#
+# @args:
+#  @arg $* options
+#
+# @global_variables:
+#  docker_installed
+#  name_check
+################################################################################
+qb::args::process() {
+  declare -gi docker_installed; hash docker 2> /dev/null && docker_installed=1
+  [[ "${docker_installed}" -eq 1 ]] && declare -g name_check; name_check=$(docker ps --format "{{.Names}}" | grep ${qb_container})
+  if [[ $(type -t "qb::docker::${1}") == function ]]; then
+    "qb::docker::${1}" $@
+  else
+    printf -- "error: %s is not a vaild argument\n" "${1}" && exit 1
+  fi
+}
+
+################################################################################
+# @name: qb::docker::build
+# @description: installs quickbox v3
+#
+# @args:
+#  $@ quickbox install arguments
+################################################################################
+qb::docker::build() {
+  mkdir -p /tmp/quickbox
+  cd "/tmp/quickbox" || { printf -- "error: unable to move to /tmp/quickbox\n" && exit 1; }
+  [[ -n "${name_check}" ]] && printf -- "error: quickbox container already exists - use qb rebuild/qb remove\n" && exit 1
+  # insert download links
+  #[[ -f "/tmp/quickbox/quickbox_host" ]] && "/tmp/quickbox_host" $@ && exit 0
+  exit 1
+}
+
+################################################################################
+# @name: qb::docker::check
+# @description: checks for quickbox v3 docker
+################################################################################
+qb::docker::check() {
+  [[ -z "${name_check}" ]] && printf -- "error: no quickbox container found\n" && exit 1
+}
+
+################################################################################
+# @name: qb::docker::start
+# @description: starts quickbox v3
+################################################################################
+qb::docker::start() {
+  docker start "${qb_container}" > /dev/null && docker exec -it quickbox bash -c "systemctl daemon-reexec"
+}
+
+################################################################################
+# @name: qb::docker::stop
+# @description: stops quickbox v3 docker
+################################################################################
+qb::docker::stop() {
+  qb::docker::check
+  docker stop "${qb_container}" > /dev/null
+}
+
+################################################################################
+# @name: qb::docker::restart
+# @description: restart quickbox v3 docker
+################################################################################
+qb::docker::restart() {
+  qb::docker::stop
+  qb::docker::start
+}
+
+################################################################################
+# @name: qb::docker::remove
+# @description: removes quickbox v3 docker
+################################################################################
+qb::docker::remove() {
+  qb::docker::stop
+  docker rm "${qb_container}" > /dev/null
+}
+
+################################################################################
+# @name: qb::docker::rebuild
+# @description: reinstalls quickbox v3
+#
+# @args:
+#  $@ quickbox install arguments
+################################################################################
+qb::docker::rebuild() {
+  qb::docker::remove
+  qb::docker::build "$@"
+}
+
+################################################################################
+# @name: qb::docker::enter
+# @description: enters quickbox v3 docker
+################################################################################
+qb::docker::enter() {
+  qb::docker::check
+  docker exec -it -w /root "${qb_container}" /bin/bash -c "sudo su -"
+}
+
+################################################################################
+# @name: qb::docker::stat
+# @description: stats quickbox v3 docker
+################################################################################
+qb::docker::stat() {
+  qb::docker::check
+  docker stats --no-stream "${qb_container}"
+}
+
+################################################################################
+# @name: qb::docker::log
+# @description: displays quickbox v3 docker logs
+################################################################################
+qb::docker::log() {
+  qb::docker::check
+  docker log "${qb_container}"
+}
+
+################################################################################
+# @description: calls functions in required order
+################################################################################
+qb::environment::setup "$@"
+qb::host::update "$@"
+qb::args::process "$@"
+exit 0
