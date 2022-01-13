@@ -1,4 +1,0 @@
-#!/bin/bash
-declare -gi priority=3; declare -g title text
-title="priority 3 message"
-text="this is also a test"

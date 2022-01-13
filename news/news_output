@@ -1,5 +1,5 @@
 #!/bin/bash
-declare -gi priority=1; declare -g title text
+declare -g title text
 title="v3 news module released"
 text="this is a test news announcement
 Magna esse ex aute anim eu. Pariatur excepteur aute eiusmod deserunt esse. Commodo duis minim laboris proident voluptate aliquip enim anim amet fugiat. Deserunt labore nostrud nulla aute amet et nisi aliquip sit exercitation.
