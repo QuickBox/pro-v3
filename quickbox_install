@@ -4,12 +4,12 @@
 # @project_name: quickbox_pro_v3
 # @file_name: quickbox_download
 # @description: Downloads installation script.
-# @version: 1.0.6
+# @version: 1.0.7
 #
 # @save_tasks:
 #  automated_versioning: true
 #
-# @author: Jamie Dobbs (Mschf)
+# @author: Jamie Dobbs (mschf)
 # @author_contact: jamie.dobbs@mschf.dev
 #
 # @license: BSD-3 Clause (Included in LICENSE)
