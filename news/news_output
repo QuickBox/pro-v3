@@ -1,10 +1,4 @@
 #!/bin/bash
 declare -g title text
 title="QuickBox Pro v3 release coming soon!"
-text="soon to enter the test phase
-As we near the finish line, QuickBox Pro will be going into the beta testing phase over the next couple of weeks.
-
-We continue to work on quality control where we encounter a need for it. The initial testing phases should be fast.
-Once v3 passes the initial testing phase, we will be launching v3 for new installs. The aim is to complete the upgrade from v2 > v3 over the next month or so. This means, that anyone not wanting to do a fresh install will be able to upgrade their installs not long after the launch of v3. 
-
-Stay tuned for more!"
+text="test message"
