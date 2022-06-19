@@ -1,5 +1,5 @@
 #!/bin/bash
 declare -g title text
 title="QuickBox Pro v3 release coming soon!"
-text="Available for fresh server installs of Debian 9, 10, and 11.
-Mark your calendars for May 22 2022!"
+text="Available for fresh server installs of Debian 10, and 11.
+Mark your calendars for July 22 2022!"
