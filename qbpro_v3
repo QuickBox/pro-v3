@@ -2,7 +2,7 @@
 ################################################################################
 # <START METADATA>
 # @project_name: quickbox_pro_v3
-# @file_name: install
+# @file_name: qbpro_v3
 # @description: Downloads installation script.
 # @version: 1.0.13
 #
@@ -13,7 +13,7 @@
 # @author_contact: jamie.dobbs@mschf.dev
 #
 # @license: BSD-3 Clause (Included in LICENSE)
-# Copyright (C) 2019-2021, QuickBox | Jamie Dobbs
+# Copyright (C) 2019-2022, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=SC2068
