@@ -1,0 +1,978 @@
+<?php
+$version = $configs->getConfig('Version');
+/********************************************************
+ *                        Danish                        *
+ *                                                      *
+ * Ready for QuickBox Pro v3.0.0 : June 29, 2022        *
+ *                                                      *
+ * SUMMARY :                                            *
+ *                                                      *
+ * NAVIGATION : #1                                      *
+ *    lang & theme : #1.1                               *
+ *    user menu : #1.2                                  *
+ *    sidebar menu : #1.3                               *
+ *    sidebar submenus : #1.4                           *
+ *    footer : #1.5                                     *
+ * MISCELLANEOUS : #2                                   *
+ *    buttons : #2.1                                    *
+ *    popup texture : #2.2                              *
+ *    app nginx config edit modal : #2.3                *
+ *    other : #2.4                                      *
+ * WIDGETS : #3                                         *
+ *    Tables Headers : #3.1                             *
+ *       app management center : #3.1.1                 *
+ *    Package Management Center : #3.2                  *
+ *       app info & uninstall : #3.2.1                  *
+ *       toggles & tooltips : #3.2.2                    *
+ *       service control : #3.2.3                       *
+ *       rclone specific toggles : #3.2.4               *
+ *    Dashboard Widgets : #3.3                          *
+ *       disk status widget : #3.3.1                    *
+ *       system index v1 - bandwidth data : #3.3.2      *
+ *       system index v1 - server load : #3.3.3         *
+ *       system index v1 - memory status : #3.3.4       *
+ *       server activity widget : #3.3.5                *
+ * PAGES : #4                                           *
+ *    Start Screen Forms : #4.1                         *
+ *       login : #4.1.1                                 *
+ *       forgot password : #4.1.2                       *
+ *       register : #4.1.3                              *
+ *       account : #4.1.4                               *
+ *         quotes : #4.1.4.1                            *
+ *         edit account modal : #4.1.4.2                *
+ *       summary : #4.1.5                               *
+ *    Settings : #4.2                                   *
+ *       general settings : #4.2.1                      *
+ *       email settings : #4.2.2                        *
+ *       session settings : #4.2.3                      *
+ *       user settings : #4.2.4                         *
+ *       security settings : #4.2.5                     *
+ *    User Management : #4.3                            *
+ *       registration settings : #4.3.1                 *
+ *       useradmin : #4.3.2                             *
+ *         admin user edit : #4.3.2.1                   *
+ *       user groups : #4.3.3                           *
+ *    System : #4.4                                     *
+ *       web console : #4.4.1                           *
+ *       troubleshootings : #4.4.2                      *
+ *       system logs : #4.4.3                           *
+ *       about / quicktips : #4.4.4                     *
+ *         commands : #4.4.4.1                          *
+ *       changelogs / update : #4.4.5                   *
+ *       system dashboard : #4.4.6                      *
+ *    Error Pages : #4.5                                *
+ *******************************************************/
+
+///////////////////////////////////////
+//          #1 NAVIGATION
+///////////////////////////////////////
+
+//#1.1 - language & theme selection
+$L['CHINESE'] = 'Kinesisk';
+$L['DANISH'] = 'Dansk';
+$L['ENGLISH'] = 'Engelsk';
+$L['FRENCH'] = 'Fransk';
+$L['GERMAN'] = 'Tysk';
+$L['PORTUGUESE'] = 'Portugisisk';
+$L['SELECT_LANGUAGE'] = 'Klik for at vælge sprog';
+$L['SELECT_THEME'] = 'Klik for at vælge tema';
+$L['SPANISH'] = 'Spansk';
+$L['THEME_DARK'] = 'Mørkt Tema';
+$L['THEME_LIGHT'] = 'Lyst Tema';
+
+//#1.2 - user menu tabs
+$L['LOG_OUT'] = 'Log Ud';
+$L['PROFILE'] = 'Min Profil';
+$L['REBOOT'] = 'Genstart';
+
+//#1.3 - sidebar menus
+$L['ABOUT_AND_TIPS'] = 'Om / QuickTips';
+$L['APP_DASHBOARD'] = 'Software Dashboard';
+$L['DASHBOARD'] = 'Dashboardet';
+$L['DB_MGMNT'] = 'phpMyAdmin';
+$L['EXTERNAL_LINKS'] = 'Brugerdefinerede links';
+$L['GENERAL_SETTINGS'] = 'Generelle indstillinger';
+$L['HELP_SUPPORT'] = 'Hjælp / Opdater';
+$L['KB'] = 'QuickBox.IO Videns Base';
+$L['PLUGINS'] = 'Udvidelser';
+$L['REGISTRATION'] = 'Registrering';
+$L['SECURITY_SETTINGS'] = 'Sikkerhedsindstillinger';
+$L['SESSION_SETTINGS'] = 'Sessionindstillinger';
+$L['SETTINGS'] = 'Indstillinger';
+$L['SYS_DASHBOARD'] = 'System Dashboard';
+$L['SYSTEM_LOGS'] = 'Systemlogs';
+$L['SYSTEM'] = 'System';
+$L['USER_ADMIN'] = 'Brugeradministrator';
+$L['USER_GROUPS'] = 'Brugergrupper';
+$L['USER_MANAGEMENT'] = 'Brugeradministration';
+$L['USER_SETTINGS'] = 'Brugerindstillinger';
+$L['WEB_CONSOLE'] = 'Webkonsol';
+
+//#1.4 - sidebar submenus
+$L['APP_MENU'] = 'Software';
+$L['APPLICATIONS'] = 'Min software';
+$L['DASHBOARD_INFO'] = 'Vælg mellem det administrative systemdashboard eller softwaredashboardet, der kan ses af alle brugere.';
+$L['DASHBOARD_VIEW'] = 'Dashboard Visning';
+$L['DOWNLOADS'] = 'Downloads';
+$L['FILEMANAGER'] = 'Filhåndtering';
+$L['PLUGINS_CENTER'] = 'Udvidelsescenter';
+$L['PLUGINS_INFO'] = 'Installer og afinstaller udvidelser nemt ved blot at klikke på udvidelses-navnet.';
+$L['RPLUGINS_NOTICE'] = 'Installer og afinstallér ruTorrent-udvidelser nemt ved blot at klikke på udvidelses-navnet.';
+$L['RPLUGINS'] = 'ruTorrent Udvidelser';
+$L['TORRENT_CLIENTS'] = 'Torrentklienter';
+
+//#1.5 - footer
+$L['ALL_RIGHTS'] = 'Alle rettigheder forbeholdes.';
+
+
+///////////////////////////////////////
+//         #2 MISCELLANEOUS
+///////////////////////////////////////
+
+//#2.1 - buttons
+$L['ACTIVATE_USERS'] = 'Aktivér Brugere';
+$L['ADD_IP_ADDRESS'] = 'Tilføj IP-adresse';
+$L['ADD_USERNAME'] = 'Tilføj Brugernavn';
+$L['AGREE'] = 'Det er forstået - gør det!';
+$L['API_ACTIVATE'] = 'Aktiver';
+$L['APP_MANAGEMENT'] = 'Softwareadministration';
+$L['APPS_INSTALLED'] = 'Installeret software';
+$L['AUTO_DISABLE'] = 'Deaktiver automatiske opdateringer';
+$L['AUTO_ENABLE'] = 'Aktiver automatiske opdateringer';
+$L['BACK'] = 'Tilbage';
+$L['BAN_USER'] = 'Bandlys Bruger';
+$L['CANCEL'] = 'Fortryd';
+$L['CLEAN_LOG'] = 'Rens opdateringslog';
+$L['CLEAN_RCLOG'] = 'Rens Rclone-upload log';
+$L['CLICK_ME'] = 'Klik på mig';
+$L['CLOSE_REFRESH'] = 'Luk & Opdater';
+$L['CLOSE'] = 'Luk';
+$L['CPU_TAB'] = 'CPU';
+$L['CREATE_GROUP'] = 'Opret Gruppe';
+$L['CREATE_NEW_GROUP'] = 'Opret en Ny Gruppe';
+$L['CREATE_NEW_USER'] = 'Opret Ny Bruger';
+$L['CREATE_USER'] = 'Opret Bruger';
+$L['DELETE_ALL_ANNOUNCEMENTS'] = 'Slet alle meddelelser';
+$L['DELETE_ALL_LOGS'] = 'Slet alle logfiler (> 30 dage)';
+$L['DELETE_INACTIVE_USERS'] = 'Slet Inaktive Brugere';
+$L['DELETE_LOGS'] = 'Slet logfiler';
+$L['DELETE_SELECTED_ANNOUNCEMENTS'] = 'Slet valgte meddelelser';
+$L['DELETE_SELECTED_SESSIONS'] = 'Slet valgte Sessioner';
+$L['DELETE_SELECTED'] = 'Slet Valgte';
+$L['DELETE_USER'] = 'Slet Bruger';
+$L['DEMOTE'] = 'Degrader fra Admin';
+$L['DISABLED'] = 'Deaktiveret';
+$L['DISK_TAB'] = 'Disk';
+$L['DOWNLOAD'] = 'Hent';
+$L['EDIT_GROUP'] = 'Rediger Gruppe';
+$L['EDIT_USER'] = 'Rediger bruger';
+$L['ENABLED'] = 'Aktiveret';
+$L['EXECUTE'] = 'Udfør';
+$L['GENERATE'] = 'Generér';
+$L['GO_BACK'] = 'Tilbage';
+$L['IN_USE'] = 'I brug';
+$L['INSTALL'] = 'Installer';
+$L['INSTALLED'] = 'Afinstaller';
+$L['INSTALLING'] = 'Installerer';
+$L['KILL_USER_SESSION'] = 'Dræb alle brugersessioner';
+$L['LAUNCH'] = 'Åben';
+$L['LOGIN'] = 'Log på';
+$L['MEMORY_TAB'] = 'Hukommelse';
+$L['NETWORK_TAB'] = 'Netværk';
+$L['NGINX_BACKUP'] = 'Backup Nginx Konfiguration';
+$L['NGINX_DEFAULT'] = 'Gendan Standard Konfiguration';
+$L['NGINX_DISABLE'] = 'Deaktiver Auth Popup';
+$L['NGINX_ENABLE'] = 'Aktiver Auth Popup';
+$L['NGINX_RESTORE'] = 'Gendan Nginx Konfiguration';
+$L['APP_BACKUP'] = 'Backup af programkonfiguration';
+$L['APP_DEFAULT'] = 'Gendan standardkonfiguration';
+$L['APP_RESTORE'] = 'Gendan sikkerhedskopiering af software';
+$L['PROMOTE'] = 'Opgrader til Admin';
+$L['RCLONE_LOCK_REMOVE'] = 'fjern låsen';
+$L['RCLONE_LOGS'] = 'se logfiler';
+$L['RCLONE_UPLOAD'] = 'upload';
+$L['REFRESH'] = 'Genindlæs';
+$L['REGISTER'] = 'Tilmeld';
+$L['RELOAD_CONF'] = 'Genindlæs Konfigurationer';
+$L['RELOAD'] = 'Genindlæs';
+$L['REMOVE_BANNED_IP'] = 'Fjern Bandlyste IP-adresser';
+$L['REMOVE_DISALLOWED'] = 'Fjern Brugernavn';
+$L['REMOVE_MEMBER'] = 'Fjern gruppemedlem';
+$L['REMOVE'] = 'Fjern';
+$L['RESET_VERSION'] = 'Nulstil Nuværende Version';
+$L['RESET'] = 'Nulstil';
+$L['SAVE'] = 'Gemme';
+$L['SERVICE_CONTROL'] = 'Servicekontrol';
+$L['SIMULATE_BUTTON'] = 'Simulér';
+$L['SIMULATE_END'] = 'Afslut Sim';
+$L['SIMULATE_USER'] = 'Simulér Bruger';
+$L['NANGINX'] = 'N/A Service kører via nginx';
+$L['START'] = 'Start';
+$L['STOP'] = 'Hold op';
+$L['SUBMIT'] = 'Gem ændringer';
+$L['TOP_PROC_TAB'] = 'Top Processer';
+$L['UNBAN_USER'] = 'Tillad Bruger';
+$L['UNINSTALLED'] = 'Afinstalleret';
+$L['UNINSTALLING'] = 'Afinstallerer';
+$L['UP'] = 'Op';
+$L['UPDATE_TOOLTIP'] = 'Klik for at se flere oplysninger';
+$L['UPDATE_VERSION'] = 'Opdater';
+$L['USER_ACTIONS'] = 'Brugerhandlinger';
+$L['VIEW_CHANGELOG'] = 'Vis Ændringslog';
+$L['LATEST'] = 'seneste';
+$L['CURRENT'] = 'aktuel';
+$L['VIEW'] = 'Vis';
+
+//#2.2 - popup texture
+$L['SYSTEM_RESPONSE_TITLE'] = 'Systeminfo';
+$L['UNINSTALL_TITLE'] = 'Afinstallation';
+$L['UNINSTALLING_TXT_1'] = 'Fjerner filer og rydder op ... afinstallerer';
+$L['UNINSTALLING_TXT_2'] = 'er i gang. Vær tålmodig';
+
+//#2.3 - app nginx config edit modal
+$L['ALERT_NGINX_EDITOR'] = 'Det rådes til at tage backup af din nuværende konfiguration først og kun ændre konfigurationen nedenfor, hvis du er velbevandret med Nginx eller bliver instrueret af et staffmedlem.';
+$L['BACKUP_NGINX_LOC'] = 'Placering af Nginx Konfigurations Backup';
+$L['CURRENT_NGINX_LOC'] = 'Nuværenden placering af Nginx Konfiguration';
+$L['NGINX_APP_CONFIGURE'] = 'Nginx Konfigurations Editor';
+$L['NGINX_EDIT'] = 'Rediger Nginx Konfiguration';
+$L['ALERT_CONFIG_EDITOR'] = 'Det anbefales at tage en sikkerhedskopi af din nuværende konfiguration først og kun ændre konfigurationen nedenfor, hvis du er klar over de ændringer, der foretages, har konsulteret programmets egen dokumentation eller får instrukser fra en medarbejder';
+$L['BACKUP_CONFIG_LOC'] = 'Placering af Sikkerhedskopiering af Konfigurationen';
+$L['CURRENT_CONFIG_LOC'] = 'Config Nuværende Placering';
+$L['APP_CONFIG_OPTIONS'] = 'Software-konfigurationseditor';
+$L['APP_CONFIG_EDIT'] = 'Rediger softwarekonfiguration';
+
+//#2.4 - other
+$L['ABOUT_RELEASE'] = 'Om Frigivelsen';
+$L['EMAIL'] = 'Email';
+$L['HERE'] = 'her';
+$L['HOME'] = 'Hjem';
+$L['IDLE_L'] = 'ledig';
+$L['IDLE'] = 'Ledig';
+$L['NANGINX'] = 'Kører på Nginx';
+$L['NEED_HELP'] = 'Brug for hjælp ?';
+$L['NGINX_CONF_OPTIONS'] = 'Nginx Konfigurationsindstillinger';
+$L['NGINX_CONFIG'] = 'Nginx Konfiguration';
+$L['NGINX_SETTINGS'] = 'Nginx Indstillinger';
+$L['NO'] = 'Nej';
+$L['OR'] = 'eller';
+$L['PASSWORD'] = 'Adgangskode';
+$L['PLEASE_HOLD'] = '- Vent venligst';
+$L['REQUIRED_FIELD'] = 'Påkrævet område...';
+$L['REQUIRED_FIELDS'] = 'Felter markeret med <span style="color:#d9534f">*</span> er påkrævet';
+$L['SET_HERE'] = 'Sæt her';
+$L['SIMULATE_LIST'] = 'Brugerliste';
+$L['SIMULATE'] = 'Simuler Bruger';
+$L['SUMMARY'] = 'Oversigt';
+$L['UPDATING_QUICKBOX'] = 'Opdaterer QuickBox';
+$L['UPDATING'] = 'Opdatering ';
+$L['USED_L'] = 'brugt';
+$L['USERNAME'] = 'Brugernavn';
+$L['USERS'] = 'Brugere';
+$L['YES'] = 'Ja';
+
+
+////////////////////////////////////////
+//          #3 WIDGETS
+///////////////////////////////////////
+
+//#3.1 - TABLES HEADERS
+//#3.1.1 - App Management Center
+$L['AVAILABILITY'] = 'Tilgængelighed';
+$L['DETAILS'] = 'Detaljer';
+$L['NAME'] = 'Navn';
+$L['CONFIGS'] = 'Configs';
+
+
+//#3.2 - PACKAGE MANAGEMENT CENTER
+//#3.2.1 - App info & uninstall
+$L['AIRSONIC_UNINSTALL'] = 'u er ved at afinstallere <span style="color:#01cea2">Airsonic</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Airsonic</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['AIRSONIC'] = 'Airsonic-Advanced er en mere moderne implementering af Airsonic-gaflen med flere vigtige ydelses- og funktionsforbedringer. Den tilføjer og erstatter flere funktioner i Airsonic. Airsonic er en gratis, webbaseret mediestreamer, der giver universel adgang til din musik.';
+$L['AUTOBRR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Autobrr</span> fra dit system.<br/><br/>Dette vil helt fjerne alle dine konfigurationer og indstillinger... denne handling er irreversibel. <br/><br/>Du kan til enhver tid geninstallere <span style="color:#01cea2">Autobrr</span>, dog vil dine indstillinger blive nulstillet til standard.';
+$L['AUTOBRR'] = 'Autobrr er en moderne enkelt binær erstatning for autodl-irssi+rutorrent plugin. Autobrr-monitorer IRC annoncerer kanaler og torznab RSS-feeds for at få udgivelser, så snart de er tilgængelige, med god filtrering og regex-understøttelse.';
+$L['AUTODL_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">AutoDL-iRSSi</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">AutoDL-iRSSi</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['AUTODL'] = 'AutoDL-iRSSi er et plugin til irssi, der overvåger IRC annoncerer kanaler og downloader torrent-filer baseret på brugerdefinerede filtre.';
+$L['AUTOSCAN_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Autoscan</span> fra dit system.<br/><br/>Dette vil helt fjerne alle dine konfigurationer og indstillinger... denne handling er irreversibel. <br/><br/>Du kan til enhver tid geninstallere <span style="color:#01cea2">Autoscan</span>, men dine indstillinger vil blive nulstillet til standardindstillingerne.';
+$L['AUTOSCAN'] = 'Autoscan erstatter standardadfærden i Plex og Emby til at opsamle filændringer i filsystemet. Autoscan integrerer med Sonarr, Radarr, Lidarr og Google Drive for at hente ændringer i næsten realtid uden at være afhængig af filsystemet.';
+$L['BAZARR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Bazarr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Bazarr</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['BAZARR'] = 'Bazarr er en ledsageransøgning til Sonarr og Radarr. Det administrerer og downloader undertekster baseret på dine krav. Du definerer dine præferencer efter tv-show eller film, og Bazarr tager sig af alt for dig.';
+$L['BBR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">BBR</span> fra dit system.<br/><br/>Dette vil helt fjerne alle dine konfigurations- og kernejusteringsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">BBR</span> til hver en tid.';
+$L['BBR'] = 'BBR er en ny overbelastningsstyringsalgoritme, som er bidraget til Linux-kernen TCP-stakken af Google. Med BBR på plads kan en Linux-server få signifikant øget gennemgang og reduceret forsinkelse for forbindelsessvartider.';
+$L['BTSYNC_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">BitTorrent Sync</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurations og delte indstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">BitTorrent Sync</span> til hver en tid, men din sti til lagering og linkede mappeindstillinger vil blive nulstillet til standard.';
+$L['BTSYNC'] = 'BitTorrent Sync fra BitTorrent Inc. er et proprietært peer-to-peer-fil synkroniseringsværktøj.';
+$L['CALIBRE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Calibre</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Calibre</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['CALIBRE'] = 'Calibre er en cross-platform open-source suite af e-bogs software. Calibre understøtter organisering af eksisterende e-bøger ind i virtuelle biblioteker, visning, redigering, oprettelse og konvertering af e-bøger, ligeledes synkronisering til forskellige e-bogs læsere. Redigering af bøger er understøttet for EPUB and AZW3 formater.';
+$L['COUCHPOTATO_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">CouchPotato</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">CouchPotato</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['COUCHPOTATO'] = 'Hent film automatisk, nemt og i den bedste kvalitet, så snart de er frigivet via usenet eller torrent.';
+$L['CSF_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Config Server Firewall (CSF)</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Config Server Firewall (CSF)</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['CSF'] = 'ConfigServer Firewall, også kendt som CSF, er et firewall-konfigurationsscript således du kan få en bedre sikkerhed til din server og samtidig giver dig et nemt plus avanceret interface til styring af dine firewall-indstillinger.';
+$L['DELUGE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Deluge</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurations og delte indstillinger for <strong>alle brugere</strong>... denne handling kan ikke fortrydes.<br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Deluge</span> til hver en tid, men din sti til lagering og linkede mappeindstillinger vil blive nulstillet til standard.';
+$L['DELUGE'] = 'Deluge en gratis letvægts cross-platform BitTorrent klient.';
+$L['DUPLICATI_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Duplicati</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#01cea2">Duplicati</span> at any time, however, your storage path and linked folder settings will be reset to default.';
+$L['DUPLICATI'] = 'Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers. It can works with Amazon S3, Dropbox, Google Drive, FTP, SSH/SFTP, WebDAV, and <a href="https://nullrefer.ir/?https://duplicati.readthedocs.io/en/latest/01-introduction/#supported-backends" rel="noopener nofollow" target="_blank">many more</a>.';
+$L['EMBY_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Emby</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurations og delte indstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Emby</span> til hver en tid, men din sti til lagering og linkede mappeindstillinger vil blive nulstillet til standard.';
+$L['EMBY'] = 'Emby er en klient-server softwarepakke, der lader brugerne være vært og streame personlige kopier af multimedie - musik-, video- og billedfiler. ... Emby-klientsoftwaren er en app, du skal installere på mobile enheder og visse set-top bokse til fjernsyn, som f.eks. Android TV. og har samme træk som Plex/SPMC etc';
+$L['FAIL2BAN_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Fail2Ban</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurations og delte indstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Fail2Ban</span> til hver en tid, men din sti til lagering og linkede mappeindstillinger vil blive nulstillet til standard.';
+$L['FAIL2BAN'] = 'Fail2Ban er et framework til indtrængningsforebyggelse af software som beskytter servere imod brute force angreb.';
+$L['FILEBOT_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">FileBot</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">FileBot</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['FILEBOT'] = 'FileBot er det ultimative værktøj til at organisere og omdøbe dine film, tv-programmer og anime samt hente undertekster og artwork. Det er smart og det virker bare.';
+$L['FILEBROWSER_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">File Browser</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">File Browser</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['FILEBROWSER'] = 'Filbrowser giver en filhåndteringsgrænseflade indenfor en bestemt mappe, og den kan bruges til at uploade, slette, forhåndsvise, omdøbe og redigere dine filer. Det tillader oprettelse af flere brugere, og hver bruger kan have sin egen mappe. Det kan bruges som en selvstændig app eller som middleware.';
+$L['FLARESOLVERR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">FlareSolverr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <br/><br/>You may reinstall <span style="color:#01cea2">FlareSolverr</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['FLARESOLVERR'] = 'FlareSolverr er en proxyserver til at omgå Cloudflare-beskyttelse.';
+$L['FLEXGET_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Flexget</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <br/><br/>You may reinstall <span style="color:#01cea2">Flexget</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['FLEXGET'] = 'FlexGet er et multifunktionsautomatiseringsværktøj til alle dine medier. Understøtter torrents, nzbs, podcasts, tegneserier, tv, film, RSS, HTML, CSV og meget mere.';
+$L['FLOOD_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Flood</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurations og delte indstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Flood</span> til hver en tid, men din sti til lagering og linkede mappeindstillinger vil blive nulstillet til standard.';
+$L['FLOOD'] = 'Flood er en anden webgrænseflade til rtorrent. Det implementerer en Node.js-server til kommunikation med rTorrent API, lagring af historiske data og visning af web-brugergrænsefladen.';
+$L['HEADPHONES_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Headphones</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurations og delte indstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Headphones</span> til hver en tid, men din sti til lagering og linkede mappeindstillinger vil blive nulstillet til standard.';
+$L['HEADPHONES'] = 'Headphones er en automatiseret musik downloader til NZB og Torrent, skrevet i Python. Den understøtter SABnzbd, NZBget, Transmission, μTorrent, Deluge og Blackhole.';
+$L['JACKETT_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Jackett</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Jackett</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['JACKETT'] = 'Jackett åbner op for API support til dine favorit private trackere.';
+$L['JELLYFIN_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Jellyfin</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Jellyfin</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['JELLYFIN'] = 'Jellyfin er et gratis software medie system, der giver dig kontrol over styring, administration og streaming af dine medier.';
+$L['LAZYLIBRARIAN_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2"> LazyLibrarian </span> fra dit system. <br/><br/>Dette vil fjerne alle dine konfigurationsindstillinger fuldstændigt ... denne handling er irreversibel. <br/><br/>Du kan geninstallere <span style="color:#01cea2"> LazyLibrarian </span> når som helst, men dine konfigurationsindstillinger nulstilles til standard.';
+$L['LAZYLIBRARIAN'] = 'LazyLibrarian er en SickBeard, CouchPotato, Headphone-lignende applikation til ebøger, lydbøger og magasiner. Den bruger en kombination af <a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a> og eventuelt <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a> som kilder til forfatterinfo og boginformation.';
+$L['LETSENCRYPT_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Let\'s Encrypt</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Let\'s Encrypt</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['LETSENCRYPT'] = 'Let\'s Encrypt er en gratis, automatiseret og åben certifikatmyndighed (CA). Det er en tjeneste fra <a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group (ISRG)</a>.';
+$L['LIDARR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Lidarr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Lidarr</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['LIDARR'] = 'Lidarr er en uafhængig fork af Sonarr ombygget til automatisk musikdownload via Usenet og BitTorrent. Projektet er inspireret af andre Usenet/BitTorrent musik downloadere som fx. Headphones.';
+$L['MEDUSA_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Medusa</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Medusa</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['MEDUSA'] = 'Medusa håndterer nemt dine tv-serier, den holder automatisk øje med nye afsnit af din favorit serie. Tillader manuel søgning og andre eksklusive funktioner, skal du kontrollere Medusa on <a href="https://nullrefer.ir/?https://github.com/pymedusa/Medusa" rel="noopener nofollow" target="_blank">Github</a>.';
+$L['MYLAR3_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2"> Mylar3 </span> fra dit system. <br/><br/>Dette vil fjerne alle dine konfigurationsindstillinger helt ... denne handling er uoprettelig. <br/><br/>Du kan geninstallere <span style="color:#01cea2"> Mylar3 </span> når som helst, men dine konfigurationsindstillinger nulstilles til standard.';
+$L['MYLAR3'] = 'Mylar er et automatiseret Comic Book-downloadprogram (cbr/cbz) til brug med NZB og torrenter skrevet i python. Det understøtter SABnzbd, NZBGET og mange torrent-klienter ud over DDL.';
+$L['NETDATA_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Netdata</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Netdata</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['NETDATA'] = 'Netdata er et distribueret, realtids - ydeevne og sundheds overvågning for systemer og applikationer.';
+$L['NEXTCLOUD_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">NextCloud</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">NextCloud</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['NEXTCLOUD'] = 'Nextcloud er en open source, selvhosted fil synkroniserings-, delings- og kommunikationsplatform. Få nem adgang til og synkroniser dine filer, kontakter, kalendre og kommuniker på tværs af alle dine enheder. Du afgør selv hvad der sker med dine data, hvor den lagres, og hvem der kan få adgang!';
+$L['NOVNC_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">noVNC</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">noVNC</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['NOVNC'] = 'noVNC er både et VNC klient JavaScript bibliotek samt et program bygget oven på biblioteket. noVNC kører godt i enhver moderne browser, herunder mobilbrowsere (iOS og Android).';
+$L['NZBGET_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">NZBGet</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">NZBGet</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['NZBGET'] = 'NZBGet er en binær downloader, som overfører filer fra Usenet baseret på information givet i nzb-filer. NZBGet er skrevet i C ++ og er kendt for sin ekstraordinære ydeevne og effektivitet.';
+$L['NZBHYDRA_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">NZBHydra</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">NZBHydra</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['NZBHYDRA'] = 'NZBHydra er meta søgning til NZB indeksere. Det giver nem adgang til en række rå og newznab-baserede indeksere. Du kan søge alle indeksere fra ét sted og bruge det som indekskilde til værktøjer som Sonarr eller CouchPotato.';
+$L['NZBHYDRA2_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">NZBHydra2</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">NZBHydra2</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['NZBHYDRA2'] = 'NZBHydra2 er meta søgning til NZB indeksere. Det giver nem adgang til en række rå og newznab-baserede indeksere. Du kan søge alle indeksere fra ét sted og bruge det som indekskilde til værktøjer som Sonarr eller CouchPotato.';
+$L['OMBI_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Ombi</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne din konfiguration og biblioteksindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Ombi</span> til hver en tid, men dine biblioteksindstillinger og anmodninger vil blive nulstillet.';
+$L['OMBI'] = 'Ombi tilbyder et smuk og let anvendeligt interface, så brugere nemt kan tilføje "Ønsker" til Plex-biblioteket. Integrerer med CouchPotato, SickChill and Sonarr.';
+$L['OVERSEERR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Overseerr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Overseerr</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['OVERSEERR'] = 'Overseerr er en gratis og open source softwareapplikation til håndtering af anmodninger om dit mediebibliotek. Det integrerer med dine eksisterende tjenester, såsom Sonarr, Radarr og Plex!';
+$L['OVPN_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">OpenVPN</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">OpenVPN</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['OVPN'] = 'SSL/TLS baseret brugerdefineret VPN. Supporterer Linux, Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X, og Windows.';
+$L['PHPMYADMIN_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">phpMyAdmin</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne din konfiguration og databaseindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere  <span style="color:#01cea2">phpMyAdmin</span> til hver en tid.';
+$L['PHPMYADMIN'] = 'phpMyAdmin er et gratis softwareværktøj skrevet i <a href="https://nullrefer.ir/?https://php.net/" rel="noopener nofollow" target="_blank">PHP</a>, der skal håndtere administrationen af <a href="https://nullrefer.ir/?https://www.mysql.com/" rel="noopener nofollow" target="_blank">MySQL</a> over internettet. phpMyAdmin understøtter en bred vifte af operationer på MySQL og MariaDB. Ofte anvendte operationer som (styring af databaser, tabeller, kolonner, relationer, indekser, brugere, tilladelser osv.) Kan udføres via brugergrænsefladen, mens du stadig har evnen til at udføre en SQL-sætning direkte.';
+$L['PLEX_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Plex Media Server</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne din konfiguration og biblioteksindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Plex</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['PLEX'] = 'Plex lader dig administrere og streame dit indhold til enhver Plex enhed.';
+$L['PROWLARR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Prowlarr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne din konfiguration og biblioteksindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Prowlarr</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['PROWLARR'] = 'Prowlarr er en indekseringsadministrator/proxy bygget på den populære arr .net/reactjs-basestak til integration med dine forskellige PVR-apps. Prowlarr understøtter både Torrent Trackers og Usenet Indexers. Det integreres problemfrit med Sonarr, Radarr, Lidarr og Readarr, der tilbyder komplet styring af dine indeksører uden nogen app-indekseringsopsætning påkrævet.';
+$L['PYLOAD_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">PyLoad</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">PyLoad</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['PYLOAD'] = 'pyLoad er en download manager for `Hoster` hjemmesider, videosider og HTTP / FTP links. En liste over understøttede websteder kan findes <a href="https://nullrefer.ir/?https://github.com/pyload/pyload/wiki/Supported-Hoster" rel="noopener nofollow" target="_blank">her</a>';
+$L['QBITTORRENT_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">qBittorrent</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurations- og and delt mappe indstillinger for <strong>alle brugere</strong>... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">qBittorrent</span> til hver en tid, men lagringsstien samt mappeindstillinger vil blive nulstillet.';
+$L['QBITTORRENT'] = 'qBittorrent er en gratis og pålidelig P2P BitTorrent klient. En avanceret multiplatform BitTorrent-klient med en flot Qt-brugergrænseflade samt et web-interface til remote betjening og en integreret søgemaskine.';
+$L['QUASSEL_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Quassel</span> fra dit system.<br/><br/> Dette vil fuldstændig fjerne <span style="color:#01cea2">Quassel</span> alle indstillinger/gemte backlogs fra dit system.';
+$L['QUASSEL'] = 'Quassel IRC er en moderne, cross-platform, distribueret IRC klient baseret på Qt4 framework.';
+$L['QUOTA_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Quotas</span> fra dit system.<br/><br/> Dette vil fuldstændig fjerne bruger kvoter (user quotas) og enhver indstilling associeret med dem.';
+$L['QUOTAS'] = 'Denne feature fra Linux tillader administratore at tildele den mængde disk plads en bruger eller gruppe kan tilgå.';
+$L['RADARR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Radarr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Radarr</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['RADARR'] = 'Radarr er en uafhængig fork af Sonarr omarbejdet til automatisk at downloade film via Usenet og BitTorrent.<br>Projektet blev inspireret af andre Usenet/BitTorrent film downloadere som CouchPotato.';
+$L['RAPIDLEECH_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Rapidleech</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Rapidleech</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['RAPIDLEECH'] = 'RapidLeech er et gratis serveroverførsels script op mod forskellige populære upload-/downloadsider som fx. uploaded.net, Rapidshare.com og mere end 120 andre.';
+$L['RCLONE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Rclone</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Rclone</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['RCLONE'] = 'Rclone er et kommandolinjeprogram til synkronisering af filer og mapper til og fra et væld af værter';
+$L['READARR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Readarr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Readarr</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['READARR'] = 'Readarr er en e-bogsamlingsmanager for Usenet- og BitTorrent-brugere. Den kan overvåge flere RSS-feeds for nye bøger fra dine yndlingsforfattere og vil fungere sammen med klienter og indeksere for at hente, sortere og omdøbe dem.';
+$L['REQUESTRR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Requestrr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Requestrr</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['REQUESTRR'] = 'Requestrr er en Discord chatbot, der bruges til at forenkle brugen af tjenester som Sonarr/Radarr/Ombi via brugen af chat! Alle brugere af din Discord Server kan anmode om at tilføje nyt indhold og få besked, når det er tilgængeligt.';
+$L['RTORRENT_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">rTorrent</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">rTorrent</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['RTORRENT'] = 'rTorrent er en hurtig og effektiv BitTorrent-klient, der bruger og er ved at blive udviklet sammen med libTorrent-biblioteket (ikke forveksles med libtorrent-rasterbar). Det er skrevet i C ++ og bruger ncurses programmeringsbiblioteket, hvilket betyder at det bruger en tekstbrugergrænseflade.';
+$L['RUTORRENT_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">ruTorrent</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">ruTorrent</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['RUTORRENT'] = 'ruTorrent er en front-end til den populære Bittorrent klient rtorrent. Hovedfunktioner: Letvægts serverside, så den kan installeres på gamle og low-end servere og selv på nogle SOHO routere, Udvidelser - der er flere plugins, og alle kan lave deres eget, kommer med <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox tema</a>.';
+$L['SABNZBD_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">SABnzbd</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">SABnzbd</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['SABNZBD'] = 'SABnzbd er en multi-platform binær nyhedsgruppe-downloader. Programmet virker i baggrunden og forenkler downloading, verificering og udpakning af filer fra Usenet. SABnzbd bruger NZB-filer (ligner .torrent-filer, men til Usenet), i stedet for at browse Usenet direkte.';
+$L['SICKCHILL_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">SickChill</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">SickChill</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['SICKCHILL'] = 'SickChill håndterer nemt dine tv-serier, den holder automatisk øje med nye afsnit af din favorit serie.';
+$L['SICKGEAR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">SickGear</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">SickGear</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['SICKGEAR'] = 'SickGear er udviklet af SickBear. Automatiser din tv nydelse med innovation, dokumenteret stabilitet og pålidelighed.';
+$L['SONARR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Sonarr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Sonarr-NzbDrone</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['SONARR'] = 'Sonarr håndterer dine tv-serier og virker med både torrents og usenet.';
+$L['SUBSONIC_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Subsonic</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Subsonic</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['SUBSONIC'] = 'Subsonic er en webbaseret medieserver. Det er skrevet i Java, så det kan køre på ethvert operativsystem med Java support. Subsonic understøtter streaming til flere klienter samtidigt, og understøtter alle streamable medier (inklusive MP3, AAC og Ogg).';
+$L['SYNCTHING_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Syncthing</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Syncthing</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['SYNCTHING'] = 'Syncthing er en open source kontinuerlig Filsynkronisering med BitTorrent';
+$L['TAUTULLI_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Tautulli</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne din konfiguration og biblioteksindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Tautulli</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['TAUTULLI'] = 'Tautulli (tidligere PlexPy) En webapplikation til at monitorere, analysere og spore forskellige data omkring brugen af din Plex Media Server.';
+$L['THELOUNGE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">TheLounge</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne din konfiguration og biblioteksindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">TheLounge</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['THELOUNGE'] = 'En moderne selvhostet web IRC klient';
+$L['TRANSMISSION_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Transmission</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Transmission</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['TRANSMISSION'] = 'Transmission er designet til nem og kraftig brug. Standardindstillingerne er indstillet til standard brug, og det tager kun et par klik at konfigurere avancerede funktioner som se mapper, peer blocklists og webgrænsefladen. Når Ubuntu valgte Transmission som standard BitTorrent-klient, var en af de mest anførte grunde den nemme indlæringskurve.';
+$L['UNIFI_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">UniFi</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">UniFi</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['UNIFI'] = 'UniFi® Controller er en trådløs netværksadministration fra Ubiquiti Networks™. Det giver dig mulighed for at styre flere trådløse netværk ved hjælp af en webbrowser.';
+$L['UNPACKERR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Unpackerr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Unpackerr</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['UNPACKERR'] = 'Uddrag downloads til Radarr, Sonarr, Lidarr, Readarr - Sletter udpakkede filer efter import.';
+$L['WEBCONSOLE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Web Console (shellinabox)</span> fra dit system.<br/><br/> >Du har mulighed for at geninstallere <span style="color:#01cea2">Web Console (shellinabox)</span> til hver en tid.';
+$L['WEBCONSOLE'] = 'Shell In A Box (aka Web Konsol) implementerer en webserver, der kan eksportere vilkårlig kommandolinjeværktøjer til en web-baseret terminal emulator. Denne emulator er tilgængelig for enhver JavaScript og CSS-aktiveret webbrowser og kræver ikke yderligere browser plugins.';
+$L['X2GO_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">x2go</span> fra dit system.<br/><br/> Dette vil fuldstændig fjerne <span style="color:#01cea2">x2goserver</span> og <span style="color:#01cea2">xfce4 desktopmiljøet</span> fra dit system.';
+$L['X2GO'] = 'X2Go er et open source fjernskrivebords-software til Linux som benytter sig af NX tech-protokollen.';
+$L['XTEVE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">xTeVe</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">xTeVe</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
+$L['XTEVE'] = 'xTeVe er et program, der simulerer en tv-tuner, det giver dig mulighed for at have IPTV-kanaler via Plex eller Emby. xTeVe kan flette flere M3U-og XMLTV-filer og sende det til dit foretrukne Media Center.';
+$L['ZNC_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">ZNC</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">ZNC</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['ZNC'] = 'ZNC er en IRC bouncer eller BNC. Den kan frigøre ircklienten fra serveren eller kanalen og holde din klient ajour når der igen sker en tilkobling.';
+
+//#3.2.2 - toggles & tooltips
+$L['CARD VIEW'] = 'Kortvisning';
+$A['LIST VIEW'] = 'Listevisning';
+$L['CLI'] = 'Kun via Webkonsol';
+$L['COMPAT_E'] = 'Kompatibilitetsfejl';
+$L['CURRENTLY_INSTALLED_NOTICE'] = 'Det ser ud til, at du har adgang til et program, som kun kan installeres af én bruger ad gangen. Tal med din systemadministrator for at få yderligere status om tilgængeligheden.';
+$L['CURRENTLY_INSTALLED_TITLE'] = 'Nogen har i øjeblikket installeret denne software';
+$L['DEL1_TOOLTIP'] = 'Det ser ud til, at du kører på Ubuntu 20.04. Deluge v1 kører ikke på denne Distro. Overvej at installere Deluge v2 for at fortsætte, da Deluge v2 kører på opdateret libtorrent1.2 + og python3 +.';
+$L['DEL2_TOOLTIP'] = 'Det ser ud som om qBittorrent er installeret i øjeblikket. Deluge v2 fungerer ikke med qBittorrent installeret. Fjern venligst qBittorrent eller installer Deluge v1 for at fortsætte.';
+$L['DEL2XENIAL_TOOLTIP'] = 'Det ser ud til, at du kører på Ubuntu 16.04. Deluge v2 kører ikke på denne Distro. Overvej venligst at installere Deluge v1 for at fortsætte.';
+$L['DOMAIN'] = 'Domæne';
+$L['EMBY_JELLYFIN_COMPAT_MESSAGE'] = 'Jellyfin Installeret';
+$L['ENTER_MOUNT_POINT'] = 'Indtast venligst dit primære monteringspunkt';
+$L['FAIL2BAN_TOOLTIP'] = 'Adgang til denne feature fås via ssh ved at skrive: \'qb install fail2ban\'';
+$L['JELLYFIN_EMBY_COMPAT_MESSAGE'] = 'Emby Installeret';
+$L['LETSENCRYPT_DOMAIN'] = 'Indtast venligst dit domæne til Let\'s Encrypt';
+$L['MEDUSA_INSTALLED'] = 'Medusa Installeret';
+$L['OVPN_TOOLTIP'] = 'Adgang til denne feature fås via webkonsollen ved at skrive: \'qb install vpn\'';
+$L['PLEX_CLAIM_MESSAGE'] = 'For at kræve din Plex Media Server skal du allerede have en konto og være logget ind for at hente kravskoden fra: <a href="https://nullrefer.ir/?https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank"><strong>https://www.plex.tv/claim/</strong></a><br/><br/><div class="alert alert-notice" style="color:#fff"><strong>BEMÆRK: </strong> Det tilrådes at bruge knappen "Kopier til udklipsholder" fra kravskodeskærmen for at sikre korrekt indsættelse, da kravskoden er store og små bogstaver.</div>';
+$L['PLEX_CLAIM_TITLE'] = 'Plex Media Server-installation';
+$L['PLEX_CLAIM_TOKEN'] = 'Plex kravskode';
+$L['PRIMARY_MOUNTM'] = 'Primært monteringspunkt (Mount)';
+$L['QBIT_TOOLTIP'] = 'Det ser ud til, at Deluge 2 er installeret i øjeblikket. qBittorrent fungerer ikke med Deluge 2 installeret. Fjern venligst Deluge 2 eller installer Deluge 1 for at fortsætte.';
+$L['QUOTAS_FSTAB'] = 'Rediger din fstab';
+$L['QUOTAS_HELP'] = 'Mere omkring installering af quotas, <a href="https://nullrefer.ir/?https://quickbox.io/document/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>læs venligst denne F.A.Q først</strong></a>.';
+$L['QUOTAS_TOOLTIP'] = 'Tilføj følgende i stedet for <code class="language-bash">defaults</code> på dit hovedmonteringspunkt (main mount) for at fortsætte';
+$L['RCLONE_ADMIN_TOOLTIP'] = 'Adgang til denne feature fås via ssh ved at skrive: \'qb install rclone -u USER [ -o encrypted ]\'';
+$L['RCLONE_USER_TOOLTIP'] = 'Kontakt en systemadministrator for at få dette installeret.';
+$L['REMOVE_MEDUSA_FIRST'] = 'Fjern først Medusa for at installere denne software.';
+$L['REMOVE_SICKCHILL_FIRST'] = 'Fjern først SickChill for at installere denne software.';
+$L['REMOVE_SICKGEAR_FIRST'] = 'Fjern først SickGear for at installere denne software.';
+$L['SICKCHILL_INSTALLED'] = 'SickChill Installeret';
+$L['SICKGEAR_INSTALLED'] = 'SickGear Installeret';
+$L['UNIFI_SSL_TOOLTIP'] = 'Hvis du allerede har et domæne, der er angivet i dit webstedsrod samt et Lets Encrypt certifikat, der allerede er genereret for domænet, skal du vælge denne indstilling.';
+$L['ZNC_TOOLTIP'] = 'Adgang til denne feature fås via ssh ved at skrive: \'qb install znc -u USER\'';
+
+//#3.2.3 - service control
+$L['ACTIVE_STATUS'] = 'aktiv (kører)';
+$L['APP_KEY'] = 'API Nøgle';
+$L['APP_PORT'] = 'Software-port';
+$L['APP_STATUS'] = 'Software-status';
+$L['INACTIVE_STATUS'] = 'inaktiv (død)';
+
+//#3.2.4 - rclone specific toggles
+$L['ACTIVE_MOUNTED'] = 'aktiv monteringspunkt (aka mount)';
+$L['INACTIVE_NOTMOUNTED'] = 'død (ikke monteret)';
+$L['RCLONE_OPTIONS'] = 'Rclone Muligheder';
+$L['RCLONE_LOG_VIEWER'] = 'Rclone move.log visning';
+$L['RCLONE_COMMAND_CENTER'] = 'Rclone Kommandocenter';
+$L['RCLONE_STATUS'] = 'Rclone Status';
+$L['RCLONE_UPLOAD_MESSAGE'] = 'Rclone arbejder i øjeblikket i baggrunden med at uploade dine data til gdrive. I løbet af denne periode vil du se en lås, der er indstillet til at verificere, at din proces er påbegyndt. Denne lås fjerner sig selv, når processen er afsluttet. Du kan altid lukke denne popup når som helst.<br/><br/><div class="alert alert-notice" style="color:#fff"><strong>BEMÆRK: </strong> Uploaden kører automatisk via en cronjob hver aften kl. 03:12 servertid.</div>';
+$L['RCLONE_UPLOAD_VIEWER'] = 'Rclone-upload visning';
+$L['RCMOUNT_STATUS'] = 'MergerFS-status';
+$L['RCMOUNT_WHERE'] = 'Monteringspunkt (mount) placering';
+
+
+//#3.3 - DASHBOARD WIDGETS
+//#3.3.1 - disk status widget
+$L['DD_DELUGE'] = 'Deluge';
+$L['DD_NZBGET'] = 'NZBGet';
+$L['DD_QBITTORRENT'] = 'qBittorrent';
+$L['DD_RTORRENT'] = 'rTorrent';
+$L['DD_SABNZBD'] = 'SABnzbd';
+$L['DD_TRANSMISSION'] = 'Transmission';
+$L['DELUGE_TORRENTS'] = 'torrents i Deluge';
+$L['DISK_%_1'] = 'Du har brugt';
+$L['DISK_%_2'] = 'af din totale diskplads!';
+$L['DISK_SPACE'] = 'Diskplads';
+$L['FREE'] = 'Ledig';
+$L['QBITTORRENT_TORRENTS'] = 'torrents i qBittorrent';
+$L['RT_TORRENTS'] = 'torrents i rTorrent';
+$L['SIZE'] = 'Størrelse';
+$L['CURRENT_USERS_ONLINE'] = 'Brugere, der i Øjeblikket er Online';
+$L['THERE_ARE'] = 'Der er indlæst';
+$L['TRANSMISSION_TORRENTS'] = 'torrents i Transmission';
+$L['USED'] = 'Brugt';
+$L['YOUR_DISK_STATUS'] = 'Diskstatus';
+$L['NZBGET_NZB'] = 'nzb indlæst i NZBGet';
+$L['SABNZBD_NZB'] = 'nzb indlæst i SABnzbd';
+
+//#3.3.2 - System Index v1 : bandwidth data widget
+$L['BANDWIDTH_DAILY'] = 'Daglig';
+$L['BANDWIDTH_DATA'] = 'Båndbredde';
+$L['BANDWIDTH_HOURLY'] = 'Hver time';
+$L['BANDWIDTH_LIVE'] = 'Direkte';
+$L['BANDWIDTH_MONTHLY'] = 'Månedlig';
+$L['datefmt_days_img'] = '%d';
+$L['datefmt_days'] = '%d %B';
+$L['datefmt_hours_img'] = '%l';
+$L['datefmt_hours'] = '%l%p';
+$L['datefmt_months_img'] = '%b';
+$L['datefmt_months'] = '%B %Y';
+$L['datefmt_top'] = '%d %B %Y';
+$L['NETWORK'] = 'Netværk';
+$L['UPLOAD'] = 'Upload';
+
+//#3.3.3 - System Index v1 : server load widget
+$L['DAYS_L'] = 'dage';
+$L['HOURS_L'] = 'timer';
+$L['MINUTES_L'] = 'min';
+$L['SECONDS_L'] = 'sek';
+$L['SERVER_LOAD'] = 'Serverbelastning';
+$L['SL_TXT'] = 'Din servers aktuelle belastningsgennemsnit';
+$L['UPTIME'] = 'Oppetid';
+
+//#3.3.4 - System Index v1 : memory status widget
+$L['CACHED_MEMORY'] = 'Cached Hukommelsesforbrug';
+$L['CLEAR_CACHE'] = 'Ryd Hukommelsescache';
+$L['CM_BUFFERS'] = 'Buffers ligger på';
+$L['CM_USAGE'] = 'Cache hukommelsesforbrug ligger på';
+$L['PHYSICAL_MEMORY'] = 'Fysisk Hukommelsesforbrug';
+$L['PM_IDLE'] = 'ledig';
+$L['PM_USED'] = 'brugt';
+$L['REAL_MEMORY'] = 'Aktuel Hukommelsesforbrug';
+$L['RM_FREE'] = 'Aktuel hukommelse ledig';
+$L['RM_USAGE'] = 'Aktuel hukommelsesforbrug ligger på';
+$L['SWAP_IDLE'] = 'ledig';
+$L['SWAP_TOTAL'] = 'total';
+$L['SWAP_USAGE'] = 'SWAP-Forbrug';
+$L['SWAP_USED'] = 'brugt';
+$L['SWAP_ZONE'] = 'SWAP-Område';
+$L['SYSTEM_RAM_STATUS'] = 'RAM';
+$L['TOTAL_RAM'] = 'Samlet system RAM';
+$L['TOTAL'] = 'Total';
+
+//#3.3.5 - server activity widget
+$L['ACC_REQ_ACT'] = 'kræver kontoaktivering';
+$L['GUESTS_ONLINE'] = 'gæster online';
+$L['LAST_ACTIVE_ON'] = 'var sidst aktiv den';
+$L['LOGGED_ON'] = 'logged på';
+$L['MEMBERS'] = 'medlemmer';
+$L['RECORD_ONLINE'] = 'Flest brugere online';
+$L['THERE_ARE_AW'] = 'Der er';
+$L['THERE_ARE_CURRENTLY'] = 'Der er i øjeblikket';
+$L['USERS_AND'] = 'brugere og';
+$L['USERS_LAST_VISIT'] = 'nye brugere har registreret sig siden dit sidste besøg';
+
+
+////////////////////////////////////////
+//          #4 PAGES
+///////////////////////////////////////
+
+//#4.1 - START SCREEN FORMS (login/forgot pass/register/account)
+//#4.1.1 - LOG IN
+$L['CONFIRM_PASS_FIELD_PLACE'] = 'Bekræft venligst din email adresse.';
+$L['CREATE_ACCOUNT'] = 'Opret en konto';
+$L['REMEMBER_ME'] = 'Husk Mig';
+$L['FORGOT_PASS'] = 'Glemt din adgangskode?';
+$L['LOG_IN'] = 'Log Ind';
+$L['LOGIN_ACCOUNT'] = 'Log ind på din konto for at fortsætte.';
+$L['PASS_FIELD_INVALID'] = 'Angiv venligst din adgangskode.';
+$L['PASS_FIELD_PLACE'] = 'Indtast venligst din adgangskode.';
+$L['PASS_FIELD_VALID'] = 'Adgangskode leveret, validering afsluttet.';
+$L['REGISTRATION_DISABLED'] = 'Registrering er i øjeblikket deaktiveret.';
+$L['SIGN_IN'] = 'Log ind';
+$L['UNREGISTERED'] = 'Ikke registreret?';
+$L['USER_FIELD_INVALID'] = 'Angiv venligst dit brugernavn.';
+$L['USER_FIELD_PLACE'] = 'Indtast venligst dit brugernavn.';
+$L['USER_FIELD_VALID'] = 'Brugernavn leveret, validering afsluttet.';
+
+//#4.1.2 - FORGOT PASSWORD
+$L['EMAIL_FIELD_INVALID'] = 'Angiv venligst din email.';
+$L['EMAIL_FIELD_PLACE'] = 'Indtast venligst din email.';
+$L['EMAIL_FIELD_VALID'] = 'Email leveret, validering afsluttet.';
+$L['PASS_GENERATED'] = 'Ny adgangskode genereret!';
+$L['PASS_GENERATED_INFO'] = 'Din nye adgangskode er blevet genereret og sendt til den e-mail, der er tilknyttet din konto.';
+$L['PASS_GENERATED_FAIL'] = 'Ny adgangskodefejl!';
+$L['PASS_GENERATED_FAIL_INFO'] = 'Der opstod en fejl ved at sende dig e-mailen med den nye adgangskode, så din adgangskode er ikke ændret.';
+$L['RECOVER_INFO'] = 'Indtast din e-mail, og instruktioner sendes til dig!';
+$L['RECOVER'] = 'Gendan adgangskode';
+$L['PASSWORD_RESET'] = 'Nulstilling af adgangskode';
+$L['CONFIRM_PASSWORD'] = 'Bekræft adgangskode';
+
+//#4.1.3 - REGISTER
+$L['ACCOUNT_CREATED'] = 'din konto er blevet oprettet.';
+$L['CAN_LOGIN'] = 'til din registrering. Du kan nu logge ind.';
+$L['CREATED_ADM_ACT'] = 'Dette bord kræver imidlertid kontoaktivering af en administrator. Du får besked via e-mail, når din konto er blevet aktiveret.';
+$L['CREATED_CHECK_EMAIL'] = 'din konto er blevet oprettet.';
+$L['CREATED_EMAIL_ACT'] = 'Dette websted kræver imidlertid kontoaktivering. En aktiveringsnøgle er sendt til den e-mail-adresse, du har angivet.';
+$L['RCONF_EMAIL_FIELD_INVALID'] = 'Denne e-mail svarer ikke til den tidligere indtastede. Prøv igen.';
+$L['RCONF_EMAIL_FIELD_VALID'] = 'E-mails matcher, validering klar.';
+$L['RCONF_PASS_FIELD_INVALID'] = 'Denne adgangskode stemmer ikke overens med den tidligere indtastede. Prøv igen.';
+$L['RCONF_PASS_FIELD_VALID'] = 'Adgangskoder matcher, validering klar.';
+$L['REG_C_DISABLED_INFO1'] = ',men registrering til dette websted er i øjeblikket deaktiveret';
+$L['REG_C_DISABLED_INFO2'] = 'Prøv igen på et senere tidspunkt eller kontakt serverejer';
+$L['REG_C_DISABLED'] = 'Registrering er i øjeblikket deaktiveret';
+$L['REG_DISABLED_INFO'] = 'Vi beklager, men registreringen er i øjeblikket deaktiveret. Prøv igen på et senere tidspunkt.';
+$L['REG_DISABLED'] = 'Registrering Deaktiveret';
+$L['REG_FORM_INFO'] = 'Udfyld venligst nedenstående formular for at oprette en konto';
+$L['SORRY'] = 'Vi er kede af det';
+$L['THANKS'] = 'Tak skal du have';
+
+//#4.1.4 - ACCOUNT
+$L['ADMIN_EDIT_ACC'] = 'Rediger Admin konto';
+$L['EDIT_ACCOUNT'] = 'Rediger konto';
+$L['USER_LINKS'] = 'Bruger-links';
+$L['ADMIN_LINKS'] = 'Admin-links';
+$L['Q_APP_DASH'] = 'QuickBox-software Dashboard';
+$L['Q_SYS_DASH'] = 'QuickBox-systemets dashboard';
+$L['FORGOT_PASS'] = 'Glemt din adgangskode?';
+$L['RESET_PASS'] = 'Nulstil kodeord';
+$L['USER_PROFILE'] = 'Brugerprofil';
+
+//#4.1.4.1 - quotes
+$L['DAYUM'] = 'Lækkert';
+$L['HEY'] = 'Hej';
+$L['HOW_AWESOME'] = 'du er for vild!';
+$L['LOOK_GOOD'] = 'Ser godt ud!';
+$L['QUICKBOX_DEDICATION'] = 'vi elsker din dedikation til QuickBox!!!';
+$L['SO_GLAD'] = 'Så glad for at du er her';
+$L['WITHOUT_YOU'] = 'hvor ville vi være uden dig!';
+
+//#4.1.4.2 - edit account modal
+$L['CONFIRM_NEW_PASS_INFO'] = 'Bekræft din nye adgangskode.';
+$L['CURRENT_PASS'] = 'Nuværende kodeord';
+$L['NEW_EMAIL'] = 'Ny email adresse';
+
+//#4.1.5 - SUMMARY
+$L['AWESOME'] = 'Fantastisk';
+$L['WITH_PASSWORD'] = 'med adgangskode';
+$L['USER_ADDED_TO_DB'] = 'er føjet til databasen';
+$L['RETURN_PREVIOUS'] = 'Vend tilbage til forrige side';
+$L['REGI_FAIL'] = 'Registreringen fejlede';
+$L['REGI_FAIL_ERR1'] = 'Vi beklager, men der opstod en fejl, og din registrering af brugernavnet!';
+$L['REGI_FAIL_ERR2'] = 'Kunne ikke gennemføres!';
+$L['REGI_FAIL_ERR3'] = 'Prøv venligst igen!';
+$L['REGI_FAIL_ERR_FOUND'] = 'fejl fundet';
+
+
+//#4.2 - SETTINGS
+//#4.2.1 - GENERAL SETTINGS
+$L['ACCOUNT_PAGE'] = 'Kontoside';
+$L['ACTIVATION_IP'] = 'Aktiveringsip';
+$L['ACTIVATION_NEED_D_DO'] = 'Gør det her!';
+$L['ACTIVATION_NEED_D'] = 'Brug for at de-aktivere?';
+$L['ACTIVATION_NEED_G_GET'] = 'Få en her!';
+$L['ACTIVATION_NEED_G'] = 'Brug for en API-nøgle?';
+$L['ACTIVATION_TIME'] = 'Aktiveringstid';
+$L['ADD_DASH_SETTINGS'] = 'Yderligere Dashboard-indstillinger';
+$L['ADMIN_HOME'] = 'Startside';
+$L['API_ACTIVE'] = 'Aktiv';
+$L['API_KEY'] = 'API-nøgle';
+$L['API_NOT_ACTIVE'] = 'Ikke Aktiv';
+$L['API_PLACE'] = 'Indtast API-nøgle her...';
+$L['API_SETTINGS'] = 'API-indstillinger';
+$L['API_STATUS'] = 'API-Status';
+$L['API'] = 'API';
+$L['CONF_SETTINGS'] = 'Konfigurationsindstillinger';
+$L['DASH_URL_SETTINGS'] = 'Dashboard URL-indstillinger';
+$L['DEFAULT_PAGE'] = 'Destinationsside';
+$L['DISK_MOUNT'] = 'Disk Forbindelse (Mount)';
+$L['EDIT_GEN_SETTINGS'] = 'Rediger generelle webstedsindstillinger';
+$L['EMAIL_FROM_ADDR'] = 'Webstedets Email-adresse';
+$L['EMAIL_FROM_NAME'] = 'Webstedet Email-afsender';
+$L['EMAIL_SETTINGS'] = 'Email-indstillinger';
+$L['LOGIN_PAGE'] = 'Loginside';
+$L['NET_ADAPTER'] = 'Netværksgrænseflade';
+$L['PHP_DATE_FORMAT'] = 'PHP Datoformat';
+$L['PHP_FORMAT_SETTINGS'] = 'PHP Format Indstillinger';
+$L['PHP_TIME_ZONE'] = 'PHP Tidszone';
+$L['SITE_DESC'] = 'Webstedets Beskrivelse';
+$L['SITE_META_SETTINGS'] = 'Site Meta Indstillinger';
+$L['SITE_NAME'] = 'Webstedets Navn';
+$L['SITE_ROOT'] = 'Webstedets Rod';
+$L['SITE_NAME_TOOLTIP'] = 'Webstedsnavnet skal være under 40 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
+$L['SITE_DESC_TOOLTIP'] = 'Webstedsbeskrivelse skal være under 120 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
+$L['EMAIL_FROM_NAME_TOOLTIP'] = 'Fra navn skal være under 60 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
+$L['SITE_ROOT_TOOLTIP'] = 'Indtast din server-IP eller et gyldigt domæne. eksempel: https://192.168.0.1/ (or) https://myawesomedomain.com/';
+
+//#4.2.2 - EMAIL SETTINGS
+$L['SMTP_AUTH'] = 'Aktivér SMTP-godkendelse';
+$L['SMTP_SECURE'] = 'Aktivér SSL-kryptering, TLS accepteres også med port 465';
+$L['MAIL_HOST'] = 'Indstil SMTP-serveren til at sende igennem';
+$L['MAIL_PORT'] = 'TCP-port at oprette forbindelse til';
+$L['MAIL_USERNAME'] = 'SMTP-brugernavn';
+$L['MAIL_PASS'] = 'SMTP-adgangskode';
+
+//#4.2.3 - SESSION SETTINGS
+$L['CHANGE_SESSION_SETTINGS'] = 'Skift indstillingerne vedrørende sessioner.';
+$L['COOKIE_EXPIRY'] = '\'Husk mig\' Cookie udløb';
+$L['COOKIE_PATH'] = 'Cookie Sti';
+$L['DAYS'] = 'Dage';
+$L['GUEST_TIMEOUT'] = 'Gæsteinaktivitet';
+$L['MINUTES'] = 'Minutter';
+$L['RESET_EXPIRY'] = 'Nulstil udløb ved log på';
+$L['USER_TIMEOUT'] = 'Brugerinaktivitet';
+
+//#4.2.4 - USER SETTINGS
+$L['ALLOW_MULTI_LOGINS'] = 'Tillad flere samtidige logins';
+$L['ALLOW_CONFIG_EDITING'] = 'Tillad konfigurationsredaktører på kontrolpanelet';
+$L['BY_ADMIN'] = 'Af Admin (Indstil herunder..)';
+$L['BY_USER'] = 'Af Bruger (Se brugeradministrator sider)';
+$L['CHANGE_USER_SETTINGS'] = 'Skift globale indstillinger for brugerkonti.';
+$L['EXCLUDE_ADMINS'] = 'Ekskluder admins';
+$L['EXCLUDE_REDIRECTED_ADMINS'] = 'Ekskluder Admins fra at blive omdirigeret.';
+$L['GEN_USER_SETTINGSTINGS'] = 'Generelle brugerindstillinger';
+$L['HOW_SET'] = 'Hvordan er de indstillet?';
+$L['INDIV_USER_HOME'] = 'Individuelle brugerhjemmesider';
+$L['INDIVIDUAL_USER_FOLDERS'] = 'Individuelle brugermapper';
+$L['PATH_ADMIN'] = 'Sti (indstillet af Admin)';
+$L['SITE_ROOT_RELATIVE'] = 'I forhold til Sidens Rod';
+$L['PATH_INFOS'] = '<p class="help-block">Stien, du vælger, skal indstilles i forhold til administrationsmappen (som vil være sidens rod, angivet på under Indstillinger -> Generelle indstillinger i Kontrolpanel).
+Derfor vil du sandsynligvis gerne gå tilbage til en mappe, inden du vælger en undermappe, du opretter for de unikke brugersider. Brug <i>../</i> for at gå tilbage til en mappe. Så hvis du f.eks. Sitet\'s admin kontrolpanel er her <i> http://www.website.com/admin/ </i>, og dine brugermapper er her - <i> http://www.website.com/users/</i> skal du bruge stiindstillingen <i>../users/</i> sammen med din unikke side - således <i>../users/admin.php</i>.</p>
+<p class="help-block"> Wildcard til rådighed: <strong>%brugernavn%</strong> (dvs. brugernavn indlogget bruger).</p> ';
+
+//#4.2.5 - SECURITY SETTINGS
+$L['BAN_IP_ADDRESS'] = 'Blokér / Bandlys IP-adresse';
+$L['BAN_IP_INFO'] = 'f.eks. 192.168.0.1 uden ledende nuller';
+$L['BAN_IP_REGISTER'] = 'Bandlys IP-adresser fra at Registrere (eller logge ind)';
+$L['BANNED_IP_ADDRESSES'] = 'Bandlyste IP-adresser';
+$L['DISALLOW_USERNAME'] = 'Blokér Brugernavn';
+$L['DISALLOW_USERNAMES'] = 'Blokerede Brugernavne';
+$L['DISALLOWED_USERNAMES'] = 'Blokerede Brugernavne';
+$L['PREVENT_USERNAMES'] = 'Tillad ikke registrering af udvalgte Brugernavne';
+
+
+//#4.3 - USER MANAGEMENT 
+//#4.3.1 - REGISTRATION SETTINGS
+$L['ACCOUNT_ACTIVATION'] = 'Kontoaktivering';
+$L['ADMIN_ACT'] = 'Adminaktivering (Administrator godkendelse)';
+$L['ADMIN_ACT_INFO'] = 'Når denne mulighed er valgt, vil brugeren efter registrering blive informeret om, at de skal vente på, at administratoren aktiverer kontoen. Brugeren vil også modtage en e-mail herom, ligesom administratoren vil have mulighed for at aktivere brugeren med linket i e-mailen eller besøge administrationspanelet og aktivere brugeren der.';
+$L['ALPHANUMERIC_ONLY'] = 'Kun alfanumerisk';
+$L['ALPHANUMERIC_SPACERS'] = 'Alfanumeriske';
+$L['ANY_CHARS'] = 'Alle tegn';
+$L['ANY_LETTER_NUM'] = 'Enhvert bogstav, tegn og tal';
+$L['DEFAULT_QUOTA_ALLOWANCE'] = 'Standard kvotetilladelse';
+$L['DEFAULT_QUOTA_ALLOWANCE_INFO'] = 'Indstil et standard kvotebeløb for nye oprettede konti. Denne værdi bruges kun, når Linux Quota-pakken er installeret.';
+$L['DISABLE_REGISTRATION'] = 'Deaktiver registrering';
+$L['DISABLE_REGISTRATION_INFO'] = 'Dette deaktiverer registrering. Registreringsformularen vises ikke og erstattes med en informationsmeddelelse.';
+$L['ENABLE_CAPTCHA'] = 'Aktivér Captcha';
+$L['LETTER_NUM_AND_SPACE'] = 'Bogstav, tegn, tal';
+$L['LIMIT_CHAR'] = 'Brugernavnsbegrænsning til';
+$L['NO_ACTIVATION'] = 'Ingen aktivering (øjeblikkelig adgang)';
+$L['NO_ACTIVATION_INFO'] = 'Indstilling af denne mulighed giver brugeren mulighed for at registrere sig normalt uden behov for yderligere aktiveringsproces.';
+$L['PASSWORD_LENGTH'] = 'Adgangskode længde';
+$L['RECOMMENDED'] = 'QuickBox anbefales';
+$L['REG_SETTINGS_INFO'] = 'Skift indstillinger vedrørende registrering til webstedet.';
+$L['REG_SETTINGS'] = 'Registreringsindstillinger';
+$L['SEND_WELCOME_EMAIL'] = 'Send Velkomstemail';
+$L['SEND_WELCOME_EMAIL_YES_INFO'] = 'Indstilling af denne indstilling til Ja sender velkomst-e-mails til både brugeren og systemadministratoren. Denne mulighed kræver SMTP-opsætning for korrekt afsendelse af e-mails. Disse muligheder kan kontrolleres på siden <a href="/email-settings.php" style="color: var(--successColor);text-decoration: underline;">E-mailindstillinger</a>.';
+$L['SEND_WELCOME_EMAIL_NO_INFO'] = 'Indstilling af denne indstilling til Nej vil ikke sende velkomstmails til nyregistrerede brugere. Al brugeroprettelse/registrering forbliver tavs, ligesom brugeroprettelse i CLI-miljøet.';
+$L['USER_ACT'] = 'Brugeraktivering (via Email)';
+$L['USER_ACT_INFO'] = 'Indstilling af denne mulighed kræver, at brugeren aktiverer sin konto ved at klikke på et link sendt til sin registrerede e-mail-adresse.';
+$L['USERNAME_LENGTH'] = 'Brugernavns længde';
+$L['USERNAME_LOWERCASE'] = 'Brugernavn til små bogstaver';
+$L['USERNAME_LOWERCASE_YES_INFO'] = 'Indstilling af denne indstilling til Ja ændrer alle nye registrerede brugernavne til små bogstaver. Dette er den anbefalede mulighed.';
+$L['USERNAME_LOWERCASE_NO_INFO'] = 'Indstilling af denne indstilling til Nej vil ikke ændre nye registrerede brugernavne til små bogstaver. Brugernavne vises efterhånden som de er registreret, men vil bevare små bogstaver i servermiljøet for korrekt softwarefunktionalitet.';
+
+//#4.3.2 - USER ADMIN
+$L['ADMIN_ANNOUNCE'] = 'Admin Bekendtgørelse';
+$L['ANNOUNCEMENT_HISTORY'] = 'Dine tidligere bekendtgørelser';
+$L['ANNOUNCEMENT_LIST'] = 'Bekendtgørelsesindhold';
+$L['AWAITING_ADMIN'] = 'Venter på Admin aktivering ';
+$L['AWAITING_EMAIL'] = 'Venter på Email aktivering';
+$L['BANNED'] = 'Bandlyst';
+$L['CU_CONFIRM_EMAIL_INFO'] = 'Bekræft venligst Email';
+$L['CU_CONFIRM_EMAIL'] = 'Bekræft Email:';
+$L['CU_CONFIRM_PASS_INFO'] = 'Bekræft venligst dit kodeord';
+$L['CU_CONFIRM_PASSWORD'] = 'Bekræft Kodeord:';
+$L['CU_DISK_QUOTA'] = 'Diskkvota:';
+$L['CU_EMAIL'] = 'Email:';
+$L['CU_NEW_PASS_INFO'] = 'Indtast venligst din nye adgangskode';
+$L['CU_NEW_PASSWORD'] = 'Nyt Kodeord:';
+$L['CU_SHELL_ENV'] = 'Foretrukket shell-miljø:';
+$L['CURRENT_SHELLS'] = 'Nuværende Shell';
+$L['CURRENT_USERS'] = 'Nuværende Brugere';
+$L['DISK_STATUS'] = 'Diskstatus';
+$L['EDIT_USER_SHELL'] = 'Rediger brugernes skalmiljø';
+$L['ENABLE_USER_ANNOUNCE'] = 'Aktivér Bekendtgørelser';
+$L['EXPIRY'] = 'Udløb';
+$L['HAS_USED'] = 'har brugt';
+$L['IP_ADDRESS'] = 'IP-adresse';
+$L['LAST_IP_ADDRESS'] = 'Seneste IP-adresse';
+$L['LAST_LOGIN'] = 'Seneste Logind';
+$L['LAST'] = 'Seneste Logind';
+$L['MEMBER_STATUS'] = 'Medlems Status';
+$L['MEMBER_GROUP'] = 'Medlems Gruppe';
+$L['OF_QUOTA'] = 'af deres samlede kvote';
+$L['RECENTLY_ONLINE'] = 'Senest Online';
+$L['REGISTERED_DISK_QUOTA'] = 'Disk-kvote';
+$L['REGISTERED'] = 'Registreret';
+$L['REGISTRATION_LOGIN'] = 'Registrering & Login';
+$L['STATISTICS'] = 'Statistik';
+$L['USER_ACTIVITY'] = 'Brugeraktivitet';
+$L['PASSWORD_NOTICE'] = 'Adgangskoden bør ikke indeholde følgende tegn';
+$L['USER_QUOTA_HELP'] = 'Indtast mængden af diskplads du vil tildele en bruger. Kvoter skal installeres for at gøre brug af denne mulighed.';
+$L['USER_SHELL_HELP'] = 'Vælg rullemenuen nedenfor for at tilføje brugeren til et shell ...';
+$L['USERNAME_ADMIN_USER'] = 'Brugernavn:';
+$L['USERNAMES'] = 'Brugernavn';
+$L['USERS_AWAITING'] = 'Afventer Aktivering';
+$L['USERS_SESSIONS'] = 'Brugersessioner';
+
+//#4.3.2.1 - admin user edit
+$L['ACTIONS'] = 'Handlinger';
+$L['ACTIVE_SESSION'] = 'Aktive Sessioner';
+$L['APPLICATION'] = 'Software';
+$L['CURRENT_FULL_PATH'] = 'Nuværende Fulde Sti';
+$L['CURRENT_GROUPS'] = 'Nuværende Grupper';
+$L['CURRENT_STATUS'] = 'Nuværende Status';
+$L['EDIT_GROUP_MEMBERSHIP'] = 'Rediger brugerens gruppemedlemskab';
+$L['EU_PATH'] = 'Sti';
+$L['GENERAL_INFO'] = 'Generelle oplysninger';
+$L['GROUP_MEMBERSHIP_HELP'] = 'Klik på nedenstående tekstfelt for at tilføje brugeren til flere grupper ...';
+$L['GROUP_MEMBERSHIP'] = 'Gruppemedlemskab';
+$L['HOMEPAGE'] = 'Hjemmeside';
+$L['INSTRUCTIONS'] = 'Instruktioner';
+$L['LAST_ACTIVE_IP'] = 'Senest Aktive IP';
+$L['LAST_ACTIVE'] = 'Senest Aktiv';
+$L['LAST_UPDATE'] = 'Senest Ændret';
+$L['PATH_HOWTO'] = 'Brug ../ for at gå tilbage en mappe';
+$L['PATH_INSTRUCTIONS'] = 'Stien, du vælger, skal indstilles i forhold til administrationsmappen (som vil være siden rod, angivet på siden Generelle indstillinger i Kontrolpanel).
+Derfor vil du sandsynligvis gerne gå tilbage til en mappe, inden du vælger en undermappe, du opretter for de unikke bruger sider. Brug <i> ../</i> for at gå tilbage til en mappe. Så for eksempel, hvis du site\'s admin kontrolpanel er her - <i>http://www.website.com/admin/</i>, og dine brugermapper er her - <i>http://www.website.com/brugere/</i> du vil indstille stiindstillingen til <i> ../brugere/</i> sammen med din unikke side - så <i>../brugere/admin.php </i>. Den fulde sti vises så som <i>http://www.website.com/admin/../brugere/admin.php</i> - mappen/filen vil faktisk være placeret på <i>http://www.website.com/brugere/admin.php</i></p>.';
+$L['PERSISTENT'] = 'Vedvarende';
+$L['REGISTERED_IP'] = 'Registreret IP';
+$L['SESSION_EXPIRY'] = 'Session Udløb';
+$L['STATUS'] = 'Status';
+$L['UNIQUE_USER_HP_SETTINGS'] = 'Unik Bruger Side - Indstillinger';
+$L['USER_EDIT1'] = 'Brugerredigering :';
+$L['USER_EDIT2'] = 'Brugerredigering';
+
+//#4.3.3 - USERS GROUPS
+$L['ADMINISTRATORS'] = 'Administratorer';
+$L['ASSIGN_LEVEL'] = 'Tildel Gruppeniveau :';
+$L['CLICK_HERE'] = 'Klik Her...';
+$L['DELETE_GROUP'] = 'Slet Gruppe';
+$L['EDIT_ADD_USER'] = 'Tilføj Bruger :';
+$L['EDIT_GROUP_LEVEL'] = 'Gruppeniveau :';
+$L['EDIT_GROUP_NAME'] = 'Gruppenavn :';
+$L['GROUP_LEVEL'] = 'Gruppeniveau';
+$L['GROUP_NAME'] = 'Gruppenavn';
+$L['LEVEL_INFO'] = 'Indtast et tal mellem 2 - 256';
+$L['NEW_GROUP_NAME'] = 'Nyt Gruppenavn :';
+$L['NUMBER_MEMBERS'] = '# Antal Medlemmer';
+$L['USER_GROUPS_INFO'] = 'Opret, se og rediger brugergrupper. Tildel brugere til brugergrupper.';
+
+
+//#4.4 - SYSTEM
+//#4.4.1 - WEB CONSOLE
+$L['WEB_CONSOLE_INFO'] = 'Få adgang til webkonsollen.';
+
+//#4.4.2 - TROUBLESHOOTING
+$L['APP_SELECT'] = 'Vælg Software';
+$L['APPLIANCE'] = 'Kommandoer';
+$L['CLEAN_MEM'] = 'Ryd Fysisk Cachehukommelse';
+$L['FIX'] = 'Rette op';
+$L['FIXUPDATE'] = 'Fiks dpkg frontend locks';
+$L['LOG_GEN'] = 'Log-generator';
+$L['NGINX'] = 'Nginx';
+$L['PHP'] = 'Php-fpm';
+$L['PHP7_2'] = 'Php72-fpm';
+$L['QSUPPORT'] = 'QuickBox Support';
+$L['QSUPPORTU'] = 'QuickBox Support Adgang';
+$L['SERVER_TROUBLESHOOTING'] = 'Server Fejlfinding';
+$L['SYSTEM_INFO'] = 'System-Info';
+$L['SYSTEM_LOG_FILES'] = 'System-Log';
+$L['TROUBLESHOOTING'] = 'Fejlfinding';
+$L['WEB_SERVER'] = 'Webserver';
+
+//#4.4.3 - SYSTEM LOGS
+$$L['ACCESS_LOGS'] = 'Adgangslogfiler';
+$L['APP_LOGS'] = 'Softwarelogfiler';
+$L['USER_LOGS'] = 'Brugerlogfiler';
+$L['DATE_TIME'] = 'Dato/tid';
+$L['EVENT'] = 'Begivenhed';
+$L['LOGS_SUMMARY'] = 'Logoversigt';
+
+//#4.4.4 - ABOUT / QUICKTIPS
+$L['ABOUT'] = 'Om';
+$L['DISCLAIMER_TEXT'] = '<p class="fs14">Dette script er beregnet til generel brug, og der stilles ingen garanti for egnetheden til en given opgave. QuickBox.IO påtager sig intet ansvar for din opsætning eller skader, der er gjort, mens du bruger / installerer / ændrer dette script eller nogen af ​​dets plugins. Husk QuickBox.IO, eller dets personale er ansvarlige for at holde din software og / eller server up-to-date; dette er et ansvar, der kun overlades til brugeren af ​​QuickBox Pro-softwaren.</p>';
+$L['DISCLAIMER'] = '<h3><strong>Ansvarsfraskrivelse</strong></h3>';
+$L['GETTING_SUPPORT'] = 'Få Support';
+$L['HELP_TEXT'] = '<p class="fs14">Bragt til dig af <a href="https://nullrefer.ir/?https://quickbox.io" rel="noopener nofollow" target="_blank">QuickBox.IO</a>.<br><br>
+Support til scriptet findes på en række steder, herunder fora, wiki og chats. Hvis du har brug for support på et spørgsmål relateret til QuickBox Pro, kan du finde det <a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/qbpro" rel="noopener nofollow" target="_blank">her</a>.<br><br>
+Eller besøg webstedet QuickBox.IO, hvor du finder wiki samt en livechat på <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="nofollow">Discord</a>.<br><br>
+Hvis du har brug for at kontakte QuickBox-teamet om et problem med scriptet, kan du bruge vores support system på vores forum <a href="https://nullrefer.ir/?https://plaza.quickbox.io/new-topic?title=Angiv problemet her&body=Beskriv så meget detaljeret om emnet&category=QuickBox Pro/Issue Tracker&tags=issue,tracker,' . $version . '" rel="noopener nofollow" target="_blank">her</a>.</p><br><br>';
+$L['HELP_TITLE'] = 'QuickBox Administration, Dashboard Portal & Brugeradministration';
+$L['HELP'] = 'Hjælp';
+$L['LICENSE_SET'] = '<h3><strong>Licenseret under BSD 3-klausul</strong></h3>';
+$L['LICENSE_TEXT'] = '<p class="fs14">Ophavsret (c) 2018-2020, QuickBox. Alle rettigheder forbeholdes.</p>
+<p class="fs14">Omfordeling og brug i kilde- og binære formularer, med eller uden ændring, er tilladt, forudsat at følgende betingelser er opfyldt:
+<ul><li class="fs14">Omfordeling af kildekoden skal beholde ovenstående copyrightophavsret, denne liste over betingelser og følgende ansvarsfraskrivelse. </ li>
+<li class="fs14">Omfordeling i binær form skal gengive ovenstående copyrightophavsret, denne liste over betingelser og følgende ansvarsfraskrivelse i dokumentationen og / eller andre materialer, der leveres med distributionen.</li>
+<li class="fs14">Hverken ophavsretsindehaverens navn eller navnene på dens bidragydere kan bruges til at godkende eller fremme produkter, der er afledt af denne software uden forudgående skriftlig tilladelse.</li></ul>
+<p class="fs14">DENNE SOFTWARE LEVERES AF COPYRIGHT HOLDERS OG BIDRAGERE "SOM DE ER" OG EVENTUELLE UDTRYKKELIGE ELLER UNDERFORSTÅEDE GARANTIER, INKLUSIVE, MEN IKKE BEGRÆNSET TIL, DE UNDERFORSTÅEDE GARANTIER FOR SALGBARHED OG EGNETHED TIL ET BESTEMT FORMÅLET ER OPFATTET. INDEHOLDSGIVER ELLER BIDRAGERE ER INGEN ANSVARLIGE FOR ANSVARLIGE DIREKTE, INDIREKTE, TILFÆLDIGE, SÆRLIGE, FORELØBIGE ELLER FØLGENDE SKADER (INKLUSIVE, MEN IKKE BEGRÆNSET TIL, INDKØB AF VARER ELLER TJENESTEYDELSER, DER SKAL ANVENDES; DATABLAD, DATA ELLER RESULTATER; ELLER VIRKSOMHEDSBRÆNDING) OGSÅ ÅRSAGEN OG OM ANSVARSORORIER, UANSET OM DET ER I KONTRAKT, STÆRKT ANSVAR ELLER SKADELIG (HERUNDER UAGTSOMHED ELLER ANDEN MÅDE), DER OPSTÅR PÅ NOGEN MÅDE UD AF BRUGEN AF DENNE SOFTWARE, SELVOM DE ER INFORMERET OM MULIGHEDEN FOR EN SÅDAN SKADE.</p>';
+
+//commands
+$L['ADDITIONAL_ADMIN_COMMANDS'] = 'Yderligere Admin-kommandoer';
+$L['ADMIN_UPGRADE_COMMANDS'] = 'Admin-opgraderingskommandoer';
+$L['CLEAN_MEM_INFO'] = 'Skriv denne kommando i ssh (root) for at nulstille systemets fysiske Hukommelsescache.';
+$L['DISKTEST_INFO'] = 'Skriv denne kommando for at udføre en hurtig s/l test af din disk.';
+$L['ESSENTIAL_USER_COMMANDS'] = 'Væsentlige brugerkommandoer';
+$L['FIXHOME_INFO'] = 'Skriv denne kommando for hurtigt at tilrette /home rettigheder.';
+$L['QUICK_SYSTEM_TIPS'] = 'Hurtige systemtips';
+$L['QUICKVPN_INFO'] = 'Skriv denne kommando i ssh for at installere din egen VPN server på omkring et minut samt administrere og oprette en nye brugercertifikater til brug på serveren.';
+$L['SCREEN_IRSSI_INFO'] = 'tillader en bruger at genstarte/genforbinde irssi via SSH.';
+$L['SCREEN_RTORRENT_INFO'] = 'tillader en bruger at genstarte/genforbinde rtorrent via SSH.';
+$L['UPGRADEBTSYNC_INFO'] = 'Skriv denne kommando i ssh for at opgradere BTSync til nyeste version.';
+$L['UPGRADEDELUGE_INFO'] = 'Skriv denne kommando i ssh for at opgradere Deluge til nyeste version.';
+$L['UPGRADEOMBI_INFO'] = 'Skriv denne kommando i ssh for at opgradere Ombi til nyeste version.';
+$L['UPGRADEPLEX_INFO'] = 'Skriv denne kommando i ssh for at opgradere Plex til nyeste version.';
+$L['UPGRADERUTORRENT_INFO'] = 'Skriv denne kommando i ssh for at opgradere ruTorrent og club-QuickBox temaet til nyeste version.';
+
+//#4.4.5 - CHANGELOG / UPDATE
+$L['CURRENT_VERSION'] = 'Nuværende Version';
+$L['DASH_UPDATE_TITLE'] = 'QuickBox Opdateringer';
+$L['QB_UPDATE'] = 'QuickBox Opdateringer';
+$L['QBUPDATE'] = 'Ændringslog / Opdateringer';
+$L['UPCOMING_CHANGES'] = 'Kommende Ændringer';
+$L['UPDATE_AVAILABLE'] = 'Opdatering Klar';
+$L['UPDATE_TO_DATE'] = 'Aktuel version';
+$L['VERSION_STATUS'] = 'Versionsstatus';
+$L['UPDATE_TXT'] = 'Opdater';
+$L['AVAILABLE_TXT'] = 'Tilgængelig!';
+$L['UPDATE_VERSION'] = 'Opdater version';
+$L['UPDATE_ACTIVATE'] = 'Aktiver venligst dit Pro-abonnement for at modtage opdateringer';
+$L['UPDATE_CURRENT'] = 'Du er opdateret!';
+$L['CHANGELOGS'] = 'Ændringslogs';
+
+//#4.4.6 - SYSTEM DASHBOARD
+$L['DISK_UTIL_TIME'] = 'Diskudnyttelsestid';
+$L['DISK_IO_BW'] = 'Disk I/O båndbredde';
+$L['DISK_SPACE_USAGE_FOR'] = 'Diskpladsbrug for:';
+$L['DISK_UTILIZATION'] = 'Udnyttelse';
+$L['DISK_WRITE'] = 'Skriv';
+$L['DISK_READ'] = 'Læs';
+$L['SYS_DISK_READ'] = 'Disk Læs';
+$L['SYS_DISK_WRITE'] = 'Disk Skriv';
+$L['TOP_CPU_PROC'] = 'Top CPU-applikationsprocesser';
+$L['TOP_CPUMEM_PROC'] = 'Top CPU-hukommelsesprocesser';
+$L['TOP_CPUSYS_PROC'] = 'Top CPU-systemprocesser';
+$L['SERVICE_MEM_USAGE'] = 'Systemd Services hukommelsesforbrug uden cache';
+$L['SYS_SWAP_USAGE'] = 'Systemets Swapforbrug';
+$L['SYS_MEM_USAGE'] = 'Systemets Hukommelsesforbrug';
+$L['CPU_FREQ'] = 'Nuværende CPU-frekvens';
+$L['CPU_LOAD'] = 'CPU-belastning';
+$L['CPU_USAGE'] = 'CPU-forbrug';
+$L['BW_UPLOAD'] = 'Båndbredde Upload';
+$L['BW_DOWNLOAD'] = 'Båndbredde Download';
+$L['SYS_UPLOAD'] = 'Upload';
+$L['SYS_DOWNLOAD'] = 'Download';
+$L['SYS_DASH_POWERED_BY'] = 'System Dashboard drevet af:';
+$L['SYS_DASH_UPTIME'] = 'Systemets Oppetid';
+$L['SYS_DASH_SWAP_USED'] = 'Forbrug swap';
+$L['SYS_DASH_RAM_USED'] = 'Forbrug RAM';
+$L['SYS_DASH_CPU'] = 'CPU';
+$L['SYS_DASH_TMD'] = 'Samlet Månedlig Download';
+$L['SYS_DASH_TMU'] = 'Samlet Månedlig Upload';
+$L['APT_UPDATES'] = 'APT-opdateringer';
+$L['APT_DEPENDENCY'] = 'Afhængighedspakke';
+$L['APT_VERSION_INSTALLED'] = 'Nuværende version';
+$L['APT_VERSION_AVAILABLE'] = 'Tilgængelig version';
+$L['UPDATE_APT_DEPENDENCIES'] = 'Opdater apt-afhængigheder';
+
+
+//#4.5 - ERROR PAGES
+$L['404HACK'] = 'Kalder du det for et hack? Ha!';
+$L['404PAGE'] = 'Dette er ikke den side, du leder efter.';
+$L['404PRO'] = 'Køb venligst en <a href="https://nullrefer.ir/?https://quickbox.io/product/quickbox-pro-subscription/" rel="noopener nofollow" target="_blank">QuickBox API-nøgle</a> for at få adgang til denne side.';
+$L['500PAGE'] = 'Det her er pinligt, det tyder på at der er noget som er gået galt.';
+$L['WHOOPS'] = 'Ups!';

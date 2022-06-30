@@ -1,0 +1,754 @@
+#!/usr/bin/env bash
+################################################################################
+# <START METADATA>
+# Project Name: QuickBox Pro
+# File Name: quickbox_lang_dk
+# File Description: Danish language file
+# File Version: 1.0.38
+#
+# Save Tasks:
+# Automated_Versioning: true
+#
+# Build Tasks:
+# Automated_Comment_Strip: true
+#
+# Deploy Tasks:
+# Automated_Encryption: false
+#
+# Author: Jamie Dobbs (Mschf)
+# Author Contact: jamie.dobbs@mschf.dev
+#
+# License: BSD-3 (Available in LICENSE.md)
+# Copyright (C) 2019-2022, QuickBox | Jamie Dobbs
+# All rights reserved.
+# <END METADATA>
+# shellcheck disable=2034,2154,2312
+################################################################################
+
+quickbox::dashboard::log() {
+	admin_name="$(quickbox::database "SELECT username FROM user_information WHERE user_level = '10';")"
+	if [[ ! -f "/srv/quickbox/logs/dashboard" ]]; then
+		mkdir -p /srv/quickbox/logs
+		touch /srv/quickbox/logs/dashboard
+		chown www-data:www-data /srv/quickbox/logs/dashboard
+	fi
+	if [[ ! -f "/srv/quickbox/logs/${username:-${admin_name}}.dashboard" ]]; then
+		mkdir -p /srv/quickbox/logs
+		touch "/srv/quickbox/logs/${username:-${admin_name}}.dashboard"
+		chown www-data:www-data "/srv/quickbox/logs/${username:-${admin_name}}.dashboard"
+	fi
+	if [[ -n ${username} ]]; then
+		echo "${1:-null}" | sed -z "s/\n/\n<br>/" >"/srv/quickbox/logs/${username:-}.dashboard"
+	else
+		echo "${1:-null}" | sed -z "s/\n/\n<br>/" >"/srv/quickbox/logs/${admin_name:-}.dashboard"
+	fi
+	echo "${1:-null}"
+}
+################################################################################
+# Clean
+################################################################################
+quickbox::lang::clean::memory() {
+	declare text="rengøring af hukommelsescache..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::clean::rclone() {
+	declare text="rengøring af rclone upload log..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::clean::rclone::error() {
+	declare text="fejl: logfil ikke til stede."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::clean::dashboard() {
+	declare text="afventer systemets svar..."
+	quickbox::dashboard::log "${text}"
+}
+################################################################################
+# Locks
+################################################################################
+quickbox::lang::lock::handle() {
+	declare text="${quickbox_lock} kører i øjeblikket
+processen vil blive genoptaget, når ${quickbox_lock} er færdig"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::lock::remove() {
+	declare text="fjernelse af softwarelåse..."
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# Apt
+################################################################################
+quickbox::lang::apt::update::header() {
+	declare text="kontrol og udførelse af apt-opdateringer..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::apt::db::locked() {
+	declare text="forsøger at opløse dpkg lock..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::apt::update::completed() {
+	declare text="apt-get upgrade blev gennemført med succes"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::apt::check::failed() {
+	declare text="apt-get check mislykkedes, du har muligvis ødelagte pakker"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# Install
+################################################################################
+quickbox::lang::install::header() {
+	declare text="${software_title} vil nu blive installeret
+denne proces kan tage et par minutter..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::rutorrent::header() {
+	rtorrent_count=$(quickbox::software::count rtorrent)
+	if [[ ${rtorrent_count} -eq 0 ]]; then
+		declare text="det ser ud til, at rTorrent ikke er installeret
+
+rTorrent 0.9.8 vil nu blive installeret, men vent venligst, da dette kan
+tage et par minutter (afhængigt af systemspecifikationer) at installere"
+	else
+		declare text="${software_title} vil nu blive installeret
+denne proces kan tage et par minutter..."
+	fi
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::sources::header() {
+	declare text="tilføjelse af yderligere nøgler og kilder til ${software_title}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::dependencies::header() {
+	declare text="installation af ${software_title} afhængigheder..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::build::header() {
+	declare text="opbygning af ${software_title}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::mktorrent::header() {
+	declare text="opbygning af mktorrent..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::xmlrpc::header() {
+	declare text="opbygning af xmlrpc-c..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::libtorrent::header() {
+	declare text="opbygning af libtorrent..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::rtorrent::header() {
+	declare text="opbygning af rtorrent..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::configure::header() {
+	declare text="konfigurering af ${software_title}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::backup::header() {
+	declare text="sikkerhedskopiering af ${software_title} konfiguration..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::start::header() {
+	declare text="starter ${software_title}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::complete::header() {
+	declare text="${software_title} installationen er færdig"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# Reinstall
+################################################################################
+quickbox::lang::reinstall::header() {
+	declare text="${software_title} vil nu blive geninstalleret
+denne proces kan tage et par minutter..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::reinstall::complete::header() {
+	declare text="${software_title} geninstallation afsluttet"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# Remove
+################################################################################
+quickbox::lang::remove::header() {
+	declare text="${software_title} vil nu blive fjernet
+denne proces kan tage et par minutter..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::remove::stop::header() {
+	declare text="stopper ${software_title}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::remove::dependencies::header() {
+	declare text="fjernelse af ${software_title} afhængigheder..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::remove::files::header() {
+	declare text="fjernelse af ${software_title} filer..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::remove::complete::header() {
+	declare text="${software_title} fjernelse komplet"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# Update
+################################################################################
+quickbox::lang::update::header() {
+	declare text="${software_title} vil nu blive opdateret
+denne proces kan tage et par minutter..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::files::header() {
+	declare text="opdatering af ${software_title}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::complete::header() {
+	declare text="${software_title} opdatering gennemført"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# User
+################################################################################
+quickbox::lang::user::create() {
+	declare text="quickbox bruger oprettet:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::user::delete() {
+	declare text="${username:-"quickbox bruger"} slettet"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::user::username() {
+	declare text="bruger: ${username}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::user::password() {
+	declare text="adgangskode: ${password}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::user::password::updated() {
+	declare text="${username:-"quickbox bruger"}'s adgangskode er opdateret"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::user::ban() {
+	declare text="${username:-"quickbox bruger"} forbudt"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::user::unban() {
+	declare text="${username:-"quickbox bruger"} ophæver forbuddet"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::user::demote() {
+	declare text="${username:-"quickbox bruger"} degraderet fra admin"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::user::promote() {
+	declare text="${username:-"quickbox bruger"} forfremmet til admin"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# Misc
+################################################################################
+quickbox::lang::username::specified() {
+	declare text="fejl: brugernavn ikke angivet"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::info::example() {
+	if [[ ${proces} == "install" ]]; then
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
+	elif [[ ${process} == "reinstall" ]]; then
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
+	elif [[ ${process} == "remove" ]]; then
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
+	elif [[ ${process} == "update" ]]; then
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
+	fi
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::info::note() {
+	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
+	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
+	if [[ ${proces} == "install" ]]; then
+		[[ -n ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name} til bruger"
+		[[ -n ${dmn} ]] && declare text="installerer et ssl-certifikat, der skal bruges til dashboardet på det angivne domæne"
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="installerer et ssl-certifikat for det angivne domæne"
+		[[ -n ${version} ]] && declare text="installerer seneste ${version[*]} version af ${software_name}"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name}"
+	elif [[ ${process} == "reinstall" ]]; then
+		[[ -n ${usr} ]] && declare text="geninstallerer seneste ${branch}-version af ${software_name} for bruger"
+		[[ -n ${dmn} ]] && declare text="geninstallerer ssl-certifikat brugt til dashboardet på det angivne domæne"
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="geninstallerer et ssl-certifikat for det angivne domæne"
+		[[ -n ${version} ]] && declare text="geninstallerer seneste ${version[*]} version af ${software_name}"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name}"
+	elif [[ ${process} == "remove" ]]; then
+		[[ -n ${usr} ]] && declare text="fjerner ${software_name} for brugeren"
+		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="fjerner ssl-certifikat fra det angivne domæne"
+		[[ -n ${version} && -z ${dmn} ]] && declare text="fjerner ${software_name}"
+		[[ -z ${usr} && -z ${version} && -z ${dmn} ]] && declare text="fjerner ${software_name}"
+	elif [[ ${process} == "update" ]]; then
+		[[ -n ${usr} ]] && declare text="opdaterer ${software_name} til seneste ${branch}-version for bruger"
+		[[ -n ${dmn} ]] && declare text="opdaterer ssl-certifikat for det angivne domæne, der skal bruges med dashboardet"
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="opdaterer ssl-certifikat for det angivne domæne"
+		[[ -n ${version} ]] && declare text="opdaterer ${software_name} til den seneste ${version} version"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name}"
+	fi
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::access() {
+	declare text="få adgang til ${software_title} på:
+${quickbox_web_root}${software_name}
+${software_title} installeret på port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::mu::access() {
+	declare text="få adgang til ${software_title} på:
+${quickbox_web_root}${username}/${software_name}
+${software_title} installeret på port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::calibre::access() {
+	declare text="få adgang til ${software_title} på:
+${quickbox_web_root}${username}/${software_name}
+brugernavn: ${username}
+password: admin123
+database placering: /home/${username}/.config/calibre/library
+${software_title} installeret på havnen: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::rtorrent::access() {
+	declare text="> rTorrent version: ${rtorrent_version}
+> libtorrent version: ${libtorrent_version}
+> stikkontakt sti: /var/run/${admin_name}/.rtorrent.sock"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::rutorrent::access() {
+	declare text="få adgang til ${software_title} på:
+${quickbox_web_root}${software_name}
+> stikkontakt sti: /var/run/${admin_name}/.rtorrent.sock"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::admin::access() {
+	declare text="få adgang til ${software_title} på:
+${quickbox_web_root}${admin_name}/${software_name}
+${software_title} installeret på havnen: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::dashboard() {
+	declare text="domæne: https://${domain}/"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::dashboard::custom() {
+	declare text="ssl-certifikat for ${domain} installeret på:
+/etc/nginx/ssl/${domain}/"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::database() {
+	declare text="opdatering af database..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::trackers::disable() {
+	declare text="deaktivere offentlige trackere..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::trackers::enable() {
+	declare text="aktivering af offentlige trackere..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::directory::noexist() {
+	declare text="den krævede mappe findes ikke..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::directory::nomove() {
+	declare text="ikke i stand til at flytte til $1..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::package::fail() {
+	declare text="kunne ikke installere en nødvendig pakke $1..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::flaresolverr::access() {
+	curl_check=$(curl -s "127.0.0.1:${software_web_port}" | grep -o "FlareSolverr is ready!")
+	if [[ ${curl_check} == "FlareSolverr is ready!" ]]; then
+		declare text="status: ok. FlareSolverr er klar!
+${software_title} installeret på port: ${software_web_port}"
+		quickbox::dashboard::log "${text}"
+	else
+		declare text="Det ser ud til, at noget gik galt"
+		quickbox::dashboard::log "${text}"
+	fi
+}
+
+quickbox::lang::software::plexclaim() {
+	declare text="gør krav på plex-server for ${username}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plex::access() {
+	declare text="få adgang til ${software_title} på:
+${quickbox_web_root}web/
+${software_title} installeret på porten: ${software_web_port}
+
+> hvis du ikke har gjort det, eller hvis du er usikker på, 
+hvordan du gør krav på din plex-server, 
+skal du følge disse instruktioner:
+https://quickbox.io/kb-categories/plex/"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_credentials_header() {
+	declare text="Indtast venligst dine Plex legitimationsoplysninger (brugernavn/adgangskode/2FA):"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_credentials_subheader() {
+	declare text="Disse legitimationsoplysninger vil ikke blive gemt eller delt uden for denne instans."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_credentials_email() {
+	declare text="Email: "
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_credentials_password() {
+	declare text="Adgangskode: "
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_credentials_otp() {
+	declare text="2FA: [Lad det være tomt, hvis der ikke er indstillet 2FA] "
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_credentials_fail() {
+	declare text="Brugernavn og adgangskode er nødvendig for at downloade PlexPass-opdatering."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_credentials_incorrect() {
+	declare text="Brugernavn og/eller adgangskode forkert"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_credentials_loginfail() {
+	declare text="Log ind mislykkedes, debug information:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_credentials_retrievefail() {
+	declare text="Det er ikke muligt at hente download-URL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_credentials_parsefail() {
+	declare text="Det lykkedes ikke at analysere HTML-svaret."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_downloading() {
+	declare text="Download af Plex-opdatering..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_downloading_fail() {
+	declare text="Download mislykkedes med fejlkode ${code}, ${error}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_installing() {
+	declare text="Installerer ny Plex-version..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_updated() {
+	declare text="Plex er blevet opdateret med succes."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plexupdate_current() {
+	declare text="Plex er allerede opdateret."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::pyload::access() {
+	declare text="få adgang til ${software_title} på:
+${quickbox_web_root}${username}/${software_name}/
+${software_title} installeret på port: ${software_web_port}
+
+> brugernavn = ${username}
+> password = pyload
+
+> Log ind på pyload og ændre standardadgangskoden af sikkerhedshensyn.
+Din adgangskode kan ændres under fanen [brugere] i pyload."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::quassel::access() {
+	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+	declare text="${software_title} installeret på port: ${software_daemon_port}
+  
+> Installer venligst quassel-client på din personlige 
+computer og opretter forbindelse til den nyligt oprettede ${software_title} Core 
+for at oprette din konto på:
+${server_ip}:${software_daemon_port}
+
+> Download quassel-client fra følgende:
+https://quassel-irc.org/downloads"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::rclone_configure() {
+	declare text="
+Besøg venligst https://console.developers.google.com og opret et projekt.
+Du skal notere dit client_id og client_secret.
+Du kan også besøge nedenstående Knowledge Base-artikel for at få en gennemgang:
+https://quickbox.io/knowledge-base/creating-a-google-api-client-id-client-secret-code/
+
+Når du har både dit client_id og client_secret, skal du trykke på en vilkårlig tast for at fortsætte.
+
+"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_entries() {
+	declare text="Indtast dine forbindelsesoplysninger nedenfor."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_clientid() {
+	declare text="Client ID: "
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_clientsecret() {
+	declare text="Client Secret: "
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_encryptpass() {
+	declare text="Krypteringsadgangskode: "
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_saltpass() {
+	declare text="Salt Password: "
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_salterror() {
+	declare text="Salt password kan ikke være det samme som krypteringsadgangskoden."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_confirm() {
+	declare text="Bekræft venligst følgende oplysninger, før du fortsætter..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_clientid_confirm() {
+	declare text="Client ID: ${clientvar}"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_clientsecret_confirm() {
+	declare text="Klienthemmelighed: ${secretvar}"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_encryptpass_confirm() {
+	declare text="Krypteringsadgangskode: ${encvar}"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_saltpass_confirm() {
+	declare text="Salt Password: ${saltvar}"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::rclone_continue() {
+	declare text="Hvis du er tilfreds med ovenstående indstillinger, skal du trykke på Y for at fortsætte..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::znc_configure() {
+	declare text="ZNC-konfigurationen vil nu blive kørt. Besvar venligst følgende spørgsmål:"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# QB Updater
+################################################################################
+quickbox::lang::update::ntp() {
+	declare text="tjekker med ntp-server..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::apt() {
+	declare text="kører passende opdateringer..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::initial::dependencies() {
+	declare text="søger efter indledende afhængigheder..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::download::v3() {
+	declare text="downloader v3-opdatering..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::quickbox::dependencies() {
+	declare text="checker for quickbox-afhængigheder..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::base::dependencies() {
+	declare text="installerer basisafhængigheder: "
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::web::dependencies() {
+	declare text="installerer webafhængigheder: "
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::python::dependencies() {
+	declare text="installerer python-afhængigheder: "
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::dependencies::log() {
+	declare text="gemmer installerede afhængigheder..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::pip() {
+	declare text="opdaterer pip..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::lshell() {
+	declare text="opdaterer lshell..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::iris() {
+	declare text="opdaterer iris..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::libraries() {
+	declare text="opdaterer quickbox-biblioteker..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::cron() {
+	declare text="opdatering af cron-job..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::sudo() {
+	declare text="opdaterer sudo-konfigurationer..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::curl() {
+	declare text="opdaterer krølle..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::php::check() {
+	declare text="checker php..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::qbcommands() {
+	declare text="konfigurerer quickbox pro-kommandoer..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::dashboard() {
+	declare text="opdaterer quickbox-dashboard..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::database() {
+	declare text="opdaterer quickbox-database..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::autocomplete() {
+	declare text="opdatering af quickbox-autofuldførelse..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::permissions() {
+	declare text="konfigurerer tilladelser..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::clean() {
+	declare text="renser opdateringsfiler..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::complete() {
+	declare text="opdateringen er fuldført!"
+	quickbox::dashboard::log "${text}"
+}

@@ -1,0 +1,980 @@
+<?php
+$version = $configs->getConfig('Version');
+/********************************************************
+ *                   Français	  	                    *
+ *                                                      *
+ * Ready for QuickBox Pro v3.0.0 : June 17, 2022        *
+ *                                                      *
+ * SUMMARY :                                            *
+ *                                                      *
+ * NAVIGATION : #1                                      *
+ *    lang & theme : #1.1                               *
+ *    user menu : #1.2                                  *
+ *    sidebar menu : #1.3                               *
+ *    sidebar submenus : #1.4                           *
+ *    footer : #1.5                                     *
+ * MISCELLANEOUS : #2                                   *
+ *    buttons : #2.1                                    *
+ *    popup texture : #2.2                              *
+ *    app nginx config edit modal : #2.3                *
+ *    other : #2.4                                      *
+ * WIDGETS : #3                                         *
+ *    Tables Headers : #3.1                             *
+ *       app management center : #3.1.1                 *
+ *    Package Management Center : #3.2                  *
+ *       app info & uninstall : #3.2.1                  *
+ *       toggles & tooltips : #3.2.2                    *
+ *       service control : #3.2.3                       *
+ *       rclone specific toggles : #3.2.4               *
+ *    Dashboard Widgets : #3.3                          *
+ *       disk status widget : #3.3.1                    *
+ *       system index v1 - bandwidth data : #3.3.2      *
+ *       system index v1 - server load : #3.3.3         *
+ *       system index v1 - memory status : #3.3.4       *
+ *       server activity widget : #3.3.5                *
+ * PAGES : #4                                           *
+ *    Start Screen Forms : #4.1                         *
+ *       login : #4.1.1                                 *
+ *       forgot password : #4.1.2                       *
+ *       register : #4.1.3                              *
+ *       account : #4.1.4                               *
+ *         quotes : #4.1.4.1                            *
+ *         edit account modal : #4.1.4.2                *
+ *       summary : #4.1.5                               *
+ *    Settings : #4.2                                   *
+ *       general settings : #4.2.1                      *
+ *       email settings : #4.2.2                        *
+ *       session settings : #4.2.3                      *
+ *       user settings : #4.2.4                         *
+ *       security settings : #4.2.5                     *
+ *    User Management : #4.3                            *
+ *       registration settings : #4.3.1                 *
+ *       useradmin : #4.3.2                             *
+ *         admin user edit : #4.3.2.1                   *
+ *       user groups : #4.3.3                           *
+ *    System : #4.4                                     *
+ *       web console : #4.4.1                           *
+ *       troubleshootings : #4.4.2                      *
+ *       system logs : #4.4.3                           *
+ *       about / quicktips : #4.4.4                     *
+ *         commands : #4.4.4.1                          *
+ *       changelogs / update : #4.4.5                   *
+ *       system dashboard : #4.4.6                      *
+ *    Error Pages : #4.5                                *
+ *******************************************************/
+
+///////////////////////////////////////
+//          #1 NAVIGATION
+///////////////////////////////////////
+
+//#1.1 - language & theme selection
+$L['CHINESE'] = 'Chinois';
+$L['DANISH'] = 'Danois';
+$L['ENGLISH'] = 'Anglais';
+$L['FRENCH'] = 'Français';
+$L['GERMAN'] = 'Allemand';
+$L['PORTUGUESE'] = 'Portugais';
+$L['SELECT_LANGUAGE'] = 'Cliquez pour changer de langue';
+$L['SELECT_THEME'] = 'Cliquez pour changer de thème';
+$L['SPANISH'] = 'Espagnol';
+$L['THEME_DARK'] = 'Theme Sombre';
+$L['THEME_LIGHT'] = 'Theme Clair';
+
+//#1.2 - user menu tabs
+$L['LOG_OUT'] = 'Déconnexion';
+$L['PROFILE'] = 'Mon Profil';
+$L['REBOOT'] = 'Redémarrer';
+
+//#1.3 - sidebar menus
+$L['ABOUT_AND_TIPS'] = 'À propos';
+$L['APP_DASHBOARD'] = 'Gérer les Applications';
+$L['DASHBOARD'] = 'Panel';
+$L['DB_MGMNT'] = 'phpMyAdmin';
+$L['EXTERNAL_LINKS'] = 'Liens Externes';
+$L['GENERAL_SETTINGS'] = 'Réglages Généraux';
+$L['HELP_SUPPORT'] = 'Aide / Mise à jour';
+$L['KB'] = 'Base de Connaissances';
+$L['PLUGINS'] = 'Extensions';
+$L['REGISTRATION'] = 'Enregistrement';
+$L['SECURITY_SETTINGS'] = 'Paramètres de sécurité';
+$L['SESSION_SETTINGS'] = 'Paramètres de session';
+$L['SETTINGS'] = 'Réglages';
+$L['SYS_DASHBOARD'] = 'Gestion Système';
+$L['SYSTEM_LOGS'] = 'Journaux Système';
+$L['SYSTEM'] = 'Système';
+$L['USER_ADMIN'] = 'Administrer Utilisateurs';
+$L['USER_GROUPS'] = 'Groupes utilisateurs';
+$L['USER_MANAGEMENT'] = 'Gestion Utilisateurs';
+$L['USER_SETTINGS'] = 'Paramètres Utilisateurs';
+$L['WEB_CONSOLE'] = 'Console Web';
+
+//#1.4 - sidebar submenus
+$L['APP_MENU'] = 'Menu logiciel';
+$L['APPLICATIONS'] = 'Mes logiciels';
+$L['DASHBOARD_INFO'] = 'Choisissez entre le tableau de bord du système administratif ou le tableau de bord de l\'application vu par tous les utilisateurs.';
+$L['DASHBOARD_VIEW'] = 'Tableaux de bord';
+$L['DOWNLOADS'] = 'Téléchargements';
+$L['FILEMANAGER'] = 'Gestionnaire de Fichiers';
+$L['PLUGINS_CENTER'] = 'Centre des Extensions';
+$L['PLUGINS_INFO'] = 'Installez et désinstallez facilement les plugins simplement en cliquant sur le nom du plugin.';
+$L['RPLUGINS_NOTICE'] = 'Installez et désinstallez facilement les plugins ruTorrent en cliquant simplement sur le nom du plugin.';
+$L['RPLUGINS'] = 'Plugins ruTorrent';
+$L['TORRENT_CLIENTS'] = 'Clients Torrent';
+
+//#1.5 - footer
+$L['ALL_RIGHTS'] = 'Tous droits réservés. ';
+
+
+///////////////////////////////////////
+//         #2 MISCELLANEOUS
+///////////////////////////////////////
+
+//#2.1 - buttons
+$L['ACTIVATE_USERS'] = 'Activer Utilisateur';
+$L['ADD_IP_ADDRESS'] = 'Ajouter l\'adresse IP';
+$L['ADD_USERNAME'] = 'Ajouter l\'utilisateur';
+$L['AGREE'] = 'Je comprends, fais-le!';
+$L['API_ACTIVATE'] = 'Activer';
+$L['APP_MANAGEMENT'] = 'Gérer les Applications';
+$L['APPS_INSTALLED'] = 'Apps installées';
+$L['AUTO_DISABLE'] = 'Désactiver MàJ Automatiques';
+$L['AUTO_ENABLE'] = 'Activer MàJ Automatiques';
+$L['BACK'] = 'Retour';
+$L['BAN_USER'] = 'Bloquer Utilisateur';
+$L['CANCEL'] = 'Annuler';
+$L['CLEAN_LOG'] = 'Nettoyer Logs de MàJ';
+$L['CLEAN_RCLOG'] = 'Nettoyer Logs de Rclone';
+$L['CLICK_ME'] = 'Cliquez-moi';
+$L['CLOSE_REFRESH'] = 'Fermer & Rafraîchir';
+$L['CLOSE'] = 'Fermer';
+$L['CPU_TAB'] = 'CPU';
+$L['CREATE_GROUP'] = 'Créer Groupe';
+$L['CREATE_NEW_GROUP'] = 'Créer un Nouveau Groupe';
+$L['CREATE_NEW_USER'] = 'Créer Nouvel Utilisateur';
+$L['CREATE_USER'] = 'Créer Utilisateur';
+$L['DELETE_ALL_ANNOUNCEMENTS'] = 'Supprimer toutes les annonces';
+$L['DELETE_ALL_LOGS'] = 'Tout Effacer (> 30 jours)';
+$L['DELETE_INACTIVE_USERS'] = 'Supprimer Utilisteur Inactif';
+$L['DELETE_LOGS'] = 'Effacer Logs';
+$L['DELETE_SELECTED_ANNOUNCEMENTS'] = 'Supprimer les annonces sélectionnées';
+$L['DELETE_SELECTED_SESSIONS'] = 'Supprimer Sessions Selectionnées';
+$L['DELETE_SELECTED'] = 'Supprimer la Selection';
+$L['DELETE_USER'] = 'Supprimer Utilisateur';
+$L['DEMOTE'] = 'Rétrograder l\'administrateur';
+$L['DISABLED'] = 'Désactivé';
+$L['DISK_TAB'] = 'Disque';
+$L['DOWNLOAD'] = 'Télécharger';
+$L['EDIT_GROUP'] = 'Editer Groupe';
+$L['EDIT_USER'] = 'Editer Utilisateur';
+$L['ENABLED'] = 'Activé';
+$L['EXECUTE'] = 'Exécuter';
+$L['GENERATE'] = 'Générer';
+$L['GO_BACK'] = 'Revenir à la page précédente';
+$L['IN_USE'] = 'Utilisé';
+$L['INSTALL'] = 'Installer';
+$L['INSTALLED'] = 'Désinstaller';
+$L['INSTALLING'] = 'Installation';
+$L['KILL_USER_SESSION'] = 'Déconnecter les Utilisateurs';
+$L['LAUNCH'] = 'Lancer';
+$L['LOGIN'] = 'Connexion';
+$L['MEMORY_TAB'] = 'Mémoire';
+$L['NETWORK_TAB'] = 'Réseau';
+$L['NGINX_BACKUP'] = 'Sauvegarde de la configuration Nginx';
+$L['NGINX_DEFAULT'] = 'Restaurer la configuration par défaut';
+$L['NGINX_DISABLE'] = 'Désactiver le popup d\'authentification';
+$L['NGINX_ENABLE'] = 'Activer le popup d\'authentification';
+$L['NGINX_RESTORE'] = 'Restaurer la configuration Nginx';
+$L['APP_BACKUP'] = 'Sauvegarde de la configuration de l\'application';
+$L['APP_DEFAULT'] = 'Restaurer la configuration par défaut';
+$L['APP_RESTORE'] = 'Restaurer la sauvegarde de l\'application';
+$L['PROMOTE'] = 'Promouvoir Admin';
+$L['RCLONE_LOCK_REMOVE'] = 'retirer le verrou';
+$L['RCLONE_LOGS'] = 'regarder les logs';
+$L['RCLONE_UPLOAD'] = 'upload';
+$L['REFRESH'] = 'Rafraîchir';
+$L['REGISTER'] = 'S\'enregistrer';
+$L['RELOAD_CONF'] = 'Recharger les Configurations';
+$L['RELOAD'] = 'Recharger';
+$L['REMOVE_BANNED_IP'] = 'Autoriser l\'adresses IP';
+$L['REMOVE_DISALLOWED'] = 'Autoriser l\'utilisateur';
+$L['REMOVE_MEMBER'] = 'Supprimer Membre du Groupe';
+$L['REMOVE'] = 'Supprimer';
+$L['RESET_VERSION'] = 'Réinitialiser Version';
+$L['RESET'] = 'Réinitialiser';
+$L['SERVICE_CONTROL'] = 'Contrôle des Services';
+$L['SIMULATE_BUTTON'] = 'Simuler';
+$L['SIMULATE_END'] = 'Fin Sim';
+$L['SIMULATE_USER'] = 'Simuler Utilisateur';
+$L['NANGINX'] = 'N/A fonctionne avec Nginx';
+$L['START'] = 'Démarrer';
+$L['STOP'] = 'Arrêter';
+$L['SUBMIT'] = 'Enregistrer';
+$L['TOP_PROC_TAB'] = 'Top Processes';
+$L['UNBAN_USER'] = 'Débloquer Utilisateur';
+$L['UNINSTALLED'] = 'Désinstallé';
+$L['UNINSTALLING'] = 'Désinstallation';
+$L['UP'] = 'Haut';
+$L['UPDATE_TOOLTIP'] = 'Cliquez pour voir plus d\'informations';
+$L['UPDATE_VERSION'] = 'Mettre à jour la version';
+$L['USER_ACTIONS'] = 'Actions Utilisateur';
+$L['VIEW_CHANGELOG'] = 'Voir Changelog';
+$L['LATEST'] = 'le plus récent';
+$L['CURRENT'] = 'actuel';
+$L['VIEW'] = 'Voir';
+
+//#2.2 - popup texture
+$L['SYSTEM_RESPONSE_TITLE'] = 'Réponse Système';
+$L['UNINSTALL_TITLE'] = 'Désinstaller';
+$L['UNINSTALLING_TXT_1'] = 'Désolé de te voir partir ... Désinstallation de ';
+$L['UNINSTALLING_TXT_2'] = 'en cours. Veuillez patienter.';
+
+//#2.3 - app nginx config edit modal
+$L['ALERT_NGINX_EDITOR'] = 'Il est conseillé de sauvegarder votre configuration actuelle en premier et de ne modifier la configuration ci-dessous que si vous connaissez bien Nginx ou si vous êtes instruit par un membre du personnel.';
+$L['BACKUP_NGINX_LOC'] = 'Chemin de la Sauvegarde de la configuartion Nginx';
+$L['CURRENT_NGINX_LOC'] = 'Chemin actuel de la configuartion Nginx';
+$L['NGINX_APP_CONFIGURE'] = 'Editeur de Configuration Nginx';
+$L['NGINX_EDIT'] = 'Editer la Configuration Nginx';
+$L['ALERT_CONFIG_EDITOR'] = 'Il est conseillé de sauvegarder d\'abord votre configuration actuelle et de ne modifier la configuration ci-dessous que si vous êtes conscient des modifications apportées, si vous avez consulté la documentation de l\'application ou si vous avez reçu des instructions d\'un membre du personnel';
+$L['BACKUP_CONFIG_LOC'] = 'Emplacement de la sauvegarde de la configuration';
+$L['CURRENT_CONFIG_LOC'] = 'Emplacement de la configuration actuelle';
+$L['APP_CONFIG_OPTIONS'] = 'Éditeur de configuration d\'application';
+$L['APP_CONFIG_EDIT'] = 'Modifier la configuration de l\'application';
+
+//#2.4 - other
+$L['ABOUT_RELEASE'] = 'A propos de la release';
+$L['EMAIL'] = 'Email';
+$L['HERE'] = 'ici';
+$L['HOME'] = 'Accueil';
+$L['IDLE_L'] = 'libre';
+$L['IDLE'] = 'Libre';
+$L['NANGINX'] = 'Fonctionne sur NGINX';
+$L['NEED_HELP'] = 'Besoin d\'aide ?';
+$L['NGINX_CONF_OPTIONS'] = 'Options Config Nginx';
+$L['NGINX_CONFIG'] = 'Configuration Nginx';
+$L['NGINX_SETTINGS'] = 'Paramètres Nginx';
+$L['NO'] = 'Non';
+$L['OR'] = 'ou';
+$L['PASSWORD'] = 'Mot de passe';
+$L['PLEASE_HOLD'] = 'En cours - Veuillez Patienter';
+$L['REQUIRED_FIELD'] = 'Champ requis...';
+$L['REQUIRED_FIELDS'] = 'Les champs marqués avec <span style="color:#d9534f">*</span> sont requis';
+$L['SET_HERE'] = 'Définissez-le ici';
+$L['SIMULATE_LIST'] = 'Liste Utilisateurs';
+$L['SIMULATE'] = 'Simuler Utilasateurs';
+$L['SUMMARY'] = 'Sommaire';
+$L['UPDATING_QUICKBOX'] = 'Mise à Jour QuickBox';
+$L['UPDATING'] = 'Mise à Jour ';
+$L['USED_L'] = 'utilisé';
+$L['USERNAME'] = 'Nom d\'utilisateur';
+$L['USERS'] = 'Utilisateurs';
+$L['YES'] = 'Oui';
+
+
+////////////////////////////////////////
+//          #3 WIDGETS
+///////////////////////////////////////
+
+//#3.1 - TABLES HEADERS
+//#3.1.1 - App Management Center
+$L['AVAILABILITY'] = 'Disponibilité';
+$L['DETAILS'] = 'Détails';
+$L['NAME'] = 'Nom';
+$L['CONFIGS'] = 'Configs';
+
+
+//#3.2 - PACKAGE MANAGEMENT CENTER
+//#3.2.1 - App info & uninstall
+$L['AIRSONIC_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Airsonic</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Airsonic</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['AIRSONIC'] = 'Airsonic-Advanced est une implémentation plus moderne de la bifurcation d\'Airsonic avec plusieurs améliorations clés en termes de performances et de fonctionnalités. Il ajoute et remplace plusieurs fonctionnalités d\'Airsonic. Airsonic est un streamer multimédia gratuit, basé sur le web, qui fournit un accès omniprésent à votre musique.';
+$L['AUTOBRR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Autobrr</span> de votre système.<br/><br/>Cela supprimera complètement toutes vos configurations et réglages... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Autobrr</span> à tout moment, cependant, vos paramètres seront réinitialisés par défaut.';
+$L['AUTOBRR'] = 'Autobrr est un simple binaire moderne remplaçant le plugin autodl-irssi+rutorrent. Autobrr surveille les canaux d\'annonce IRC et les flux RSS torznab pour obtenir les versions dès qu\'elles sont disponibles, avec un bon filtrage et un support regex.';
+$L['AUTODL_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">AutoDL-iRSSi</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">AutoDL-iRSSi</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['AUTODL'] = 'AutoDL-iRSSi est un plugin pour iRSSi qui surveille les canaux IRC et télécharge des fichiers torrent basés sur des filtres définis par l\'utilisateur.';
+$L['AUTOSCAN_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Autoscan</span> de votre système.<br/><br/>Cela supprimera complètement toutes vos configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Autoscan</span> à tout moment, cependant, vos paramètres seront réinitialisés par défaut.';
+$L['AUTOSCAN'] = 'Autoscan remplace le comportement par défaut de Plex et Emby pour capter les modifications de fichiers sur le système de fichiers. Autoscan s\'intègre à Sonarr, Radarr, Lidarr et Google Drive pour récupérer les modifications en temps quasi réel sans dépendre du système de fichiers.';
+$L['BAZARR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Bazarr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Bazarr</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['BAZARR'] = 'Bazarr est une application compagnon de Sonarr et Radarr. Il gère et télécharge les sous-titres en fonction de vos besoins. Vous définissez vos préférences par émission de télévision ou par film et Bazarr s\'occupe de tout pour vous.';
+$L['BBR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">BBR</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et ajustements du kernel ... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">BBR</span> à tout moment.';
+$L['BBR'] = 'BBR est un nouvel algorithme de contrôle de congestion qui est contribué à la pile TCP du noyau Linux par Google. Avec BBR en place, un serveur Linux peut augmenter considérablement le débit et réduire la latence des connexions.';
+$L['BTSYNC_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">BitTorrent Sync</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de dossiers partagés ... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">BitTorrent Sync</span> à tout moment, cependant, vos chemin de stockage et les paramètres des dossiers liés seront réinitialisés.';
+$L['BTSYNC'] = 'BitTorrent Sync par BitTorrent.Inc est un outil propriétaire peer-to-peer de synchronisation de fichiers.';
+$L['CALIBRE_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Calibre</span> from your system.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>>Vous pouvez réinstaller <span style="color:#01cea2">Calibre</span> à tout moment, cependant, vos paramètres de configuration (si des modifications ont été apportées) seront réinitialisés.';
+$L['CALIBRE'] = 'Calibre est une suite d\'applications open source multi-plateforme de livres électroniques. Calibre prend en charge l\'organisation de livres électroniques existants dans des bibliothèques virtuelles, l\'affichage, l\'édition (formats EPUB et AZW3), la création et la conversion de livres électroniques, ainsi que la synchronisation de livres électroniques avec une variété de lecteurs électroniques.';
+$L['COUCHPOTATO_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">CouchPotato</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">CouchPotato</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['COUCHPOTATO'] = 'Téléchargez automatiquement des films, facilement et dans la meilleure qualité dès qu\'ils sont libérés, par l\'intermédiaire d\'Usenet ou de torrents.';
+$L['CSF_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Config Server Firewall (CSF)</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Config Server Firewall (CSF)</span> à tout moment, cependant, vos paramètres de configuration (si des modifications ont été apportées) seront réinitialisés.';
+$L['CSF'] = 'ConfigServer Firewall, connu sous le nom de CSF, est un script de configuration de pare-feu créé pour assurer une meilleure sécurité pour votre serveur tout en vous donnant une interface avancée et facile à utiliser pour gérer vos paramètres de pare-feu.';
+$L['DELUGE_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Deluge</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de dossiers partagés pour <strong>tous les utilisateurs</strong>... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Deluge</span> à tout moment, cependant, vos chemins de stockage et les paramètres des dossiers liés seront réinitialisés.';
+$L['DELUGE'] = 'Deluge est un client BitTorrent léger, gratuit et multi-plateforme.';
+$L['DUPLICATI_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Duplicati</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Duplicati</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['DUPLICATI'] = 'Duplicati est un client de sauvegarde gratuit et open source qui stocke en toute sécurité des sauvegardes cryptées, incrémentielles et compressées sur des services de stockage en nuage et des serveurs de fichiers distants. Il peut fonctionner avec Amazon S3, Dropbox, Google Drive, FTP, SSH/SFTP, WebDAV et <a href="https://nullrefer.ir/?https://duplicati.readthedocs.io/en/latest/01-introduction/#supported-backends" rel="noopener nofollow" target="_blank">beaucoup plus</a>.';
+$L['EMBY_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Emby</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de dossiers partagés... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Emby</span> à tout moment, cependant, vos chemins de stockage et les paramètres des dossiers liés seront réinitialisés.';
+$L['EMBY'] = 'Importer toutes vos vidéos, vos musiques et vos photos dans un seul endroit n\'a jamais été aussi simple. Votre Serveur Emby personnel convertit automatiquement et diffuse vos médias à la volée pour jouer sur n\'importe quel appareil (Android TV, Apple TV, smartphones, Roku, Consoles de jeu et <a href="https://nullrefer.ir/?https://emby.media/download.html" rel="noopener nofollow" target="_blank">plein d\'autres</a>).';
+$L['FAIL2BAN_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Fail2Ban</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Fail2Ban</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['FAIL2BAN'] = 'Fail2Ban est une structure logicielle de prévention des intrusions qui protège les serveurs d’ordinateur des attaques par force brute.';
+$L['FILEBOT_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">FileBot</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">FileBot</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['FILEBOT'] = 'FileBot est l\'outil ultime pour organiser et renommer vos films, vos émissions de télévision et vos dessins animés, ainsi que pour récupérer des sous-titres et des illustrations.';
+$L['FILEBROWSER_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">File Browser</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">File Browser</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['FILEBROWSER'] = 'FileBrowser fournit une interface de gestion de fichiers dans un répertoire spécifié et peut être utilisé pour télécharger, supprimer, prévisualiser, renommer et éditer vos fichiers. Il permet la création de plusieurs utilisateurs et chaque utilisateur peut avoir son propre répertoire.';
+$L['FLARESOLVERR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">FlareSolverr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">FlareSolverr</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['FLARESOLVERR'] = 'FlareSolverr est un serveur proxy pour contourner la protection Cloudflare.';
+$L['FLEXGET_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">FlexGet</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">FlexGet</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['FLEXGET'] = 'FlexGet est un outil d\'automatisation polyvalent pour tous vos médias. Il prends en charge des torrents, NZBs, podcasts, bandes dessinées, télévision, films, flux RSS, HTML, CSV, etc.';
+$L['FLOOD_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Flood</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de dossiers partagés... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Flood</span> à tout moment, cependant, vos chemins de stockage et les paramètres des dossiers liés seront réinitialisés.';
+$L['FLOOD'] = 'Flood est une autre interface web pour rtorrent. Il implémente un serveur Node.js pour communiquer avec l\'API rTorrent, stocker des données historiques et servir l\'interface utilisateur Web.';
+$L['HEADPHONES_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Headphones</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de dossiers partagés... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Headphones</span> à tout moment, cependant, vos chemins de stockage et les paramètres des dossiers liés seront réinitialisés.';
+$L['HEADPHONES'] = 'Headphones est un logiciel de téléchargement automatique de musique pour NZB et Torrent, écrit en Python. Il supporte SABnzbd, NZBget, Transmission, μTorrent, Deluge et Blackhole.';
+$L['JACKETT_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Jackett</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Jackett</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['JACKETT'] = 'Support API pour vos trackers privés préférés.';
+$L['JELLYFIN_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Jellyfin</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Jellyfin</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['JELLYFIN'] = 'Jellyfin est un système multimédia logiciel libre, basé sur Emby qui vous permet de contrôler la gestion et la diffusion de vos médias.';
+$L['LAZYLIBRARIAN_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color: #01cea2"> LazyLibrarian </span> de votre système. <br/><br/>Cela supprimera complètement tous vos paramètres de configuration ... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color: #01cea2"> LazyLibrarian </span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés par défaut.';
+$L['LAZYLIBRARIAN'] = 'LazyLibrarian est une application SickBeard, CouchPotato, semblable à un casque pour les livres électroniques, les livres audio et les magazines. Il utilise une combinaison de <a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a> et éventuellement <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a> comme sources d\'informations sur l\'auteur et les informations sur le livre.';
+$L['LETSENCRYPT_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Let\'s Encrypt</span> de votre système.<br/><br/>Cela va complètement désinstaller vos domaines et certificats. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Let\'s Encrypt</span> à tout moment.';
+$L['LETSENCRYPT'] = 'Let\'s Encrypt est une autorité de certification (CA) gratuite, automatisée et ouverte, exploitée pour le bénéfice du public. Il s\'agit d\'un service fourni par l\' <a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group (ISRG)</a>.';
+$L['LIDARR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Lidarr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Lidarr</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['LIDARR'] = 'Lidarr est un fork indépendant de Sonarr retravaillé pour télécharger automatiquement de la musique via Usenet et BitTorrent et inspiré par Headphones.';
+$L['MEDUSA_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Medusa</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Medusa</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['MEDUSA'] = 'Gestionnaire de fichiers vidéo pour Séries TV. Il surveille les nouveaux épisodes de vos émissions préférées à votre place et quand ils sont sur la toile, sa magie entre en jeu.';
+$L['MYLAR3_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2"> Mylar3 </span> de votre système. <br/><br/> Cela supprimera complètement tous vos paramètres de configuration ... cette action est irréversible. <br/><br/> Vous pouvez réinstaller <span style="color:#01cea2"> Mylar3 </span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés par défaut.';
+$L['MYLAR3'] = 'Mylar est un programme de téléchargement automatisé de bandes dessinées (cbr/cbz) à utiliser avec NZB et des torrents écrits en python. Il prend en charge SABnzbd, NZBGET et de nombreux clients torrent en plus de DDL.';
+$L['NETDATA_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Netdata</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">NetData</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['NETDATA'] = 'Netdata est une surveillance distribuée, en temps réel, des performances et de l\'intégrité des systèmes et des applications.';
+$L['NEXTCLOUD_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">NextCloud</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">NextCloud</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['NEXTCLOUD'] = 'NextCloud est un logiciel open source vous permettant d\'accéder depuis n\'importe quel endroit à vos documents importants. Il peut être installé sur n\'importe quel serveur et vous permet de synchroniser vos données (contacts, calendriers) \'dans le nuage\' sur votre serveur. Vous décidez de ce qui se passe avec vos données, où elles sont et qui peut y accéder!';
+$L['NOVNC_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">noVNC</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">noVNC</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['NOVNC'] = 'noVNC est à la fois une bibliothèque JavaScript proposant client VNC et une application construite au-dessus de cette bibliothèque. noVNC fonctionne dans tous les navigateurs modernes, y compris les navigateurs mobiles (iOS et Android).';
+$L['NZBGET_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">NZBGet</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">NZBGet</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['NZBGET'] = 'NZBGet est un programme de téléchargement binaire, qui télécharge les fichiers d\'Usenet en fonction des informations fournies dans les fichiers nzb. NZBGet est écrit en C++ et est connu pour ses performances et son efficacité exceptionnelle.';
+$L['NZBHYDRA_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">CNZBHydra</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">NZBHydra</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['NZBHYDRA'] = 'NZBHydra offre un accès facile à un certain nombre d\'indexeurs basés sur raw et newznab. Vous pouvez rechercher tous vos indexateurs au même endroit et l\'utiliser comme source d\'indexation pour des outils tels que Sonarr ou CouchPotato.';
+$L['NZBHYDRA2_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">CNZBHydra2</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">NZBHydra2</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['NZBHYDRA2'] = 'NZBHydra2 offre un accès facile à un certain nombre d\'indexeurs basés sur raw et newznab. Vous pouvez rechercher tous vos indexateurs au même endroit et l\'utiliser comme source d\'indexation pour des outils tels que Sonarr ou CouchPotato.';
+$L['OMBI_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Ombi</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de librairies... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Ombi</span>à tout moment, cependant, vos paramètres de librairies et vos requêtes en cours seront réinitialisés.';
+$L['OMBI'] = 'Ombi offre une belle interface pour que vos utilisateurs vous demandent facilement d\'ajouter de nouveaux films à la bibliothèque. S\'intègre avec CouchPotato, SickChill et Sonarr.';
+$L['OVERSEERR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Overeerr</span> de votre système.<br/><br/>Cela supprimera complètement toute votre configuration et les paramètres de la bibliothèque... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Overeerr</span> à tout moment, cependant, vos paramètres de bibliothèque et vos requêtes seront réinitialisés.';
+$L['OVERSEERR'] = 'Overseerr est un logiciel libre et open source permettant de gérer les requêtes pour votre médiathèque. Il s\'intègre à vos services existants, tels que Sonarr, Radarr et Plex!';
+$L['OVPN_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">OpenVPN</span> de votre système.<br/><br/>Cela supprimera complètement toute votre configuration et les paramètres de la base de données phpmyadmin... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">OpenVPN</span> à tout moment.';
+$L['OVPN'] = 'VPN basé sur SSL/TLS. Supporté sur Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X, et Windows 2000/XP+.';
+$L['PHPMYADMIN_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">phpMyAdmin</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et les bases de données... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">phpMyAdmin</span> à tout moment.';
+$L['PHPMYADMIN'] = 'phpMyAdmin est un outil logiciel gratuit écrit en <a href="https://nullrefer.ir/?https://php.net/" rel="noopener nofollow" target="_blank">PHP</a>, destiné à gérer l\'administration de <a href="https://nullrefer.ir/?https://www.mysql.com/" rel="noopener nofollow" target="_blank">MySQL</a> sur le Web. Il supporte un large éventail d\'opérations sur MySQL et MariaDB. Il est utilisé pour la gestion des bases de données, des tables, des colonnes, des relations, des index, des utilisateurs, des permissions, etc.';
+$L['PLEX_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Plex</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de librairies... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Plex</span> à tout moment, cependant, vos paramètres et librairies seront réinitialisés.';
+$L['PLEX'] = 'Plex vous permet de diffuser votre contenu à tous vos dispositifs Plex activés.';
+$L['PROWLARR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Prowlarr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de librairies... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Prowlarr</span> à tout moment, cependant, vos paramètres et librairies seront réinitialisés.';
+$L['PROWLARR'] = 'Prowlarr est un gestionnaire d\'indexation/proxy construit sur la populaire pile de base arr .net/reactjs pour s\'intégrer à vos différentes applications PVR. Prowlarr prend en charge à la fois les Torrent Trackers et les Usenet Indexers. Il s\'intègre parfaitement à Sonarr, Radarr, Lidarr et Readarr, offrant une gestion complète de vos indexeurs sans aucune configuration d\'indexeur par application requise.';
+$L['PYLOAD_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">pyLoad</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">PyLoad</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['PYLOAD'] = 'pyLoad vous permet de télécharger directement sur votre serveur des liens provenant de sites comme Sendspace ou Rapidshare (une liste de ces sites peut être trouvée en cliquant <a href="https://nullrefer.ir/?https://github.com/pyload/pyload/wiki/Supported-Hoster" rel="noopener nofollow" target="_blank">ici</a>. Vous pourrez ensuite facilement récupérer ces fichiers via votre client FTP habituel.';
+$L['QBITTORRENT_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">qBittorrent</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de dossiers partagés pour <strong>tous les utilisateurs</strong>... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">qBittorrent</span> à tout moment, cependant, vos chemin de stockage et les paramètres des dossiers liés seront réinitialisés.';
+$L['QBITTORRENT'] = 'qBittorrent est un client BitTorrent multi-plateforme, multilingue, léger et libre. Livré avec une interface utilisateur agréable et un moteur de recherche intégré.';
+$L['QUASSEL_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Quassel</span> de votre système.<br/><br/>Cela va complètement supprimer <span style="color:#01cea2">Quassel</span> et tous ses paramètres / logs de votre système.';
+$L['QUASSEL'] = 'Quassel est un client IRC multi-plateforme moderne basé sur le framework Qt4.';
+$L['QUOTA_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Quotas</span> de votre système.<br/><br/>Cela va complètement supprimer les Quotas de vos utilisateurs et tout paramètres associés avec eux.';
+$L['QUOTAS'] = 'Cette fonctionnalité de Linux permet à l\'administrateur du système d\'allouer un montant maximum de l\'espace disque d\'un utilisateur.';
+$L['RADARR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Radarr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Radarr</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['RADARR'] = 'Radarr est un fork indépendant de Sonarr retravaillé pour le téléchargement automatique de films via Usenet et BitTorrent. Il est inspiré d\'outils tels que CouchPotato.';
+$L['RAPIDLEECH_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Rapidleech</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Rapidleech</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['RAPIDLEECH'] = 'RapidLeech est un script de transfert de serveur gratuit pour une utilisation sur différents sites de Direct Download populaires tels que uploaded.net, rapidshare.com et plus de 120 autres.';
+$L['RCLONE_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Rclone</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Rclone</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['RCLONE'] = 'Rclone est un programme en ligne de commande permettant de synchroniser des fichiers et des répertoires depuis et vers une multitude d\'hôtes.';
+$L['READARR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Readarr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Readarr</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['READARR'] = 'Readarr est un gestionnaire de collection d\'ebooks pour les utilisateurs de Usenet et BitTorrent. Il peut surveiller plusieurs flux RSS pour les nouveaux livres de vos auteurs préférés et s\'interfacer avec des clients et des indexeurs pour les saisir, les trier et les renommer.';
+$L['REQUESTRR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Requestrr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Requestrr</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['REQUESTRR'] = 'Requestrr est un chatbot Discord utilisé pour simplifier l\'utilisation de services comme Sonarr/Radarr/Ombi via l\'utilisation du chat! Tous les utilisateurs de votre serveur Discord peuvent demander l\'ajout d\'un nouveau contenu et être informés de sa disponibilité.';
+$L['RTORRENT_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">rTorrent</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">rTorrent</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['RTORRENT'] = 'rTorrent est un client BitTorrent rapide et efficace qui utilise, la bibliothèque libTorrent (à ne pas confondre avec libtorrent-rasterbar). Il est écrit en C ++ et utilise la bibliothèque de programmation ncurses, ce qui signifie qu\'il utilise une interface utilisateur texte. L\'interface de ruTorrent sera installée en plus.';
+$L['RUTORRENT_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">ruTorrent</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">ruTorrent</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['RUTORRENT'] = 'ruTorrent est l\'interface front-end du client Bittorrent \'rTorrent\'. Très léger côté serveur, il peut être installé sur des serveurs anciens et bas de gamme et même sur certains routeurs SOHO. Il existe plusieurs plugins pour que tout le monde puisse créer l\'interface qui lui ressemble, d\'ailleurs il vient avec notre thème maison : <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox</a>.';
+$L['SABNZBD_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">SABnzbd</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller SABnzbd à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['SABNZBD'] = 'SABnzbd est un projet Open Source de lecteur de newsgroup pour fichier binaire écrit en Python. Le programme fonctionne en arrière-plan et simplifie la vérification de téléchargement et l\'extraction de fichiers à partir de Usenet. SABnzbd utilise des fichiers NZB (similaires aux fichiers .torrent, mais pour Usenet), au lieu de naviguer sur Usenet.';
+$L['SICKCHILL_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">SickChill</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">SickChill</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['SICKCHILL'] = 'Gestionnaire de fichiers vidéo pour Séries TV. Il surveille les nouveaux épisodes de vos émissions préférées et quand ils sont postés, sa magie entre en jeu.';
+$L['SICKGEAR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">SickGear</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">SickGear</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['SICKGEAR'] = 'SickGear est comme Sick Beard, mais en mieux. Automatisez votre plaisir de télévision avec l\'innovation, la stabilité éprouvée et la fiabilité en plus.';
+$L['SONARR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Sonarr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Sonarr-NzbDrone</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['SONARR'] = 'Sonarr est un outil de gestion de Séries TV qui travaillera avec les torrents et liens Usenet.';
+$L['SUBSONIC_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Subsonic</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Subsonic</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['SUBSONIC'] = 'Subsonic est un serveur de contenu audio et vidéo en streaming écrit en JAVA avec une interface web (via HHTP ou HTTPS) et une gestion de plusieurs utilisateurs, ainsi que l\'authentification LDAP. Il suuporte un grand nombre de fichiers (MP3, AAC, OGG, FLAC, WMA, APE...).';
+$L['SYNCTHING_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Syncthing</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Syncthing</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['SYNCTHING'] = 'Syncthing est une application open source vous permettant de synchroniser vos fichiers en continu avec BitTorrent.';
+$L['TAUTULLI_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Tautulli</span> from your system.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de librairies... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Tautulli</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
+$L['TAUTULLI'] = 'Une application web python conçue pour surveiller, analyser et obtenir des notifications de votre serveur Plex.';
+$L['THELOUNGE_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">TheLounge</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de librairies... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">TheLounge</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['THELOUNGE'] = 'Un client web IRC auto-hebergé.';
+$L['TRANSMISSION_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Transmission</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Transmission</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['TRANSMISSION'] = 'Transmission est conçue pour une utilisation facile et puissante. Les valeurs par défaut sont définies sur \'Just Work\' et il suffit de quelques clics pour configurer les fonctionnalités avancées telles que les répertoires de surveillance, les listes de blocage des pairs et l\'interface Web. Quand Ubuntu a choisi Transmission comme client BitTorrent par défaut, l\'une des raisons les plus citées était sa courbe d\'apprentissage facile.';
+$L['UNIFI_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">UniFi</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">UniFi</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['UNIFI'] = 'UniFi® Controller est une solution logicielle de gestion de réseau sans fil d\'Ubiquiti Networks™. Il vous permet de gérer plusieurs réseaux sans fil à l\'aide d\'un navigateur Web.';
+$L['UNPACKERR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Unpackerr</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Unpackerr</span> à tout moment, cependant, vos paramètres seront réinitialisés..';
+$L['UNPACKERR'] = 'Extrait les téléchargements pour Radarr, Sonarr, Lidarr, Readarr - Supprime les fichiers extraits après l\'importation.';
+$L['WEBCONSOLE_UNINSTALL'] = 'Vous êtes sur le point de désinstaller la <span style="color:#01cea2">Console Web (shellinabox)</span> de votre système.<br/><br/> >Vous pouvez réinstaller <span style="color:#01cea2">Web Console (shellinabox)</span> à tout moment.';
+$L['WEBCONSOLE'] = 'Shell In A Box (aka The QuickBox Web Console) implémente un serveur pouvant exporter arbitrairement des lignes de commandes sur un emulateur de Terminal web based depuis un navigateur supportant le JavaScript et le CSS, sans nécessiter de plugins tiers.';
+$L['X2GO_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">x2go</span> de votre système.<br/><br/>Cela va complètement supprimer <span style="color:#01cea2">x2goserver</span> et l\'environnement de bureau <span style="color:#01cea2">xfce4</span> de votre système.';
+$L['X2GO'] = 'X2Go est un logiciel de bureau à distance open source pour Linux qui utilise le protocole de technologie NX.';
+$L['XTEVE_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">xTeVe</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">xTeVe</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['XTEVE'] = 'xTeVe est une application qui simule un tuner TV, elle permet d\'avoir des chaines IPTV via Plex ou Emby. xTeVe peut fusionner plusieurs fichiers M3U et XMLTV et les envoyer à votre Media Center préféré.';
+$L['ZNC_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">ZNC</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">ZNC</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['ZNC'] = 'ZNC est un bouncer IRC sous licence GPL. Celui-ci sera connecté en permanence à vos salons de discussions et fera office de passerelle entre votre client et vos serveurs IRC.';
+
+//#3.2.2 - toggles & tooltips
+$L['CARD_VIEW'] = 'Vue de la carte';
+$L['LIST_VIEW'] = 'Vue de la liste';
+$L['CLI'] = 'Console Web Seulement';
+$L['COMPAT_E'] = 'Erreur de Compatibilité';
+$L['CURRENTLY_INSTALLED_NOTICE'] = 'On dirait que vous avez accès à une application qui ne peut être installée que par un utilisateur à la fois. Parlez à votre administrateur système pour connaître l\'état de sa disponibilité.';
+$L['CURRENTLY_INSTALLED_TITLE'] = 'Quelqu\'un a déjà installé cette application';
+$L['DEL1_TOOLTIP'] = 'Il semblerait que vous utilisez Ubuntu 20.04. Deluge v1 est incompatible avec cette distribution. Veuillez considérer l\'installation de Deluge v2 pour continuer car Deluge v2 fonctionne avec des versions à jour de libtorrent1.2+ et python3+.';
+$L['DEL2_TOOLTIP'] = 'Il semblerait que qBittorrent est actuellement installé. Deluge v2 ne fonctionnera si Deluge 2 est installé. Veuillez désinstaller qBittorrent ou installer Deluge 1 pour continuer.';
+$L['DEL2XENIAL_TOOLTIP'] = 'Il semblerait que vous utilisez Ubuntu 16.04. Deluge v2 n\'est pas compatible avec cette distribution. Veuillez installer Deluge v1 pour continuer.';
+$L['DOMAIN'] = 'Domaine';
+$L['EMBY_JELLYFIN_COMPAT_MESSAGE'] = 'Jellyfin Installé';
+$L['ENTER_MOUNT_POINT'] = 'Veuillez entrer votre point de montage principal';
+$L['FAIL2BAN_TOOLTIP'] = 'Installez Fail2Ban en tapant \'qb install fail2ban\' dans votre terminal SSH.';
+$L['JELLYFIN_EMBY_COMPAT_MESSAGE'] = 'Emby Installé';
+$L['LETSENCRYPT_DOMAIN'] = 'Quel domaine voulez-vous que Let\'s Encrypt sécurise?';
+$L['MEDUSA_INSTALLED'] = 'Medusa Installé';
+$L['OVPN_TOOLTIP'] = 'Accedez à cette fonctionnalité depuis votre console web en tapant: \'qb install vpn\'.';
+$L['PLEX_CLAIM_MESSAGE'] = 'Pour réclamer votre serveur multimédia Plex, vous devez déjà avoir un compte et être connecté pour obtenir le code de réclamation auprès de: <a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank"><strong>https://www.plex.tv/claim/</strong></a><br/><br/><div class="alert alert-notice" style="color:#fff"><strong>REMARQUE: </strong> Il est conseillé d\'utiliser le bouton "Copier dans le presse-papiers" de l\'écran du code de réclamation pour assurer une insertion correcte, car le code de réclamation est sensible à la casse.</div>';
+$L['PLEX_CLAIM_TITLE'] = 'Installation du serveur multimédia Plex';
+$L['PLEX_CLAIM_TOKEN'] = 'Code de réclamation Plex';
+$L['PRIMARY_MOUNTM'] = 'Point de Montage';
+$L['QBIT_TOOLTIP'] = 'Il semblerait que Deluge 2 est actuellement installé. qBittorrent ne fonctionnera si Deluge 2 est installé. Veuillez désinstaller Deluge 2 ou installer Deluge 1 pour continuer.';
+$L['QUOTAS_FSTAB'] = 'Editez votre fstab';
+$L['QUOTAS_HELP'] = 'Pour en savoir plus sur l\'installation de Quotas, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>Lisez cette F.A.Q en premier</strong></a>.';
+$L['QUOTAS_TOOLTIP'] = 'Ajoutez ce qui suit au lieu de <code class="language-bash">defaults</code> sur votre point de montage principal pour continuer';
+$L['RCLONE_ADMIN_TOOLTIP'] = 'Installez Rclone en tapant \'qb install rclone USER [encrypted]\' dans votre terminal SSH.';
+$L['RCLONE_USER_TOOLTIP'] = 'Veuillez contacter un administrateur système pour l\'installer.';
+$L['REMOVE_MEDUSA_FIRST'] = 'Désinstallez Medusa pour pouvoir installer cette app.';
+$L['REMOVE_SICKCHILL_FIRST'] = 'Désinstallez SickChill pour pouvoir cette app.';
+$L['REMOVE_SICKGEAR_FIRST'] = 'Désinstallez SickGear pour pouvoir cette app.';
+$L['SICKCHILL_INSTALLED'] = 'SickChill Installé';
+$L['SICKGEAR_INSTALLED'] = 'SickGear Installé';
+$L['UNIFI_SSL_TOOLTIP'] = 'Si vous avez déjà un domaine défini dans la racine de votre site ainsi qu un certificat de chiffrement déjà généré pour le domaine, sélectionnez cette option.';
+$L['ZNC_TOOLTIP'] = 'Installez ZNC en tapant \'qb install znc USER\' dans votre terminal SSH.';
+
+//#3.2.3 - service control
+$L['ACTIVE_STATUS'] = 'actif (en fonction)';
+$L['APP_KEY'] = 'clé API';
+$L['APP_PORT'] = 'Port';
+$L['APP_STATUS'] = 'Statut Application';
+$L['INACTIVE_STATUS'] = 'inactif (mort)';
+
+//#3.2.4 - rclone specific toggles
+$L['ACTIVE_MOUNTED'] = 'actif (monté)';
+$L['INACTIVE_NOTMOUNTED'] = 'mort (non monté)';
+$L['RCLONE_OPTIONS'] = 'Options Rclone';
+$L['RCLONE_LOG_VIEWER'] = 'Rclone move.log';
+$L['RCLONE_COMMAND_CENTER'] = 'Centre de commande Rclone';
+$L['RCLONE_STATUS'] = 'Statut Rclone';
+$L['RCLONE_UPLOAD_MESSAGE'] = 'Rclone travaille actuellement en arrière-plan pour télécharger vos données sur gdrive. Pendant ce temps, vous verrez un verrou mis en place pour vérifier que votre processus a commencé. Ce verrou se supprimera une fois le processus terminé. N\'hésitez pas à fermer cette fenêtre contextuelle à tout moment.<br/><br/><div class="alert alert-notice" style="color:#fff"><strong>REMARQUE: </strong> Le téléchargement s\'exécute automatiquement via un cronjob tous les soirs à 03h12 heure du serveur.</div>';
+$L['RCLONE_UPLOAD_VIEWER'] = 'Téléchargement de Rclone';
+$L['RCMOUNT_STATUS'] = 'Statut MergerFS';
+$L['RCMOUNT_WHERE'] = 'Point de montage';
+
+
+//#3.3 - DASHBOARD WIDGETS
+//#3.3.1 - disk status widget
+$L['DD_DELUGE'] = 'Deluge';
+$L['DD_NZBGET'] = 'NZBGet';
+$L['DD_QBITTORRENT'] = 'qBittorrent';
+$L['DD_RTORRENT'] = 'rTorrent';
+$L['DD_SABNZBD'] = 'SABnzbd';
+$L['DD_TRANSMISSION'] = 'Transmission';
+$L['DELUGE_TORRENTS'] = 'torrents chargés dans Deluge';
+$L['DISK_%_1'] = 'Vous avez utilisé';
+$L['DISK_%_2'] = 'de votre espace disque total.';
+$L['DISK_SPACE'] = 'Espace Disque';;
+$L['FREE'] = 'Libre';
+$L['QBITTORRENT_TORRENTS'] = 'torrents chargés dans qBittorrent';
+$L['RT_TORRENTS'] = 'torrents chargés dans rTorrent';
+$L['SIZE'] = 'Taille';
+$L['CURRENT_USERS_ONLINE'] = 'Utilisateurs Actuellement en Ligne';
+$L['THERE_ARE'] = 'Vous avez';
+$L['TRANSMISSION_TORRENTS'] = 'torrents chargés dans Transmission';
+$L['USED'] = 'Utilisé';
+$L['YOUR_DISK_STATUS'] = 'Statut Du Disque';
+$L['NZBGET_NZB'] = 'nzb chargé dans NZBGet';
+$L['SABNZBD_NZB'] = 'nzb chargé dans SABnzbd';
+
+//#3.3.2 - System Index v1 : bandwidth data widget
+$L['BANDWIDTH_DAILY'] = 'Quotidien';
+$L['BANDWIDTH_DATA'] = 'Bande Passante';
+$L['BANDWIDTH_HOURLY'] = 'Cette Heure';
+$L['BANDWIDTH_LIVE'] = 'Direct';
+$L['BANDWIDTH_MONTHLY'] = 'Mensuel';
+$L['datefmt_days_img'] = '%d';
+$L['datefmt_days'] = '%d %B';
+$L['datefmt_hours_img'] = '%l';
+$L['datefmt_hours'] = '%l%p';
+$L['datefmt_months_img'] = '%b';
+$L['datefmt_months'] = '%B %Y';
+$L['datefmt_top'] = '%d %B %Y';
+$L['NETWORK'] = 'Réseau';
+$L['DOWNLOAD'] = 'Download';
+$L['UPLOAD'] = 'Upload';
+
+//#3.3.3 - System Index v1 : server load widget
+$L['DAYS_L'] = 'jours';
+$L['HOURS_L'] = 'heures';
+$L['MINUTES_L'] = 'min';
+$L['SECONDS_L'] = 'sec';
+$L['SERVER_LOAD'] = 'Charge Serveur';
+$L['SL_TXT'] = 'Ceci est la moyenne de charge de votre serveur.';
+$L['UPTIME'] = 'Uptime';
+
+//#3.3.4 - System Index v1 : memory status widget
+$L['CACHED_MEMORY'] = 'Utilisation de la Mémoire Cache';
+$L['CLEAR_CACHE'] = 'Nettoyer le cache Mémoire';
+$L['CM_BUFFERS'] = 'Mémoire tampon est à';
+$L['CM_USAGE'] = 'Mémoire cache utilisée :';
+$L['PHYSICAL_MEMORY'] = 'Utilisation de la Mémoire Physique';
+$L['PM_IDLE'] = 'Libre';
+$L['PM_USED'] = 'Utilisé';
+$L['REAL_MEMORY'] = 'Utilisation de la Mémoire Réelle';
+$L['RM_FREE'] = 'Mémoire Réelle libre:';
+$L['RM_USAGE'] = 'Mémoire Réelle utilisée:';
+$L['SWAP_IDLE'] = 'Libre:';
+$L['SWAP_TOTAL'] = 'total';
+$L['SWAP_USAGE'] = 'Utilisation Swap';
+$L['SWAP_USED'] = 'Utilisé:';
+$L['SWAP_ZONE'] = 'Zone SWAP';
+$L['SYSTEM_RAM_STATUS'] = 'Statut mémoire RAM';
+$L['TOTAL_RAM'] = 'RAM Totale du Système: ';
+$L['TOTAL'] = 'Total';
+
+//#3.3.5 - server activity widget
+$L['ACC_REQ_ACT'] = 'comptes nécessitant une activation';
+$L['GUESTS_ONLINE'] = 'invités en ligne';
+$L['LAST_ACTIVE_ON'] = 'a été actif pour la dernière fois les';
+$L['LOGGED_ON'] = 'connecté le';
+$L['MEMBERS'] = 'membres';
+$L['RECORD_ONLINE'] = 'Record Utilisateurs connectés';
+$L['THERE_ARE_AW'] = 'Il y a';
+$L['THERE_ARE_CURRENTLY'] = 'Il y a actuellement';
+$L['USERS_AND'] = 'utilisateurs et';
+$L['USERS_LAST_VISIT'] = 'nouveaux utilisateurs inscrits depuis votre dernière visite';
+
+
+////////////////////////////////////////
+//          #4 PAGES
+///////////////////////////////////////
+
+//#4.1 - START SCREEN FORMS (login/forgot pass/register/account)
+//#4.1.1 - LOG IN
+$L['CONFIRM_PASS_FIELD_PLACE'] = 'Merci de confirmer votre adresse e-mail.';
+$L['CREATE_ACCOUNT'] = 'Créer un compte';
+$L['REMEMBER_ME'] = 'Souviens-toi de Moi';
+$L['FORGOT_PASS'] = 'Mot de passe oublié?';
+$L['LOG_IN'] = 'S\'identifier';
+$L['LOGIN_ACCOUNT'] = 'Connectez-vous à votre compte pour continuer.';
+$L['PASS_FIELD_INVALID'] = 'Veuillez fournir votre mot de passe.';
+$L['PASS_FIELD_PLACE'] = 'Veuillez saisir votre mot de passe.';
+$L['PASS_FIELD_VALID'] = 'Mot de passe fourni, validation prête.';
+$L['REGISTRATION_DISABLED'] = 'Inscription est actuellement désactivée.';
+$L['SIGN_IN'] = 'Se connecter';
+$L['UNREGISTERED'] = 'Pas de compte?';
+$L['USER_FIELD_INVALID'] = 'Veuillez fournir votre nom d\'utilisateur.';
+$L['USER_FIELD_PLACE'] = 'Veuillez saisir votre nom d\'utilisateur.';
+$L['USER_FIELD_VALID'] = 'Nom d\'utilisateur fourni, validation prête.';
+
+//#4.1.2 - FORGOT PASSWORD
+$L['EMAIL_FIELD_INVALID'] = 'Veuillez fournir votre email.';
+$L['EMAIL_FIELD_PLACE'] = 'Veuillez saisir votre email.';
+$L['EMAIL_FIELD_VALID'] = 'Email fourni, validation prête.';
+$L['PASS_GENERATED'] = 'Nouveau Mot de Passe Généré !';
+$L['PASS_GENERATED_INFO'] = 'Votre nouveau mot de passe a été généré et envoyé à l\'e-mail associé à votre compte.';
+$L['PASS_GENERATED_FAIL'] = 'Échec Nouveau Mot de Passe !';
+$L['PASS_GENERATED_FAIL_INFO'] = 'Une erreur s\'est produite lors de l\'envoi de l\'e-mail avec le nouveau mot de passe. Votre mot de passe n\'a donc pas été modifié.';
+$L['RECOVER_INFO'] = 'Entrez votre e-mail et des instructions vous seront envoyées!';
+$L['RECOVER'] = 'Récupération Mot de Passe';
+$L['PASSWORD_RESET'] = 'Réinitialisation du mot de passe';
+$L['CONFIRM_PASSWORD'] = 'Confirmer le mot de passe';
+
+//#4.1.3 - REGISTER
+$L['ACCOUNT_CREATED'] = 'Votre compte a été créé';
+$L['CAN_LOGIN'] = 'pour votre inscription. Vous pouvez maintenant vous connecter';
+$L['CREATED_ADM_ACT'] = 'Cependant, cette carte nécessite l\'activation du compte par un administrateur. Vous serez informé par e-mail de l\'activation de votre compte';
+$L['CREATED_CHECK_EMAIL'] = 'Veuillez vérifier votre e-mail pour plus d\'informations';
+$L['CREATED_EMAIL_ACT'] = 'Cependant, cette carte nécessite l\'activation du compte. Une clé d\'activation a été envoyée à l\'adresse e-mail que vous avez fournie';
+$L['RCONF_EMAIL_FIELD_INVALID'] = 'Cet e-mail ne correspond pas à celui entré précédemment. Veuillez réessayer.';
+$L['RCONF_EMAIL_FIELD_VALID'] = 'Correspondance des e-mails, validation prête.';
+$L['RCONF_PASS_FIELD_INVALID'] = 'Ce mot de passe ne correspond pas à celui entré précédemment. Veuillez réessayer.';
+$L['RCONF_PASS_FIELD_VALID'] = 'Correspondance des mots de passe, validation prête.';
+$L['REG_C_DISABLED_INFO1'] = 'mais l\'inscription à ce site est actuellement désactivée';
+$L['REG_C_DISABLED_INFO2'] = 'Veuillez réessayer ultérieurement ou contacter le propriétaire du serveur';
+$L['REG_C_DISABLED'] = 'L\'inscription est actuellement désactivée';
+$L['REG_DISABLED_INFO'] = 'Nous sommes désolés mais l\'inscription est actuellement désactivée. Veuillez réessayer ultérieurement.';
+$L['REG_DISABLED'] = 'Inscription désactivée';
+$L['REG_FORM_INFO'] = 'Veuillez remplir le formulaire ci-dessous pour créer un compte';
+$L['SORRY'] = 'Nous sommes désolés';
+$L['THANKS'] = 'Je vous remercie';
+
+//#4.1.4 - ACCOUNT
+$L['ADMIN_EDIT_ACC'] = 'Editer le compte Admin';
+$L['EDIT_ACCOUNT'] = 'Editer le compte';
+$L['USER_LINKS'] = 'Liens Utiles';
+$L['ADMIN_LINKS'] = 'Administration';
+$L['Q_APP_DASH'] = 'Tableau de Bord Applications';
+$L['Q_SYS_DASH'] = 'Tableau de Bord Système';
+$L['RESET_PASS'] = 'Réinitialiser mot de passe';
+$L['RESET_PASSWORD'] = 'Réinitialiser votre mot de passe';
+$L['USER_PROFILE'] = 'Mon profil';
+
+//#4.1.4.1 - quotes
+$L['HEY'] = 'Salut';
+$L['DAYUM'] = 'Génial';
+$L['SO_GLAD'] = 'Tellement content que vous soyez là';
+$L['HOW_AWESOME'] = 'comment êtes vous devenu si génial?';
+$L['LOOK_GOOD'] = 'Vous avez l\'air bien!';
+$L['WITHOUT_YOU'] = 'où serais-je sans vous!';
+$L['QUICKBOX_DEDICATION'] = 'nous aimons votre dévouement à QuickBox!!!';
+
+//#4.1.4.2 - edit account modal
+$L['CONFIRM_NEW_PASS_INFO'] = 'Veuillez confirmer votre nouveau mot de passe.';
+$L['CURRENT_PASS'] = 'Mot de passe actuel';
+$L['NEW_EMAIL'] = 'Nouvelle adresse email';
+
+//#4.1.5 - SUMMARY
+$L['AWESOME'] = 'Impressionnant';
+$L['WITH_PASSWORD'] = 'avec le mot de passe';
+$L['USER_ADDED_TO_DB'] = 'a été ajouté à la base de données';
+$L['RETURN_PREVIOUS'] = 'Retourner à la page précédente';
+$L['REGI_FAIL'] = 'Échec de l\'inscription';
+$L['REGI_FAIL_ERR1'] = 'Nous sommes désolés, mais une erreur s\'est produite et votre inscription pour le nom d\'utilisateur';
+$L['REGI_FAIL_ERR2'] = 'n\'a pas pu être terminé';
+$L['REGI_FAIL_ERR3'] = 'Veuillez réessayer';
+$L['REGI_FAIL_ERR_FOUND'] = 'erreur(s) trouvée(s)';
+
+
+//#4.2 - SETTINGS
+//#4.2.1 - GENERAL SETTINGS
+$L['ACCOUNT_PAGE'] = 'Page du compte';
+$L['ACTIVATION_IP'] = 'IP d\'activation';
+$L['ACTIVATION_NEED_D_DO'] = 'Faites-les ici!';
+$L['ACTIVATION_NEED_D'] = 'Besoin de désactiver votre clé?';
+$L['ACTIVATION_NEED_G_GET'] = 'Obtenez-en une ici!';
+$L['ACTIVATION_NEED_G'] = 'Besoin d\'une clé API?';
+$L['ACTIVATION_TIME'] = 'Activée le';
+$L['ADD_DASH_SETTINGS'] = 'Paramètres supplémentaires Tableau de Bord';
+$L['ADMIN_HOME'] = 'Page d\'accueil';
+$L['API_ACTIVE'] = 'Valide';
+$L['API_KEY'] = 'Clé API';
+$L['API_NOT_ACTIVE'] = 'Invalide';
+$L['API_PLACE'] = 'Entrez votre clé API ici...';
+$L['API_SETTINGS'] = 'Contrôle clé API';
+$L['API_STATUS'] = 'Validité';
+$L['API'] = 'API';
+$L['CONF_SETTINGS'] = 'Paramètres de configuration';
+$L['DASH_URL_SETTINGS'] = 'Dashboard URL Settings';
+$L['DEFAULT_PAGE'] = 'Page de démarrage';
+$L['DISK_MOUNT'] = 'Montage disque';
+$L['EDIT_GEN_SETTINGS'] = 'Editer les paramètres généraux du site';
+$L['EMAIL_FROM_ADDR'] = 'Adresse de l\'expéditeur';
+$L['EMAIL_FROM_NAME'] = 'Expéditeur de l\'email';
+$L['EMAIL_SETTINGS'] = 'Paramètres email';
+$L['LOGIN_PAGE'] = 'Page de connexion';
+$L['NET_ADAPTER'] = 'Interface réseau';
+$L['PHP_DATE_FORMAT'] = 'Format de la date';
+$L['PHP_FORMAT_SETTINGS'] = 'Paramètres Format PHP';
+$L['PHP_TIME_ZONE'] = 'Fuseau Horaire';
+$L['SITE_DESC'] = 'Description';
+$L['SITE_META_SETTINGS'] = 'Paramètres Métadonnées';
+$L['SITE_NAME'] = 'Nom du site';
+$L['SITE_ROOT'] = 'Chemin du site';
+$L['SITE_NAME_TOOLTIP'] = 'Le nom du site doit comporter moins de 40 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
+$L['SITE_DESC_TOOLTIP'] = 'La description du site doit comporter moins de 120 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
+$L['EMAIL_FROM_NAME_TOOLTIP'] = 'De Le nom doit comporter moins de 60 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
+$L['SITE_ROOT_TOOLTIP'] = 'Saisissez l\'IP de votre serveur ou un domaine valide. exemple: https://192.168.0.1/ (ou) https://myawesomedomain.com/';
+
+//#4.2.2 - EMAIL SETTINGS
+$L['SMTP_AUTH'] = 'Activer authentification SMTP';
+$L['SMTP_SECURE'] = 'Activer le cryptage SSL, TLS également accepté avec le port 465';
+$L['MAIL_HOST'] = 'Configurez le serveur SMTP pour envoyer via';
+$L['MAIL_PORT'] = 'Port TCP auquel se connecter';
+$L['MAIL_USERNAME'] = 'Utilisateur SMTP';
+$L['MAIL_PASS'] = 'Mot de passe SMTP';
+
+//#4.2.3 - SESSION SETTINGS
+$L['CHANGE_SESSION_SETTINGS'] = 'Modifier les paramètres concernant les sessions.';
+$L['COOKIE_EXPIRY'] = 'Expiration des cookies';
+$L['COOKIE_PATH'] = 'Chemin des cookies';
+$L['DAYS'] = 'Jours';
+$L['GUEST_TIMEOUT'] = 'Expiration de l\'invité';
+$L['MINUTES'] = 'Minutes';
+$L['RESET_EXPIRY'] = 'Réinitialiser l\'expiration à l\'ouverture de session';
+$L['USER_TIMEOUT'] = 'Délai d\'inactivité de l\'utilisateur';
+
+//#4.2.4 - USER SETTINGS
+$L['ALLOW_MULTI_LOGINS'] = 'Autoriser Plusieurs Connexions';
+$L['ALLOW_CONFIG_EDITING'] = 'Autoriser les éditeurs de configuration sur le tableau de bord';
+$L['BY_ADMIN'] = 'Par l\'administrateur (réglages en dessous..)';
+$L['BY_USER'] = 'Par l\'utilisateur (voir la page d\'administration utilisateur)';
+$L['CHANGE_USER_SETTINGS'] = 'Modifier les paramètres globaux pour les utilisateurs';
+$L['EXCLUDE_ADMINS'] = 'Exclure les administrateurs';
+$L['EXCLUDE_REDIRECTED_ADMINS'] = 'Empêcher la redirection des Administrateurs.';
+$L['GEN_USER_SETTINGSTINGS'] = 'Paramètres généraux de l\'utilisateur';
+$L['HOW_SET'] = 'Comment sont-ils réglés?';
+$L['INDIV_USER_HOME'] = 'Pages d\'accueil Utilisateur Individuelles';
+$L['INDIVIDUAL_USER_FOLDERS'] = 'Dossiers Utilisateur Individuels';
+$L['PATH_ADMIN'] = 'Chemin (défini par Admin)';
+$L['PATH_INFOS'] = '<p class="help-block">Le chemin que vous choisissez doit être défini par rapport au dossier admin (qui sera votre racine de site, défini dans la page Paramètres Généraux).
+    Par conséquent, vous souhaiterez probablement retourner dans un dossier avant de choisir un sous-dossier que vous créez pour les pages utilisateur uniques. Utilisez <i>..</i> pour revenir à un dossier. Ainsi, par exemple, si le panneau de contrôle de l\'administrateur de votre site est ici - <i>http://www.website.com/admin/</i> et que vos dossiers d\'utilisateurs sont ici - <i>http://www.website.com/users/</i>, vous devez définir le chemin d\'accès à <i>../users/</i> avec votre page unique - donc <i>../users/admin.php</i>.
+    <p class="help-block">Caractère Générique Disponible: : <strong>%username%</strong> (c\'est à dire, connecté dans le nom d\'utilisateur de l\'utilisateur).</p>';
+$L['SITE_ROOT_RELATIVE'] = 'Relatif à la racine du site';
+
+//#4.2.5 - SECURITY SETTINGS
+$L['BAN_IP_ADDRESS'] = 'Bannir l\'adresse IP';
+$L['BAN_IP_INFO'] = 'exemple: 192.168.0.1';
+$L['BAN_IP_REGISTER'] = 'Interdire les adresses IP d\'enregistrement (ou de connexion)';
+$L['BANNED_IP_ADDRESSES'] = 'Adresses IP bannies';
+$L['DISALLOW_USERNAME'] = 'Désactiver l\'utilisateur';
+$L['DISALLOW_USERNAMES'] = 'Interdire l\'utilisateur';
+$L['DISALLOWED_USERNAMES'] = 'Utilisateurs interdits';
+$L['PREVENT_USERNAMES'] = 'Empêcher les utilisateurs d\'être enregistrés';
+
+
+//#4.3 - USER MANAGEMENT 
+//#4.3.1 - REGISTRATION SETTINGS
+$L['ACCOUNT_ACTIVATION'] = 'Activation des comptes';
+$L['ADMIN_ACT'] = 'Validation par l\'administrateur';
+$L['ADMIN_ACT_INFO'] = 'Lorsque cette option est sélectionnée, après l\'inscription, l\'utilisateur sera informé qu\'il doit attendre que l\'administrateur active le compte. L\'utilisateur recevra également un e-mail à cet effet, tout comme l\'administrateur qui aura alors la possibilité d\'activer l\'utilisateur avec le lien fourni dans l\'e-mail ou de visiter le panneau d\'administration et d\'y activer l\'utilisateur.';
+$L['ALPHANUMERIC_ONLY'] = 'Seulement Alphanumérique';
+$L['ALPHANUMERIC_SPACERS'] = 'Alphanumerique + Espaces';
+$L['ANY_CHARS'] = 'Tous les caractères';
+$L['ANY_LETTER_NUM'] = 'Alphanumérique + Symboles';
+$L['DEFAULT_QUOTA_ALLOWANCE'] = 'Allocation de quota par défaut';
+$L['DEFAULT_QUOTA_ALLOWANCE_INFO'] = 'Définissez un montant de quota par défaut pour les nouveaux comptes créés. Cette valeur n\'est utilisée que lorsque le package Linux Quota est installé.';
+$L['DISABLE_REGISTRATION'] = 'Interdire l\'inscription';
+$L['DISABLE_REGISTRATION_INFO'] = 'Ceci désactive l\'enregistrement. Le formulaire d\'inscription ne s\'affiche pas et est remplacé par un message d\'information.';
+$L['ENABLE_CAPTCHA'] = 'Activer Captcha';
+$L['LETTER_NUM_AND_SPACE'] = 'Alphanumérique + Symboles + Espaces';
+$L['LIMIT_CHAR'] = 'Caractères de nom d\'utilisateur';
+$L['NO_ACTIVATION'] = 'Pas d\'activation (accès immédiat)';
+$L['NO_ACTIVATION_INFO'] = 'Cette option permet à l\'utilisateur de s\'enregistrer normalement sans avoir besoin d\'un processus d\'activation supplémentaire.';
+$L['PASSWORD_LENGTH'] = 'Longueur mot de passe';
+$L['RECOMMENDED'] = 'QuickBox recommandé';
+$L['REG_SETTINGS_INFO'] = 'Changez les paramètres concernant l\'inscription sur le site.';
+$L['REG_SETTINGS'] = 'Paramètres d\'inscription';
+$L['SEND_WELCOME_EMAIL'] = 'Envoyer e-mail de bienvenue';
+$L['SEND_WELCOME_EMAIL_YES_INFO'] = 'La définition de cette option sur Oui envoie des e-mails de bienvenue à l\'utilisateur, ainsi qu\'à l\'administrateur système. Cette option nécessite une configuration SMTP pour envoyer correctement les e-mails. Ces options peuvent être contrôlées sur la page <a href="/email-settings.php" style="color: var(--successColor);text-decoration: underline;">Paramètres de messagerie</a>.';
+$L['SEND_WELCOME_EMAIL_NO_INFO'] = 'Régler cette option sur Non n\'enverra pas d\'e-mails de bienvenue aux utilisateurs nouvellement enregistrés. Toute création/enregistrement d\'utilisateur reste silencieux, un peu comme la création d\'utilisateur dans l\'environnement CLI.';
+$L['USER_ACT'] = 'Activation par l\'utilisateur (e-mail verification)';
+$L['USER_ACT_INFO'] = 'La définition de cette option nécessite que l\'utilisateur active son compte en cliquant sur un lien envoyé à son adresse e-mail enregistrée.';
+$L['USERNAME_LENGTH'] = 'Longueur nom d\'utilisateur';
+$L['USERNAME_LOWERCASE'] = 'Utilisateurs en minuscule';
+$L['USERNAME_LOWERCASE_YES_INFO'] = 'Définir cette option sur Oui change tous les nouveaux noms d\'utilisateur enregistrés en minuscules. C\'est l\'option recommandée.';
+$L['USERNAME_LOWERCASE_NO_INFO'] = 'Définir cette option sur Non ne changera pas les nouveaux noms d\'utilisateur enregistrés en minuscules. Les noms d\'utilisateur apparaîtront tels qu\'ils sont enregistrés, mais conserveront les minuscules dans l\'enironnement du serveur pour un bon fonctionnement du logiciel.';
+
+//#4.3.2 - USER ADMIN
+$L['ADMIN_ANNOUNCE'] = 'Annonces de l\'administrateur';
+$L['ANNOUNCEMENT_HISTORY'] = 'Vos annonces précédentes';
+$L['ANNOUNCEMENT_LIST'] = 'Contenu de l\'annonce';
+$L['AWAITING_ADMIN'] = 'Attente d\'activation par l\'administrateur';
+$L['AWAITING_EMAIL'] = 'En attente d\'activation par email';
+$L['BANNED'] = 'Banni';
+$L['CU_CONFIRM_EMAIL_INFO'] = 'Confirmez email';
+$L['CU_CONFIRM_EMAIL'] = 'Confirmation email';
+$L['CU_CONFIRM_PASS_INFO'] = 'Confirmez votre mot de passe';
+$L['CU_CONFIRM_PASSWORD'] = 'Confirmation Mot de Passe';
+$L['CU_DISK_QUOTA'] = 'Espace Disque:';
+$L['CU_EMAIL'] = 'email:';
+$L['CU_NEW_PASS_INFO'] = 'Tapez votre nouveau mot de passe';
+$L['CU_NEW_PASSWORD'] = 'Nouveau Mot de Passe';
+$L['CU_SHELL_ENV'] = 'Environnement shell préféré:';
+$L['CURRENT_SHELLS'] = 'Shell actuel';
+$L['CURRENT_USERS'] = 'Utilisateurs Actuels';
+$L['DISK_STATUS'] = 'Statut du disque';
+$L['EDIT_USER_SHELL'] = 'Modifier l\'environnement du shell des utilisateurs';
+$L['ENABLE_USER_ANNOUNCE'] = 'Activer l\'annonce de l\'utilisateur';
+$L['EXPIRY'] = 'Expiration';
+$L['HAS_USED'] = 'a utilisé';
+$L['IP_ADDRESS'] = 'Adresse IP';
+$L['LAST_IP_ADDRESS'] = 'Dernière Adresse IP';
+$L['LAST_LOGIN'] = 'Dernière connexion:';
+$L['LAST'] = 'Dernière';
+$L['MEMBER_STATUS'] = 'Statut Membre';
+$L['MEMBER_GROUP'] = 'Groupe de Membre';
+$L['OF_QUOTA'] = 'de son espace disque';
+$L['RECENTLY_ONLINE'] = 'Connecté Récemment';
+$L['REGISTERED_DISK_QUOTA'] = 'Quota de Disque';
+$L['REGISTERED'] = 'Inscrit le';
+$L['REGISTRATION_LOGIN'] = 'Inscription et Connexion';
+$L['STATISTICS'] = 'Statistiques';
+$L['USER_ACTIVITY'] = 'Activité de l\'Utilisateur';
+$L['PASSWORD_NOTICE'] = 'Le mot de passe ne doit pas contenir les caractères suivants';
+$L['USER_QUOTA_HELP'] = 'Entrez la quantité d\'espace disque que vous souhaitez attribuer à un utilisateur. Les quotas doivent être installés pour pouvoir utiliser cette option.';
+$L['USER_SHELL_HELP'] = 'Sélectionnez la liste déroulante ci-dessus pour ajouter l\'utilisateur à un shell.';
+$L['USERNAME_ADMIN_USER'] = 'Utilisateur:';
+$L['USERNAMES'] = 'utilisateurs';
+$L['USERS_AWAITING'] = 'Utilisateurs en attente d\'activation';
+$L['USERS_SESSIONS'] = 'Sessions utilisateurs';
+
+//#4.3.2.1 - admin user edit
+$L['ACTIONS'] = 'Actions';
+$L['ACTIVE_SESSION'] = 'Session Active';
+$L['APPLICATION'] = 'Applications';
+$L['CURRENT_FULL_PATH'] = 'Chemin Complet Actuel';
+$L['CURRENT_GROUPS'] = 'Groupes Actuels';
+$L['CURRENT_STATUS'] = 'Statuts Actuels';
+$L['EDIT_GROUP_MEMBERSHIP'] = 'Modifier l\'appartenance de l\'Utilisateur au Groupe';
+$L['EU_PATH'] = 'Chemin';
+$L['GENERAL_INFO'] = 'Informations Générales';
+$L['GROUP_MEMBERSHIP_HELP'] = 'Cliquez sur la zone de texte ci-dessous pour ajouter l\'utilisateur à plus de groupes ...';
+$L['GROUP_MEMBERSHIP'] = 'Appartenance à un groupe';
+$L['HOMEPAGE'] = 'Page d\'Accueil';
+$L['INSTRUCTIONS'] = 'Instructions';
+$L['LAST_ACTIVE_IP'] = 'Dernière IP Active';
+$L['LAST_ACTIVE'] = 'Dernière Activité';
+$L['LAST_UPDATE'] = 'Dernière Mise à Jour';
+$L['PATH_HOWTO'] = 'Utilisez ../ pour retourner dans un dossier';
+$L['PATH_INSTRUCTIONS'] = 'Le chemin que vous choisissez doit être défini par rapport au dossier admin (qui sera votre racine de site, défini dans la page Paramètres généraux du Panneau de configuration).
+           Par conséquent, vous voudrez probablement retourner dans un dossier avant de choisir un sous-dossier que vous créez pour les pages utilisateur uniques. Utilisez <i> ../</i> pour revenir à un dossier. Ainsi, par exemple, si votre
+           panneau de contrôle d\'administration est ici - <i> http://www.website.com/admin/ </i> et vos dossiers d\'utilisateurs sont ici - <i> http://www.website.com/users/ </i > vous pouvez définir le chemin sur <i> ../users/</i>
+           avec votre page unique - donc <i> ../users/admin.php</i>. Le chemin d\'accès complet s\'affichera alors comme <i> http://www.website.com/admin/../users/admin.php </i> - le dossier / sera situé quant à lui sur <i> http://www.website.com/users/admin.php</i>. </p> ';
+$L['PERSISTENT'] = 'Persistance';
+$L['REGISTERED_IP'] = 'IP Enregistrée';
+$L['SESSION_EXPIRY'] = 'Expiration de la Session';
+$L['STATUS'] = 'Statut';
+$L['UNIQUE_USER_HP_SETTINGS'] = 'Page d\'Accueil Utilisateur Unique - Paramètres';
+$L['USER_EDIT1'] = 'Edition Utilisateur :';
+$L['USER_EDIT2'] = 'Editer Utilisateur';
+
+//#4.3.3 - USERS GROUPS
+$L['ADMINISTRATORS'] = 'Administrateurs';
+$L['ASSIGN_LEVEL'] = 'Niveau de Groupe :';
+$L['CLICK_HERE'] = 'Cliquez ici...';
+$L['DELETE_GROUP'] = 'Supprimer Groupe';
+$L['EDIT_ADD_USER'] = 'Ajouter Utilisateur :';
+$L['EDIT_GROUP_LEVEL'] = 'Niveau de Groupe :';
+$L['EDIT_GROUP_NAME'] = 'Nom du Groupe :';
+$L['GROUP_LEVEL'] = 'Niveau de Groupe';
+$L['GROUP_NAME'] = 'Nom du Groupe';
+$L['LEVEL_INFO'] = 'Doit être compris entre 2 et 256';
+$L['NEW_GROUP_NAME'] = 'Nouveau Groupe :';
+$L['NUMBER_MEMBERS'] = '# de Membres';
+$L['USER_GROUPS_INFO'] = 'Créer, afficher et modifier des groupes d\'utilisateurs. Affecter des utilisateurs à des groupes d\'utilisateurs.';
+
+
+//#4.4 - SYSTEM 
+//#4.4.1 - WEB CONSOLE
+$L['WEB_CONSOLE_INFO'] = 'Accédez à votre terminal de commande.';
+
+//#4.4.2 - TROUBLESHOOTING
+$L['APP_SELECT'] = 'Selectionner Application';
+$L['APPLIANCE'] = 'Commande';
+$L['CLEAN_MEM'] = 'Effacer le cache de la mémoire physique';
+$L['FIX'] = 'Réparer';
+$L['FIXUPDATE'] = 'Correction des verrous dpkg';
+$L['LOG_GEN'] = 'Générateur de Logs Système';
+$L['NGINX'] = 'nginx';
+$L['PHP'] = 'php-fpm';
+$L['PHP7_2'] = 'php-fpm';
+$L['QSUPPORT'] = 'QuickBox Support';
+$L['QSUPPORTU'] = 'Utilisateur QuickBox Support';
+$L['SERVER_TROUBLESHOOTING'] = 'Dépannage Serveur';
+$L['SYSTEM_INFO'] = 'Infos Système';
+$L['SYSTEM_LOG_FILES'] = 'Logs Système';
+$L['TROUBLESHOOTING'] = 'Dépannage';
+$L['WEB_SERVER'] = 'Serveur Web';
+
+//#4.4.3 - SYSTEM LOGS
+$L['ACCESS_LOGS'] = 'Journaux d\'accès';
+$L['APP_LOGS'] = 'Journaux du logiciel';
+$L['USER_LOGS'] = 'Journaux des utilisateurs';
+$L['DATE_TIME'] = 'Date / Heure';
+$L['EVENT'] = 'Evenement';
+$L['LOGS_SUMMARY'] = 'Résumé des journaux';
+
+//#4.4.4 - ABOUT / QUICKTIPS
+$L['ABOUT'] = 'A Propos';
+$L['DISCLAIMER_TEXT'] = '<p class="fs14">Ce script est destiné à une utilisation générale et aucune garantie n\'est requise quant à l\'adéquation à une tâche donnée. QuickBox.IO n\'assumera aucune responsabilité pour votre configuration ni pour les dommages causés lors de l\'utilisation / l\'installation / la modification de ce script ou de l\'un de ses plugins. Veuillez garder à l\'esprit que QuickBox.IO et son personnel ne sont pas tenus de maintenir votre logiciel et / ou votre serveur à jour; cette responsabilité incombe uniquement à l\'utilisateur du logiciel QuickBox Pro.</p>';
+$L['DISCLAIMER'] = 'Avertissement';
+$L['GETTING_SUPPORT'] = 'Obtenir du Soutien';
+$L['HELP_TEXT'] = '<p class="fs14">Présenté avec amour par <a href="https://nullrefer.ir/?https://quickbox.io" rel="noopener nofollow" target="_blank">QuickBox.IO</a>.<br><br>
+    Le support pour le script peut être trouvé dans un certain nombre d\'endroits, y compris les forums. Si vous avez besoin de support sur une question liée à QuickBox Pro et ses applications incluses, vous pouvez le trouver <a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/qbpro" rel="noopener nofollow" target="_blank">ici</a>.<br><br>
+    Ou visitez le site Web QuickBox.IO où vous trouverez quelques informations supplémentaires, notamment un chat en direct <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank">ici</a>.<br><br>
+    Si vous avez besoin de contacter le personnel de QuickBox à propos d\'un problème avec le script, vous pouvez le reporter sur notre Forum <a href="https://nullrefer.ir/?https://plaza.quickbox.io/new-topic?title=State the issue here&body=Please describe in as much detail the nature of the issue&category=QuickBox Pro/Issue Tracker&tags=issue,tracker,' . $version . '" rel="noopener nofollow" target="_blank">here</a>.</p><br><br>';
+$L['HELP_TITLE'] = 'Panneau d\'Administration QuickBox, Cockpit et Gestion des Utilisateurs';
+$L['HELP'] = 'Aide';
+$L['LICENSE_SET'] = '<h3><strong>Licencié sous la clause BSD 3</strong></h3>';
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2020, QuickBox. Tous droits réservés.</p>
+    <li class="fs14"Les redistributions sous formes binaires doivent reproduire ce Copyright, cette liste de conditions ainsi que cet avertissement dans leur documentation et/ou autre matériaux fournis avec la distribution.</li>
+    <ul><li class="fs14">Les redistributions des codes sources doivent comporter cette licence Copyright, cette liste de conditions ainsi que cet avertissement.</li>
+    <p class="fs14">La redistribution et l\'utilisation des fichiers sources et binaires, avec ou sans modification, sont permises si les conditions suivantes sont réunies:
+    <li class="fs14">Ni le nom du detenteur légal du copyright ou du nom des contributeurs doivent être utilisés pour promouvoir des produits dérivés de ce logiciel sans accord préalablement écrit.</li></ul>
+    <p class="fs14">CE LOGICIEL EST FOURNI "EN L\'ÉTAT" PAR LES TITULAIRES DE COPYRIGHT ET LES CONTRIBUTEURS. TOUTE GARANTIE EXPRESSE OU IMPLICITE, Y COMPRIS, MAIS SANS S\'Y LIMITER, LES GARANTIES IMPLICITES DE QUALITÉ MARCHANDE ET D\'ADÉQUATION À UN USAGE PARTICULIER SONT EXCLUES. EN AUCUN CAS, LE TITULAIRE DU DROIT D’AUTEUR OU LES CONTRIBUTEURS NE PEUVENT ÊTRE TENUS RESPONSABLES DES DOMMAGES DIRECTS, INDIRECTS, ACCESSOIRES, SPÉCIAUX, EXEMPLAIRES OU ACCESSOIRES (Y COMPRIS, MAIS SANS S\'Y LIMITER, LES MARCHANDISES OU SERVICES SUBSTITUÉS; PERTE D\'UTILISATION, DE DONNÉES OU DE PROFITS; TOUJOURS CAUSÉS ET SUR TOUTE THÉORIE DE LA RESPONSABILITÉ, QUE CELA SOIT UN CONTRAT, UNE RESPONSABILITÉ STRICTE OU UN ACTE TORT (Y COMPRIS DE LA NÉGLIGENCE OU AUTREMENT) DÉCOULANT DE TOUTE MANIÈRE DE L\'UTILISATION DE CE LOGICIEL, MÊME SI AVISÉ DE LA POSSIBILITÉ D\'UN DOMMAGE APPARENT.</p>';
+
+//commands
+$L['ADDITIONAL_ADMIN_COMMANDS'] = 'Commandes de Configuration';
+$L['ADMIN_UPGRADE_COMMANDS'] = 'Commandes de Mise à Jour';
+$L['CLEAN_MEM_INFO'] = 'Tapez cette commande en tant que root si/quand vous décidez de nettoyer le cache de Mémoire Physique.';
+$L['DISKTEST_INFO'] = 'Tapez cette commande pour effectuer un rapide test de lecture/écriture sur votre disque.';
+$L['ESSENTIAL_USER_COMMANDS'] = 'Commandes utilisateur';
+$L['FIXHOME_INFO'] = 'Tapez cette commande pour ajuster rapidement les permissions du dossier /home.';
+$L['QUICK_SYSTEM_TIPS'] = 'Astuces';
+$L['QUICKVPN_INFO'] = 'Tapez cette commande en SSH pour configurer votre propre serveur VPN et en une petite minute, crééez et gérez de nouveaux certificats d\'utilisteur pour utiliser le serveur VPN.';
+$L['SCREEN_IRSSI_INFO'] = 'Autorise l\'utilisateur à redémarrer/remonter IRSSI en SSH.';
+$L['SCREEN_RTORRENT_INFO'] = 'Autorise l\'utilisateur à redémarrer/remonter rTorrent en SSH.';
+$L['UPGRADEBTSYNC_INFO'] = 'Tapez cette commande en SSH pour mettre à jour BTSync vers la version la plus récente disponible.';
+$L['UPGRADEDELUGE_INFO'] = 'Tapez cette commande en SSH pour mettre à jour Deluge vers la version la plus récente disponible.';
+$L['UPGRADEOMBI_INFO'] = 'Tapez cette commande en SSH pour mettre à jour Ombi vers la  version la plus récente disponible.';
+$L['UPGRADEPLEX_INFO'] = 'Tapez cette commande en SSH pour mettre à jour Plex vers la version la plus récente disponible.';
+$L['UPGRADERUTORRENT_INFO'] = 'Tapez cette commande en SSH pour mettre à jour ruTorrent et le theme club-QuickBox vers la nouvelle version quand elle sera disponible.';
+
+//#4.4.5 - CHANGELOG / UPDATE
+$L['CURRENT_VERSION'] = 'Version Actuelle';
+$L['DASH_UPDATE_TITLE'] = 'Panneau de Version QuickBox';
+$L['QB_UPDATE'] = 'Panneau de Version QuickBox';
+$L['QBUPDATE'] = 'Mise à Jour / Changelog';
+$L['UPCOMING_CHANGES'] = 'Notes de version';
+$L['UPDATE_AVAILABLE'] = 'MaJ Disponible';
+$L['UPDATE_TO_DATE'] = 'A jour';
+$L['VERSION_STATUS'] = 'Statut Version';
+$L['UPDATE_TXT'] = 'Mettre à jour';
+$L['AVAILABLE_TXT'] = 'Disponible!';
+$L['UPDATE_VERSION'] = 'Mettre à jour la version';
+$L['UPDATE_ACTIVATE'] = 'Veuillez activer votre abonnement Pro pour recevoir les mises à jour';
+$L['UPDATE_CURRENT'] = 'Vous êtes à jour!';
+$L['CHANGELOGS'] = 'Journaux des modifications';
+
+//#4.4.6 - SYSTEM DASHBOARD
+$L['DISK_UTIL_TIME'] = 'Temps d\'utilisation du disque';
+$L['DISK_IO_BW'] = 'Bande passante d\'E/S disque';
+$L['DISK_SPACE_USAGE_FOR'] = 'Utilisation de l\'espace disque pour:';
+$L['DISK_UTILIZATION'] = 'Utilisation';
+$L['DISK_WRITE'] = 'Écriture';
+$L['DISK_READ'] = 'Lectures';
+$L['SYS_DISK_READ'] = 'Lecture de disque';
+$L['SYS_DISK_WRITE'] = 'Écriture sur disque';
+$L['TOP_CPU_PROC'] = 'Principaux processus d\'application du processeur';
+$L['TOP_CPUMEM_PROC'] = 'Principaux processus de mémoire du processeur';
+$L['TOP_CPUSYS_PROC'] = 'Principaux processus du système CPU';
+$L['SERVICE_MEM_USAGE'] = 'Mémoire utilisée par les services Systemd sans cache';
+$L['SYS_SWAP_USAGE'] = 'Utilisation du Swap système';
+$L['SYS_MEM_USAGE'] = 'Utilisation de la mémoire système';
+$L['CPU_FREQ'] = 'Fréquence actuelle du processeur';
+$L['CPU_LOAD'] = 'Charge CPU';
+$L['CPU_USAGE'] = 'Utilisation du processeur';
+$L['BW_UPLOAD'] = 'Téléversement';
+$L['BW_DOWNLOAD'] = 'Téléchargement';
+$L['SYS_UPLOAD'] = 'Téléverser';
+$L['SYS_DOWNLOAD'] = 'Télécharger';
+$L['SYS_DASH_POWERED_BY'] = 'Tableau de bord système alimenté par:';
+$L['SYS_DASH_UPTIME'] = 'Disponibilité du système';
+$L['SYS_DASH_SWAP_USED'] = 'Swap utilisé';
+$L['SYS_DASH_RAM_USED'] = 'RAM utilisée';
+$L['SYS_DASH_CPU'] = 'CPU';
+$L['SYS_DASH_TMD'] = 'Total des téléversements mensuels';
+$L['SYS_DASH_TMU'] = 'Total des téléchargements mensuels';
+$L['APT_UPDATES'] = 'Mises à jour APT';
+$L['APT_DEPENDENCY'] = 'Paquet de dépendances';
+$L['APT_VERSION_INSTALLED'] = 'Version actuelle';
+$L['APT_VERSION_AVAILABLE'] = 'Version disponible';
+$L['UPDATE_APT_DEPENDENCIES'] = 'Mettre à jour les dépendances apt';
+
+
+//#4.5 - ERROR PAGES
+$L['404HACK'] = 'Vous appelez ça un hack? S\'il vous plaît...';
+$L['404PAGE'] = 'La page que vous recherchez n\'est pas disponible.';
+$L['404PRO'] = 'Votre licence est probablement expirée. Veuillez acheter une <a href="https://nullrefer.ir/?https://quickbox.io/product/quickbox-pro-subscription/" rel="noopener nofollow" target="_blank">nouvelle licence</a> pour acceder à cette page.';
+$L['500PAGE'] = 'C\'est embarrassant, quelque chose semble s\'être mal passé.';
+$L['WHOOPS'] = 'Oops!';

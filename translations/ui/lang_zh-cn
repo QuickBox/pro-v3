@@ -1,0 +1,976 @@
+<?php
+$version = $configs->getConfig('Version');
+/********************************************************
+ *                  Simplified chinese                  *
+ *                                                      *
+ * Ready for QuickBox Pro v3.0.0 : June 29, 2022        *
+ *                                                      *
+ * SUMMARY :                                            *
+ *                                                      *
+ * NAVIGATION : #1                                      *
+ *    lang & theme : #1.1                               *
+ *    user menu : #1.2                                  *
+ *    sidebar menu : #1.3                               *
+ *    sidebar submenus : #1.4                           *
+ *    footer : #1.5                                     *
+ * MISCELLANEOUS : #2                                   *
+ *    buttons : #2.1                                    *
+ *    popup texture : #2.2                              *
+ *    app nginx config edit modal : #2.3                *
+ *    other : #2.4                                      *
+ * WIDGETS : #3                                         *
+ *    Tables Headers : #3.1                             *
+ *       app management center : #3.1.1                 *
+ *    Package Management Center : #3.2                  *
+ *       app info & uninstall : #3.2.1                  *
+ *       toggles & tooltips : #3.2.2                    *
+ *       service control : #3.2.3                       *
+ *       rclone specific toggles : #3.2.4               *
+ *    Dashboard Widgets : #3.3                          *
+ *       disk status widget : #3.3.1                    *
+ *       system index v1 - bandwidth data : #3.3.2      *
+ *       system index v1 - server load : #3.3.3         *
+ *       system index v1 - memory status : #3.3.4       *
+ *       server activity widget : #3.3.5                *
+ * PAGES : #4                                           *
+ *    Start Screen Forms : #4.1                         *
+ *       login : #4.1.1                                 *
+ *       forgot password : #4.1.2                       *
+ *       register : #4.1.3                              *
+ *       account : #4.1.4                               *
+ *         quotes : #4.1.4.1                            *
+ *         edit account modal : #4.1.4.2                *
+ *       summary : #4.1.5                               *
+ *    Settings : #4.2                                   *
+ *       general settings : #4.2.1                      *
+ *       email settings : #4.2.2                        *
+ *       session settings : #4.2.3                      *
+ *       user settings : #4.2.4                         *
+ *       security settings : #4.2.5                     *
+ *    User Management : #4.3                            *
+ *       registration settings : #4.3.1                 *
+ *       useradmin : #4.3.2                             *
+ *         admin user edit : #4.3.2.1                   *
+ *       user groups : #4.3.3                           *
+ *    System : #4.4                                     *
+ *       web console : #4.4.1                           *
+ *       troubleshootings : #4.4.2                      *
+ *       system logs : #4.4.3                           *
+ *       about / quicktips : #4.4.4                     *
+ *         commands : #4.4.4.1                          *
+ *       changelogs / update : #4.4.5                   *
+ *       system dashboard : #4.4.6                      *
+ *    Error Pages : #4.5                                *
+ *******************************************************/
+
+///////////////////////////////////////
+//          #1 NAVIGATION
+///////////////////////////////////////
+
+//#1.1 - language & theme selection
+$L['SELECT_LANGUAGE'] = '点击以选择语言';
+$L['CHINESE'] = '中文';
+$L['DANISH'] = '丹麦语';
+$L['ENGLISH'] = '英语';
+$L['FRENCH'] = '法语';
+$L['GERMAN'] = '德语';
+$L['PORTUGUESE'] = '葡萄牙语';
+$L['SPANISH'] = '西班牙语';
+$L['SELECT_THEME'] = '点击以选择主题';
+$L['THEME_DARK'] = '黑暗主题';
+$L['THEME_LIGHT'] = '灯光主题';
+
+//#1.2 - user menu tabs
+$L['PROFILE'] = '我的资料';
+$L['LOG_OUT'] = '注销';
+$L['REBOOT'] = '重启';
+
+//#1.3 - sidebar menus
+$L['ABOUT_AND_TIPS'] = '关于 / 快速提示';
+$L['APP_DASHBOARD'] = '应用仪表盘';
+$L['DASHBOARD'] = '仪表盘';
+$L['DB_MGMNT'] = 'phpMyAdmin';
+$L['EXTERNAL_LINKS'] = '自定义链接';
+$L['GENERAL_SETTINGS'] = '常规设置';
+$L['HELP_SUPPORT'] = '帮助 / 更新';
+$L['KB'] = '知识库';
+$L['PLUGINS'] = '插件';
+$L['REGISTRATION'] = '注册';
+$L['SECURITY_SETTINGS'] = '安全设置';
+$L['SESSION_SETTINGS'] = '会话设置';
+$L['SETTINGS'] = '设置';
+$L['SYS_DASHBOARD'] = '系统仪表盘';
+$L['SYSTEM_LOGS'] = '系统日志';
+$L['SYSTEM'] = '系统';
+$L['USER_ADMIN'] = '用户管理';
+$L['USER_GROUPS'] = '用户组';
+$L['USER_MANAGEMENT'] = '用户管理';
+$L['USER_SETTINGS'] = '用户设置';
+$L['WEB_CONSOLE'] = 'Web 控制台';
+
+//#1.4 - sidebar submenus
+$L['APP_MENU'] = '应用菜单';
+$L['APPLICATIONS'] = '我的申请';
+$L['DASHBOARD_INFO'] = '在管理系统仪表板或所有用户看到的应用程序仪表板之间进行选择.';
+$L['DASHBOARD_VIEW'] = '仪表板视图';
+$L['DOWNLOADS'] = '下载';
+$L['FILEMANAGER'] = '文件管理器';
+$L['PLUGINS_CENTER'] = '插件中心';
+$L['PLUGINS_INFO'] = '只需点击插件名称, 就能轻松安装和卸载插件.';
+$L['RPLUGINS_NOTICE'] = '只需单击插件名称即可轻松安装和卸载ruTorrent插件';
+$L['RPLUGINS'] = 'ruTorrent 插件';
+$L['TORRENT_CLIENTS'] = 'Torrent 客户端';
+
+//#1.5 - footer
+$L['ALL_RIGHTS'] = '版权所有.';
+
+
+///////////////////////////////////////
+//         #2 MISCELLANEOUS
+///////////////////////////////////////
+
+//#2.1 - buttons
+$L['ACTIVATE_USERS'] = '启用账户';
+$L['ADD_IP_ADDRESS'] = '添加 IP 地址';
+$L['ADD_USERNAME'] = '添加用户名';
+$L['AGREE'] = '我了解, 立即执行!';
+$L['API_ACTIVATE'] = '激活';
+$L['APP_MANAGEMENT'] = '应用管理';
+$L['APPS_INSTALLED'] = '已安装的应用';
+$L['AUTO_DISABLE'] = '禁用自动更新';
+$L['AUTO_ENABLE'] = '启用自动更新';
+$L['BACK'] = '返回';
+$L['BAN_USER'] = '禁令用户';
+$L['CANCEL'] = '取消';
+$L['CLEAN_LOG'] = '清理更新日志';
+$L['CLEAN_RCLOG'] = '清理Rclone上传日志';
+$L['CLICK_ME'] = '点我';
+$L['CLOSE_REFRESH'] = '关闭并刷新';
+$L['CLOSE'] = '关闭';
+$L['CPU_TAB'] = 'CPU';
+$L['CREATE_GROUP'] = '创建用户组';
+$L['CREATE_NEW_GROUP'] = '创建新的用户组';
+$L['CREATE_NEW_USER'] = '创建新账户';
+$L['CREATE_USER'] = '创建用户';
+$L['DELETE_ALL_ANNOUNCEMENTS'] = '删除所有公告';
+$L['DELETE_ALL_LOGS'] = '删除全部日志 (> 30 天)';
+$L['DELETE_INACTIVE_USERS'] = '删除未启用的账户';
+$L['DELETE_LOGS'] = '删除日志';
+$L['DELETE_SELECTED_ANNOUNCEMENTS'] = '删除所选公告';
+$L['DELETE_SELECTED_SESSIONS'] = '删除选中的会话';
+$L['DELETE_SELECTED'] = '删除所选';
+$L['DELETE_USER'] = '删除用户';
+$L['DEMOTE'] = '从管理员降职';
+$L['DISABLED'] = '已禁用';
+$L['DISK_TAB'] = '磁盘';
+$L['DOWNLOAD'] = '下载';
+$L['EDIT_GROUP'] = '编辑用户组';
+$L['EDIT_USER'] = '编辑用户';
+$L['ENABLED'] = '已启用';
+$L['EXECUTE'] = '执行';
+$L['GENERATE'] = '生成';
+$L['GO_BACK'] = '返回首页';
+$L['IN_USE'] = '正在使用';
+$L['INSTALL'] = '安装';
+$L['INSTALLED'] = '卸载';
+$L['INSTALLING'] = '安装中';
+$L['KILL_USER_SESSION'] = '结束所有用户会话';
+$L['LAUNCH'] = '启动';
+$L['LOGIN'] = '登录';
+$L['MEMORY_TAB'] = '记忆';
+$L['NETWORK_TAB'] = '网络';
+$L['NGINX_BACKUP'] = '备份 Nginx 配置';
+$L['NGINX_DEFAULT'] = '恢复默认配置';
+$L['NGINX_DISABLE'] = '禁用弹出式授权检测';
+$L['NGINX_ENABLE'] = '启用弹出式授权检测';
+$L['NGINX_RESTORE'] = '恢复 Nginx 备份';
+$L['APP_BACKUP'] = '备份应用程序配置';
+$L['APP_DEFAULT'] = '恢复默认配置';
+$L['APP_RESTORE'] = '恢复应用程序备份';
+$L['PROMOTE'] = '晋升为管理员';
+$L['RCLONE_LOCK_REMOVE'] = '解除锁定';
+$L['RCLONE_LOGS'] = '查看日志';
+$L['RCLONE_UPLOAD'] = '上载';
+$L['REFRESH'] = '刷新';
+$L['REGISTER'] = '注册';
+$L['RELOAD_CONF'] = '重载配置';
+$L['RELOAD'] = '重载';
+$L['REMOVE_BANNED_IP'] = '移除已阻止的 IP 地址';
+$L['REMOVE_DISALLOWED'] = '移除已禁用的用户名';
+$L['REMOVE_MEMBER'] = '移除集团成员';
+$L['REMOVE'] = '移除';
+$L['RESET_VERSION'] = '重置当前版本';
+$L['RESET'] = '重置';
+$L['SERVICE_CONTROL'] = '服务控制';
+$L['SIMULATE_BUTTON'] = '模拟';
+$L['SIMULATE_END'] = '终止模拟';
+$L['SIMULATE_USER'] = '模拟用户';
+$L['NANGINX'] = '不适用 服务在nginx上运行';
+$L['START'] = '开始';
+$L['STOP'] = '停止';
+$L['SUBMIT'] = '提交更改';
+$L['TOP_PROC_TAB'] = '顶级工艺';
+$L['UNBAN_USER'] = '解除禁令的用户';
+$L['UNINSTALLED'] = '已卸载';
+$L['UNINSTALLING'] = '卸载中';
+$L['UP'] = '上';
+$L['UPDATE_TOOLTIP'] = '点击查看更多信息';
+$L['UPDATE_VERSION'] = '更新版本';
+$L['USER_ACTIONS'] = '用户行动';
+$L['VIEW_CHANGELOG'] = '查看更改日志';
+$L['LATEST'] = '最新';
+$L['CURRENT'] = '当前';
+$L['VIEW'] = '查看';
+
+//#2.2 - popup texture
+$L['SYSTEM_RESPONSE_TITLE'] = '系统响应';
+$L['UNINSTALL_TITLE'] = '卸载';
+$L['UNINSTALLING_TXT_1'] = '正在从你的系统中卸载';
+$L['UNINSTALLING_TXT_2'] = '进行中, 请耐心等待';
+
+//#2.3 - app nginx config edit modal
+$L['ALERT_NGINX_EDITOR'] = '建议首先备份当前配置文件, 请在精通 Nginx 配置或者在有工作人员的指导时进行修改.';
+$L['BACKUP_NGINX_LOC'] = 'Nginx 配置文件备份位置';
+$L['CURRENT_NGINX_LOC'] = 'Nginx 当前配置文件位置';
+$L['NGINX_APP_CONFIGURE'] = 'Nginx 配置文件编辑器';
+$L['NGINX_EDIT'] = '编辑 Nginx 配置文件';
+$L['ALERT_CONFIG_EDITOR'] = '建议先备份你的当前配置, 只有在你知道正在进行的编辑, 查阅了应用程序本身的文档或得到工作人员的指示时, 才可以改变下面的配置.';
+$L['BACKUP_CONFIG_LOC'] = '配置备份位置';
+$L['CURRENT_CONFIG_LOC'] = '配置 当前位置';
+$L['APP_CONFIG_OPTIONS'] = '应用配置编辑器';
+$L['APP_CONFIG_EDIT'] = '编辑应用配置';
+
+//#2.4 - other
+$L['ABOUT_RELEASE'] = '关于发布';
+$L['EMAIL'] = '电子邮件';
+$L['HERE'] = '此处';
+$L['HOME'] = '主页';
+$L['IDLE_L'] = '空闲';
+$L['IDLE'] = '空闲';
+$L['NANGINX'] = '在Nginx上运行';
+$L['NEED_HELP'] = '需要帮助 ?';
+$L['NGINX_CONF_OPTIONS'] = 'Nginx Conf选项';
+$L['NGINX_CONFIG'] = 'Nginx 配置';
+$L['NGINX_SETTINGS'] = 'Nginx 设置';
+$L['NO'] = '否';
+$L['OR'] = '或';
+$L['PLEASE_HOLD'] = '- 请等候';
+$L['PASSWORD'] = '密码';
+$L['REQUIRED_FIELD'] = '必填项目...';
+$L['REQUIRED_FIELDS'] = '标有的字段 <span style="color:#d9534f">*</span> 是必要的';
+$L['SET_HERE'] = '在此处设置';
+$L['SIMULATE_LIST'] = '用户列表';
+$L['SIMULATE'] = '模拟用户';
+$L['SUMMARY'] = '概要';
+$L['UPDATING_QUICKBOX'] = '更新 QuickBox';
+$L['UPDATING'] = '更新中 ';
+$L['USED_L'] = '已使用';
+$L['USERNAME'] = '用户名';
+$L['USERS'] = '账户';
+$L['YES'] = '是';
+
+
+////////////////////////////////////////
+//          #3 WIDGETS
+///////////////////////////////////////
+
+//#3.1 - TABLES HEADERS
+//#3.1.1 - App Management Center
+$L['AVAILABILITY'] = '状态';
+$L['DETAILS'] = '详情';
+$L['NAME'] = '名称';
+$L['CONFIGS'] = '配置';
+
+
+//#3.2 - PACKAGE MANAGEMENT CENTER
+//#3.2.1 - App info & uninstall
+$L['AIRSONIC_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Airsonic</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Airsonic</span>, 然而, 你的设置将被重置为默认.';
+$L['AIRSONIC'] = 'Airsonic-Advanced是Airsonic分叉的一个更现代的实现, 有几个关键的性能和功能增强. 它增加并取代了Airsonic的一些功能. Airsonic是一个免费的、基于网络的媒体流媒体, 提供无处不在的音乐访问.';
+$L['AUTOBRR_UNINSTALL'] = '您即将从系统中卸载 <span style="color:#01cea2">Autobrr</span>. <br/><br/>这将完全删除您的所有配置 和设置……这个动作是不可逆转的. <br/><br/>您可以随时重新安装<span style="color:#01cea2">Autobrr</span>, 但是您的设置将被重置为默认值. ';
+$L['AUTOBRR'] = 'Autobrr 是 autodl-irssi+rutorrent 插件的现代单一二进制替代品. Autobrr 监控 IRC 公告频道和 torznab RSS 提要, 以便在它们可用时立即获得发布, 具有良好的过滤和正则表达式支持.';
+$L['AUTODL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">AutoDL-iRSSi</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">AutoDL-iRSSi</span>, 但是, 您的设置将被重置为默认值.';
+$L['AUTODL'] = 'AutoDL-iRSSi 是一个 irssi 插件, 用于监视 IRC 发布频道并且可以根据用户定义的过滤器下载.';
+$L['AUTOSCAN_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Autoscan</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Autoscan</span>, 然而, 你的设置将被重置为默认.';
+$L['AUTOSCAN'] = 'Autoscan取代了默认的Plex和Emby的行为, 用于在文件系统上采集文件变化. Autoscan与Sonarr, Radarr, Lidarr和Google Drive集成, 以接近实时的方式获取变化, 而不依赖文件系统.';
+$L['BAZARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Bazarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Bazarr</span>, 但是, 您的设置将被重置为默认值.';
+$L['BAZARR'] = 'Bazarr是Sonarr和Radarr的配套应用程序. 它根据您的要求管理和下载字幕. 您可以通过电视节目或电影定义喜好, Bazarr会为您做好一切.';
+$L['BBR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BBR</span>. <br/><br/>这将完全删除您的所有对内核的修改设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">BBR</span>.';
+$L['BBR'] = 'BBR 是一个由 Google 提供的 Linux 内核的新型TCP拥塞控制算法, 它可以增加网络吞吐量并且降低连接';
+$L['BTSYNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BitTorrent Sync</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">BitTorrent Sync</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['BTSYNC'] = 'BitTorrent 公司的 BitTorrent Sync 是一个专有的对等文件同步工具.';
+$L['CALIBRE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Calibre</span>. <br/><br/>这将完全删除您的所有配置文件...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Calibre</span> 但是, 您的设置将被重置为默认值.';
+$L['CALIBRE'] = 'Calibre 是一个跨平台的开源电子书套件. Calibre 可以将电子书整理进一个虚拟的库, 并且可以显示, 编辑, 转换这些电子书. 同时它也可以将这些电子书同步到电子阅读器中. 书籍编辑支持 EPUB 和 AZW3格式.';
+$L['COUCHPOTATO_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">CouchPotato</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">CouchPotato</span>, 但是, 您的设置将被重置为默认值.';
+$L['COUCHPOTATO'] = '通过 Usenet 或 Torrents 自动下载电影, 轻松和最好的质量.';
+$L['CSF_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Config Server Firewall (CSF)</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Config Server Firewall (CSF)</span>, 但是, 您的设置 (任何修改) 将被重置为默认值.';
+$L['CSF'] = 'ConfigServer 防火墙 (也称为 CSF) 是一种防火墙配置脚本, 为你的服务器提供更好的安全性, 同时为你提供易于使用的高级界面来管理防火墙设置.';
+$L['DELUGE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Deluge</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Deluge</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['DELUGE'] = 'Deluge 是一款轻量级的免费软件, 跨平台的BitTorrent客户端.';
+$L['DUPLICATI_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Duplicati</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Duplicati</span>, 但是, 你的存储路径和链接文件夹设置将被重置为默认值.';
+$L['DUPLICATI'] = 'Duplicati是一个免费, 开源的备份客户端, 可以安全地在云存储服务和远程文件服务器上存储加密, 增量, 压缩的备份. 它可以与Amazon S3, Dropbox, Google Drive, FTP, SSH/SFTP, WebDAV和<a href="https://nullrefer.ir/?https://duplicati.readthedocs.io/en/latest/01-introduction/#supported-backends" rel="noopener nofollow" target="_blank">更多</a>一起工作.';
+$L['EMBY_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Emby</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Emby</span>, 但是, 您的库设置将被重置为默认值.';
+$L['EMBY'] = 'Emby Server 是一个服务器软件包, 可以让消费者托管他们合法的多媒体 - 音乐, 视频和图片文件. Emby 客户端软件是一个应用程序, 你需要安装在移动设备和某些电视的机顶盒, 如Android电视.';
+$L['FAIL2BAN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Fail2Ban</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Fail2Ban</span>, 但是, 您的设置将被重置为默认值.';
+$L['FAIL2BAN'] = 'Fail2Ban 是一种入侵防御软件框架, 可以保护计算机和服务器免受暴力攻击的威胁.';
+$L['FILEBOT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">FileBot</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">FileBot</span>, 但是, 您的设置将被重置为默认值.';
+$L['FILEBOT'] = 'FileBot 是一个组织重命名电影, 电视节目, 动漫文件并且可以抓取字幕和信息的终极工具, 它会智能地搞定一切';
+$L['FILEBROWSER_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">File Browser</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">File Browser</span>, 但是, 您的设置将被重置为默认值.';
+$L['FILEBROWSER'] = 'filebrowser 提供了一个指定目录中的文件管理界面, 可以用于上传, 删除, 预览, 重命名以及编辑. 它允许你创建多个用户, 每个用户可以拥有自己的目录.';
+$L['FLARESOLVERR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">FlareSolverr</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">FlareSolverr</span>, 但是, 您的设置将被重置为默认值.';
+$L['FLARESOLVERR'] = 'FlareSolverr 是绕过 Cloudflare 保护的代理服务器.';
+$L['FLEXGET_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Flexget</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Flexget</span>, 但是, 您的设置将被重置为默认值.';
+$L['FLEXGET'] = 'FlexGet 是一款适用于所有媒体的多功能自动化工具. 它支持 torrents, nzbs, podcasts, comics, TV, movies, RSS, HTML, CSV, 等形式.';
+$L['FLOOD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Flood</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Flood</span>, 但是, 您的设置将被重置为默认值.';
+$L['FLOOD'] = 'Flood 是 rtorrent 的另一个 Web 界面. 它使用 Node.js 服务与 rTorrent API 交互, 存储数据, 并且提供 Web UI.';
+$L['HEADPHONES_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Headphones</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Headphones</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['HEADPHONES'] = 'Headphones 是用 Python 编写的 NZB 和 Torrent 的自动音乐下载器. 它支持 SABnzbd, NZBget, Transmission, μTorrent, Deluge 和 Blackhole.';
+$L['JACKETT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jackett</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jackett</span>, 但是, 您的设置将被重置为默认值.';
+$L['JACKETT'] = '对您最喜爱的 private trackers 的 API 支持.';
+$L['JELLYFIN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jellyfin</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jellyfin</span>, 但是, 您的设置将被重置为默认值.';
+$L['JELLYFIN'] = 'Jellyfin 是一个多媒体系统的自由软件, 它可以让您控制媒体的管理和流式传输.';
+$L['LAZYLIBRARIAN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">LazyLibrarian</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">LazyLibrarian</span>, 但是, 您的设置将被重置为默认值.';
+$L['LAZYLIBRARIAN'] = 'LazyLibrarian是SickBeard, CouchPotato, 类似于耳机的应用程序, 用于电子书, 有声读物和杂志. 它结合使用<a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a>和（可选）<a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a>作为作者信息和书籍信息的来源.';
+$L['LETSENCRYPT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Let\'s Encrypt</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Let\'s Encrypt</span>, 但是, 您的设置将被重置为默认值.';
+$L['LETSENCRYPT'] = 'Let\'s Encrypt 是一个免费, 自动化的和开放的证书颁发机构 (CA), 由 ISRG (<a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group</a>) 运营.';
+$L['LIDARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Lidarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Lidarr</span>, 但是, 您的设置将被重置为默认值.';
+$L['LIDARR'] = 'Lidarr 是 Sonarr的一个独立分支, 它通过 Usenet 和 BitTorrent 自动下载音乐. 该项目的灵感来自其他的 Usenet/BitTorrent 音乐下载器, 例如 Headphones.';
+$L['MEDUSA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Medusa</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Medusa</span>, 但是, 您的设置将被重置为默认值.';
+$L['MEDUSA'] = '电视节目的视频文件管理器, 用来观看你最喜爱的节目的新剧集. 允许手动搜索和其他专有功能, 请检查<a href="https://nullrefer.ir/?https://github.com/pymedusa/Medusa" rel="noopener nofollow" target="_blank"> Github </a>上的 Medusa.';
+$L['MYLAR3_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Mylar3</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Mylar3</span>, 但是, 您的设置将被重置为默认值.';
+$L['MYLAR3'] = 'Mylar是一个自动漫画 (cbr / cbz) 下载程序, 可与NZB和用python编写的torrent一起使用. 除了DDL外, 它还支持SABnzbd, NZBGET和许多torrent客户端.';
+$L['NETDATA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Netdata</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Netdata</span>, 但是, 您的设置将被重置为默认值.';
+$L['NETDATA'] = 'Netdata 分布式的, 实时的适用于应用与系统的性能与健康情况的监视器.';
+$L['NEXTCLOUD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NextCloud</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NextCloud</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['NEXTCLOUD'] = 'Nextcloud是一个开源, 自主托管的文件同步和共享通信应用平台. 访问和同步你的文件, 联系人, 日历和沟通和协作你的设备. 你可以完全掌控你的数据, 存放在哪里以及谁可以访问它!';
+$L['NOVNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">noVNC</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">noVNC</span>, 但是, 您的设置将被重置为默认值.';
+$L['NOVNC'] = 'noVNC不仅是一个 VNC 客户端 JavaScript 库, 也是一个利用该库构建的应用程序. noVNC 可以在任何的现代浏览器包括移动浏览器 (iOS and Android) 中运行.';
+$L['NZBGET_UNINSTALL'] = 'Y即将从系统中卸载 <span style="color:#01cea2">NZBGet</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBGet</span>, 但是, 您的设置将被重置为默认值.';
+$L['NZBGET'] = 'NZBGet 是一个二进制下载器, 它根据 nzb-files 中给出的信息从 Usenet 下载文件. NZBGet 是用 C ++ 编写的, 以其非凡的性能和效率而闻名.';
+$L['NZBHYDRA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NZBHydra</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBHydra</span>, 但是, 您的设置将被重置为默认值.';
+$L['NZBHYDRA'] = 'NZBHydra 是 NZB 索引器的元搜索程序, 它提供了对一些基于 raw 和 newznab 的索引器的简单访问. 你可以从一个地方搜索所有索引, 并将其用作 Sonarr 或 CouchPotato 等工具的索引.';
+$L['NZBHYDRA2_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NZBHydra2</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBHydra2</span>, 但是, 您的设置将被重置为默认值.';
+$L['NZBHYDRA2'] = 'NZBHydra2 是 NZB 索引器的元搜索程序, 它提供了对一些基于 raw 和 newznab 的索引器的简单访问. 你可以从一个地方搜索所有索引, 并将其用作 Sonarr 或 CouchPotato 等工具的索引.';
+$L['OMBI_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Ombi</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Ombi</span>, 但是, 您的库设置将被重置为默认值.';
+$L['OMBI'] = 'Ombi 为希望将内容添加到库的用户提供了一个美观且易于使用的界面, 它集成于 CouchPotato, SickChill 和 Sonarr.';
+$L['OVERSEERR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Overseerr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Overseerr</span>, 但是, 您的设置将被重置为默认值.';
+$L['OVERSEERR'] = 'Overseerr is a free and open source software application for managing requests for your media library. It integrates with your existing services, such as Sonarr, Radarr, and Plex!';
+$L['OVPN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">OpenVPN</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">OpenVPN</span>, 但是, 您的设置将被重置为默认值.';
+$L['OVPN'] = '基于 SSL/TLS 的 VPN.  支持 Linux, Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X和Windows 2000 / XP +.';
+$L['PHPMYADMIN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">phpMyAdmin</span>. <br/><br/>这将完全删除您的所有配置文件和 phpMyAdmin 数据库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">phpMyAdmin</span>.';
+$L['PHPMYADMIN'] = 'phpMyAdmin 是一个使用 <a href="https://nullrefer.ir/?https://php.net/" rel="noopener nofollow" target="_blank">PHP</a> 编写的免费软件, 旨在通过网页处理 <a href="https://nullrefer.ir/?https://www.mysql.com/" rel="noopener nofollow" target="_blank">MySQL</a> 数据库的管理. phpMyAdmin 支持 MySQL 和 MariaDB 上的各种操作. 可以在用户界面执行常用操作 (管理数据库, 表, 列, 关系, 索引, 用户, 权限等), 同时你也可以直接执行各种 SQL 语句.';
+$L['PLEX_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Plex Media Server</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Plex Media Server</span>, 但是, 您的库设置将被重置为默认值.';
+$L['PLEX'] = 'Plex 可让你将内容传输到任何支持 Plex 的设备.';
+$L['PROWLARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Prowlarr</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Prowlarr</span>, 但是, 您的库设置将被重置为默认值.';
+$L['PROWLARR'] = 'Prowlarr 是建立在流行的 arr .net/reactjs 基础堆栈上的索引器管理器/代理, 可与您的各种 PVR 应用程序集成. Prowlarr 支持 Torrent Trackers 和 Usenet Indexers. 它与 Sonarr, Radarr, Lidarr 和 Readarr 无缝集成, 提供对索引器的完整管理, 无需每个应用程序的索引器设置.';
+$L['PYLOAD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">PyLoad</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">PyLoad</span>, 但是, 您的设置将被重置为默认值.';
+$L['PYLOAD'] = 'pyLoad 是用于 `Hoster` 网站, 视频网站和HTTP/FTP链接的下载管理器.  你可以在 <a href="https://nullrefer.ir/?https://github.com/pyload/pyload/wiki/Supported-Hoster" rel="noopener nofollow" target="_blank">此处</a> 找到支持的网站列表.';
+$L['QBITTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">qBittorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">qBittorrent</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['QBITTORRENT'] = 'qBittorrent 是一款免费可靠的 P2P BitTorrent 客户端, 先进的多平台 BitTorrent 客户端, 具有良好的 Qt 用户界面以及用于远程控制并且集成搜索引擎的 Web 用户界面.';
+$L['QUASSEL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Quassel</span>. <br/><br/>这将从您的系统中彻底移除 <span style="color:#01cea2">Quassel</span> 和所有设置/存储的日志.';
+$L['QUASSEL'] = 'Quassel IRC 是一个基于Qt4框架的现代化, 跨平台, 分布式的IRC客户端.';
+$L['QUOTA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Quotas</span>. <br/><br/>这将完全删除用户的配额和与之相关的任何设置.';
+$L['QUOTAS'] = 'Linux 的这一特性允许系统管理员分配用户或用户组组可以使用的最大磁盘空间.';
+$L['RADARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Radarr</span>, 但是, 您的设置将被重置为默认值.';
+$L['RADARR'] = 'Radarr 是 Sonarr 的一个独立分支, 通过 Usenet 和 BitTorrent 自动下载电影.<br>该项目的灵感来自其他的 Usenet/BitTorrent 电影下载器, 例如 CouchPotato.';
+$L['RAPIDLEECH_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rapidleech</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Rapidleech</span>, 但是, 您的设置将被重置为默认值.';
+$L['RAPIDLEECH'] = 'Rapid Leech 是一个免费的服务器转移脚本, 可用于各种流行的上传/下载站点, 例如 uploaded.net, Rapidshare.com 和 120 多个其他站点.';
+$L['RCLONE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rclone</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Rclone</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['RCLONE'] = 'Rclone 是一个命令行程序, 它可以将文件或者文件夹同步到多个主机';
+$L['READARR_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Readarr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Readarr</span>, 然而, 你的配置设置将被重置为默认.';
+$L['READARR'] = 'Readarr是一个针对Usenet和BitTorrent用户的电子书收集管理器. 它可以监控多个RSS提要, 以获取你喜欢的作者的新书, 并将与客户端和索引器接口, 以抓取、分类和重命名它们.';
+$L['REQUESTRR_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Requestrr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Requestrr</span>, 然而, 你的配置设置将被重置为默认.';
+$L['REQUESTRR'] = 'Requestrr是一个Discord聊天机器人, 用于通过使用聊天来简化使用Sonarr/Radarr/Ombi等服务! 你的Discord服务器的所有用户都可以请求添加新的内容, 并在可用时得到通知';
+$L['RTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">rTorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">rTorrent</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['RTORRENT'] = 'rTorrent 是一个快速高效的 BitTorrent 客户端, 同时使用正在开发的 libtorrent 库 (并非 libtorrent-rasterbar). 它是利用 C ++ 和 ncurses 库编写的软件, 因此它使用一个字符用户界面.';
+$L['RUTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ruTorrent</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">ruTorrent</span>, 但是, 您的设置将被重置为默认值.';
+$L['RUTORRENT'] = 'ruTorrent 是一个受欢迎的 BitTorrent 客户端 rTorrent 的前端. 主要特性: 轻量级的服务端, 因此可以被安装在一些较老以及较地段的服务器上, 甚至可以安装在一些 SOHO 路由器上; 可扩展, 它拥有很多插件, 每个人都可以创建自己的插件; 带有 <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox 皮肤</a>.';
+$L['SABNZBD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SABnzbd</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SABnzbd</span>, 但是, 您的设置将被重置为默认值.';
+$L['SABNZBD'] = 'SABnzbd 是一个多平台的二进制新闻组下载器. 该程序在后台工作, 并简化了从 Usenet 下载, 验证和提取文件的操作. SABnzbd 使用 NZB 文件 (类似于 .torrent文件, 但用于 Usenet), 而不是直接浏览 Usenet.';
+$L['SICKCHILL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickChill</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SickChill</span>, 但是, 您的设置将被重置为默认值.';
+$L['SICKCHILL'] = '电视节目的视频文件管理器, 它可以帮助你及时追剧.';
+$L['SICKGEAR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickGear</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SickGear</span>, 但是, 您的设置将被重置为默认值.';
+$L['SICKGEAR'] = 'SickGear 是 Sick-Beard 的进化版. 凭借创新, 久经考验的稳定性和可靠性实现享受电视的自动化.';
+$L['SONARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Sonarr-NzbDrone</span>, 但是, 您的设置将被重置为默认值.';
+$L['SONARR'] = 'Sonarr 是一个电视连续剧管理工具, 可以同时使用 Torrents 和 Usenet .';
+$L['SUBSONIC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Subsonic</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Subsonic</span>, 但是, 您的设置将被重置为默认值.';
+$L['SUBSONIC'] = 'Subsonic 是一个基于网络的媒体服务器. 它是用 Java 编写的, 所以它可以在任何支持 Java 的操作系统上运行. Subsonic 支持同时向多个客户端传输流媒体, 并支持任何流媒体 (包括 MP3, AAC 和 Ogg).';
+$L['SYNCTHING_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Syncthing</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Syncthing</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['SYNCTHING'] = '开源的 BitTorrent 文件同步软件.';
+$L['TAUTULLI_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Tautulli</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Tautulli</span>, 但是, 您的库设置将被重置为默认值.';
+$L['TAUTULLI'] = '基于 python 的 Web 应用程序, 用于 Plex Media Server 的监视, 分析和通知.';
+$L['THELOUNGE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">TheLounge</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">TheLounge</span>, 但是, 您的库设置将被重置为默认值.';
+$L['THELOUNGE'] = '一个现代化的 IRC web 客户端';
+$L['TRANSMISSION_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Transmission</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Transmission</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['TRANSMISSION'] = 'Transmission 被设计为功能强大而易于使用的客户端. 它的默认设置即可直接运行, 只需要简单的点击就可以配置例如如监视目录, 不良 peers 拦截列表和 Web 界面等高级功能. Ubuntu 以它作为默认的 BitTorrent 客户端, 其中最重要的理由就是它简单易学.';
+$L['UNIFI_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">UniFi</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">UniFi</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['UNIFI'] = 'The UniFi® 是 Ubiquiti Networks™ 的无线网络管理软件. 它允许你在浏览器种管理多个无线网络.';
+$L['UNPACKERR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Unpackerr</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Unpackerr</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['UNPACKERR'] = '提取 Radarr, Sonarr, Lidarr, Readarr 的下载 - 导入后删除提取的文件.';
+$L['WEBCONSOLE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Web Console (shellinabox)</span>. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Web Console (shellinabox)</span>.';
+$L['WEBCONSOLE'] = 'Shell In A Box (也被称为 The QuickBox Web Console) 实现了一个 Web 服务, 它可以将任意的命令行工具导出到基于 Web 的终端模拟器. 该模拟器可以运行在任何启用 JavaScript 和 CSS 支持的浏览器中, 并且不需要任何额外的的浏览器插件.';
+$L['X2GO_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">x2go</span>. <br/><br/>这将完全删除您系统中的 <span style="color:#01cea2">x2goserver</span> 和 <span style="color:#01cea2">xfce4</span> 桌面环境.';
+$L['X2GO'] = 'X2Go 是一款使用 NX 技术协议的 Linux 开源远程桌面软件.';
+$L['XTEVE_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">xTeVe</span>.<br/><br/>这将完全删除你所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">xTeVe</span>, 但是, 你的设置将被重置为默认值.';
+$L['XTEVE'] = 'XTeVe是一个模拟电视调谐器的应用程序, 它允许你通过Plex或Emby拥有IPTV频道. xTeVe可以合并多个M3U和XMLTV文件, 并将其发送到你喜欢的媒体中心';
+$L['ZNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ZNC</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">ZNC</span>, 但是, 您的设置将被重置为默认值.';
+$L['ZNC'] = 'ZNC 是一个 IRC 网络辅助软件. 它可以将客户端从实际的 IRC 服务器以及选定的频道中分离出来.';
+
+//#3.2.2 - toggles & tooltips
+$L['CARD_VIEW'] = '卡片视图';
+$L['LIST_VIEW'] = '列表查看';
+$L['CLI'] = '仅限 Web 控制台';
+$L['COMPAT_E'] = '兼容性错误';
+$L['CURRENTLY_INSTALLED_NOTICE'] = '看来您可以访问一次只能由一个用户安装的应用程序. 与系统管理员联系以了解其可用性的进一步状态.';
+$L['CURRENTLY_INSTALLED_TITLE'] = '当前有人已安装此应用程序';
+$L['DEL1_TOOLTIP'] = '看起来你运行的是Ubuntu 20.04. Deluge v1不能在这个发行版上运行. 请考虑安装Deluge v2来继续, 因为Deluge v2运行在更新的libtorrent1.2+和python3+上';
+$L['DEL2_TOOLTIP'] = 'qBittorrent 已安装. Deluge v2 不能兼容已安装的 qBittorrent. 请安装 Deluge v1 或者卸载 qBittorrent 以继续.';
+$L['DEL2XENIAL_TOOLTIP'] = '看起来你再运行 Ubuntu 16.04. Deluge v2 不能在此平台运行. 请选择 Deluge v1 并继续.';
+$L['DOMAIN'] = '域名';
+$L['EMBY_JELLYFIN_COMPAT_MESSAGE'] = 'Jellyfin 已安装';
+$L['ENTER_MOUNT_POINT'] = '请输入您的首选挂载点';
+$L['FAIL2BAN_TOOLTIP'] = '从 SSH: \`qb install fail2ban\` 以访问此功能';
+$L['JELLYFIN_EMBY_COMPAT_MESSAGE'] = 'Emby 已安装';
+$L['LETSENCRYPT_DOMAIN'] = '请输入您的 Let\'s Encrypt 域名';
+$L['MEDUSA_INSTALLED'] = 'Medusa 已安装';
+$L['OVPN_TOOLTIP'] = '从 Web 控制台输入: \'qb install vpn\' 以访问此功能';
+$L['PLEX_CLAIM_MESSAGE'] = '要声明您的 Plex Media Server 所有权, 您必须已经有一个帐户并登录才能从以下位置获取 Plex Claim Code: <a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank"><strong>https://www.plex.tv/claim/</strong></a><br/><br/><div class="alert alert-notice" style="color:#fff"><strong>注意：</strong>建议使用 Claim Code 界面上上的 "Copy to Clipboard" 按钮, 以确保正确插入, 因为索赔代码区分大小写.</div>';
+$L['PLEX_CLAIM_TITLE'] = 'Plex Media Server 安装';
+$L['PLEX_CLAIM_TOKEN'] = 'Plex Claim Code';
+$L['PRIMARY_MOUNTM'] = '首选挂载点';
+$L['QBIT_TOOLTIP'] = 'Deluge 2 已安装. qBittorrent 不能兼容已安装的 Deluge 2. 请安装 Deluge v1 或者卸载 Deluge 2 以继续.';
+$L['QUOTAS_FSTAB'] = '编辑您的 fstab';
+$L['QUOTAS_HELP'] = '更多有关安装 quotas 的信息, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>请阅读此 F.A.Q first</strong></a>.';
+$L['QUOTAS_TOOLTIP'] = '在您的主挂载点添加以下内容以替代 <code class="language-bash">defaults</code> 并继续';
+$L['RCLONE_ADMIN_TOOLTIP'] = '从 SSH: \`qb install rclone -u USER [ -o encrypted ]\` 以访问此功能';
+$L['RCLONE_USER_TOOLTIP'] = '请与系统管理员联系以安装此程序.';
+$L['REMOVE_MEDUSA_FIRST'] = '安装此应用需要首先移除 Medusa.';
+$L['REMOVE_SICKCHILL_FIRST'] = '安装此应用需要首先移除 SickChill.';
+$L['REMOVE_SICKGEAR_FIRST'] = '安装此应用需要首先移除 SickGear.';
+$L['SICKCHILL_INSTALLED'] = 'SickChill 已安装';
+$L['SICKGEAR_INSTALLED'] = 'SickGear 已安装';
+$L['UNIFI_SSL_TOOLTIP'] = '如果您已在站点根目录中设置了域, 并且已为域生成了let的加密证书, 请选择此选项';
+$L['ZNC_TOOLTIP'] = '从 SSH: \`qb install znc -u USER\` 以访问此功能';
+
+//#3.2.3 - service control
+$L['ACTIVE_STATUS'] = '正在运行';
+$L['APP_KEY'] = 'API 密钥';
+$L['APP_PORT'] = '应用端口';
+$L['APP_STATUS'] = '应用状态';
+$L['INACTIVE_STATUS'] = '未运行';
+
+//#3.2.4 - rclone specific toggles
+$L['ACTIVE_MOUNTED'] = '活动（已安装）';
+$L['INACTIVE_NOTMOUNTED'] = '已死（未安装）';
+$L['RCLONE_OPTIONS'] = 'Rclone选项';
+$L['RCLONE_LOG_VIEWER'] = 'Rclone move.log';
+$L['RCLONE_COMMAND_CENTER'] = 'Rclone 指挥中心';
+$L['RCLONE_STATUS'] = 'Rclone状态';
+$L['RCLONE_UPLOAD_MESSAGE'] = 'Rclone当前正在后台运行, 以将数据上传到gdrive. 在这段时间内, 您会看到一个锁定位置, 以确认您的过程已开始. 该过程完成后, 此锁将自行删除. 随时关闭此弹出窗口. <br/><br/><div class="alert alert-notice" style="color:#fff"><strong>注意: </strong> 服务器每天晚上03:12 AM通过cronjob自动运行上传. </div>';
+$L['RCLONE_UPLOAD_VIEWER'] = 'Rclone上传';
+$L['RCMOUNT_STATUS'] = 'MergerFS状态';
+$L['RCMOUNT_WHERE'] = '安装位置';
+
+
+//#3.3 - DASHBOARD WIDGETS
+//#3.3.1 - disk status widget
+$L['DD_DELUGE'] = 'Deluge';
+$L['DD_NZBGET'] = 'NZBGet';
+$L['DD_QBITTORRENT'] = 'qBittorrent';
+$L['DD_RTORRENT'] = 'rTorrent';
+$L['DD_SABNZBD'] = 'SABnzbd';
+$L['DD_TRANSMISSION'] = 'Transmission';
+$L['DELUGE_TORRENTS'] = '个种子被 Deluge 加载';
+$L['DISK_%_1'] = '您已使用';
+$L['DISK_%_2'] = '的磁盘空间';
+$L['DISK_SPACE'] = '磁盘空间';
+$L['FREE'] = '空闲';
+$L['QBITTORRENT_TORRENTS'] = '个种子被 qBittorrent 加载';
+$L['RT_TORRENTS'] = '个种子被 rTorrent 加载';
+$L['SIZE'] = '总大小';
+$L['THERE_ARE'] = '总计有';
+$L['TRANSMISSION_TORRENTS'] = '个种子被 Transmission 加载';
+$L['USED'] = '已使用';
+$L['YOUR_DISK_STATUS'] = '磁盘状态';
+$L['NZBGET_NZB'] = 'NZBGet 中加载的 nzb';
+$L['SABNZBD_NZB'] = 'nzb 在 SABnzbd 中加载';
+
+//#3.3.2 - System Index v1 : bandwidth data widget
+$L['BANDWIDTH_DATA'] = '带宽数据';
+$L['BANDWIDTH_DAILY'] = '每日';
+$L['BANDWIDTH_HOURLY'] = '每小时';
+$L['BANDWIDTH_LIVE'] = '实时';
+$L['BANDWIDTH_MONTHLY'] = '每月';
+$L['datefmt_days_img'] = '%d';
+$L['datefmt_days'] = '%d %B';
+$L['datefmt_hours_img'] = '%l';
+$L['datefmt_hours'] = '%l%p';
+$L['datefmt_months_img'] = '%b';
+$L['datefmt_months'] = '%B %Y';
+$L['datefmt_top'] = '%d %B %Y';
+$L['NETWORK'] = '网络';
+$L['DOWNLOAD'] = '下载';
+$L['UPLOAD'] = '上传';
+
+//#3.3.3 - System Index v1 : server load widget
+$L['SERVER_LOAD'] = '服务器负载';
+$L['SL_TXT'] = '您服务器当前负载的平均值';
+$L['UPTIME'] = '运行时间';
+$L['DAYS_L'] = '天';
+$L['HOURS_L'] = '小时';
+$L['MINUTES_L'] = '分钟';
+$L['SECONDS_L'] = '秒';
+
+//#3.3.4 - System Index v1 : memory status widget
+$L['CACHED_MEMORY'] = '高速缓存使用情况';
+$L['CLEAR_CACHE'] = '清除缓存';
+$L['CM_BUFFERS'] = '已缓冲';
+$L['CM_USAGE'] = '高速缓存已使用';
+$L['PHYSICAL_MEMORY'] = '物理内存使用情况';
+$L['PM_IDLE'] = '空闲';
+$L['PM_USED'] = '已使用';
+$L['REAL_MEMORY'] = '实际内存使用情况';
+$L['RM_FREE'] = '实际内存空闲';
+$L['RM_USAGE'] = '实际内存已使用';
+$L['SWAP_IDLE'] = '空闲';
+$L['SWAP_TOTAL'] = '总计';
+$L['SWAP_USAGE'] = 'Swap 使用情况';
+$L['SWAP_USED'] = '已使用';
+$L['SWAP_ZONE'] = 'SWAP 区';
+$L['SYSTEM_RAM_STATUS'] = '系统内存状态';
+$L['TOTAL_RAM'] = '系统内存总计';
+$L['TOTAL'] = '总计';
+
+//#3.3.5 - server activity widget
+$L['ACC_REQ_ACT'] = '帐户需要激活';
+$L['GUESTS_ONLINE'] = '客人在线';
+$L['LAST_ACTIVE_ON'] = '最后一次活跃于';
+$L['LOGGED_ON'] = '登录';
+$L['MEMBERS'] = '成员';
+$L['RECORD_ONLINE'] = '在线记录用户';
+$L['CURRENT_USERS_ONLINE'] = '目前在线的用户';
+$L['THERE_ARE_AW'] = '有';
+$L['THERE_ARE_CURRENTLY'] = '目前有';
+$L['USERS_AND'] = '用户和';
+$L['USERS_LAST_VISIT'] = '自你上次访问以来, 已有新用户注册';
+
+
+////////////////////////////////////////
+//          #4 PAGES
+///////////////////////////////////////
+
+//#4.1 - START SCREEN FORMS (login/forgot pass/register/account)
+//#4.1.1 - LOG IN
+$L['CREATE_ACCOUNT'] = '创建账户';
+$L['REMEMBER_ME'] = '记住我';
+$L['FORGOT_PASS'] = '忘记密码?';
+$L['LOG_IN'] = '登录';
+$L['CONFIRM_PASS_FIELD_PLACE'] = '请确认您的电子邮件地址.';
+$L['LOGIN_ACCOUNT'] = '登录您的账户, 继续.';
+$L['PASS_FIELD_INVALID'] = '请提供您的密码.';
+$L['PASS_FIELD_PLACE'] = '请输入你的密码.';
+$L['PASS_FIELD_VALID'] = '提供密码, 验证准备就绪.';
+$L['REGISTRATION_DISABLED'] = '注册目前是禁用的.';
+$L['SIGN_IN'] = '登入';
+$L['UNREGISTERED'] = '没有注册?';
+$L['USER_FIELD_INVALID'] = '请提供您的用户名.';
+$L['USER_FIELD_PLACE'] = '请输入你的用户名.';
+$L['USER_FIELD_VALID'] = '用户名已提供, 验证准备就绪.';
+
+//#4.1.2 - FORGOT PASSWORD
+$L['EMAIL_FIELD_INVALID'] = '请提供您的电子邮件.';
+$L['EMAIL_FIELD_PLACE'] = '请键入您的电子邮件地址.';
+$L['EMAIL_FIELD_VALID'] = '已提供电子邮件, 验证准备就绪.';
+$L['PASS_GENERATED'] = '新密码已生成!';
+$L['PASS_GENERATED_INFO'] = '您的新密码已经生成并发送至与您的账户相关的电子邮件中.';
+$L['PASS_GENERATED_FAIL'] = '新密码失败!';
+$L['PASS_GENERATED_FAIL_INFO'] = '向您发送新密码的电子邮件时出现了错误, 所以您的密码没有被修改.';
+$L['RECOVER_INFO'] = '请输入您的电子邮件, 我们将向您发送说明!';
+$L['RECOVER'] = '密码恢复';
+$L['PASSWORD_RESET'] = '密码重置';
+$L['CONFIRM_PASSWORD'] = '确认密码';
+
+//#4.1.3 - REGISTER
+$L['ACCOUNT_CREATED'] = '您的账户已被创建';
+$L['CAN_LOGIN'] = '为您注册. 您现在可以登录了';
+$L['CREATED_ADM_ACT'] = '但是, 这个论坛需要管理员激活账户. 当您的账户被激活后, 我们会通过电子邮件通知您.';
+$L['CREATED_CHECK_EMAIL'] = '请查看您的电子邮件以了解更多信息';
+$L['CREATED_EMAIL_ACT'] = '然而, 这个论坛需要账户激活. 激活密钥已被发送到您提供的电子邮件地址.';
+$L['RCONF_EMAIL_FIELD_INVALID'] = '这个电子邮件与之前输入的电子邮件不一致. 请再试一次.';
+$L['RCONF_EMAIL_FIELD_VALID'] = '电子邮件匹配, 验证准备就绪.';
+$L['RCONF_PASS_FIELD_INVALID'] = '这个密码与之前输入的密码不一致. 请再试一次.';
+$L['RCONF_PASS_FIELD_VALID'] = '密码匹配, 验证准备就绪.';
+$L['REG_C_DISABLED_INFO1'] = '但该网站的注册目前是禁用的';
+$L['REG_C_DISABLED_INFO2'] = '请稍后再试, 或联系服务器所有者';
+$L['REG_C_DISABLED'] = '注册目前已被禁用';
+$L['REG_DISABLED_INFO'] = '我们很抱歉, 但目前注册是无效的. 请在以后的时间再试.';
+$L['REG_DISABLED'] = '注册已被禁用';
+$L['REG_FORM_INFO'] = '请填写下面的表格来创建一个账户';
+$L['SORRY'] = '我们很抱歉';
+$L['THANKS'] = '谢谢你';
+
+//#4.1.4 - ACCOUNT
+$L['ADMIN_EDIT_ACC'] = '管理员编辑账户';
+$L['EDIT_ACCOUNT'] = '编辑账户';
+$L['USER_LINKS'] = '用户链接';
+$L['ADMIN_LINKS'] = '管理员链接';
+$L['Q_APP_DASH'] = 'QuickBox应用程序仪表板';
+$L['Q_SYS_DASH'] = 'QuickBox系统仪表板';
+$L['RESET_PASS'] = '重置密码';
+$L['RESET_PASSWORD'] = '重置你的密码';
+$L['USER_PROFILE'] = '用户个人信息';
+
+//#4.1.4.1 - quotes
+$L['HEY'] = '嗨';
+$L['DAYUM'] = '嗨';
+$L['SO_GLAD'] = '很高兴在这里见到你';
+$L['HOW_AWESOME'] = '你怎么这么棒？';
+$L['LOOK_GOOD'] = '看起来不错';
+$L['WITHOUT_YOU'] = '很高兴见到你';
+$L['QUICKBOX_DEDICATION'] = '欢迎使用 QuickBox!';
+
+//#4.1.4.2 - edit account modal
+$L['CONFIRM_NEW_PASS_INFO'] = '请确认您的新密码.';
+$L['CURRENT_PASS'] = '当前密码';
+$L['NEW_EMAIL'] = '新的电子邮件地址';
+
+//#4.1.5 - SUMMARY
+$L['AWESOME'] = '真棒';
+$L['WITH_PASSWORD'] = '有密码';
+$L['USER_ADDED_TO_DB'] = '已被添加到数据库中';
+$L['RETURN_PREVIOUS'] = '返回前页';
+$L['REGI_FAIL'] = '注册失败';
+$L['REGI_FAIL_ERR1'] = '我们很抱歉, 但发生了一个错误, 您的注册用户名为';
+$L['REGI_FAIL_ERR2'] = '无法完成';
+$L['REGI_FAIL_ERR3'] = '请再试一次';
+$L['REGI_FAIL_ERR_FOUND'] = '发现错误';
+
+
+//#4.2 - SETTINGS
+//#4.2.1 - GENERAL SETTINGS
+$L['ACCOUNT_PAGE'] = '账户页面';
+$L['ACTIVATION_IP'] = '激活 IP';
+$L['ACTIVATION_NEED_D_DO'] = '在这里搞定!';
+$L['ACTIVATION_NEED_D'] = '需要取消激活?';
+$L['ACTIVATION_NEED_G_GET'] = '在这里获取!';
+$L['ACTIVATION_NEED_G'] = '需要一个 API 密钥?';
+$L['ACTIVATION_TIME'] = '激活时间';
+$L['ADD_DASH_SETTINGS'] = '其他仪表板设置';
+$L['ADMIN_HOME'] = '主页';
+$L['API_ACTIVE'] = '已激活';
+$L['API_KEY'] = 'API 密钥';
+$L['API_NOT_ACTIVE'] = '未激活';
+$L['API_PLACE'] = '再此输入 API 密钥...';
+$L['API_SETTINGS'] = 'API 控制';
+$L['API_STATUS'] = 'API 状态';
+$L['API'] = 'API';
+$L['CONF_SETTINGS'] = '站点设置';
+$L['DASH_URL_SETTINGS'] = '仪表盘 URL 设置';
+$L['DEFAULT_PAGE'] = '默认主页';
+$L['DISK_MOUNT'] = '磁盘挂载点';
+$L['EDIT_GEN_SETTINGS'] = '编辑常规设置';
+$L['EMAIL_FROM_ADDR'] = '站点邮件地址';
+$L['EMAIL_FROM_NAME'] = '站点邮件标识';
+$L['EMAIL_SETTINGS'] = '电子邮件设置';
+$L['LOGIN_PAGE'] = '登录页面';
+$L['NET_ADAPTER'] = '网络接口';
+$L['PHP_DATE_FORMAT'] = 'PHP 日期格式';
+$L['PHP_FORMAT_SETTINGS'] = 'PHP 格式设置';
+$L['PHP_TIME_ZONE'] = 'PHP 时区';
+$L['SITE_DESC'] = '站点描述';
+$L['SITE_META_SETTINGS'] = '站点元设置';
+$L['SITE_NAME'] = '站点名称';
+$L['SITE_ROOT'] = '站点根目录';
+$L['SITE_NAME_TOOLTIP'] = '网站名称应少于 40 个字符, 只能是字母数字, 不能有特殊字符（可以有空格）';
+$L['SITE_DESC_TOOLTIP'] = '网站描述应少于 120 个字符和字母数字, 没有特殊字符 (空格是可以接受的)';
+$L['EMAIL_FROM_NAME_TOOLTIP'] = 'From Name 应该少于 60 个字符, 只有字母数字, 没有特殊字符 (空格是可以接受的)';
+$L['SITE_ROOT_TOOLTIP'] = '输入您的服务器 IP 或有效域.  例如: https://192.168.0.1/ (或) https://myawesomedomain.com/';
+
+//#4.2.2 - EMAIL SETTINGS
+$L['SMTP_AUTH'] = '启用 SMTP 身份验证';
+$L['SMTP_SECURE'] = '启用 SSL 加密, 端口 465 也接受 TLS';
+$L['MAIL_HOST'] = '设置 SMTP 服务器以通过发送';
+$L['MAIL_PORT'] = '要连接的 TCP 端口';
+$L['MAIL_USERNAME'] = 'SMTP 用户名';
+$L['MAIL_PASS'] = 'SMTP 密码';
+
+//#4.2.3 - SESSION SETTINGS
+$L['CHANGE_SESSION_SETTINGS'] = '更改会话相关设置.';
+$L['COOKIE_EXPIRY'] = '\'记住我\' Cookie 有效期';
+$L['COOKIE_PATH'] = 'Cookie 路径';
+$L['DAYS'] = '天';
+$L['GUEST_TIMEOUT'] = '访客超时';
+$L['MINUTES'] = '分钟';
+$L['RESET_EXPIRY'] = '登陆时重置有效期';
+$L['USER_TIMEOUT'] = '用户会话超时';
+
+//#4.2.4 - USER SETTINGS
+$L['ALLOW_MULTI_LOGINS'] = '允许多处登陆';
+$L['ALLOW_CONFIG_EDITING'] = '允许仪表板上的配置编辑器';
+$L['BY_ADMIN'] = '管理员设定 (见下方..)';
+$L['BY_USER'] = '用户设定 (查看用户管理页面)';
+$L['CHANGE_USER_SETTINGS'] = '更改用户帐户的全局设置.';
+$L['EXCLUDE_ADMINS'] = '排除管理员';
+$L['EXCLUDE_REDIRECTED_ADMINS'] = '对管理员禁用重定向.';
+$L['GEN_USER_SETTINGSTINGS'] = '一般用户设置';
+$L['HOW_SET'] = '它们将被如何设定?';
+$L['INDIV_USER_HOME'] = '个人用户主页';
+$L['INDIVIDUAL_USER_FOLDERS'] = '个人用户文件夹';
+$L['PATH_ADMIN'] = '路径 (由管理员设置)';
+$L['PATH_INFOS'] = '<p class="help-block">您选择的路径应当相对于 admin 文件夹设置 (该文件夹是您的站点根目录, 在控制面板的常规设置中设定).
+    因此在选择为特定用户页面创建的任何子文件夹之前, 您很可能希望返回某个文件夹. 使用 <i>../</i> 返回上一级文件夹. 例如, 您站点的管理员面板在这里 - <i>http://www.website.com/admin/</i> 您的用户文件夹在这里 - <i>http://www.website.com/users/</i> 您要将根据路径 <i>../users/</i> 设置根特定的页面 - <i>../users/admin.php</i>.</p>
+    <p class="help-block">可使用的通配符 : <strong>%username% </strong>(即登录用户的用户名) </p>';
+$L['SITE_ROOT_RELATIVE'] = '相对于站点根目录';
+
+//#4.2.5 - SECURITY SETTINGS
+$L['BAN_IP_ADDRESS'] = '阻止 IP 地址';
+$L['BAN_IP_INFO'] = '例如 192.168.0.1 第一位非零';
+$L['BAN_IP_REGISTER'] = '阻止 IP 地址注册 (或登录)';
+$L['BANNED_IP_ADDRESSES'] = '已阻止的 IP 地址';
+$L['DISALLOW_USERNAME'] = '禁用的用户名';
+$L['DISALLOW_USERNAMES'] = '禁用用户名';
+$L['DISALLOWED_USERNAMES'] = '已禁用的用户名';
+$L['PREVENT_USERNAMES'] = '防止用户名被注册';
+
+
+//#4.3 - USER MANAGEMENT
+//#4.3.1 - REGISTRATION SETTINGS
+$L['ACCOUNT_ACTIVATION'] = '账户激活设定';
+$L['ADMIN_ACT'] = '管理员手动激活';
+$ l ['admin_act_info'] ='选择此选项时, 注册后将告知用户必须等待管理员激活帐户. 用户也将收到一封这样的电子邮件, 管理员也将可以选择使用电子邮件中提供的链接激活用户或访问管理面板并在那里激活用户';
+$L['ALPHANUMERIC_ONLY'] = '仅限字母数字';
+$L['ALPHANUMERIC_SPACERS'] = '字母数字及空格';
+$L['ANY_CHARS'] = '任何字符';
+$L['ANY_LETTER_NUM'] = '任何符号字母和数字';
+$L['DEFAULT_QUOTA_ALLOWANCE'] = '默认配额津贴';
+$L['DEFAULT_QUOTA_ALLOWANCE_INFO'] = '为创建的新帐户设置默认配额. 此值仅在安装 Linux Quota 包时使用.';
+$L['DISABLE_REGISTRATION'] = '禁用注册';
+$L['DISABLE_REGISTRATION_INFO'] = '这将禁用注册. 注册表不显示, 取而代之的是信息性消息.';
+$L['ENABLE_CAPTCHA'] = '启用 Captcha';
+$L['LETTER_NUM_AND_SPACE'] = '任何符号字母和数字空格';
+$L['LIMIT_CHAR'] = '限制用户名字符';
+$L['NO_ACTIVATION'] = '无需激活 (立即访问)';
+$L['NO_ACTIVATION_INFO'] = '设置此选项允许用户正常注册, 无需任何额外的激活过程.';
+$L['PASSWORD_LENGTH'] = '密码长度';
+$L['RECOMMENDED'] = 'QuickBox推荐';
+$L['REG_SETTINGS_INFO'] = '更改有关站点注册的设置.';
+$L['REG_SETTINGS'] = '注册设置';
+$L['SEND_WELCOME_EMAIL'] = '发送欢迎电子邮件';
+$L['SEND_WELCOME_EMAIL_YES_INFO'] = '将此选项设置为是会向用户以及系统管理员发送欢迎电子邮件. 此选项需要 SMTP 设置才能正确发送电子邮件. 这些选项可以在 <a href="/email-settings.php" style="color: var(--successColor);text-decoration: underline;">电子邮件设置</a>页面上进行控制.';
+$L['SEND_WELCOME_EMAIL_NO_INFO'] = '将此选项设置为否将不会向新注册的用户发送欢迎电子邮件. 所有用户创建/注册都保持静默, 就像在 CLI 环境中创建用户一样.';
+$L['USER_ACT'] = '用户激活 (电子邮件验证)';
+$L['USER_ACT_INFO'] = '设置此选项要求用户通过单击发送到其注册电子邮件地址的链接来激活其帐户.';
+$L['USERNAME_LENGTH'] = '用户名长度';
+$L['USERNAME_LOWERCASE'] = '强制用户名小写';
+$L['USERNAME_LOWERCASE_YES_INFO'] = '将此选项设置为是会将所有新注册的用户名更改为小写. 这是推荐的选项.';
+$L['USERNAME_LOWERCASE_NO_INFO'] = '将此选项设置为否不会将新注册的用户名更改为小写. 用户名将在注册时出现, 但将在服务器环境中保持小写以确保软件功能正常.';
+
+//#4.3.2 - USER ADMIN
+$L['ADMIN_ANNOUNCE'] = '管理员公告';
+$L['ANNOUNCEMENT_HISTORY'] = '您之前的公告';
+$L['ANNOUNCEMENT_LIST'] = '公告内容';
+$L['AWAITING_ADMIN'] = '等待管理员激活';
+$L['AWAITING_EMAIL'] = '等待电子邮件激活';
+$L['BANNED'] = '被禁止';
+$L['CU_CONFIRM_EMAIL'] = '确认电子邮件:';
+$L['CU_CONFIRM_PASS_INFO'] = '请确认您的密码';
+$L['CU_CONFIRM_PASSWORD'] = '确认密码:';
+$L['CU_DISK_QUOTA'] = '磁盘配额:';
+$L['CU_EMAIL'] = '电子邮件:';
+$L['CU_NEW_PASS_INFO'] = '请输入您的新密码';
+$L['CU_NEW_PASSWORD'] = '新密码:';
+$L['CU_SHELL_ENV'] = '首选的外壳环境：';
+$L['CURRENT_SHELLS'] = '目前的壳牌';
+$L['CURRENT_USERS'] = '当前用户';
+$L['DISK_STATUS'] = '磁盘状态';
+$L['EDIT_USER_SHELL'] = '编辑用户的外壳环境';
+$L['ENABLE_USER_ANNOUNCE'] = '启用用户仪表板公告';
+$L['EXPIRY'] = '登录有效期至';
+$L['HAS_USED'] = '已使用';
+$L['IP_ADDRESS'] = 'IP 地址';
+$L['LAST_IP_ADDRESS'] = '最后一次登录的IP地址';
+$L['LAST_LOGIN'] = '最后登录:';
+$L['LAST'] = '最后一次登录的时间';
+$L['OF_QUOTA'] = '的总配额';
+$L['MEMBER_STATUS'] = '会员身份';
+$L['MEMBER_GROUP'] = '会员组';
+$L['RECENTLY_ONLINE'] = '近期在线';
+$L['REGISTERED_DISK_QUOTA'] = '磁盘配额';
+$L['REGISTERED'] = '已注册';
+$L['REGISTRATION_LOGIN'] = '注册与登录';
+$L['STATISTICS'] = '统计';
+$L['USER_ACTIVITY'] = '用户行为';
+$L['PASSWORD_NOTICE'] = '密码不应包含以下字符';
+$L['USER_QUOTA_HELP'] = '输入你想分配给用户的磁盘空间的数量. 必须安装配额才能使用这个选项';
+$L['USER_SHELL_HELP'] = '选择上面的下拉菜单, 将用户添加到一个壳中.';
+$L['USERNAME_ADMIN_USER'] = '用户名:';
+$L['USERNAMES'] = '用户名';
+$L['USERS_AWAITING'] = '等待激活的用户';
+$L['USERS_SESSIONS'] = '用户会话';
+$L['VIEW'] = '查看';
+
+//#4.3.2.1 - admin user edit
+$L['ACTIONS'] = '动作';
+$L['ACTIVE_SESSION'] = '活动会话';
+$L['APPLICATION'] = '应用领域';
+$L['CURRENT_FULL_PATH'] = '当前的完整路径';
+$L['CURRENT_GROUPS'] = '当前用户组';
+$L['CURRENT_STATUS'] = '当前状态';
+$L['EDIT_GROUP_MEMBERSHIP'] = '编辑用户的用户组成员';
+$L['EU_PATH'] = '路径';
+$L['GENERAL_INFO'] = '常规信息';
+$L['GROUP_MEMBERSHIP_HELP'] = '点击下方文本框为用户添加更多用户组...';
+$L['GROUP_MEMBERSHIP'] = '用户组成员';
+$L['HOMEPAGE'] = '主页';
+$L['INSTRUCTIONS'] = '说明';
+$L['LAST_ACTIVE_IP'] = '最后活跃的 IP';
+$L['LAST_ACTIVE'] = '最后活跃';
+$L['LAST_UPDATE'] = '最后更新于';
+$L['PATH_HOWTO'] = '使用 ../ 回到上级文件夹';
+$L['PATH_INSTRUCTIONS'] = '您选择的路径应当相对于 admin 文件夹设置 (该文件夹是您的站点根目录, 在控制面板的常规设置中设定).
+      因此在选择为特定用户页面创建的任何子文件夹之前, 您很可能希望返回某个文件夹. 使用 <i>../</i> 返回上一级文件夹. 例如, 您站点的管理员面板在这里 - <i>http://www.website.com/admin/</i> 您的用户文件夹在这里 - <i>http://www.website.com/users/</i> 您要将根据路径 <i>../users/</i> 设置根特定的页面 - <i>../users/admin.php</i>. 完整路径显示为 <i>http://www.website.com/admin/../users/admin.php</i> - 文件夹 / 文件实际位于  <i>http://www.website.com/users/admin.php</i>.</p>';
+$L['PERSISTENT'] = '持久化';
+$L['REGISTERED_IP'] = '注册 IP';
+$L['SESSION_EXPIRY'] = '会话有效期';
+$L['STATUS'] = '状态';
+$L['UNIQUE_USER_HP_SETTINGS'] = '唯一用户主页 - 设置';
+$L['USER_EDIT1'] = '编辑用户 :';
+$L['USER_EDIT2'] = '编辑用户';
+
+//#4.3.3 - USERS GROUPS
+$L['ADMINISTRATORS'] = '管理员';
+$L['ASSIGN_LEVEL'] = '分配用户组级别 :';
+$L['CLICK_HERE'] = '点击此处...';
+$L['DELETE_GROUP'] = '删除群组';
+$L['EDIT_ADD_USER'] = '添加用户 :';
+$L['EDIT_GROUP_LEVEL'] = '用户组级别 :';
+$L['EDIT_GROUP_NAME'] = '用户组名称 :';
+$L['GROUP_LEVEL'] = '用户组级别';
+$L['GROUP_NAME'] = '用户组名称';
+$L['LEVEL_INFO'] = '输入 2 - 256 之间的数字';
+$L['NEW_GROUP_NAME'] = '新的用户组名称 :';
+$L['NUMBER_MEMBERS'] = '# 个成员';
+$L['USER_GROUPS_INFO'] = '创建, 查看和编辑用户组. 将用户分配给用户组.';
+
+
+//#4.4 - SYSTEM
+//#4.4.1 - WEB CONSOLE
+$L['WEB_CONSOLE_INFO'] = '访问您的命令行环境.';
+
+//#4.4.2- TROUBLESHOOTING
+$L['APP_SELECT'] = '选择应用';
+$L['APPLIANCE'] = 'Appliance';
+$L['CLEAN_MEM'] = '清除物理内存中的缓存';
+$L['FIX'] = '修复';
+$L['FIXUPDATE'] = '修复 dpkg 锁定';
+$L['LOG_GEN'] = '系统日志生成器';
+$L['NGINX'] = 'nginx';
+$L['PHP'] = 'php-fpm';
+$L['PHP7_2'] = 'php-fpm';
+$L['QSUPPORT'] = 'QuickBox 支持';
+$L['QSUPPORTU'] = 'QuickBox 支持账户';
+$L['SERVER_TROUBLESHOOTING'] = '服务器疑难解答';
+$L['SYSTEM_INFO'] = '系统信息';
+$L['SYSTEM_LOG_FILES'] = '系统日志';
+$L['TROUBLESHOOTING'] = '疑难解答';
+$L['WEB_SERVER'] = 'Web 服务器';
+
+//#4.4.3 - SYSTEM LOGS
+$L['ACCESS_LOGS'] = '访问日志';
+$L['APP_LOGS'] = '软件日志';
+$L['USER_LOGS'] = '用户日志';
+$L['DATE_TIME'] = '日期/时间';
+$L['EVENT'] = '事件';
+$L['LOGS_SUMMARY'] = '日志摘要';
+
+//#4.4.4 - ABOUT / QUICKTIPS
+$L['ABOUT'] = '关于';
+$L['DISCLAIMER_TEXT'] = '<p class="fs14">该脚本供一般使用, 并不暗示对任何给定任务的适用性作任何保证. 在使用/安装/修改此脚本或其任何插件时, QuickBox.IO对您的设置或任何损坏不承担任何责任. 请记住QuickBox.IO或其工作人员负责使您的软件和/或服务器保持最新状态; 这是QuickBox Pro软件用户的全部责任. </p>';
+$L['DISCLAIMER'] = '<h3><strong>免责声明</strong></h3>';
+$L['GETTING_SUPPORT'] = '获得支持';
+$L['HELP_TEXT'] = '<p style="font-size: 14px"><a href="https://nullrefer.ir/?https://quickbox.io" rel="noopener nofollow" target="_blank"> QuickBox.IO </a>精心为您带来. <br><br><br>
+    可以在包括论坛在内的许多地方找到对脚本的支持.  如果您需要对与QuickBox Pro相关的问题提供任何支持, 并且它包含应用程序, 您可以在<a href="https://nullrefer.ir/?https://plaza.quickbox.io" rel="noopener nofollow" target="_blank">此处</a>找到它. 
+    或者访问QuickBox.IO网站, 其中包含一些信息, 包括<a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank">此处</a>的实时聊天. <br>
+    如果您需要联系QuickBox工作人员以解决脚本问题, 您可以向我们发送有关我们的<a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank">Discord</a>或 您可以提交<a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/bugs" rel="noopener nofollow" target="_blank">帖子. </p><br><br>';
+$L['HELP_TITLE'] = 'QuickBox 管理面板, 仪表盘门户 & 用户管理';
+$L['HELP'] = '帮助';
+$L['LICENSE_SET'] = '<h3><strong>依据 BSD 3-Clause 许可</strong></h3>';
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2020, QuickBox. 版权所有.</p>
+    <p class="fs14">这份授权条款, 在使用者符合以下条件的情形下, 授予使用者使用及再散播本软件包装原始码及二进位可执行形式的权利, 无论此包装是否经改作皆然:
+    <ul><li class="fs14">对于本软件源代码的再散播, 必须保留上述的版权宣告, 此条件表列, 以及下述的免责声明.</li>
+    <li class="fs14">对于本套件二进位可执行形式的再散播, 必须连带以文件以及 / 或者其他附于散播包装中的媒介方式, 重制上述之版权宣告, 此条件表列, 以及下述的免责声明.</li>
+    <li class="fs14">未获事前取得书面许可, 不得使用版权所有者的名称或其贡献者的名称来为本软件之衍生物做任何表示支持, 认可或推广, 促销之行为.</li></ul>
+    <p class="fs14">本软件是由版权所有者和贡献者按以现状 ("as is") 提供, 本软件包装不负任何明示或默示之担保责任, 包括但不限于就适售性以及特定目的的适用性为默示性担保. 版权所有者或贡献者, 无论任何条件, 无论成因或任何责任主义, 无论此责任为因合约关系, 无过失责任主义或因非违约之侵权（包括过失或其他原因等）而起, 对于任何因使用本软件包装所产生的任何直接性, 间接性, 偶发性, 特殊性, 惩罚性或任何结果的损害 (包括但不限于替代商品或劳务之购用, 使用损失, 资料损失, 利益损失, 业务中断等等), 不负任何责任, 即在该种使用已获事前告知可能会造成此类损害的情形下亦然.</p>';
+//commands   
+$L['ADDITIONAL_ADMIN_COMMANDS'] = '其他管理应用程序设置命令';
+$L['ADMIN_UPGRADE_COMMANDS'] = '管理员升级命令';
+$L['CLEAN_MEM_INFO'] = '如果您决定清除系统物理内存中的高速缓存, 请以 root 身份运行上述命令.';
+$L['DISKTEST_INFO'] = '键入该命令进行快速的磁盘读写测试.';
+$L['ESSENTIAL_USER_COMMANDS'] = '基本用户命令';
+$L['FIXHOME_INFO'] = '键入该命令立即修复您的 /home 权限.';
+$L['QUICK_SYSTEM_TIPS'] = '系统命令提示';
+$L['QUICKVPN_INFO'] = '在 SSH 中键入该命令以快速设置您自己的 VPN 服务器, 同时可以管理和创建使用 VPN 服务器的用户证书.';
+$L['SCREEN_IRSSI_INFO'] = '允许用户从 SSH 重启 / 重新挂载 irssi.';
+$L['SCREEN_RTORRENT_INFO'] = '允许用户从 SSH 重启 / 重新挂载 rTorrent.';
+$L['UPGRADEBTSYNC_INFO'] = '在 SSH 中键入该命令以升级 BTSync 到最新版本.';
+$L['UPGRADEDELUGE_INFO'] = '在 SSH 中键入该命令以升级 Deluge 到最新版本.';
+$L['UPGRADEOMBI_INFO'] = '在 SSH 中键入该命令以升级 Ombi 到最新版本.';
+$L['UPGRADEPLEX_INFO'] = '在 SSH 中键入该命令以升级 Plex 到最新版本.';
+$L['UPGRADERUTORRENT_INFO'] = '在 SSH 中键入该命令以升级 ruTorrent 和 club-QuickBox 主题到最新版本.';
+
+//#4.4.5 - CHANGELOG / UPDATE
+$L['CURRENT_VERSION'] = '当前版本';
+$L['DASH_UPDATE_TITLE'] = 'QuickBox 版本面板';
+$L['QB_UPDATE'] = 'QuickBox 版本面板';
+$L['QBUPDATE'] = '更改日志 / 更新';
+$L['UPCOMING_CHANGES'] = '即将到来的变化';
+$L['UPDATE_AVAILABLE'] = '可用更新';
+$L['UPDATE_TO_DATE'] = '最新';
+$L['VERSION_STATUS'] = '版本状态';
+$L['UPDATE_TXT'] = '更新';
+$L['AVAILABLE_TXT'] = '可用！';
+$L['UPDATE_VERSION'] = '更新版本';
+$L['UPDATE_ACTIVATE'] = '请激活您的专业订阅以接收更新';
+$L['UPDATE_CURRENT'] = '你是最新的！';
+$L['CHANGELOGS'] = '更新日志';
+
+//#4.4.6 - SYSTEM DASHBOARD
+$L['DISK_UTIL_TIME'] = '磁盘使用时间';
+$L['DISK_IO_BW'] = '磁盘 I/O 带宽';
+$L['DISK_SPACE_USAGE_FOR'] = '的磁盘空间使用情况:';
+$L['DISK_UTILIZATION'] = '使用率';
+$L['DISK_WRITE'] = '写';
+$L['DISK_READ'] = '读';
+$L['SYS_DISK_READ'] = '磁盘读取';
+$L['SYS_DISK_WRITE'] = '磁盘写';
+$L['TOP_CPU_PROC'] = '顶级 CPU 应用程序进程';
+$L['TOP_CPUMEM_PROC'] = '顶级 CPU 内存进程';
+$L['TOP_CPUSYS_PROC'] = '顶级 CPU 系统进程';
+$L['SERVICE_MEM_USAGE'] = '系统服务使用的不带缓存的内存';
+$L['SYS_SWAP_USAGE'] = '系统交换使用';
+$L['SYS_MEM_USAGE'] = '系统内存使用率';
+$L['CPU_FREQ'] = '当前 CPU 频率';
+$L['CPU_LOAD'] = 'CPU 负载';
+$L['CPU_USAGE'] = 'CPU 使用率';
+$L['BW_UPLOAD'] = '带宽上传';
+$L['BW_DOWNLOAD'] = '带宽下载';
+$L['SYS_UPLOAD'] = '上载';
+$L['SYS_DOWNLOAD'] = '下载';
+$L['SYS_DASH_POWERED_BY'] = '系统仪表板由:';
+$L['SYS_DASH_UPTIME'] = '系统正常运行时间';
+$L['SYS_DASH_SWAP_USED'] = '二手交换';
+$L['SYS_DASH_RAM_USED'] = '使用的 RAM';
+$L['SYS_DASH_CPU'] = 'CPU';
+$L['SYS_DASH_TMD'] = '每月总下载';
+$L['SYS_DASH_TMU'] = '每月总上传';
+$L['APT_UPDATES'] = 'APT更新';
+$L['APT_DEPENDENCY'] = '依赖性包';
+$L['APT_VERSION_INSTALLED'] = '当前版本';
+$L['APT_VERSION_AVAILABLE'] = '现有版本';
+
+
+//#4.5 - ERROR PAGES
+$L['404HACK'] = '破解失败.';
+$L['404PAGE'] = '您查找的页面不存在.';
+$L['404PRO'] = '请购买 <a href="https://nullrefer.ir/?https://quickbox.io/product/quickbox-pro-subscription/" rel="noopener nofollow" target="_blank">QuickBox 许可证</a> 以使用此页面.';
+$L['500PAGE'] = '这很尴尬, 似乎出了问题.';
+$L['WHOOPS'] = '呜呼!';
