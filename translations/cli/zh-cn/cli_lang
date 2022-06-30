@@ -15,11 +15,13 @@
 # Deploy Tasks:
 # Automated_Encryption: false
 #
+# Author: Jason Matthews (JMSolo)
+# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2022, QuickBox | Jamie Dobbs
+# Copyright (C) 2019-2022, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
