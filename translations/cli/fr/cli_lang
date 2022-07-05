@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_fr
 # File Description: French lang file
-# File Version: 1.0.36
+# File Version: 1.0.39
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -626,6 +626,24 @@ quickbox::lang::software::rclone_continue() {
 	declare text="Si vous êtes satisfait des paramètres ci-dessus, appuyez sur Y pour continuer..."
 	quickbox::dashboard::log "${text}"
 }
+
+quickbox::lang::software::x2go::access() {
+	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+	declare text="${software_title} Serveur installé
+  
+> Veuillez installer x2go-client sur votre ordinateur personnel
+et connectez-vous au serveur ${software_title} nouvellement créé
+en utilisant ce qui suit :
+Hôte:				${server_ip}
+Connexion:			${username}
+Port SSH:			4747
+Type de session:	XFCE ou MATE
+
+> Téléchargez x2go-client depuis :
+https://wiki.x2go.org/doku.php/doc:installation:x2goclient"
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::znc_configure() {
 	declare text="La configuration ZNC va maintenant s'exécuter. Veuillez répondre aux questions suivantes:"
 	quickbox::dashboard::log "${text}"

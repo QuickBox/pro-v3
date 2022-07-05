@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.34
+# File Version: 1.0.37
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -626,6 +626,24 @@ quickbox::lang::software::rclone_continue() {
 	declare text="如果你对上述设置感到满意, 按 Y 键继续..."
 	quickbox::dashboard::log "${text}"
 }
+
+quickbox::lang::software::x2go::access() {
+server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+declare text="${software_title} 服务器已安装
+  
+> 请在您的个人电脑上安装 x2go-client
+并连接到新创建的 ${software_title} 服务器
+使用以下内容:
+主机:		${server_ip}
+登录:		${username}
+SSH 端口:	4747
+会话类型:	XFCE 或 MATE
+
+> 从以下下载 x2go-client:
+https://wiki.x2go.org/doku.php/doc:installation:x2goclient"
+quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::znc_configure() {
 	declare text="现在将运行 ZNC 配置. 请回答以下提示:"
 	quickbox::dashboard::log "${text}"

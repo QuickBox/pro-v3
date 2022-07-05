@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_dk
 # File Description: Danish language file
-# File Version: 1.0.38
+# File Version: 1.0.42
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -627,6 +627,24 @@ quickbox::lang::software::rclone_continue() {
 	declare text="Hvis du er tilfreds med ovenstående indstillinger, skal du trykke på Y for at fortsætte..."
 	quickbox::dashboard::log "${text}"
 }
+
+quickbox::lang::software::x2go::access() {
+	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+	declare text="${software_title} Server installeret
+  
+> Installer venligst x2go-client på din personlige computer
+og opret forbindelse til den nyoprettede ${software_title}-server
+ved hjælp af følgende:
+Vært:			${server_ip}
+Login:			${username}
+SSH-port:		4747
+Sessionstype:	XFCE eller MATE
+
+> Download x2go-klient fra følgende:
+https://wiki.x2go.org/doku.php/doc:installation:x2goclient"
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::znc_configure() {
 	declare text="ZNC-konfigurationen vil nu blive kørt. Besvar venligst følgende spørgsmål:"
 	quickbox::dashboard::log "${text}"
