@@ -1,9 +1,16 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2492 (2022-07-05)
+text="## 3.0.0-beta.2495 (2022-07-05)
 
-### fix (2 changes)
+### enhancement (1 change)
 
-- fix(x2go): corrections to completion message and translations
-- fix(news): avoid premature escaping on changelog messages"
+- enh(fix/update): minor tweaking to api calls on update/reset
+
+### development (1 change)
+
+- dev(runner): set binary conversions to install on run
+
+### feature (1 change)
+
+- feat(installer): stage installation file"
