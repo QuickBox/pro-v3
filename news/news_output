@@ -1,4 +1,22 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text=""
+text="## 3.0.0-beta.2480 (2022-07-05)
+
+### enhancement (3 changes)
+
+- enh(help): set additional commands to qb help manual
+- enh(fix/update): post version updates to api
+- enh(runner): post version changelog as `qb news` announce on release
+
+### feature (1 change)
+
+- feat(motd): show update available message to CLI MOTD
+
+### fix (5 changes)
+
+- fix(UI): set qbittorrent to software installable function
+- fix(user): corrections to rutorrent path on account creation - if rutorrent is installed
+- fix(user): adjustments to account creation and building
+- fix(manage): tweak version setting to current installed on api activation
+- fix(UI): remove data reference linking on changelog"
