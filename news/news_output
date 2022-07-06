@@ -1,8 +1,9 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2510 (2022-07-06)
+text="## 3.0.0-beta.2513 (2022-07-06)
 
-### fix (1 change)
+### fix (2 changes)
 
-- fix(ombi): set proper check to ombi service stopping on build"
+- fix(installer): ensure iptables exist and rules saved on initial build
+- fix(novnc): ensure iptables exist on build"
