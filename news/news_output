@@ -1,9 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2513 (2022-07-06)
+text="## 3.0.0-beta.2515 (2022-07-06)
 
-### fix (2 changes)
+### fix (1 change)
 
-- fix(installer): ensure iptables exist and rules saved on initial build
-- fix(novnc): ensure iptables exist on build"
+- enh(install/fix/update): improved cleanup of setup residuals "
