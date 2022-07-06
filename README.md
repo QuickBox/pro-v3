@@ -6,7 +6,9 @@
 
 ##### OS/Distro support
 
-![debian_11](https://badgen.net/badge/Debian%2011/passing/green) ![debian_10](https://badgen.net/badge/Debian%2010/passing/green)
+![debian_11](https://badgen.net/badge/Debian%2011/passing/green) ![debian_10](https://badgen.net/badge/Debian%2010/passing/green) ![debian_9](https://badgen.net/badge/Debian%209/passing/orange)
+
+**Heads up:** Though Debian 9 is supported, it has also hit it's EOL as of June 2022.<br/>It is advised to use either Debian 11 (bullseye)[^1] or Debian 10 (buster).<br/>You can read more on Debian 9 EOL [here](https://wiki.debian.org/LTS).
 
 </div>
 
@@ -80,7 +82,7 @@ Run the installer.
 ```bash
 ./qbpro -u USERNAME -p 'PASSWORD' -k 'API_KEY'
 ```
-USERNAME[^1], 'PASSWORD'[^2], 'API_KEY'[^3]
+USERNAME[^2], 'PASSWORD'[^3], 'API_KEY'[^4]
 
 ---
 
@@ -126,8 +128,9 @@ curl -sL "https://lab.quickbox.io/QuickBox/pro-v3/-/raw/main/qbpro_v3" > qbpro &
 
 ### REFERENCES
 
-[^1]: <mark>Your username is unique to your QuickBox installation and can be whatever you like.</mark>
-[^2]: <mark>Your password is unique to your QuickBox installation and can be whatever you like.</mark>
-[^3]: <mark>Your API Key is unique to your QuickBox account and can be found on [your account](https://quickbox.io/my-account/api-keys).</mark>
+[^1]: <mark>Debian 11 (bullseye) is the recommended Distro for install.</mark>
+[^2]: <mark>Your username is unique to your QuickBox installation and can be whatever you like.</mark>
+[^3]: <mark>Your password is unique to your QuickBox installation and can be whatever you like.</mark>
+[^4]: <mark>Your API Key is unique to your QuickBox account and can be found on [your account](https://quickbox.io/my-account/api-keys).</mark>
 
 ---
