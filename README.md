@@ -41,7 +41,7 @@ sudo -i
 		apt-get install -y sudo
 		```
 - Why is sudo not installed?
-	- This is a side-effect of installation parameters of the OS. If a root password is specified during installation sudo is not installed by default. If a root password is not specified, sudo is installed. This is more commonly seen with local installs, however, some providers may not install sudo by default.
+	- This is a side-effect of installation parameters from the OS build. If a root password is specified during installation of the OS, sudo is not installed by default. If a root password is not specified during installation of the OS, sudo is installed. This is more commonly seen with local installs, however, some providers may not install sudo by default.
 
 ### Step 2:
 
