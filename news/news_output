@@ -1,9 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2506 (2022-07-06)
+text="## 3.0.0-beta.2508 (2022-07-06)
 
-### fix (2 changes)
+### fix (1 change)
 
-- fix(bazarr): update build for bazarr v1.1.0 compatibility
-- fix(translations): addition of rclone completion message to cli translations"
+- fix(installer): correction to libs set on initial install"
