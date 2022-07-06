@@ -35,6 +35,13 @@ sudo -i
 
 - Why elevate your bash environment to root?
 	- Because we need to be able to write to the `/root` directory as well as access restricted files and operations. By using `sudo -i` we temporarily elevate our bash environment to complete more sensitive tasks; such as building and configuring nginx, php, etc...
+- If you receive a "sudo: command not found" error, please install sudo.
+	- sudo can be installed with the following command as root:
+		```bash
+		apt-get install -y sudo
+		```
+- Why is sudo not installed?
+	- This is a side-effect of installation parameters of the OS. If a root password is specified during installation sudo is not installed by default. If a root password is not specified, sudo is installed. This is more commonly seen with local installs, however, some providers may not install sudo by default.
 
 ### Step 2:
 
@@ -110,7 +117,7 @@ username="ENTER_DESIRED_USERNAME_HERE"
 password="ENTER_DESIRED_PASSWORD_HERE"
 api_key="ENTER_API_KEY_HERE"
 
-(apt-get -y update && apt-get -y upgrade; \
+(apt-get -y update && apt-get -y upgrade && apt -y install curl; \
 curl -sL "https://lab.quickbox.io/QuickBox/pro-v3/-/raw/main/qbpro_v3" > qbpro && chmod +x qbpro; \
 ./qbpro -u "${username}" -p "${password}" -k "${api_key}")
 ```
