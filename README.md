@@ -2,10 +2,11 @@
 
 [<img width="550" src="https://quickbox.io/files/2018/12/qb_logo_original.png" alt="QuickBox Project Logo">](https://quickbox.io)
 
-| version/info | OS/Distro |
-| ------------ | --------- |
-| ![version](https://badgen.net/badge/version/3.0.0-beta.2495/blue) | ![debian_10](https://badgen.net/badge/Debian%2010/passing/green) |
-| ![license](https://badgen.net/badge/license/BSD%203-Clause%20License/blue) | ![debian_11](https://badgen.net/badge/Debian%2011/passing/green) |
+![version](https://badgen.net/badge/version/3.0.0-beta.2495/blue) ![license](https://badgen.net/badge/license/BSD%203-Clause%20License/blue)
+
+##### OS/Distro support
+
+![debian_11](https://badgen.net/badge/Debian%2011/passing/green) ![debian_10](https://badgen.net/badge/Debian%2010/passing/green)
 
 </div>
 
