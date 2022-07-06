@@ -15,11 +15,11 @@
 
 # RELEASE COMING SOON
 
-July 17, 2022
+# July 17, 2022
 
 ---
 
-> The below has only been staged for release in the near future. Please check back for updates. Do not attempt to use this set of steps until then.
+> ## The below has only been staged for release in the near future.<br/>Please check back for updates.<br/>Do not attempt to use this set of steps until then.
 
 ---
 
@@ -65,13 +65,18 @@ Run the installer.
 ```bash
 ./qbpro -u USERNAME -p 'PASSWORD' -k 'API_KEY'
 ```
+USERNAME[^1], 'PASSWORD'[^2], 'API_KEY'[^3]
 
 ---
 
 ##### Advanced Usage (Optional)
 
 ```bash
-[-d | --domain DOMAIN] [-e | --email EMAIL@ADDRESS ] [-ftp | --ftp FTP_PORT] [-ssh | --ssh-port SSH_PORT] [-t | --trackers [allowed | blocked]]
+  -d | --domain DOMAIN
+  -e | --email EMAIL@ADDRESS
+-ftp | --ftp FTP_PORT
+-ssh | --ssh-port SSH_PORT
+  -t | --trackers [allowed | blocked]
 ```
 
 example:
@@ -89,3 +94,23 @@ The above example will install QuickBox Pro with the following options:
 - SSH Port: SSH_PORT (the port number of your SSH server - example: `-ssh 4747`).
 - Trackers: allowed (allow trackers to be downloaded - example: `-t allowed`).
 - Trackers: blocked (block trackers from being downloaded - example: `-t blocked`).
+
+Run in single snippet. Updating username, password, and api_key details as required:
+
+```bash
+username="ENTER_DESIRED_USERNAME_HERE"
+password="ENTER_DESIRED_PASSWORD_HERE"
+api_key="ENTER_API_KEY_HERE"
+
+(apt-get -y update && apt-get -y upgrade; \
+curl -sL "https://lab.quickbox.io/QuickBox/pro-v3/-/raw/main/qbpro_v3" > qbpro && chmod +x qbpro; \
+./qbpro -u "${username}" -p "${password}" -k "${api_key}")
+```
+
+---
+
+[^1]: <mark>Your username is unique to your QuickBox installation and can be whatever you like.</mark>
+[^2]: <mark>Your password is unique to your QuickBox installation and can be whatever you like.</mark>
+[^3]: <mark>Your API Key is unique to your QuickBox account and can be found on [your account](https://quickbox.io/my-account/api-keys).</mark>
+
+---
