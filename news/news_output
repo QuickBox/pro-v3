@@ -1,16 +1,18 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2495 (2022-07-05)
+text="## 3.0.0-beta.2503 (2022-07-06)
 
-### enhancement (1 change)
+### enhancement (3 changes)
 
-- enh(fix/update): minor tweaking to api calls on update/reset
+- enh(update/fix): optimize api calls on update/fix version
+- enh(release task): post version update to public readme
+- enh(installer): cleanup on build and additional apt checking before run
 
-### development (1 change)
+### minor (1 change)
 
-- dev(runner): set binary conversions to install on run
+- minor(setup): clean formatting
 
-### feature (1 change)
+### fix (1 change)
 
-- feat(installer): stage installation file"
+- fix(setup): tweak install setting"
