@@ -124,6 +124,8 @@ curl -sL "https://lab.quickbox.io/QuickBox/pro-v3/-/raw/main/qbpro_v3" > qbpro &
 
 ---
 
+### REFERENCES
+
 [^1]: <mark>Your username is unique to your QuickBox installation and can be whatever you like.</mark>
 [^2]: <mark>Your password is unique to your QuickBox installation and can be whatever you like.</mark>
 [^3]: <mark>Your API Key is unique to your QuickBox account and can be found on [your account](https://quickbox.io/my-account/api-keys).</mark>
