@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2515 (2022-07-06)
+text="## 3.0.0-beta.2517 (2022-07-06)
 
-### fix (1 change)
+### enhancement (1 change)
 
-- enh(install/fix/update): improved cleanup of setup residuals "
+- enh(apt): additional tweaks to system apt updating"
