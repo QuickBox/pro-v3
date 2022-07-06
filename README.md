@@ -1,4 +1,14 @@
-[![QuickBox](https://quickbox.io/files/2018/12/qb_logo_original.png "QuickBox")](https://quickbox.io)
+<div align="center">
+
+[<img width="550" src="https://quickbox.io/files/2018/12/qb_logo_original.png" alt="QuickBox Project Logo">](https://quickbox.io)
+
+| version/info | OS/Distro |
+| ------------ | --------- |
+| ![version](https://badgen.net/badge/version/3.0.0-beta.2495/blue) | ![debian_10](https://badgen.net/badge/Debian%2010/passing/green) |
+| ![license](https://badgen.net/badge/license/BSD%203-Clause%20License/blue) | ![debian_11](https://badgen.net/badge/Debian%2011/passing/green) |
+
+</div>
+
 
 ---
 
@@ -10,23 +20,34 @@ July 17, 2022
 
 > The below has only been staged for release in the near future. Please check back for updates. Do not attempt to use this set of steps until then.
 
+---
+
 ## INSTALLATION
 
 ### Step 1:
-
-It's good practice to first check your system apt.
-
-```bash
-sudo apt-get -y update && sudo apt-get -y upgrade
-```
-
-### Step 2:
 
 Elevate your bash environment to root and move to the `/root` directory.
 
 ```bash
 sudo -i
 ```
+
+- Why elevate your bash environment to root?
+	- Because we need to be able to write to the `/root` directory as well as access restricted files and operations. By using `sudo -i` we temporarily elevate our bash environment to complete more sensitive tasks; such as building and configuring nginx, php, etc...
+
+### Step 2:
+
+It's good practice to check your system apt.
+
+```bash
+apt-get -y update && apt-get -y upgrade
+```
+
+- Why check your system apt?
+	- Because we need to be able to install packages that are not available in the repositories.
+	- We also need to check for available security updates and be able to install them.
+	- We also need to check for available general updates and be able to install them.
+	- Though QuickBox does it for you on software installs and version updates, it's good practice to check your system apt regularly.
 
 ### Step 3:
 
@@ -43,3 +64,27 @@ Run the installer.
 ```bash
 ./qbpro -u USERNAME -p 'PASSWORD' -k 'API_KEY'
 ```
+
+---
+
+##### Advanced Usage (Optional)
+
+```bash
+[-d | --domain DOMAIN] [-e | --email EMAIL@ADDRESS ] [-ftp | --ftp FTP_PORT] [-ssh | --ssh-port SSH_PORT] [-t | --trackers [allowed | blocked]]
+```
+
+example:
+
+```bash
+./qbpro -u USERNAME -p 'PASSWORD' -k 'API_KEY' -d 'DOMAIN' -e 'EMAIL@ADDRESS' -ftp FTP_PORT -ssh SSH_PORT -t blocked
+```
+
+The above example will install QuickBox Pro with the following options:
+
+- Domain: DOMAIN (the domain name of your server - example: `-d 'mydomain.com'`).
+    - **You must have a valid domain name already registered with your provider and the proper DNS records set up.**<br/>This will set the Dashboard for QuickBox Pro to your domain as well as install a valid SSL certificate.
+- Email: EMAIL@ADDRESS (the email address of your user - example: `-e 'my@email.com'`).
+- FTP Port: FTP_PORT (the port number of your FTP server - example: `-ftp 5757`).
+- SSH Port: SSH_PORT (the port number of your SSH server - example: `-ssh 4747`).
+- Trackers: allowed (allow trackers to be downloaded - example: `-t allowed`).
+- Trackers: blocked (block trackers from being downloaded - example: `-t blocked`).
