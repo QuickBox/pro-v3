@@ -58,6 +58,14 @@ Grab the latest setup file.
 curl -sL "https://lab.quickbox.io/QuickBox/pro-v3/-/raw/main/qbpro_v3" > qbpro && chmod +x qbpro
 ```
 
+- If you receive a "curl: command not found" error, please install curl.
+	- curl can be installed with the following command:
+		```bash
+		sudo apt-get install -y curl
+		```
+- What is curl?
+	- curl is a command line tool that allows you to retrieve files from the internet.
+
 ### Step 4:
 
 Run the installer.
