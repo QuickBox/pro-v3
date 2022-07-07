@@ -1,8 +1,9 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2524 (2022-07-07)
+text="## 3.0.0-beta.2526 (2022-07-07)
 
-### enhancement (1 change)
+### enhancement (2 changes)
 
-- enh(autoscan): automagically generate api tokens for emby/jellyfin on build"
+- enh(UI): styling adjustments - prep qb auto update
+- enh(autoscan): better formatting on jellyfin random token creation"
