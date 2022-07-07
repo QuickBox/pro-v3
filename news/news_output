@@ -1,9 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2526 (2022-07-07)
+text="## 3.0.0-beta.2529 (2022-07-07)
 
-### enhancement (2 changes)
+### enhancement (1 change)
 
-- enh(UI): styling adjustments - prep qb auto update
-- enh(autoscan): better formatting on jellyfin random token creation"
+- enh(translations): french translations updated - provided by way of @tomcdj71"
