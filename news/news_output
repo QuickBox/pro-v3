@@ -1,8 +1,25 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2529 (2022-07-07)
+text="## 3.0.0-beta.2535 (2022-07-08)
 
-### enhancement (1 change)
+### enhancement (2 changes)
 
-- enh(translations): french translations updated - provided by way of @tomcdj71"
+- enh(UI): on api display, set new token values as set by emby/jellyfin builds
+- enh(autoscan): find api tokens already created by way of emby/jellyfin builds
+
+### fix (7 changes)
+
+- fix(jellyfin): set specific token naming to avoid conflicts
+- fix(emby): create new token per the build
+- fix(emby/jellyfin): correction to formatting on key file placement
+- fix(mylar3): corrections to necessary permissions on init.d variables
+- fix(unpackerr): remove unneeded access message on build completion
+- fix(quassel): corrections to build - satisfy both debian 10/11
+- fix(autoscan): remove unneeded access message on build completion
+
+### feature (3 changes)
+
+- feat(UI): show default web tokens for emby/jellyfin to dashboard display
+- feat(emby): create default web token file to data directory - used for dashboard display
+- feat(jellyfin): create default web token on build"
