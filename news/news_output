@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2555 (2022-07-09)
+text="## 3.0.0-beta.2558 (2022-07-09)
 
 ### fix (1 change)
 
-- fix(UI): correction to positional checks if more than one api key created"
+- fix(bazarr): adjustments to line checking on config edits during install/update"
