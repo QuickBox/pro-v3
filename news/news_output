@@ -1,21 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2552 (2022-07-09)
+text="## 3.0.0-beta.2555 (2022-07-09)
 
-### feature (2 changes)
+### fix (1 change)
 
-- feat(UI): adjustments to appinfo array to show sickgear API on Dashboard
-- feat(lazylibrarian): adjustments to build and appinfo array to show API on Dashboard
-
-### fix (5 changes)
-
-- fix(UI): correction to value searching per lazylibrarian api dashboard display
-- fix(UI): set new display field values for lazylibrarian api key
-- fix(unpackerr): ensure full, non-interactive removal on uninstall
-- fix(qbittorrent): permission setting on data directory only if it exist
-- fix(php): force set cgi.fix_pathinfo in the event it defaults to 0
-
-### enhancement (1 change)
-
-- enh(php): better backup and subsequent cleanup of old backed files"
+- fix(UI): correction to positional checks if more than one api key created"
