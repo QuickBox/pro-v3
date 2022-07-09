@@ -1,25 +1,21 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2535 (2022-07-08)
+text="## 3.0.0-beta.2552 (2022-07-09)
 
-### enhancement (2 changes)
+### feature (2 changes)
 
-- enh(UI): on api display, set new token values as set by emby/jellyfin builds
-- enh(autoscan): find api tokens already created by way of emby/jellyfin builds
+- feat(UI): adjustments to appinfo array to show sickgear API on Dashboard
+- feat(lazylibrarian): adjustments to build and appinfo array to show API on Dashboard
 
-### fix (7 changes)
+### fix (5 changes)
 
-- fix(jellyfin): set specific token naming to avoid conflicts
-- fix(emby): create new token per the build
-- fix(emby/jellyfin): correction to formatting on key file placement
-- fix(mylar3): corrections to necessary permissions on init.d variables
-- fix(unpackerr): remove unneeded access message on build completion
-- fix(quassel): corrections to build - satisfy both debian 10/11
-- fix(autoscan): remove unneeded access message on build completion
+- fix(UI): correction to value searching per lazylibrarian api dashboard display
+- fix(UI): set new display field values for lazylibrarian api key
+- fix(unpackerr): ensure full, non-interactive removal on uninstall
+- fix(qbittorrent): permission setting on data directory only if it exist
+- fix(php): force set cgi.fix_pathinfo in the event it defaults to 0
 
-### feature (3 changes)
+### enhancement (1 change)
 
-- feat(UI): show default web tokens for emby/jellyfin to dashboard display
-- feat(emby): create default web token file to data directory - used for dashboard display
-- feat(jellyfin): create default web token on build"
+- enh(php): better backup and subsequent cleanup of old backed files"
