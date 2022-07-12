@@ -1,9 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2586 (2022-07-12)
+text="## 3.0.0-beta.2588 (2022-07-12)
 
-### fix (2 changes)
+### feature (1 change)
 
-- fix(ombi): set delay on build to ensure proper api key capture for dashboard display
-- fix(plex): sort signed key path on apt source for build"
+- feat(fail2ban): set fail2ban installer and manage packages"
