@@ -1,12 +1,14 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2577 (2022-07-12)
+text="## 3.0.0-beta.2582 (2022-07-12)
 
-### minor (1 change)
+### enhancement (1 change)
 
-- minor(release): bump version to package new release
+- enh(calibre): stage db.template for deb10 as calibre-server has deprecated libc6 < 2.31
 
-### fix (1 change)
+### fix (3 changes)
 
-- fix(db): post new database values"
+- fix(rtorrent): removed deprecated versions "0.9.4" and "feature-bind" from build
+- fix(rtorrent): no longer removing flood on uninstall as flood supports multiple clients
+- fix(flood): correction to install/reinstall header message"
