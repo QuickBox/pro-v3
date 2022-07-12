@@ -1,4 +1,12 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text=""
+text="## 3.0.0-beta.2577 (2022-07-12)
+
+### minor (1 change)
+
+- minor(release): bump version to package new release
+
+### fix (1 change)
+
+- fix(db): post new database values"
