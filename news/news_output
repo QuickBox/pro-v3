@@ -1,30 +1,4 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2562 (2022-07-12)
-
-### feature (2 changes)
-
-- feat(UX): better display and accessibility of info on service control center
-- feat(ombi): create default token file to data directory - used for dashboard display
-
-### enhancement (5 changes)
-
-- enh(UI): list emby/jellyfin install restrictions
-- enh(UI): update sweetalert2 v11.3.3
-- enh(calibre): issue separate entries for server/web to database
-- enh(flood): remove rtorrent requirement as flood supports various clients
-- enh(headphones): pipe service cycling to avoid confusing verbosity
-
-### fix (6 changes)
-
-- fix(UI): adjustments to multiple software api display array
-- fix(calibre): set additional dependencies for calibre-server build
-- fix(installer): correction to log(s) directory on install
-- fix(UI): correction to positional searching for lazylibrarian key
-- fix(filebot): correction to "deluged@" service restarting
-- fix(bazarr): correction to formatting causing sed error on config edit
-
-### minor (1 change)
-
-- minor(rtorrent): remove erroneous directories from rtorrent build"
+text=""
