@@ -1,8 +1,12 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2588 (2022-07-12)
+text="## 3.0.0-beta.2590 (2022-07-13)
 
-### feature (1 change)
+### fix (1 change)
 
-- feat(fail2ban): set fail2ban installer and manage packages"
+- fix(lecert): minor correction to file operator on cert build
+
+### enhancement (1 change)
+
+- enh(UI): only show relevant calibre-server display on Debian 11 - Deb support..."
