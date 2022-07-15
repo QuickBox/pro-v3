@@ -1,23 +1,12 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2603 (2022-07-15)
-
-### minor (1 change)
-
-- minor(flood): set declaration for rtorrent on build per dlindex creation
-
-### fix (8 changes)
-
-- fix(filebot): correction to rtorrent-postprocess script
-- fix(fail2ban): correction on help output commands
-- fix(duplicati): add missing help case
-- fix(assets): readarr logo updated
-- fix(autoscan): avoid word splitting on looped path arrays to config
-- fix(UI): translations for "Flood" updated
-- fix(update/fix version): avoid removing "qb" binary on initialization of commands
-- fix(cron): correction to cron task per qb auto updating
+text="## 3.0.0-beta.2605 (2022-07-15)
 
 ### enhancement (1 change)
 
-- enh(apt): adjustments to apt update/upgrade per non-interactive"
+- enh(translations): Danish language translation updated by way of @Globber
+
+### fix (1 change)
+
+- fix(lecert): remove breakage on database title entry"
