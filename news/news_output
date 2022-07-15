@@ -1,12 +1,23 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2590 (2022-07-13)
+text="## 3.0.0-beta.2603 (2022-07-15)
 
-### fix (1 change)
+### minor (1 change)
 
-- fix(lecert): minor correction to file operator on cert build
+- minor(flood): set declaration for rtorrent on build per dlindex creation
+
+### fix (8 changes)
+
+- fix(filebot): correction to rtorrent-postprocess script
+- fix(fail2ban): correction on help output commands
+- fix(duplicati): add missing help case
+- fix(assets): readarr logo updated
+- fix(autoscan): avoid word splitting on looped path arrays to config
+- fix(UI): translations for "Flood" updated
+- fix(update/fix version): avoid removing "qb" binary on initialization of commands
+- fix(cron): correction to cron task per qb auto updating
 
 ### enhancement (1 change)
 
-- enh(UI): only show relevant calibre-server display on Debian 11 - Deb support..."
+- enh(apt): adjustments to apt update/upgrade per non-interactive"
