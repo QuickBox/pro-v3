@@ -1,12 +1,11 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2618 (2022-07-16)
+text="## 3.0.0.2624 (2022-07-16)
 
-### enhancement (1 change)
+### fix (4 changes)
 
-- enh(versioning): remove beta tagging
-
-### fix (1 change)
-
-- fix(readarr): correction to help output commands"
+- fix(fail2ban): corrections to fail2ban config build and config triggering
+- fix(autocomplete): remove "-u" completion from fail2ban tabbing
+- fix(fail2ban): remove user check from build as no username is required - installs under sysop
+- fix(translation): better translation to CLEAR on Danish "nulstil""
