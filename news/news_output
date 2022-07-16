@@ -1,9 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2608 (2022-07-16)
+text="## 3.0.0-beta.2612 (2022-07-16)
 
-### fix (2 changes)
+### fix (1 change)
 
-- fix(UI): correction to calibre on software array per uninstall
-- fix(translations): various missing translations added"
+- fix(autocomplete): set fail2ban back to array"
