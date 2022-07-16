@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2613 (2022-07-16)
+text="## 3.0.0-beta.2616 (2022-07-16)
 
-### fix (1 change)
+### enhancement (1 change)
 
-- fix(translations): typo correction"
+- enh(update/fix version): completion sequence - order arrangements"
