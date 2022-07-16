@@ -1,12 +1,9 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0-beta.2605 (2022-07-15)
+text="## 3.0.0-beta.2608 (2022-07-16)
 
-### enhancement (1 change)
+### fix (2 changes)
 
-- enh(translations): Danish language translation updated by way of @Globber
-
-### fix (1 change)
-
-- fix(lecert): remove breakage on database title entry"
+- fix(UI): correction to calibre on software array per uninstall
+- fix(translations): various missing translations added"
