@@ -1,16 +1,8 @@
 #!/bin/bash
 declare -g title text
-title="It's time to release!"
-text="Holy smokes! It's time to release!
+title="An update is available!"
+text="## 3.0.0.2660 (2022-07-17)
 
-After what seems to have been an eternity, we're finally looking at QuickBox Pro v3.0.0.
+### fix (1 change)
 
-We're very excited to have v3 launched and we're very excited to have you join us!
-
-Should you encounter any issues, please let us know. Even though there has been an incredible
-amount of testing, there may still be some bugs. This can happen depending on the environment
-, the OS, the hardware, package maintainers updating things, and any number of variables. 
-In short, it's Linux and anything can happen. All issues are tracked and will be resolved as
-quickly as possible.
-
-With the usual bug disclaimer out of the way. Enjoy and we look forward to many more releases in the future."
+- fix(translations): additional translations added"
