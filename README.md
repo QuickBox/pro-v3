@@ -12,17 +12,6 @@
 
 </div>
 
-
----
-
-# [RELEASE COMING SOON](https://quickbox.io/announcements/v3-developer-updates-launch-imminent/)
-
-# July 17, 2022
-
----
-
-> ## The below has only been staged for release in the near future.<br/>Please check back for updates.<br/>Do not attempt to use this set of steps until then.
-
 ---
 
 ## INSTALLATION
