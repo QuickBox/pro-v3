@@ -1,8 +1,15 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2660 (2022-07-17)
+text="## 3.0.0.2666 (2022-07-18)
 
-### fix (1 change)
+### fixes (3 changes)
 
-- fix(translations): additional translations added"
+- fix(translations): French translation adjustments by way of @tomcdj71
+- fix(UI): correction to svg alignment on user admin page fields
+- fix(translations): additional translations added
+
+### enhancements (2 changes)
+
+- enh(UI): better key copy
+- enh(UI): improved validation on settings page if no url set"
