@@ -6,8 +6,8 @@ text="## 3.0.0.2680 (2022-07-19)
 ### fixes (6 changes)
 
 - fix(emby/overseerr/plex): only backup necessary nginx reverse in accordance...
-- fix(emby): set url override if emby built with "-d some.emby.domain" flag
-- fix(UI): update url override accordingly if "-d" flag is used for subdomain access
+- fix(emby): set url override if emby built with '-d some.emby.domain' flag
+- fix(UI): update url override accordingly if '-d' flag is used for subdomain access
 - fix(UI): adjustments to unique sorting on disk mount selection - general settings
 - fix(UI): improved drop-down function on timezone selection
 - fix(UI): set default view on user creation
@@ -16,6 +16,6 @@ text="## 3.0.0.2680 (2022-07-19)
 
 - enh(translations): updated translations on emby, overseerr, and plex help functions
 - enh(UI): extended width on gmedia mount display per rclone
-- enh(overseerr/plex): update help commands to show "-d" options
+- enh(overseerr/plex): update help commands to show '-d' options
 - enh(UI): update jq validation to v1.19.5
 - enh(x2go): remove bulk from build - work to improve build times"
