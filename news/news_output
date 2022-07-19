@@ -1,8 +1,9 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2684 (2022-07-19)
+text="## 3.0.0.2689 (2022-07-19)
 
-### fixes (1 change)
+### fixes (2 changes)
 
-- fix(UI): correction to Calibre naming on install array"
+- fix(calibre): build gremlins resolved - killed with fire
+- fix(calibre): corrections to port randomization on build"
