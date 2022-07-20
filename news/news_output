@@ -1,9 +1,18 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2689 (2022-07-19)
+text="## 3.0.0.2697 (2022-07-20)
 
-### fixes (2 changes)
+### fixes (3 changes)
 
-- fix(calibre): build gremlins resolved - killed with fire
-- fix(calibre): corrections to port randomization on build"
+- fix(UI): set custom url2 validation to set TLD as optional - server ip etc.
+- fix(update): correction to command usage on logs display
+- fix(installer): adjust permissions on default directory during install
+
+### enhancements (1 change)
+
+- enh(UI): seamless rendering of php time zone selection
+
+### development (1 change)
+
+- dev(tasks): runner sync"
