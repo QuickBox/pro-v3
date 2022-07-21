@@ -1,18 +1,24 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2697 (2022-07-20)
+text="## 3.0.0.2708 (2022-07-21)
+
+### enhancements (3 changes)
+
+- enh(lecert): set additional help commands and translations
+- enh(snippets): boost session cache time on ssl-params
+- enh(plex): better subdomain setup if used with '-d' option
+
+### minor (1 change)
+
+- minor(plex): remove session cache setting from plex subdomain template...
+
+### features (1 change)
+
+- feat(lecert): implement options to generate and stage subdomain reverse for...
 
 ### fixes (3 changes)
 
-- fix(UI): set custom url2 validation to set TLD as optional - server ip etc.
-- fix(update): correction to command usage on logs display
-- fix(installer): adjust permissions on default directory during install
-
-### enhancements (1 change)
-
-- enh(UI): seamless rendering of php time zone selection
-
-### development (1 change)
-
-- dev(tasks): runner sync"
+- fix(lecert): show proper completion output on ssl install
+- fix(UI): correction to parse_url on check if let's encrypt is installed
+- fix(plex): pipe signed gpg key for plex source on build"
