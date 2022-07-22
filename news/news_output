@@ -1,22 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2716 (2022-07-22)
+text="## 3.0.0.2721 (2022-07-22)
 
-### security (1 change)
+### fixes (1 change)
 
-- sec(UI): kill arbitrary code execution on fields
-
-### fixes (2 changes)
-
-- fix(UI): correction to user password updating on user profile edit
-- fix(UI): correction to the API object class call
-
-### enhancements (2 changes)
-
-- enh(security): implement better logging to failed login values on fail2ban.log
-- enh(lecert): cleanup on build file
-
-### minor (1 change)
-
-- minor(lecert): remove unused count commands"
+- fix(UI): correction to Api object controller"
