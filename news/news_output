@@ -1,8 +1,16 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2721 (2022-07-22)
+text="## 3.0.0.2733 (2022-07-25)
 
-### fixes (1 change)
+### enhancements (3 changes)
 
-- fix(UI): correction to Api object controller"
+- enh(fix|updater): improved cleanup on completion
+- enh(deluge): permission settings to config files (core.conf|web.conf)
+- enh(fix|updater): additional exclude to update/fix version
+
+### fixes (3 changes)
+
+- fix(UI): better handling of php reloading on editing application nginx from dashboard
+- fix(plex): adjustments to group assignment on build to allow hw acceleration 
+- fix(deluge): remove default nginx auth in favor of that provided by Deluge"
