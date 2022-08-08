@@ -1,37 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2762 (2022-08-08)
+text="## 3.0.0.2771 (2022-08-08)
 
-### features (3 changes)
+### fixes (1 change)
 
-- feat(webconsole): set update function
-- feat(UI): ability to view and update/reinstall software versions from UI
-- feat(software): new 'qb software check' - check and compare versions of...
-
-### enhancements (9 changes)
-
-- enh(multiple software): signal application version checks on package builds and updates
-- enh(UI): send rutorrent plugins toggle to 'torrent clients' menu option
-- enh(UI): css adjustments per Service Control Center and PMC
-- enh(translations): updated translations for new reinstall/update from UI display
-- enh(unpackerr): build in complementary update option
-- enh(flood): build in complementary update option
-- enh(multiple software): on applications with '-o beta' options, add beta file...
-- enh(bazarr): improved service file - reduction to build package
-- enh(fix|updater): improved version checking
-
-### fixes (12 changes)
-
-- fix(UI): address an issue where the admin user couldn't use forgot password feature
-- fix(UI): modal step corrections for reinstall from dashboard
-- fix(UI): correction to rclone log cleaning from dashboard
-- fix(UI): disable currently out-of-date plugins from rutorrent plugin toggle
-- fix(UI): better update check on Api
-- fix(UI): set custom.css file
-- fix(rutorrent): ensure plugin directory is not removed before sending to bin
-- fix(netdata): proper version checking and sending of version to database
-- fix(jellyfin): add sanity check to version if beta is opted for install
-- fix(calibre): added missing Unit section header to service(s) file
-- fix(apt): metadata file naming on package
-- fix(user): correction to .bashrc importing on user creation"
+- fix(UI): correction to session wrapping on rutorrent plugin list"
