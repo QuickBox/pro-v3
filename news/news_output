@@ -32,6 +32,6 @@ text="## 3.0.0.2762 (2022-08-08)
 - fix(rutorrent): ensure plugin directory is not removed before sending to bin
 - fix(netdata): proper version checking and sending of version to database
 - fix(jellyfin): add sanity check to version if beta is opted for install
-- fix(calibre): added missing [Unit section header to service(s) file]
+- fix(calibre): added missing Unit section header to service(s) file
 - fix(apt): metadata file naming on package
 - fix(user): correction to .bashrc importing on user creation"
