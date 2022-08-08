@@ -12,7 +12,7 @@ text="## 3.0.0.2762 (2022-08-08)
 ### enhancements (9 changes)
 
 - enh(multiple software): signal application version checks on package builds and updates
-- enh(UI): send rutorrent plugins toggle to "torrent clients" menu option
+- enh(UI): send rutorrent plugins toggle to 'torrent clients' menu option
 - enh(UI): css adjustments per Service Control Center and PMC
 - enh(translations): updated translations for new reinstall/update from UI display
 - enh(unpackerr): build in complementary update option
