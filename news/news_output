@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2771 (2022-08-08)
+text="## 3.0.0.2774 (2022-08-08)
 
 ### fixes (1 change)
 
-- fix(UI): correction to session wrapping on rutorrent plugin list"
+- fix(software): if no available versions for update on software, null output"
