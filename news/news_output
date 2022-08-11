@@ -1,8 +1,11 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2774 (2022-08-08)
+text="## 3.0.0.2780 (2022-08-11)
 
-### fixes (1 change)
+### fixes (4 changes)
 
-- fix(software): if no available versions for update on software, null output"
+- fix(db): set tautulli and webconsole as updateable packages to database
+- fix(tautulli): corrections to the build - pull from git rather than grab tar.gz package
+- fix(emby/overseerr/plex): reset custom linking on remove/reinstall
+- fix(thelounge): set additional help info per update"
