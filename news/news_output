@@ -1,11 +1,15 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2780 (2022-08-11)
+text="## 3.0.0.2789 (2022-08-16)
 
-### fixes (4 changes)
+### fixes (3 changes)
 
-- fix(db): set tautulli and webconsole as updateable packages to database
-- fix(tautulli): corrections to the build - pull from git rather than grab tar.gz package
-- fix(emby/overseerr/plex): reset custom linking on remove/reinstall
-- fix(thelounge): set additional help info per update"
+- fix(overseerr): remove unneeded nginx reverse backup and update access messages on completion
+- fix(fix version/updater): correction to timesynced service configuration
+- fix(software): improved application version checking per multiple users
+
+### enhancements (2 changes)
+
+- enh(apt): set additional dpkg checks on apt updater
+- enh(x2go): include update function"
