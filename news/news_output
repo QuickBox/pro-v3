@@ -1,15 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2789 (2022-08-16)
+text="## 3.0.0.2793 (2022-08-16)
 
-### fixes (3 changes)
+### fixes (1 change)
 
-- fix(overseerr): remove unneeded nginx reverse backup and update access messages on completion
-- fix(fix version/updater): correction to timesynced service configuration
-- fix(software): improved application version checking per multiple users
-
-### enhancements (2 changes)
-
-- enh(apt): set additional dpkg checks on apt updater
-- enh(x2go): include update function"
+- fix(quota): much improved quota build - set values as already determined"
