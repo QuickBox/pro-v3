@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2793 (2022-08-16)
+text="## 3.0.0.2797 (2022-08-17)
 
 ### fixes (1 change)
 
-- fix(quota): much improved quota build - set values as already determined"
+- fix(UI): set proper viewing access to autodl-irssi on package management..."
