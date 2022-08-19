@@ -1,8 +1,13 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2808 (2022-08-17)
+text="## 3.0.0.2814 (2022-08-19)
 
-### fixes (1 change)
+### fixes (2 changes)
 
-- fix(autodl): additional adjustments to build per multi-users"
+- fix(fix|update): signal replace on old files rather than remove - compatibility
+- fix(user): on user creation, if autodl=installed, ensure service enable
+
+### enhancements (1 change)
+
+- enh(transmission): set update function"
