@@ -1,13 +1,25 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2814 (2022-08-19)
+text="## 3.0.0.2829 (2022-08-22)
 
-### fixes (2 changes)
+### fixes (4 changes)
 
-- fix(fix|update): signal replace on old files rather than remove - compatibility
-- fix(user): on user creation, if autodl=installed, ensure service enable
+- fix(install): correction to ntp/time-synced
+- fix(komga): set -d flag option to builtin help examples
+- fix(UI): software order correction on main navigation
+- fix(webconsole|ttyd): correction to software_title display
 
-### enhancements (1 change)
+### enhancements (3 changes)
 
-- enh(transmission): set update function"
+- enh(user): additional cleanup of user files on removal
+- enh(UI): improved application status values - more cohesive
+- enh(UI): set update/reinstall function to Web Console - easy UI control
+
+### new (1 change)
+
+- new(software): komga now available
+
+### translations (1 change)
+
+- translations: UI translation strings updated"
