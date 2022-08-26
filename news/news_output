@@ -1,23 +1,12 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2841 (2022-08-24)
+text="## 3.0.0.2851 (2022-08-26)
 
-### fixes (4 changes)
+### fixes (5 changes)
 
-- fix(UI): adjustments to appData array for update/install system response
-- fix(plex): correction to help function display on token flag -k (not) -t
-- fix(plex): set additional group/user checks in the event plex apt package malforms
-- fix(UI): set additional check on runner
-
-### enhancements (5 changes)
-
-- enh(multiple software): permissions adjustments to dlindex nginx reverse for torrent clients
-- enh(autodl): additional cleanup of leftover service files on removal
-- enh(user): additional cleanup of user files on removal
-- enh(UI): set option to update/reinstall netdata (ease of use)
-- enh(UI): adjust session parameters for sub-admin to perform user management functions
-
-### features (1 change)
-
-- feat(UI): ability to set users group on user creation"
+- fix(cli lang): correction to overseerr completion message if installed for subdomain
+- fix(admin user edit): remove unnecessary php service reload on user edit
+- fix(admin user edit): correction to header redirect on user setting updates
+- fix(user): corrections to user processing on promote/demote to/from admin
+- fix(overseerr): correction to database values for translation"
