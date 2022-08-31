@@ -1,12 +1,20 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2851 (2022-08-26)
+text="## 3.0.0.2861 (2022-08-31)
 
 ### fixes (5 changes)
 
-- fix(cli lang): correction to overseerr completion message if installed for subdomain
-- fix(admin user edit): remove unnecessary php service reload on user edit
-- fix(admin user edit): correction to header redirect on user setting updates
-- fix(user): corrections to user processing on promote/demote to/from admin
-- fix(overseerr): correction to database values for translation"
+- fix(quota): remove unnecessary -cug on quotacheck during install
+- fix(UI): avoid calamity and ensure the defaults group is not removable
+- fix(UI): set proper selection title on User Group selection on UI user creation
+- fix(user): if quota is installed, perform proper check to assign on user creation
+- fix(plex): correction to versioning set to database on update
+
+### translations (1 change)
+
+- UI translation strings updated
+
+### enhancements (1 change)
+
+- enh(quota): additional checking on assigned mount during quota install"
