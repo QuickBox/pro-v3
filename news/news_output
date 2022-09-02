@@ -1,20 +1,26 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2861 (2022-08-31)
+text="## 3.0.0.2883 (2022-09-02)
 
-### fixes (5 changes)
+### enhancements (5 changes)
 
-- fix(quota): remove unnecessary -cug on quotacheck during install
-- fix(UI): avoid calamity and ensure the defaults group is not removable
-- fix(UI): set proper selection title on User Group selection on UI user creation
-- fix(user): if quota is installed, perform proper check to assign on user creation
-- fix(plex): correction to versioning set to database on update
+- enh(db): database updated
+- enh(novnc): enhanced build if already installed
+- enh(UI): set updated user handling on PMC per novnc installing
+- enh(novnc): additional cleanup per new build adjustments (on uninstall)
+- enh(novnc): improved (multi-user) build with corrected copy/paste from clipboard
 
 ### translations (1 change)
 
-- UI translation strings updated
+- CLI/UI translation strings updated
 
-### enhancements (1 change)
+### fixes (7 changes)
 
-- enh(quota): additional checking on assigned mount during quota install"
+- fix(novnc): update completion messages on build/reinstall
+- fix(novnc): ensure dependencies are only removed if uninstall is last existing
+- fix(UI): update websockify path to novnc user link
+- fix(novnc): ensure additional reverse are removed on uninstall
+- fix(komga): proper access/error log values on subdomain reverse
+- fix(komga): adjustments to subdomain reverse on build
+- fix(UI): correction to session passing on forgot password submissions"
