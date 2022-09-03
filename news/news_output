@@ -1,26 +1,17 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2883 (2022-09-02)
+text="## 3.0.0.2894 (2022-09-03)
 
-### enhancements (5 changes)
+### fixes (5 changes)
 
-- enh(db): database updated
-- enh(novnc): enhanced build if already installed
-- enh(UI): set updated user handling on PMC per novnc installing
-- enh(novnc): additional cleanup per new build adjustments (on uninstall)
-- enh(novnc): improved (multi-user) build with corrected copy/paste from clipboard
+- fix(UI): correction to app nginx editing paths via dashboard editor
+- fix(UI): improved app nginx/conf editor from dashboard - added sanitizing
+- fix(calibre): adjustment to calibre service file
+- fix(UI): array identifier on deluge install from dashboard
+- fix(UI): array identifier on calibre install from dashboard
 
-### translations (1 change)
+### enhancements (2 changes)
 
-- CLI/UI translation strings updated
-
-### fixes (7 changes)
-
-- fix(novnc): update completion messages on build/reinstall
-- fix(novnc): ensure dependencies are only removed if uninstall is last existing
-- fix(UI): update websockify path to novnc user link
-- fix(novnc): ensure additional reverse are removed on uninstall
-- fix(komga): proper access/error log values on subdomain reverse
-- fix(komga): adjustments to subdomain reverse on build
-- fix(UI): correction to session passing on forgot password submissions"
+- enh(calibre): improved version setting to db on build
+- enh(UI): optimized application data array passing to modalcontroller"
