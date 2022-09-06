@@ -1,12 +1,9 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2911 (2022-09-06)
+text="## 3.0.0.2916 (2022-09-06)
 
-### fixes (1 change)
+### fixes (2 changes)
 
-- fix(UI): additional modal checks on deluge/calibre
-
-### enhancements (1 change)
-
-- enh(multiple software): better limits on software version scoping - avoid api limits"
+- fix(bazarr): adjust backup path for config on update
+- fix(bazarr): updated line entries for editing on build"
