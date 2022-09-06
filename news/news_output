@@ -1,17 +1,13 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2894 (2022-09-03)
-
-### fixes (5 changes)
-
-- fix(UI): correction to app nginx editing paths via dashboard editor
-- fix(UI): improved app nginx/conf editor from dashboard - added sanitizing
-- fix(calibre): adjustment to calibre service file
-- fix(UI): array identifier on deluge install from dashboard
-- fix(UI): array identifier on calibre install from dashboard
+text="## 3.0.0.2899 (2022-09-06)
 
 ### enhancements (2 changes)
 
-- enh(calibre): improved version setting to db on build
-- enh(UI): optimized application data array passing to modalcontroller"
+- enh(UI): only display forgot password link on login if mail settings are setup
+- enh(novnc): remove deprecated service entries on uninstall
+
+### fixes (1 change)
+
+- fix(pyload): correction to service editing on build"
