@@ -1,13 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2899 (2022-09-06)
-
-### enhancements (2 changes)
-
-- enh(UI): only display forgot password link on login if mail settings are setup
-- enh(novnc): remove deprecated service entries on uninstall
+text="## 3.0.0.2905 (2022-09-06)
 
 ### fixes (1 change)
 
-- fix(pyload): correction to service editing on build"
+- fix(UI): correction to build calls from dashboard resulting in dupe port values"
