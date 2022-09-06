@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2920 (2022-09-06)
+text="## 3.0.0.2921 (2022-09-06)
 
 ### fixes (1 change)
 
-- fix(duplicati): correction to user_id polling on update"
+- fix(duplicati): ensure version sets to db on update"
