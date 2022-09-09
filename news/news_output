@@ -1,9 +1,23 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2932 (2022-09-08)
+text="## 3.0.0.2946 (2022-09-09)
 
-### fixes (2 changes)
+### enhancements (5 changes)
 
-- fix(UI): new template settings per avatar upload zoning
-- fix(UI): set index to new logo assets upload directory"
+- enh(UI): set flush to memcache on theme swap
+- enh(update|fix|install): set memcached
+- enh(UI): improved field display on Service Control Panel (light and dark themes)
+- enh(UI): css aesthetic corrections (light and dark themes)
+- enh(UI): aesthetic adjustments to Admin User Edit pages
+
+### features (1 change)
+
+- feat(multiple software): only remove torrent client data directories on uninstall
+
+### fixes (4 changes)
+
+- fix(ombi): correction to install directory building on update
+- fix(UI): set better containment on collapsed logo render preview
+- fix(UI): correction to css values on app version display for light theme
+- fix(UI): if no logo uploaded use default theme values (dark/light)"
