@@ -1,9 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2952 (2022-09-10)
+text="## 3.0.0.2956 (2022-09-10)
 
-### enhancements (2 changes)
+### fixes (1 change)
 
-- enh(UI): correction on css values per username display via menu dropdown (light theme)
-- enh(UI): optimized asset handling on theme switching"
+- fix(UI): encryption on dash_header"
