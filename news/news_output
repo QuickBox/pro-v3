@@ -1,14 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2961 (2022-09-14)
-
-### enhancements (3 changes)
-
-- enh(UI): improved aesthetic to summary page
-- enh(UI): hard-coded text updated with translated values
-- enh(qb -h): update software tables on qb help manual
+text="## 3.0.0.2966 (2022-09-14)
 
 ### fixes (1 change)
 
-- fix(UI): correction to user ban - update table name"
+- fix(version|update): additional checks on apt updating within qb update/fix version"
