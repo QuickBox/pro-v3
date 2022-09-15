@@ -2,7 +2,7 @@
 
 [<img width="550" src="https://quickbox.io/files/2018/12/qb_logo_original.png" alt="QuickBox Project Logo">](https://quickbox.io)
 
-![version](https://badgen.net/badge/version/3.0.0.2966/blue)
+![version](https://badgen.net/badge/version/3.0.0.2970/blue)
 
 ##### OS/Distro support
 

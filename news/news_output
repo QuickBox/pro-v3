@@ -1,8 +1,13 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2966 (2022-09-14)
+text="## 3.0.0.2970 (2022-09-15)
 
-### fixes (1 change)
+### enhancements (1 change)
 
-- fix(version|update): additional checks on apt updating within qb update/fix version"
+- enh(wip): set ban_reason column to db user_ban_list
+
+### fixes (2 changes)
+
+- fix(UI): set web flag to user ban from Dashboard - avoid duplicate db entries
+- fix(UI): correction to case post on user unban"
