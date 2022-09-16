@@ -1,13 +1,16 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2970 (2022-09-15)
+text="## 3.0.0.2980 (2022-09-16)
+
+### fixes (5 changes)
+
+- fix(rclone): update mergerfs release target
+- fix(update|fix version): only update libs if needed to avoid failed lib loading
+- fix(tautulli): correction to update method
+- fix(update/fix version): addressed css values not updating properly with new theme switch calls
+- fix(update/fix version): addressed an issue where qb manpage was not updating (qb -h)
 
 ### enhancements (1 change)
 
-- enh(wip): set ban_reason column to db user_ban_list
-
-### fixes (2 changes)
-
-- fix(UI): set web flag to user ban from Dashboard - avoid duplicate db entries
-- fix(UI): correction to case post on user unban"
+- enh(qb -h): manual updates"
