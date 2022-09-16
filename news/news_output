@@ -1,16 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2980 (2022-09-16)
+text="## 3.0.0.2983 (2022-09-16)
 
-### fixes (5 changes)
+### fixes (1 change)
 
-- fix(rclone): update mergerfs release target
-- fix(update|fix version): only update libs if needed to avoid failed lib loading
-- fix(tautulli): correction to update method
-- fix(update/fix version): addressed css values not updating properly with new theme switch calls
-- fix(update/fix version): addressed an issue where qb manpage was not updating (qb -h)
-
-### enhancements (1 change)
-
-- enh(qb -h): manual updates"
+- fix(iris): correction to db array checking on quickbox bash module - readonly db etc message"
