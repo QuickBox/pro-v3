@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2999 (2022-09-22)
+text="## 3.0.0.3002 (2022-09-22)
 
 ### fixes (1 change)
 
-- fix(update): correction to bash headers"
+- fix(update/fix): resolve recent apt bug - overlapping to update as the file was deprecated"
