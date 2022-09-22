@@ -1,14 +1,9 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2989 (2022-09-22)
+text="## 3.0.0.2996 (2022-09-22)
 
-### fixes (3 changes)
+### fixes (2 changes)
 
-- fix(apt): adjustments to apt updater from dashboard UI
-- fix(overseerr): corrections to build/update - remove legacy node_options
-- fix(php): set apt hold on php to avoid qb update breakage
-
-### enhancements (1 change)
-
-- convenience adjustment to quickbox admin sudoer file"
+- fix(rutorrent): set newly updated version to database on update
+- fix(nzbhydra2): correction to archive package grabbing on build"
