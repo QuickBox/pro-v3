@@ -1,9 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2996 (2022-09-22)
+text="## 3.0.0.2999 (2022-09-22)
 
-### fixes (2 changes)
+### fixes (1 change)
 
-- fix(rutorrent): set newly updated version to database on update
-- fix(nzbhydra2): correction to archive package grabbing on build"
+- fix(update): correction to bash headers"
