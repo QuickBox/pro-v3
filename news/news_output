@@ -1,8 +1,14 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.2986 (2022-09-16)
+text="## 3.0.0.2989 (2022-09-22)
+
+### fixes (3 changes)
+
+- fix(apt): adjustments to apt updater from dashboard UI
+- fix(overseerr): corrections to build/update - remove legacy node_options
+- fix(php): set apt hold on php to avoid qb update breakage
 
 ### enhancements (1 change)
 
-- enh(quickbox): adjust command messaging on MOTD"
+- convenience adjustment to quickbox admin sudoer file"
