@@ -1,9 +1,14 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3006 (2022-09-23)
+text="## 3.0.0.3012 (2022-09-26)
 
 ### fixes (2 changes)
 
-- fix(znc): set apt hold on znc package to avoid killing build from source
-- fix(version/update): set direct path on pip_requirements during update"
+- fix(duplicati): correction to version grabbing on build
+- fix(UI): set better excludes to application config modal controller
+
+### enhancements (2 changes)
+
+- enh(rutorrent): variable adjustments - improved diskspace/action adjusting
+- enh(UI): implement more dynamic disk display functions to dashboard (improved unit array)"
