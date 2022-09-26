@@ -1,14 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3012 (2022-09-26)
+text="## 3.0.0.3017 (2022-09-26)
 
-### fixes (2 changes)
+### fixes (1 change)
 
-- fix(duplicati): correction to version grabbing on build
-- fix(UI): set better excludes to application config modal controller
-
-### enhancements (2 changes)
-
-- enh(rutorrent): variable adjustments - improved diskspace/action adjusting
-- enh(UI): implement more dynamic disk display functions to dashboard (improved unit array)"
+- fix(duplicati) correction to version display and updating via QB Dashboard"
