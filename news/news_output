@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3017 (2022-09-26)
+text="## 3.0.0.3020 (2022-09-27)
 
 ### fixes (1 change)
 
-- fix(duplicati) correction to version display and updating via QB Dashboard"
+- fix(UI): improved calculations on disk data widget"
