@@ -1,8 +1,13 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3020 (2022-09-27)
+text="## 3.0.0.3024 (2022-09-27)
+
+### enhancements (2 changes)
+
+- enh(user): extend service reload commands to user creation
+- enh(UI): assignment of user grouping on successful post return
 
 ### fixes (1 change)
 
-- fix(UI): improved calculations on disk data widget"
+- fix(UI): correction to operational order on user creation from user admin"
