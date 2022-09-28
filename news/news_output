@@ -1,13 +1,22 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3024 (2022-09-27)
+text="## 3.0.0.3033 (2022-09-28)
 
-### enhancements (2 changes)
+### translations (1 change)
 
-- enh(user): extend service reload commands to user creation
-- enh(UI): assignment of user grouping on successful post return
+- UI translation strings updated
+
+### enhancements (3 changes)
+
+- enh(UI): miscellaneous tweaks
+- enh(UI): aesthetic tweaks to cpu/ram widget on software dashboard
+- enh(lang): improved locale setting on language selection
+
+### features (1 change)
+
+- feat(UI): set screen loader on page load events
 
 ### fixes (1 change)
 
-- fix(UI): correction to operational order on user creation from user admin"
+- fix(quota): improved quota option and user array quota setting on build"
