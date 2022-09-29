@@ -1,9 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3046 (2022-09-29)
+text="## 3.0.0.3048 (2022-09-29)
 
-### fixes (2 changes)
+### fixes (1 change)
 
-- fix(UI): correction to header redirect from user admin edit service control
-- fix(user): full cycle rtorrent service for user on user creation should rtorrent be installed"
+- fix(UI): quick correction to user process control array"
