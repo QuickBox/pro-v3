@@ -1,15 +1,9 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3039 (2022-09-29)
-
-### enhancements (3 changes)
-
-- enh(fix|update): set included LC_ALL bash export if not exist - locale to CLI
-- enh(UI): only scan configs of installed applications - kill erroneous errors
-- enh(UI): adjustment to availability column in the software management center
+text="## 3.0.0.3046 (2022-09-29)
 
 ### fixes (2 changes)
 
-- fix(UI): correction to lazylibrarian api display on dashboard card view
-- fix(plex): set additional permissions checks on plex update to avoid perm fail"
+- fix(UI): correction to header redirect from user admin edit service control
+- fix(user): full cycle rtorrent service for user on user creation should rtorrent be installed"
