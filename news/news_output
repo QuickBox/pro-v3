@@ -1,18 +1,6 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3062 (2022-10-01)
+text="## 3.0.0.3066 (2022-10-01)
 
-### enhancements (3 changes)
-
-- enh(radarr4k/sonarr4k): set appropriate instance names on build
-- enh(*arr software): improved order of options to config.xml
-- enh(*arr software): minor tweak to baseline configs for build
-
-### fixes (1 change)
-
-- fix(lidarr): adjustments to reverse and config.xml on build
-
-### features (1 change)
-
-- feat: QB permissions monitor - for those stubborn apps that reset their permissions"
+No changes."
