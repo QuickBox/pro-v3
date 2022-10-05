@@ -1,6 +1,12 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3066 (2022-10-01)
+text="## 3.0.0.3073 (2022-10-05)
 
-No changes."
+### enhancements (1 change)
+
+- enh(qb -h): add additional manage functions to help manual
+
+### fixes (1 change)
+
+- fix(prowlarr): update build to default to updated nightly branch provided"
