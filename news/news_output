@@ -1,12 +1,21 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3073 (2022-10-05)
+text="## 3.0.0.3082 (2022-10-08)
+
+### translations (1 change)
+
+- UI translation strings updated
+
+### fixes (2 changes)
+
+- fix(UI): system admin on group assignment
+- fix(db): correction to autodl multi_user values
+
+### features (1 change)
+
+- feat(user): create and assign custom group as default for user creation
 
 ### enhancements (1 change)
 
-- enh(qb -h): add additional manage functions to help manual
-
-### fixes (1 change)
-
-- fix(prowlarr): update build to default to updated nightly branch provided"
+- enh(qb -h): update designated command examples (fix home/fix php)"
