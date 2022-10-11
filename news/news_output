@@ -1,22 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3096 (2022-10-11)
+text="## 3.0.0.3099 (2022-10-11)
 
-### enhancements (2 changes)
+### fixes (1 change)
 
-- enh(UI): set custom url override per new addition of bazarr4k (on update/fix version)
-- enh(qbpermmon): add pyload to perm monitor list
-
-### fixes (2 changes)
-
-- fix(bazarr): set 4k option to archive grabbed
-- fix(UI): add missing URL links to navigation for radarr/sonarr 4k instances
-
-### translations (1 change)
-
-- UI translation strings updated
-
-### features (1 change)
-
-- feat(bazarr/4k): ability to install separate bazarr4k instance"
+- fix(fix/update): add proper else statement on qbpermmon update"
