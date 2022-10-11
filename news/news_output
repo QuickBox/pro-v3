@@ -1,21 +1,22 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3082 (2022-10-08)
+text="## 3.0.0.3096 (2022-10-11)
+
+### enhancements (2 changes)
+
+- enh(UI): set custom url override per new addition of bazarr4k (on update/fix version)
+- enh(qbpermmon): add pyload to perm monitor list
+
+### fixes (2 changes)
+
+- fix(bazarr): set 4k option to archive grabbed
+- fix(UI): add missing URL links to navigation for radarr/sonarr 4k instances
 
 ### translations (1 change)
 
 - UI translation strings updated
 
-### fixes (2 changes)
-
-- fix(UI): system admin on group assignment
-- fix(db): correction to autodl multi_user values
-
 ### features (1 change)
 
-- feat(user): create and assign custom group as default for user creation
-
-### enhancements (1 change)
-
-- enh(qb -h): update designated command examples (fix home/fix php)"
+- feat(bazarr/4k): ability to install separate bazarr4k instance"
