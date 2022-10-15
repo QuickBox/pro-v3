@@ -1,27 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3126 (2022-10-15)
+text="## 3.0.0.3129 (2022-10-15)
 
-### fixes (3 changes)
+### fixes (1 change)
 
-- fix(UI): correction to dpkg fix call on troubleshooting page - set proper v3 function
-- fix(bazarr): set api pass-through on nginx reverse
-- fix(CLI/bazarr): tweak dialog menu (still wip) to avoid showing bazarr4k option
-
-### enhancements (6 changes)
-
-- enh(UI): tweak enable/disable quickSupport from troubleshooting page
-- enh(software): add notifiarr to update checking array
-- enh(overseerr): nginx subdomain conf formatting improvement
-- enh(UI): updated medusa logo asset
-- enh(permmon): optimized qb permissions monitor
-- enh(rtorrent): service file improvements - better handling of per user processes
-
-### translations (1 change)
-
-- CLI & UI translation strings added and updated
-
-### features (1 change)
-
-- feat(notifiarr): notifiarr is now in the QuickBox lineup"
+- fix(bazarr): correction to config stat on updater"
