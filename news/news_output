@@ -1,8 +1,15 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3129 (2022-10-15)
+text="## 3.0.0.3137 (2022-10-17)
 
-### fixes (1 change)
+### enhancements (3 changes)
 
-- fix(bazarr): correction to config stat on updater"
+- enh(fix/update): reorganize order on app version checking during update/fix version
+- enh(software check): improved software update checks to now recognize in-app updates
+- enh(notifiarr): improved build - update relevant info on completion message
+
+### fixes (2 changes)
+
+- fix(bazarr/4k): improved build to avoid conflicts with bazarr's internal update mechanism
+- fix(CLI): improved session term exporting"
