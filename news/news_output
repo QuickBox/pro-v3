@@ -1,10 +1,13 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3143 (2022-10-18)
+text="## 3.0.0.3147 (2022-10-18)
 
-### fixes (3 changes)
+### enhancements (2 changes)
 
-- fix(notifiarr): implement expression handling for passwords containing special characters
-- fix(autocomplete): correction to array read for 'qb update ...'
-- fix(UI): set bazarr4k to process menu array"
+- enh(bazarr): add apprise to pip module install list
+- enh(software check): set tautulli to in-app update checks
+
+### fixes (1 change)
+
+- fix(notifiarr): ensure that deluge and nzbget are passed proper expression for password import"
