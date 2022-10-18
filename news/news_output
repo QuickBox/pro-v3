@@ -1,15 +1,10 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3137 (2022-10-17)
+text="## 3.0.0.3143 (2022-10-18)
 
-### enhancements (3 changes)
+### fixes (3 changes)
 
-- enh(fix/update): reorganize order on app version checking during update/fix version
-- enh(software check): improved software update checks to now recognize in-app updates
-- enh(notifiarr): improved build - update relevant info on completion message
-
-### fixes (2 changes)
-
-- fix(bazarr/4k): improved build to avoid conflicts with bazarr's internal update mechanism
-- fix(CLI): improved session term exporting"
+- fix(notifiarr): implement expression handling for passwords containing special characters
+- fix(autocomplete): correction to array read for "qb update ..."
+- fix(UI): set bazarr4k to process menu array"
