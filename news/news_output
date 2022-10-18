@@ -6,5 +6,5 @@ text="## 3.0.0.3143 (2022-10-18)
 ### fixes (3 changes)
 
 - fix(notifiarr): implement expression handling for passwords containing special characters
-- fix(autocomplete): correction to array read for "qb update ..."
+- fix(autocomplete): correction to array read for 'qb update ...'
 - fix(UI): set bazarr4k to process menu array"
