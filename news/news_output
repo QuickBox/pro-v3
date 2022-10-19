@@ -1,13 +1,14 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3147 (2022-10-18)
+text="## 3.0.0.3154 (2022-10-19)
+
+### fixes (2 changes)
+
+- fix(bazarr): clean up python venv directory on uninstall
+- fix(bazarr): corrections to path navigation on bazarr python venv build
 
 ### enhancements (2 changes)
 
-- enh(bazarr): add apprise to pip module install list
-- enh(software check): set tautulli to in-app update checks
-
-### fixes (1 change)
-
-- fix(notifiarr): ensure that deluge and nzbget are passed proper expression for password import"
+- enh(qbpermmon): send permission adjustments to log file
+- enh(installer): adjustments to iris module setting on initial install"
