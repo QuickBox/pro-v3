@@ -1,13 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3159 (2022-10-21)
+text="## 3.0.0.3162 (2022-10-21)
 
-### enhancements (1 change)
+### fixes (1 change)
 
-- enh(help): perform additional lock cleanup on help trigger
-
-### features (2 changes)
-
-- feat(plex): implement more in depth help manual 'qb help plex'
-- feat(plex): optional data directory flag included for build. '-o data='"
+- fix(plex): descriptive adjustments to entries within 'qb help plex'"
