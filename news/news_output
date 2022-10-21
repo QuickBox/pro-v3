@@ -1,14 +1,13 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3154 (2022-10-19)
+text="## 3.0.0.3159 (2022-10-21)
 
-### fixes (2 changes)
+### enhancements (1 change)
 
-- fix(bazarr): clean up python venv directory on uninstall
-- fix(bazarr): corrections to path navigation on bazarr python venv build
+- enh(help): perform additional lock cleanup on help trigger
 
-### enhancements (2 changes)
+### features (2 changes)
 
-- enh(qbpermmon): send permission adjustments to log file
-- enh(installer): adjustments to iris module setting on initial install"
+- feat(plex): implement more in depth help manual 'qb help plex'
+- feat(plex): optional data directory flag included for build. '-o data='"
