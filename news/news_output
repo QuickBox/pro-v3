@@ -1,14 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3170 (2022-10-26)
+text="## 3.0.0.3174 (2022-10-27)
 
-### fixes (3 changes)
+### fixes (1 change)
 
-- fix(filebot): corrections to input unset on build
-- fix(qbittorrent): set additional checks on remove/install/reinstall for nginx reverse
-- fix(qbpermmon): set reload rules on update/fix version
-
-### enhancements (1 change)
-
-- enh(sonarr|sonarr4k): set ExecStop variable to kill process - helps with in-app restarts"
+- fix(multiple): correction to tokenization per github version scraping"
