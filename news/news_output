@@ -1,9 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3177 (2022-11-08)
+text="## 3.0.0.3181 (2022-11-08)
 
-### fixes (2 changes)
+### fixes (1 change)
 
-- fix(jellyfin): stage additional needed dependencies per jellyfin-ffmpeg requirements
-- fix(transmission): correction to address bind on settings.json"
+- fix(app update checker): if plex version available matches plex installed..."
