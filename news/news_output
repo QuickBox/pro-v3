@@ -1,8 +1,9 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3174 (2022-10-27)
+text="## 3.0.0.3177 (2022-11-08)
 
-### fixes (1 change)
+### fixes (2 changes)
 
-- fix(multiple): correction to tokenization per github version scraping"
+- fix(jellyfin): stage additional needed dependencies per jellyfin-ffmpeg requirements
+- fix(transmission): correction to address bind on settings.json"
