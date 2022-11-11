@@ -1,8 +1,14 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3181 (2022-11-08)
+text="## 3.0.0.3187 (2022-11-11)
+
+### enhancements (3 changes)
+
+- enh(cron): adjust cron tasks checks
+- enh(qb): small tweaks to function calls
+- enh(syslogging): avoid syslog bloat - additional rules applied to rsyslog.d
 
 ### fixes (1 change)
 
-- fix(app update checker): if plex version available matches plex installed..."
+- fix(autocomplete): set '-u' to autocomplete on update tabbing"
