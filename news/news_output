@@ -1,14 +1,20 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3187 (2022-11-11)
+text="## 3.0.0.3203 (2022-11-18)
 
-### enhancements (3 changes)
+### enhancements (5 changes)
 
-- enh(cron): adjust cron tasks checks
-- enh(qb): small tweaks to function calls
-- enh(syslogging): avoid syslog bloat - additional rules applied to rsyslog.d
+- enh(app version check): set seedcross to version check array
+- enh(syslog): modernize rsyslog rules
+- enh(qbpermmon): add sabnzbd.ini to permissions scope
+- enh(UI): only post app version checks if swUpdate.json is not empty
+- enh(UI): remove deprecated function checks
+
+### features (1 change)
+
+- feat: seedcross added
 
 ### fixes (1 change)
 
-- fix(autocomplete): set '-u' to autocomplete on update tabbing"
+- fix(UI): correction to session value on user edit input (profile edit)"
