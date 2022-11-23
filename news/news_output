@@ -18,8 +18,7 @@ text="## 3.0.0.3222 (2022-11-23)
 ### enhancements (7 changes)
 
 - enh(quickSupport): adjustments to support activation/deactivation
-- enh(quickSupport) adjustments to support activation/deactivation
-- enh(rclone): set mergerfs versioning on build/update - set mout/service.txt to rclone conf
+- enh(rclone): set mergerfs versioning on build/update - set mount/service.txt to rclone conf
 - enh(UI): improved service control per mergerfs
 - enh(UI): improved rclone panel - mergerfs and rclone separated and version control
 - enh(translations): update to CLI translations per plex build
