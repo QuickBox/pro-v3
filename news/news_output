@@ -1,20 +1,26 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3203 (2022-11-18)
+text="## 3.0.0.3222 (2022-11-23)
 
-### enhancements (5 changes)
+### fixes (5 changes)
 
-- enh(app version check): set seedcross to version check array
-- enh(syslog): modernize rsyslog rules
-- enh(qbpermmon): add sabnzbd.ini to permissions scope
-- enh(UI): only post app version checks if swUpdate.json is not empty
-- enh(UI): remove deprecated function checks
+- fix(UI): corrections and improvements to sabnzbd nzb counter (custom complete dirs etc)
+- fix(CLI): minor correction to color tracing on qb version display
+- fix(thelounge): correction to version .deb package grabbing on build/update
+- fix(UI): correction to multi-user rclone mount for dashboard display
+- fix(seedcross): activate update function
 
-### features (1 change)
+### translations (1 change)
 
-- feat: seedcross added
+- UI translation strings added and updated
 
-### fixes (1 change)
+### enhancements (7 changes)
 
-- fix(UI): correction to session value on user edit input (profile edit)"
+- enh(quickSupport): adjustments to support activation/deactivation
+- enh(quickSupport) adjustments to support activation/deactivation
+- enh(rclone): set mergerfs versioning on build/update - set mout/service.txt to rclone conf
+- enh(UI): improved service control per mergerfs
+- enh(UI): improved rclone panel - mergerfs and rclone separated and version control
+- enh(translations): update to CLI translations per plex build
+- enh(plex): issue notice to build if custom directory used already exist"
