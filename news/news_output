@@ -1,25 +1,17 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3222 (2022-11-23)
+text="## 3.0.0.3230 (2022-11-28)
 
 ### fixes (5 changes)
 
-- fix(UI): corrections and improvements to sabnzbd nzb counter (custom complete dirs etc)
-- fix(CLI): minor correction to color tracing on qb version display
-- fix(thelounge): correction to version .deb package grabbing on build/update
-- fix(UI): correction to multi-user rclone mount for dashboard display
-- fix(seedcross): activate update function
+- fix(software version check): improved version comparison and posting for sickchill and seedcross
+- fix(UI): remove duplicate sickchill entry from operational array
+- fix(UI): set additional processing conditions to mergerfs mount controls
+- fix(sickchill): case correction to version unpacking on build
+- fix(UI): update rclone/mergerfs panels per card view
 
-### translations (1 change)
+### enhancements (2 changes)
 
-- UI translation strings added and updated
-
-### enhancements (7 changes)
-
-- enh(quickSupport): adjustments to support activation/deactivation
-- enh(rclone): set mergerfs versioning on build/update - set mount/service.txt to rclone conf
-- enh(UI): improved service control per mergerfs
-- enh(UI): improved rclone panel - mergerfs and rclone separated and version control
-- enh(translations): update to CLI translations per plex build
-- enh(plex): issue notice to build if custom directory used already exist"
+- enh(sickchill): improved build/update - utilize pip module install and service
+- enh(UI): aesthetic adjustment to button sizing on rclone modal displays"
