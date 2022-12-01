@@ -1,17 +1,33 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3230 (2022-11-28)
+text="## 3.0.0.3253 (2022-12-01)
 
-### fixes (5 changes)
+### translations (1 change)
 
-- fix(software version check): improved version comparison and posting for sickchill and seedcross
-- fix(UI): remove duplicate sickchill entry from operational array
-- fix(UI): set additional processing conditions to mergerfs mount controls
-- fix(sickchill): case correction to version unpacking on build
-- fix(UI): update rclone/mergerfs panels per card view
+- CLI translation strings added/updated per sonarr v4
 
-### enhancements (2 changes)
+### enhancements (10 changes)
 
-- enh(sickchill): improved build/update - utilize pip module install and service
-- enh(UI): aesthetic adjustment to button sizing on rclone modal displays"
+- enh(sonarr): add sanity check on v4 update option (can not update v3 to v4)
+- enh(vpn): ensure set firewall rules are removed on uninstall
+- enh(sonarr): updated *qb help sonarr* output display per v4 options
+- enh(plex): issue additional checks on nginx file removal during uninstall
+- enh(sonarr): stage v4.lock on v4 beta builds - version check and release
+- enh(sw update checker): improved sonarr version checking on array
+- enh(sonarr): conditions set for v4-4k and standard v4 install
+- enh(sonarr): remove forced nginx auth - sonarr v4 now enforces login creation
+- enh(sonarr): set hidden v4 option to build (exp. - requires fresh sonarr install)
+- enh(qbpermmon): add tautulli config.ini to permissions scope
+
+### fixes (4 changes)
+
+- fix(vpn): openvpn/easy-rsa build updated per new requirements
+- fix(sonarr): check branch tag in config.xml before posting update - if branch changed in sonarr UI
+- fix(UI): set proper api key message if not yet generated on sonarr array
+- fix(rclone): set extras after mount and service start - avoid blank mount display
+
+### features (2 changes)
+
+- feat(sonarr v4): include sonarr v4 to dashboard install/reinstall/update management panel
+- feat(sw update checker): auto check for sonarr v4 builds added"
