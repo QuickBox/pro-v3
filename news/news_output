@@ -40,8 +40,4 @@ text="## 3.0.0.3302 (2022-12-09)
 - feat(UI): new mount display and ability to add new path for monitoring space usage
 - feat(UI): addition of new forced mount scan option - report space used on mounts/directories
 - feat(UI): re-imagined rclone display - mount display info to modal - data merger
-- feat(rclone|UI): improved rclone mount discovery (shared drives etc)
-
-### feature (1 change)
-
-- feat(UI): addition of new forced mount scan option - report space used on mounts/directories"
+- feat(rclone|UI): improved rclone mount discovery (shared drives etc)"
