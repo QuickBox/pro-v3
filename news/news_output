@@ -1,33 +1,47 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3253 (2022-12-01)
+text="## 3.0.0.3302 (2022-12-09)
 
-### translations (1 change)
+### fixes (6 changes)
 
-- CLI translation strings added/updated per sonarr v4
+- fix(software update checker): correction to piping on update checks 
+- fix(UI): set condition to display sonarr(4k) only once on custom group creation
+- fix(plex): remove deprecated ssl flag on plex subdomain nginx template
+- fix(overseerr): remove subdomain nginx reverse should it exist on uninstall
+- fix(sonarr): correction to sonarr updating when using 4k as option
+- fix(UI): improved field display on service control panel - better responsiveness
 
-### enhancements (10 changes)
+### enhancements (11 changes)
 
-- enh(sonarr): add sanity check on v4 update option (can not update v3 to v4)
-- enh(vpn): ensure set firewall rules are removed on uninstall
-- enh(sonarr): updated *qb help sonarr* output display per v4 options
-- enh(plex): issue additional checks on nginx file removal during uninstall
-- enh(sonarr): stage v4.lock on v4 beta builds - version check and release
-- enh(sw update checker): improved sonarr version checking on array
-- enh(sonarr): conditions set for v4-4k and standard v4 install
-- enh(sonarr): remove forced nginx auth - sonarr v4 now enforces login creation
-- enh(sonarr): set hidden v4 option to build (exp. - requires fresh sonarr install)
-- enh(qbpermmon): add tautulli config.ini to permissions scope
+- enh(UI): correction to new toggle per allowing mount display panel (user settings)
+- enh(airsonic): updated access on build completion message
+- enh(nzbhydra2): update package build with java 17 support
+- enh(UI): only show mount info panel to added users if option is enabled by sys admin
+- enh(db): database updated - minor tidy up on columns
+- enh(UI): user settings page revamped - aesthetics and better info on options
+- enh(rclone): set custom added mounts/paths to database
+- enh(fix|update): set mount status check per rclone (if installed)
+- enh(rclone): run mount status check task on install/update (background process)
+- enh(UI): set message to rclone mount info panel when background task is running
+- enh(UI): disk data widget to host rclone data modal
 
-### fixes (4 changes)
+### translations (6 changes)
 
-- fix(vpn): openvpn/easy-rsa build updated per new requirements
-- fix(sonarr): check branch tag in config.xml before posting update - if branch changed in sonarr UI
-- fix(UI): set proper api key message if not yet generated on sonarr array
-- fix(rclone): set extras after mount and service start - avoid blank mount display
+- CLI translation strings added/updated per airsonic completion message
+- UI translation strings added per new table headers and entries
+- UI Translation strings added/updated - new translations per added features
+- minor update to Danish translations (courtesy of @globber)
+- UI translation strings added/updated - Danish translations fixed
+- UI translation strings added/updated
 
-### features (2 changes)
+### features (4 changes)
 
-- feat(sonarr v4): include sonarr v4 to dashboard install/reinstall/update management panel
-- feat(sw update checker): auto check for sonarr v4 builds added"
+- feat(UI): new mount display and ability to add new path for monitoring space usage
+- feat(UI): addition of new forced mount scan option - report space used on mounts/directories
+- feat(UI): re-imagined rclone display - mount display info to modal - data merger
+- feat(rclone|UI): improved rclone mount discovery (shared drives etc)
+
+### feature (1 change)
+
+- feat(UI): addition of new forced mount scan option - report space used on mounts/directories"
