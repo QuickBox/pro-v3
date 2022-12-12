@@ -1,19 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3314 (2022-12-12)
+text="## 3.0.0.3318 (2022-12-12)
 
-### fixes (3 changes)
+### fixes (1 change)
 
-- fix(sabnzbd): ensure log removal on sab uninstall - avoid erroneous log bloating
-- fix(rclone): correction to column naming on rclone removal (mount removal)
-- fix(nzbhydra2): corrections to auto tac on java 17 building
-
-### enhancements (6 changes)
-
-- enh(UI): set higher page length display on service table
-- enh(UI): set option to install rtorrent form source to PMC install list
-- enh(rtorrent): include xmlrpc patch - correction to crashing on queue insert
-- enh(rtorrent): retool package to build 0.9.8 from source - better feature-bind
-- enh(bazarr): meta adjustments to build package
-- enh(qb manage): meta adjustments"
+- fix(dependencies): add 'autoconf-archive' package for modernized config building from source"
