@@ -1,43 +1,19 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3302 (2022-12-09)
+text="## 3.0.0.3314 (2022-12-12)
 
-### fixes (6 changes)
+### fixes (3 changes)
 
-- fix(software update checker): correction to piping on update checks 
-- fix(UI): set condition to display sonarr(4k) only once on custom group creation
-- fix(plex): remove deprecated ssl flag on plex subdomain nginx template
-- fix(overseerr): remove subdomain nginx reverse should it exist on uninstall
-- fix(sonarr): correction to sonarr updating when using 4k as option
-- fix(UI): improved field display on service control panel - better responsiveness
+- fix(sabnzbd): ensure log removal on sab uninstall - avoid erroneous log bloating
+- fix(rclone): correction to column naming on rclone removal (mount removal)
+- fix(nzbhydra2): corrections to auto tac on java 17 building
 
-### enhancements (11 changes)
+### enhancements (6 changes)
 
-- enh(UI): correction to new toggle per allowing mount display panel (user settings)
-- enh(airsonic): updated access on build completion message
-- enh(nzbhydra2): update package build with java 17 support
-- enh(UI): only show mount info panel to added users if option is enabled by sys admin
-- enh(db): database updated - minor tidy up on columns
-- enh(UI): user settings page revamped - aesthetics and better info on options
-- enh(rclone): set custom added mounts/paths to database
-- enh(fix|update): set mount status check per rclone (if installed)
-- enh(rclone): run mount status check task on install/update (background process)
-- enh(UI): set message to rclone mount info panel when background task is running
-- enh(UI): disk data widget to host rclone data modal
-
-### translations (6 changes)
-
-- CLI translation strings added/updated per airsonic completion message
-- UI translation strings added per new table headers and entries
-- UI Translation strings added/updated - new translations per added features
-- minor update to Danish translations (courtesy of @globber)
-- UI translation strings added/updated - Danish translations fixed
-- UI translation strings added/updated
-
-### features (4 changes)
-
-- feat(UI): new mount display and ability to add new path for monitoring space usage
-- feat(UI): addition of new forced mount scan option - report space used on mounts/directories
-- feat(UI): re-imagined rclone display - mount display info to modal - data merger
-- feat(rclone|UI): improved rclone mount discovery (shared drives etc)"
+- enh(UI): set higher page length display on service table
+- enh(UI): set option to install rtorrent form source to PMC install list
+- enh(rtorrent): include xmlrpc patch - correction to crashing on queue insert
+- enh(rtorrent): retool package to build 0.9.8 from source - better feature-bind
+- enh(bazarr): meta adjustments to build package
+- enh(qb manage): meta adjustments"
