@@ -1,8 +1,10 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3318 (2022-12-12)
+text="## 3.0.0.3323 (2022-12-13)
 
-### fixes (1 change)
+### fixes (3 changes)
 
-- fix(dependencies): add 'autoconf-archive' package for modernized config building from source"
+- fix(lecert|various apps): do not enforce https redirect on subdomain reverse (allow auto-update)
+- fix(radarr): tweak radarr update package to honor branch if updated in config.xml
+- fix(rtorrent): correction to package holding when built from source (feature-bind)"
