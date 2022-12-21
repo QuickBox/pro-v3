@@ -1,10 +1,14 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3323 (2022-12-13)
+text="## 3.0.0.3329 (2022-12-21)
 
-### fixes (3 changes)
+### enhancements (2 changes)
 
-- fix(lecert|various apps): do not enforce https redirect on subdomain reverse (allow auto-update)
-- fix(radarr): tweak radarr update package to honor branch if updated in config.xml
-- fix(rtorrent): correction to package holding when built from source (feature-bind)"
+- enh(rtorrent): set LDFLAG linker option to curl libraries (should they not be recognized)
+- enh(UI): cleanup white-space on admin functions
+
+### fixes (2 changes)
+
+- fix(overseerr): adjust completion message with proper access info (if not used with subdomain)
+- fix(UI): correction on Notifiarr menu item naming"
