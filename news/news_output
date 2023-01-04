@@ -1,14 +1,18 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3329 (2022-12-21)
+text="## 3.0.0.3341 (2023-01-04)
 
-### enhancements (2 changes)
+### enhancements (4 changes)
 
-- enh(rtorrent): set LDFLAG linker option to curl libraries (should they not be recognized)
-- enh(UI): cleanup white-space on admin functions
+- enh(update|fix): remove rclone mount on check if rclone not installed
+- enh(UI): cleanup modal control and display functions - duplicates removed
+- enh(permissions): set restart to permissions monitor service on application builds
+- enh(logging): implement better syslog template for per user application logging and rotation
 
-### fixes (2 changes)
+### fixes (4 changes)
 
-- fix(overseerr): adjust completion message with proper access info (if not used with subdomain)
-- fix(UI): correction on Notifiarr menu item naming"
+- fix(user): set defaults to database entry insert on user creation (if no custom defaults are set)
+- fix(user): correction to email "-e" flagging on user creation
+- fix(UI): better version comparison for nzbhydra2 if updated in-app
+- fix(UI): set netdata release version checking to app version update array"
