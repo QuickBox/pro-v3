@@ -1,18 +1,22 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3341 (2023-01-04)
+text="## 3.0.0.3352 (2023-01-11)
 
-### enhancements (4 changes)
+### enhancements (3 changes)
 
-- enh(update|fix): remove rclone mount on check if rclone not installed
-- enh(UI): cleanup modal control and display functions - duplicates removed
-- enh(permissions): set restart to permissions monitor service on application builds
-- enh(logging): implement better syslog template for per user application logging and rotation
+- enh(user ban): additional service controlling added - stop/disable on ban - enable/start on unban
+- enh(lazylibrarian): asset brand logo updated
+- enh(UI): set proper error attribution on admin announce pdo statement
 
-### fixes (4 changes)
+### fixes (1 change)
 
-- fix(user): set defaults to database entry insert on user creation (if no custom defaults are set)
-- fix(user): correction to email "-e" flagging on user creation
-- fix(UI): better version comparison for nzbhydra2 if updated in-app
-- fix(UI): set netdata release version checking to app version update array"
+- fix(openvpn): set version to stable v2.5.8 on build until latest is stable
+
+### translations (1 change)
+
+- CLI translation strings added/updated per jellyfin/lecert help values
+
+### features (1 change)
+
+- feat(jellyfin|lecert): add option to stage jellyfin subdomain and ssl cert"
