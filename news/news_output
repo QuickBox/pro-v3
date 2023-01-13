@@ -1,22 +1,17 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3352 (2023-01-11)
+text="## 3.0.0.3363 (2023-01-13)
 
-### enhancements (3 changes)
+### fixes (6 changes)
 
-- enh(user ban): additional service controlling added - stop/disable on ban - enable/start on unban
-- enh(lazylibrarian): asset brand logo updated
-- enh(UI): set proper error attribution on admin announce pdo statement
-
-### fixes (1 change)
-
-- fix(openvpn): set version to stable v2.5.8 on build until latest is stable
+- fix(lecert): with jellyfin option, edit network config to remove placed url base should it exist
+- fix(jellyfin): on domain option do not set url base to build
+- fix(UI): default placeholder for quota setting to now display more logical TB setting
+- fix(vpn): correction to openvpn profile zip alias on nginx config
+- fix(flaresolverr): set requirements to update
+- fix(flaresolverr): update build package to meet new requirements
 
 ### translations (1 change)
 
-- CLI translation strings added/updated per jellyfin/lecert help values
-
-### features (1 change)
-
-- feat(jellyfin|lecert): add option to stage jellyfin subdomain and ssl cert"
+- translations(CLI): adjusted openvpn completion message per profile download link"
