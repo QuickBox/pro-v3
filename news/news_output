@@ -1,17 +1,14 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3363 (2023-01-13)
+text="## 3.0.0.3365 (2023-01-18)
 
-### fixes (6 changes)
+### fixes (3 changes)
 
-- fix(lecert): with jellyfin option, edit network config to remove placed url base should it exist
-- fix(jellyfin): on domain option do not set url base to build
-- fix(UI): default placeholder for quota setting to now display more logical TB setting
-- fix(vpn): correction to openvpn profile zip alias on nginx config
-- fix(flaresolverr): set requirements to update
-- fix(flaresolverr): update build package to meet new requirements
+- fix(lecert): correction to custom url access set for jellyfin subdomain install
+- fix(jellyfin): subdomain nginx config updated with removal of vanity block
+- fix(jellyfin): correction to custom url access set for subdomain install
 
 ### translations (1 change)
 
-- translations(CLI): adjusted openvpn completion message per profile download link"
+- translations(CLI): added translations per jellyfin completion (domain/no domain)"
