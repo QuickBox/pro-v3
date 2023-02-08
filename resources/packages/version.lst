@@ -3,16 +3,16 @@ CODENAME       | OSARCH       | CATEGORY       | VERSION | FILENAME
 bullseye       | amd64        | transmission   | 4.0.0   | transmission-4.0.0-complete_amd64.deb
 bullseye       | amd64        | transmission   | 3.00    | transmission-cli_3.00-1mod1_amd64.deb
                |              |                |         | transmission-common_3.00-1mod1_all.deb
-			   |              |                |         | transmission-daemon_3.00-1mod1_amd64.deb
-			   |              |                |         | transmission-gtk_3.00-1mod1_amd64.deb
-               |			  |                |         | transmission-qt_3.00-1mod1_amd64.deb
-			   |			  |                |         | transmission_3.00-1mod1_all.deb
+               |              |                |         | transmission-daemon_3.00-1mod1_amd64.deb
+               |              |                |         | transmission-gtk_3.00-1mod1_amd64.deb
+               |              |                |         | transmission-qt_3.00-1mod1_amd64.deb
+               |              |                |         | transmission_3.00-1mod1_all.deb
 ---------------|--------------|----------------|---------|-----------------------------------------------------------------------------------------------
 buster		   | amd64        | transmission   | 4.0.0   | transmission-4.0.0-complete_amd64.deb
 buster		   | amd64        | transmission   | 3.00    | transmission-cli_3.00-1mod1_amd64.deb
                |              |                |         | transmission-common_3.00-1mod1_all.deb
-			   |              |                |         | transmission-daemon_3.00-1mod1_amd64.deb
-			   |              |                |         | transmission-gtk_3.00-1mod1_amd64.deb
-               |			  |                |         | transmission-qt_3.00-1mod1_amd64.deb
-			   |			  |                |         | transmission_3.00-1mod1_all.deb
+               |              |                |         | transmission-daemon_3.00-1mod1_amd64.deb
+               |              |                |         | transmission-gtk_3.00-1mod1_amd64.deb
+               |              |                |         | transmission-qt_3.00-1mod1_amd64.deb
+               |              |                |         | transmission_3.00-1mod1_all.deb
 ---------------|--------------|----------------|---------|-----------------------------------------------------------------------------------------------
