@@ -1,14 +1,32 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3365 (2023-01-18)
+text="## 3.0.0.3391 (2023-03-21)
 
-### fixes (3 changes)
+### enhancements (8 changes)
 
-- fix(lecert): correction to custom url access set for jellyfin subdomain install
-- fix(jellyfin): subdomain nginx config updated with removal of vanity block
-- fix(jellyfin): correction to custom url access set for subdomain install
+- enh(UI): bump transmission version display options to install on dashboard
+- enh(vpn): build updated per recent v2.6.1 openvpn release requirements
+- enh(UI): set rclone beta version checks to dashboard pmc for proper version updates
+- enh(transmission): bump version to 4.0.2
+- enh(app version checks): update version checking per transmission
+- enh(qbpermmon): set transmission settings.json to config check array
+- enh(transmission): added transmission v4.0.0
+- enh(qbpermmon): set rclone.conf to user checks (correct if changed to root)
+
+### fixes (10 changes)
+
+- fix(transmission): ensure dependencies are pushed to install/update
+- fix(novnc): correction to access completion message function
+- fix(rclone): check if beta branch installed and update accordingly
+- fix(rclone): set fuse3 install on rclone updater
+- fix(transmission): implement nodejs per transmission-web
+- fix(tautulli): set/unset safe directory to global git config per users install
+- fix(rclone): update rclone dependencies - fuse -> fuse3
+- fix(transmission): correction on web control template build/install
+- fix(app version checks): correction to rutorrent version comparisons
+- fix(nzbhydra2): update archive grabbing with new release naming (note: java no longer req.)
 
 ### translations (1 change)
 
-- translations(CLI): added translations per jellyfin completion (domain/no domain)"
+- translations(CLI): correction to update text on application help displays"
