@@ -6,9 +6,9 @@ text="## 3.0.0.3405 (2023-03-31)
 ### fixes (3 changes)
 
 - fix(rutorrent): patch clearCanvas deprecation in cpuload plugin on update/fix version
-- fix(rutorrent): help text updated "qb help rutorrent"
+- fix(rutorrent): help text updated 'qb help rutorrent'
 - fix(UI): better version comparison for mylar3 if updated in-app
 
 ### enhancements (1 change)
 
-- enh(rutorrent): set option "-o beta" to install/reinstall/update from edge releases"
+- enh(rutorrent): set option '-o beta' to install/reinstall/update from edge releases"
