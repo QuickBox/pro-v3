@@ -1,14 +1,19 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3405 (2023-03-31)
+text="## 3.0.0.3414 (2023-04-24)
 
-### fixes (3 changes)
+### fixes (2 changes)
 
-- fix(rutorrent): patch clearCanvas deprecation in cpuload plugin on update/fix version
-- fix(rutorrent): help text updated 'qb help rutorrent'
-- fix(UI): better version comparison for mylar3 if updated in-app
+- fix(buster sources): set proper archive source for stretch depends on buster sources.list
+- fix(app version checks): correction to ombi version comparisons
 
-### enhancements (1 change)
+### enhancements (3 changes)
 
-- enh(rutorrent): set option '-o beta' to install/reinstall/update from edge releases"
+- enh(rutorrent): improved version variables per beta/stable releases
+- enh(fix version|update): set various software patches to own function
+- enh(transmission): improved version scraping - additional libqt5svg depends added
+
+### chores (1 change)
+
+- chore(manage): remove deprecated rutorrent plugin patches"
