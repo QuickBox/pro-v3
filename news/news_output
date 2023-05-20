@@ -1,19 +1,20 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3414 (2023-04-24)
+text="## 3.0.0.3426 (2023-05-20)
 
-### fixes (2 changes)
+### fixes (8 changes)
 
-- fix(buster sources): set proper archive source for stretch depends on buster sources.list
-- fix(app version checks): correction to ombi version comparisons
+- fix(sickchill): downgrade pip requests and urllib3 until devs correct strict parameter
+- fix(thelounge): build/update from new thelounge-deb repository
+- fix(airsonic): update build to utilize java 17
+- fix(nzbhydra2): utilize python3 wrapper for running service
+- fix(UI|torrent counter): correction to paths checked per torrents loaded in qbittorrent
+- fix(rclone-mergerfs): set user_allow_other on fuse.conf during update
+- fix: patch seedcross requirements and installed app array with crispy_bootstrap4
+- fix: correction to user set value on qb user ban
 
-### enhancements (3 changes)
+### enhancements (2 changes)
 
-- enh(rutorrent): improved version variables per beta/stable releases
-- enh(fix version|update): set various software patches to own function
-- enh(transmission): improved version scraping - additional libqt5svg depends added
-
-### chores (1 change)
-
-- chore(manage): remove deprecated rutorrent plugin patches"
+- enh(nzbhydra2): set to remove java.list apt source only if there is no active airsonic install
+- enh: minor indentation adjustments on plex subdomain.conf template"
