@@ -5,4 +5,31 @@ text="## 3.0.0.3449 (2023-06-05)
 
 ### fixes (1 change)
 
-- hotfix(rutorrent): update rutorrent config.php template per recent release requirements"
+- hotfix(rutorrent): update rutorrent config.php template per recent release requirements
+
+## 3.0.0.3446 (2023-06-05)
+
+### fixes (8 changes)
+
+- fix(rutorrent): set global git safe directory on club-QuickBox theme - fixes not updating properly
+- fix(app version checker): update version check logic on lazylibrarian - still...
+- fix(lazylibrarian): refactor config.ini base template for new installs
+- fix(sonarr): improved sonarr v4 release grabbing logic
+- fix(UI): correction to qbitorrent config editor toggle
+- fix(thelounge): perform non-interactive pass on updates to avoid build timeout
+- fix(rutorrent): correction to plugin array logic on rutorrent update
+- fix(flaresolverr): correction to update logic per unpacking
+
+### enhancements (7 changes)
+
+- enh(multiple apps): improved isolation of python env for apps utilizing python builds
+- enh(medusa): include medusa update functionality
+- enh(mylar3): include mylar3 update functionality
+- enh(rutorrent): check for ffmpeg on update - install if missing
+- enh: symlink overseerr config to user home directory for easier viewing/reference 
+- enh(overseerr): set virtual nodejs directory for overseerr node_modules
+- enh: add radarr config to qbpermmon permissions array
+
+### translations (1 change)
+
+- translations(UI): updated tooltip example translations for site root field on general settings"
