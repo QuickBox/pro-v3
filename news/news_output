@@ -1,20 +1,29 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3426 (2023-05-20)
+text="## 3.0.0.3446 (2023-06-05)
 
 ### fixes (8 changes)
 
-- fix(sickchill): downgrade pip requests and urllib3 until devs correct strict parameter
-- fix(thelounge): build/update from new thelounge-deb repository
-- fix(airsonic): update build to utilize java 17
-- fix(nzbhydra2): utilize python3 wrapper for running service
-- fix(UI|torrent counter): correction to paths checked per torrents loaded in qbittorrent
-- fix(rclone-mergerfs): set user_allow_other on fuse.conf during update
-- fix: patch seedcross requirements and installed app array with crispy_bootstrap4
-- fix: correction to user set value on qb user ban
+- fix(rutorrent): set global git safe directory on club-QuickBox theme - fixes not updating properly
+- fix(app version checker): update version check logic on lazylibrarian - still...
+- fix(lazylibrarian): refactor config.ini base template for new installs
+- fix(sonarr): improved sonarr v4 release grabbing logic
+- fix(UI): correction to qbitorrent config editor toggle
+- fix(thelounge): perform non-interactive pass on updates to avoid build timeout
+- fix(rutorrent): correction to plugin array logic on rutorrent update
+- fix(flaresolverr): correction to update logic per unpacking
 
-### enhancements (2 changes)
+### enhancements (7 changes)
 
-- enh(nzbhydra2): set to remove java.list apt source only if there is no active airsonic install
-- enh: minor indentation adjustments on plex subdomain.conf template"
+- enh(multiple apps): improved isolation of python env for apps utilizing python builds
+- enh(medusa): include medusa update functionality
+- enh(mylar3): include mylar3 update functionality
+- enh(rutorrent): check for ffmpeg on update - install if missing
+- enh: symlink overseerr config to user home directory for easier viewing/reference 
+- enh(overseerr): set virtual nodejs directory for overseerr node_modules
+- enh: add radarr config to qbpermmon permissions array
+
+### translations (1 change)
+
+- translations(UI): updated tooltip example translations for site root field on general settings"
