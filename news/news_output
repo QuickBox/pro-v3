@@ -1,35 +1,18 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3449 (2023-06-05)
+text="## 3.0.0.3459 (2023-06-08)
 
-### fixes (1 change)
+### fixes (4 changes)
 
-- hotfix(rutorrent): update rutorrent config.php template per recent release requirements
+- fix(qbpermmon): run additional check for overseerr config - avoid dashboard load loop
+- fix(lazylibrarian): correction to version comparison logic for display
+- fix(qbpermmon): correction to overseerr permissions check blocking additional checks
+- fix(UI): correction to data serialization for quota install from dashboard
 
-## 3.0.0.3446 (2023-06-05)
+### enhancements (4 changes)
 
-### fixes (8 changes)
-
-- fix(rutorrent): set global git safe directory on club-QuickBox theme - fixes not updating properly
-- fix(app version checker): update version check logic on lazylibrarian - still...
-- fix(lazylibrarian): refactor config.ini base template for new installs
-- fix(sonarr): improved sonarr v4 release grabbing logic
-- fix(UI): correction to qbitorrent config editor toggle
-- fix(thelounge): perform non-interactive pass on updates to avoid build timeout
-- fix(rutorrent): correction to plugin array logic on rutorrent update
-- fix(flaresolverr): correction to update logic per unpacking
-
-### enhancements (7 changes)
-
-- enh(multiple apps): improved isolation of python env for apps utilizing python builds
-- enh(medusa): include medusa update functionality
-- enh(mylar3): include mylar3 update functionality
-- enh(rutorrent): check for ffmpeg on update - install if missing
-- enh: symlink overseerr config to user home directory for easier viewing/reference 
-- enh(overseerr): set virtual nodejs directory for overseerr node_modules
-- enh: add radarr config to qbpermmon permissions array
-
-### translations (1 change)
-
-- translations(UI): updated tooltip example translations for site root field on general settings"
+- enh(notifiarr): update build template w ssl staged - end-to-end encrypt
+- enh(UI): remove notifiarr api display as this is handled via their website
+- enh(UI-torrent counter): implement dynamic path checking per user .rtorrent.rc
+- enh(sickgear): set cache/alts/tmp directory on build to avoid in-app UI errors"
