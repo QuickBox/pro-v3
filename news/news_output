@@ -1,18 +1,77 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3459 (2023-06-08)
+text="## 3.0.0.3545 (2023-08-04)
 
-### fixes (4 changes)
+### enhancements (29 changes)
 
-- fix(qbpermmon): run additional check for overseerr config - avoid dashboard load loop
-- fix(lazylibrarian): correction to version comparison logic for display
-- fix(qbpermmon): correction to overseerr permissions check blocking additional checks
-- fix(UI): correction to data serialization for quota install from dashboard
+- enh(UI): minify embedded assets on the general settings page
+- enh(CLI|qb -h): add jellyseerr entries per software listings
+- enh(CLI|qb -h): update help manual with new backup|rollback features
+- enh(CLI|manage): set logic per rtorrent to backup all users .rtorrent.rc files
+- enh(UI): set cleaner ordering on list items display per changelog
+- enh(UI): update css aesthetic - remove drop-shadow bulk
+- enh(deluge): set version 2.1.1 as default for deluge build
+- enh(transmission): improvements to build - better jammy and bookworm compatibility
+- enh(deluge): now compatible with ubuntu 22 and debian 12
+- enh(multiple software): set full default backup on applicable apps during their install
+- enh(API): add software/status and software/service control endpoints
+- enh(API): /api/qb/user/create, delete, ban, and unban endpoints enabled
+- enh(UI): create path array for API usage docs on API Control page
+- enh(UI): minify inline css
+- enh(UI): improve asset loading where needed - reduce css bloat and conflicts
+- enh(UI): various css assets updated
+- enh(autocomplete): improved logic per -d flag on available software
+- enh(backup|rollback): extra conditions added per jellyseerr and overseerr
+- enh(multiple): improved subdomain nginx templates per lets encrypt discovery (cloudflare compat)
+- enh(lecert): improved removal logic per configs placed
+- enh(multiple software): update removal templates to clean rollback entries in...
+- enh(rclone): create additional 4K directories if sonarr4k or radarr4k is installed
+- enh(rclone): added new -o gdrive|dropbox optional
+- enh(UI): much improved card view for dashboard service control center
+- enh(UI): convert dashboard config drop menus to single use function array
+- enh(UI): rename Configs column on Service Control Dashboard to Extras
+- enh(assets): various css edits
+- enh(overseerr nginx): update subfolder nginx reverse template
+- enh(UI): if dashboard app editor alert message is closed - keep closed
 
-### enhancements (4 changes)
+### features (9 changes)
 
-- enh(notifiarr): update build template w ssl staged - end-to-end encrypt
-- enh(UI): remove notifiarr api display as this is handled via their website
-- enh(UI-torrent counter): implement dynamic path checking per user .rtorrent.rc
-- enh(sickgear): set cache/alts/tmp directory on build to avoid in-app UI errors"
+- feat(UI): new qb help manual page under System > Help Manual
+- feat(deluge): add update function to deluge template
+- feat: implement support for ubuntu 22.04 (jammy)
+- feat:  implement support for debian 12 (bookworm)
+- feat(UI|API): create new System>API Control page for managing QB API (removed...
+- feat(lecert): added jellyseerr to custom domain option array
+- feat: jellyseerr added
+- feat(UX): you can now update from service control panel if app has update available
+- feat(UI|CLI): new feature to perform full backups and rollbacks for permissible apps
+
+### tweaks (5 changes)
+
+- tweak(UI): update scrollspy navigation css/js and add bootstrap.bundle js 
+- tweak(UI): various object and language improvements
+- tweak(api): set user specific options to /api/qb/user/information
+- tweak(UI): unlock dashboard nginx options for overseerr
+- tweak(overseerr): better symlinking on overseerr/config directory
+
+### translations (5 changes)
+
+- translations: translations added per new help manual page - additional strings updated
+- translations: additional translation values added per new api control page
+- translations: remove excess white-space on line breaks
+- translations(UI|CLI): various translation additions and improvements
+- translations(UI): updated translations per upcoming new rollback feature
+
+### fixes (10 changes)
+
+- fix(UI): better conditional logic per deluged and delugeweb on dashboard config controls
+- fix(UI): remove erroneous php service restart when saving on the settings page
+- fix(UI): improved rendering of logo settings per collapsed and full values
+- fix(UI|CLI): adjusted logic on user banning and unbanning
+- fix(UI): correction on duplicates returned for software group info grabbing
+- fix(UI): correction to vnc behavior on other services (start, stop and restart)
+- fix(thelounge): correction to service cycling on update
+- fix(UI): addressed issue with dashboard app config editor not updating changes
+- fix(app version checks): updated software check logic per sonarr v4 releases
+- fix: correction to system log generating from troubleshooting page"
