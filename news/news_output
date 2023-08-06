@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3567 (2023-08-06)
+text="## 3.0.0.3570 (2023-08-06)
 
 ### fixes (1 change)
 
-- fix(mylar3): correction to install directory build"
+- fix(UI): hide torrent client updates from non-admin user"
