@@ -1,20 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3563 (2023-08-05)
+text="## 3.0.0.3567 (2023-08-06)
 
-### fixes (3 changes)
+### fixes (1 change)
 
-- fix(headphones): update proxy passing to avoid errors in headphones settings
-- fix(data): correction to usability per user on thelounge, overseer, and jellyseerr
-- fix(api): correction to /api/software_list endpoint
-
-### translations (3 changes)
-
-- translations: corrections to Danish and Chinese 
-- translations(UI): add new strings for software table on help manual
-- translation: minor fix to bad code attribute on shell advisory alert message
-
-### enhancements (1 change)
-
-- enh(UI): better info display for software tables on help manual page "
+- fix(mylar3): correction to install directory build"
