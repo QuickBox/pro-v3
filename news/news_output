@@ -1,33 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3587 (2023-08-11)
+text="## 3.0.0.3590 (2023-08-12)
 
-### features (2 changes)
+### hotfixes (1 change)
 
-- feat(UI|translations): /srv/quickbox/lang/ override files now available
-- feat(UI|filebot): filebot can now be installed interactively via the dashboard
-
-### fixes (5 changes)
-
-- fix(UI|system-dashboard): logic on netdata version per latest api endpoint updates
-- fix(UI): correction to codename exemption on Calibre-Server per service control panel
-- fix(flaresolverr): correction on python version placement and update logic
-- fix(filebot): update .excludes listing path on postprocess scripts
-- fix(filebot): update definition and formatting paths on postprocess scripts
-
-### translations (1 change)
-
-- translations(CLI|UI): add new strings per filebot install/reinstall modal
-
-### tweaks (3 changes)
-
-- tweak(UI): adjust translation value per openvpn tooltip on package management
-- tweak(UI): adjustment to OS and codename discovery
-- tweak(UI): update global tooltips to support complex html
-
-### enhancements (3 changes)
-
-- enh(filebot): retooled to now utilize -o optional flags
-- enh(UI): improved disk utilization and display on system dashboard per set disk mount
-- enh(filebot): add sabnzbd to build array (if installed option output)"
+- hotfix(UI|translations): correction to updating on english localize"
