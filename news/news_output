@@ -1,8 +1,107 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3590 (2023-08-12)
+text="## 3.0.0.3710 (2023-09-29)
 
 ### hotfixes (1 change)
 
-- hotfix(UI|translations): correction to updating on english localize"
+- hotfix(qb): correction to release build tagging
+
+### fixes (24 changes)
+
+- fix(UI): default read/write api key display correction
+- fix(php): set cli and common to php8.1 fixture array
+- fix(flaresolverr): build with python3.11 - additional depend per ubuntu 22 (chromium-browser)
+- fix(UI): minor code example adjustments on help manual
+- fix(UI): correction to localization on session logout
+- fix(qbnetwork): signal restart to qbnetwork poller on netdata updates
+- fix(UI): add missing translation values on login and session classes
+- fix(UI): correction to log deletion values
+- fix(UI): improved timings on display per clearing record users online
+- fix(deluge): update YaRSS2-2.1.5.egg for jammy and bookworm
+- fix(UI|manage): correction to process checking on mount status checker
+- fix(rutorrent): improved handling of user settings on rutorrent update
+- fix(libs): correction to software user counting logic
+- fix(rclone): additional flow logic per enc and salt pass values - break loop checking
+- fix(novnc): correction to completion message values on reinstall
+- fix(flaresolverr): correction to build - remove tmp build folder
+- fix(flaresolverr): correction to python setting on service template
+- fix(emby): correction to session cache on emby subdomain nginx template
+- fix(autobrr): correction to latest package grabbing on build
+- fix(autocomplete): exclude calibre-server from array - calibre handles both
+- fix(qb -o): if the option contains a key=value pair, do not enforce lowercase on the value
+- fix(UI): set launch point to calibre-server from dashboard
+- fix(UI): correction to updated swap endpoint on system dashboard
+- fix(UI): conditional logic on updates to avoid language resets
+
+### tweaks (22 changes)
+
+- tweak(API): improved database logic on software info calls
+- tweak(UI|api control): add more clarity to app naming scheme on software examples
+- tweak(radarr): set prefix matching on location to nginx config
+- tweak(UI): add base variable to cpucolor per dashboard cpu widget
+- tweak(cron): set task to check and restart qbnetwork poller
+- tweak(UI)): add checks on parsedown to avoid sending bad key/pair values
+- tweak(UI): set default array key on switch cases where needed
+- tweak(UI): send calls for plugin data to navigation structure
+- tweak(plex): use bundled fullchain cert on plex subdomain config - avoid OCSP verify errors
+- tweak(logging): setup and utilize global rsyslog template per UI actions
+- tweak(UI): various aesthetic tweaks/adjustments
+- tweak(qb): expand arg parameters to update and software function array logic
+- tweak(jellyseerr): reduce directory collision on build via unique directory
+- tweak(CLI): set histappend function to .bashrc for live history tracking
+- tweak(multiple apps): reinstate software update check function on app updates
+- tweak(multiple apps): refactor lecert install/removal on supported applications
+- tweak(UI): set header referrer on redirect per closing modal - clean log
+- tweak(emby): if stable source deb not available, check beta source
+- tweak(multiple apps): remove software update checks to reduce build times
+- tweak(qb): improvements to advanced array logic on [-o and [-d] flags]
+- tweak(UI): removed let's encrypt installer from Software Management tab
+- tweak(UI): adjustments to brand icon css per navigation menu
+
+### enhancements (19 changes)
+
+- enh(API): set additional options pair to api return values
+- enh(sabnzbd): build par2cmdline-turbo on build and update
+- enh(cli): update base .bashrc template
+- enh(UI): accessibility update - correction to alt reference tags on images
+- enh(UI): only store modal data for applications that are installed
+- enh(UI): improved case wrapping under form submission switch
+- enh(UI): help manual entries updated per qb generate log improvements
+- enh(bash): set histappend to .bashrc to keep cli history between sessions
+- enh(qb generate log): better mount information display
+- enh(qb manage mount): improved logic on checks per space used if root (/) mount
+- enh(UI): improved data counter per client torrent/nzb file count widget
+- enh(autocomplete): improved control flow on array indexing
+- enh(lecert): refactor for multiple ssl support (options/domains) building
+- enh(UI): improved installer for plex from dashboard
+- enh(UI): modal and asset load order rearranged
+- enh(UI): removed update buttons from Software Management tab - updates through control table
+- enh(UI): set interactive installer for calibre on dashboard
+- enh(calibre): improved function package per custom lib path options
+- enh(multiple apps): build logic to update timezones so they match (for python based apps)
+
+### translations (8 changes)
+
+- translations(CLI): translations added per python3.11 build notice
+- translations(CLI): added translations per par2 building on sabnzbd
+- translations(UI): add missing strings per email/password change
+- translations(UI): updated translations per new system logs page
+- translations(CLI|UI): updated translations per new dedicated ssl control page
+- translations(UI): updated translation strings per improved plex install modal
+- translations(UI): add new strings per calibre install/reinstall modal
+- translations(CLI): add new values per custom library path (qb help calibre)
+
+### features (7 changes)
+
+- feat: add python3.11 for build (fix version & update)
+- feat(UI): massively improved system logs page - more info and aggregation
+- feat(qb_log_miner): a cron task service to manage syslog data aggregation
+- feat(UI): implement custom, per user url override
+- feat(UI): let's encrypt ssl management now located at System > SSL Control
+- feat(lecert): add [qb renew lecert ... function - see [qb help lecert]]
+- feat(calibre): ability to set custom library path (-o library=/path/to/library)
+
+### UI (1 change)
+
+- tweak(UI): set variable placement outside of function calls when needed"
