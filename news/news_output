@@ -1,25 +1,25 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3722 (2023-10-03)
+text="## 3.0.0.3743 (2023-10-06)
 
-### translations (1 change)
+### tweaks (3 changes)
 
-- translations(UI): add translations per mount path entry checking
+- tweak(qb): perform permission run on update/fix per nginx conf and backup directories
+- tweak(qb): initiate qb_log_miner from /opt/quickbox/bin
+- tweak(UI): consolidate rtorrent version calls on removal
 
-### enhancements (4 changes)
+### enhancements (2 changes)
 
-- enh(UI): implement live mount path entry checking (per monitored mounts widget)
-- enh(UI): improved record user online clearance
-- enh(cron): add qbpermmon service checks to cron tasking
-- enh(rclone): if no options (gdrive|dropbox) are presented, just install the binary
+- enh(calibre): update calibre build per calibre-server nginx reverse (backup & mgmt)
+- enh(radarr): use develop as default branch for build
 
-### fixes (3 changes)
+### fixes (7 changes)
 
-- fix(UI): set additional checks on mounts entered to monitor (they should exist)
-- fix(qbpermmon): only attempt to adjust permissions on rclone if the file is present
-- fix(webconsole): update ttyd service file with new values per v1.7.4 release
-
-### tweaks (1 change)
-
-- tweak(UI|web console): tweak css values"
+- fix(UI): correction to calibre and deluge config edit
+- fix(calibre): freeze pip package werkzeug==2.3.7 until support for 3.0.0
+- fix(qbpermmon): add rtorrent and thelounge to permissions checking array
+- fix(UI): set default paths to modalController
+- fix(UI): prevent app value duplication causing unnecessary calls (improved config editors)
+- fix(UI): update software info array query to avoid duplicates
+- fix(qb_log_miner): ensure user app log directory exist"
