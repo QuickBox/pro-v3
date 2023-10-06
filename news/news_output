@@ -1,25 +1,9 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3743 (2023-10-06)
+text="## 3.0.0.3747 (2023-10-06)
 
-### tweaks (3 changes)
+### fixes (2 changes)
 
-- tweak(qb): perform permission run on update/fix per nginx conf and backup directories
-- tweak(qb): initiate qb_log_miner from /opt/quickbox/bin
-- tweak(UI): consolidate rtorrent version calls on removal
-
-### enhancements (2 changes)
-
-- enh(calibre): update calibre build per calibre-server nginx reverse (backup & mgmt)
-- enh(radarr): use develop as default branch for build
-
-### fixes (7 changes)
-
-- fix(UI): correction to calibre and deluge config edit
-- fix(calibre): freeze pip package werkzeug==2.3.7 until support for 3.0.0
-- fix(qbpermmon): add rtorrent and thelounge to permissions checking array
-- fix(UI): set default paths to modalController
-- fix(UI): prevent app value duplication causing unnecessary calls (improved config editors)
-- fix(UI): update software info array query to avoid duplicates
-- fix(qb_log_miner): ensure user app log directory exist"
+- fix(UI): check to confirm app config exist before attempting editor pull display
+- fix(UI): correction to app editor alert acknowledgement closing"
