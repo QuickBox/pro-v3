@@ -1,9 +1,20 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3747 (2023-10-06)
+text="## 3.0.0.3758 (2023-10-11)
 
-### fixes (2 changes)
+### fixes (1 change)
 
-- fix(UI): check to confirm app config exist before attempting editor pull display
-- fix(UI): correction to app editor alert acknowledgement closing"
+- fix(UI): correction to sonarrv4 update modal call
+
+### translations (1 change)
+
+- translations(UI): translations added per kavita support
+
+### tweaks (1 change)
+
+- tweak(UI/CLI): implement kavita custom library path option on UI/CLI Install/Reinstall
+
+### new (1 change)
+
+- new(application): Kavita support added"
