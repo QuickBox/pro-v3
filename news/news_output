@@ -1,20 +1,27 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3758 (2023-10-11)
+text="## 3.0.0.3778 (2023-10-22)
 
-### fixes (1 change)
+### fixes (8 changes)
 
-- fix(UI): correction to sonarrv4 update modal call
+- fix(calibre): set install/update from latest stable version tag
+- fix(calibre): set calibre/web to global git safe.directory | remove werkzueg fallback
+- fix(UI): correction to calibre-web update logic
+- fix(qb software check): add kavita to software version check array
+- fix(kavita): set executable permissions to kavita binary on update
+- fix(jellyseerr): ensure proper removal of linked config directory on uninstall
+- fix(lshell): updated limited shell per new python standards and deprecations
+- fix(qb manage): correction to paths with space breaking with 0 data (per monitored space on paths)
 
 ### translations (1 change)
 
-- translations(UI): translations added per kavita support
+- translations(CLI|UI): translations added per jdownloader support
 
-### tweaks (1 change)
+### enhancements (1 change)
 
-- tweak(UI/CLI): implement kavita custom library path option on UI/CLI Install/Reinstall
+- enh(qb fix python): add flit module to package array
 
 ### new (1 change)
 
-- new(application): Kavita support added"
+- new(application): JDownloader support added"
