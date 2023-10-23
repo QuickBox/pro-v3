@@ -1,27 +1,17 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.0.0.3778 (2023-10-22)
-
-### fixes (8 changes)
-
-- fix(calibre): set install/update from latest stable version tag
-- fix(calibre): set calibre/web to global git safe.directory | remove werkzueg fallback
-- fix(UI): correction to calibre-web update logic
-- fix(qb software check): add kavita to software version check array
-- fix(kavita): set executable permissions to kavita binary on update
-- fix(jellyseerr): ensure proper removal of linked config directory on uninstall
-- fix(lshell): updated limited shell per new python standards and deprecations
-- fix(qb manage): correction to paths with space breaking with 0 data (per monitored space on paths)
-
-### translations (1 change)
-
-- translations(CLI|UI): translations added per jdownloader support
+text="## 3.0.0.3796 (2023-10-23)
 
 ### enhancements (1 change)
 
-- enh(qb fix python): add flit module to package array
+- enh(UI): improved version splitting on app update checking and requests
 
-### new (1 change)
+### fixes (2 changes)
 
-- new(application): JDownloader support added"
+- fix(UI): set calibreserver to calibre update array
+- fix(update|fix): correction to pip updating requirements
+
+### hotfixes (1 change)
+
+- hotfix(netdata): build from 1.42.4 source until legacy api is updated"
