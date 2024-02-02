@@ -1,6 +1,14 @@
 CODENAME       | OSARCH       | CATEGORY       | VERSION | FILENAME                                  | NOTES
 ---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
+bookworm       | amd64        | transmission   | 4.0.5   | transmission-4.0.5-complete_amd64.deb     | Contains all binary for transmission
+               |              |                |         |                                           | * transmission-cli, transmission-daemon, 
+               |              |                |         |                                           |   transmission-gtk, transmission-qt
+---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
 bookworm       | amd64        | transmission   | 4.0.3   | transmission-4.0.3-complete_amd64.deb     | Contains all binary for transmission
+               |              |                |         |                                           | * transmission-cli, transmission-daemon, 
+               |              |                |         |                                           |   transmission-gtk, transmission-qt
+---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
+bullseye       | amd64        | transmission   | 4.0.5   | transmission-4.0.5-complete_amd64.deb     | Contains all binary for transmission
                |              |                |         |                                           | * transmission-cli, transmission-daemon, 
                |              |                |         |                                           |   transmission-gtk, transmission-qt
 ---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
@@ -33,6 +41,10 @@ buster         | amd64        | transmission   | 3.00    | transmission-cli_3.00
                |              |                |         | transmission-gtk_3.00-1mod1_amd64.deb     |
                |              |                |         | transmission-qt_3.00-1mod1_amd64.deb      |
                |              |                |         | transmission_3.00-1mod1_all.deb           |
+---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
+jammy          | amd64        | transmission   | 4.0.5   | transmission-4.0.5-complete_amd64.deb     | Contains all binary for transmission
+               |              |                |         |                                           | * transmission-cli, transmission-daemon, 
+               |              |                |         |                                           |   transmission-gtk, transmission-qt
 ---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
 jammy          | amd64        | transmission   | 4.0.3   | transmission-4.0.3-complete_amd64.deb     | Contains all binary for transmission
                |              |                |         |                                           | * transmission-cli, transmission-daemon, 
