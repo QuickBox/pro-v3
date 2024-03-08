@@ -1,53 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.1.1.4021 (2024-03-08)
+text="## 3.1.1.4025 (2024-03-08)
 
-### fixes (13 changes)
+### enhancements (1 change)
 
-- fix(lazylibrarian): set additional python module (irc) for build
-- fix(subsonic): correction to jdk version grabbing
-- fix(multiple apps): correction to url override defaulting on lecert supported applications
-- fix(java apps): update jdk for building java required applications
-- fix(UI): ensure theme alert database entry exist in default database
-- fix(installer): correction to fancyindex building on installer
-- fix(UI): address display bug on api control info acknowledgement panel
-- fix(UI): corection to user log view from user admin edit page
-- fix(UI): properly initialize empty results if group is empty; ie: newly created group
-- fix(UI): correction to user updating on account pages (correct need for all fields)
-- fix(qb): package version and installation check regardless of language settings
-- fix(UI): correction to a bug in user account editing (non-admin) which failed edits
-- fix(nextcloud): version pattern checking updated per nc changelog
-
-### tweaks (3 changes)
-
-- tweak(subsonic): clean removal of bellsoft-java8 on uninstall
-- tweak(fancyindex): set logic on (qb update/fix version) to correct fancyindex if needed
-- tweak(UI): minor theme method adjustment per asset paths
-
-### new (2 changes)
-
-- new(phpmyadmin): phpmyadmin available for install if DB_TYPE is mysql
-- new(qb): optional switch between sqlite and mysql (qb manage db -o [sqlite|mysql)]
-
-### enhancements (5 changes)
-
-- enh(UI): better avatar display on user account pages
-- enh(qb -h): man page updated inline with v3.1.1 release set
-- enh(UI): help manual updated with new (qb manage db -o [mysql|sqlite) command feature]
-- enh(UI): improved error code passing from 404/500
-- enh(update/fix version): improve netdata version check on update (stop unnecessary updating)
-
-### fix (1 change)
-
-- fix(novnc): implement bash elevation checks on non-super user novnc install
-
-### translations (3 changes)
-
-- translations(CLI): new translations added per new (qb manage db) feature
-- translations(UI): new translations added per newly added user settings
-- translations(UI): new translations per help manual added
-
-### features (1 change)
-
-- feat(UI): User Settings option to turn off full auto-backup of supported apps on install"
+- enh(qb manage db): implement fallback function to sqlite db in the event mysql swap fails"
