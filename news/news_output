@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.1.1.4025 (2024-03-08)
+text="## 3.1.1.4028 (2024-03-13)
 
-### enhancements (1 change)
+### fixes (1 change)
 
-- enh(qb manage db): implement fallback function to sqlite db in the event mysql swap fails"
+- fix(UI): eliminate disk calculation logic bug per admin & user disk usage display"
