@@ -1,8 +1,21 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.1.1.4032 (2024-04-05)
+text="## 3.1.1.4043 (2024-05-17)
 
-### fixes (1 change)
+### fixes (5 changes)
 
-- fix(rutorrent): correction to fileupload & club-QuickBox (theme) updating per sparse checkout"
+- fix(UI): correction to session logout on adminprocess
+- fix(netdata): switch to official netdata.cloud as packagecloud source is no longer maintained
+- fix(UI): correction to service discovery on admin user edit apps installed display
+- fix(module): correction to qb cli module output (per mysql/sqlite data schema)
+- fix(libs): correction to excess lines printed in CLI output when mysql is selected database
+
+### enhancements (6 changes)
+
+- enh(env): update default bashrc per nvm initialization (if installed)
+- enh(thelounge): set default npm version for build package
+- enh(UI): set entry level logout function as "userlogout" to avoid method corruption
+- enh(thelounge): utilize python3.11 on nodeenv building per build/update
+- enh(sabnzbd): update python venv to v3.11 per build/update
+- enh(thelounge): build/update via node/npm and remove apt requirements (easier nodejs version mngmt)"
