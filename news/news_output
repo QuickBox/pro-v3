@@ -1,21 +1,13 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.1.1.4043 (2024-05-17)
+text="## 3.1.1.4056 (2024-06-04)
 
-### fixes (5 changes)
+### fixes (2 changes)
 
-- fix(UI): correction to session logout on adminprocess
-- fix(netdata): switch to official netdata.cloud as packagecloud source is no longer maintained
-- fix(UI): correction to service discovery on admin user edit apps installed display
-- fix(module): correction to qb cli module output (per mysql/sqlite data schema)
-- fix(libs): correction to excess lines printed in CLI output when mysql is selected database
+- fix(jellyfin): implement default network.xml and corrections to version source grabbing
+- fix(thelounge): correction to the build/update packages (store app build in...
 
-### enhancements (6 changes)
+### tweaks (1 change)
 
-- enh(env): update default bashrc per nvm initialization (if installed)
-- enh(thelounge): set default npm version for build package
-- enh(UI): set entry level logout function as "userlogout" to avoid method corruption
-- enh(thelounge): utilize python3.11 on nodeenv building per build/update
-- enh(sabnzbd): update python venv to v3.11 per build/update
-- enh(thelounge): build/update via node/npm and remove apt requirements (easier nodejs version mngmt)"
+- tweak(UI): improved input field font styling"
