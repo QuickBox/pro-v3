@@ -4,106 +4,127 @@
 
 ![version](https://badgen.net/badge/version/3.1.1.4317/blue)
 
-##### OS/Distro support
+### OS/Distro Support
 
 ![debian_12](https://badgen.net/badge/Debian%2012/passing/green) ![debian_11](https://badgen.net/badge/Debian%2011/passing/green) ![debian_10](https://badgen.net/badge/Debian%2010/passing/green) ![debian_9](https://badgen.net/badge/Debian%209/passing/orange)
 
 ![ubuntu_22.04](https://badgen.net/badge/Ubuntu%2022.04/passing/green) ![ubuntu_20.04](https://badgen.net/badge/Ubuntu%2020.04/testing/purple)
 
-**Heads up:** Though Debian 9 is supported, it has also hit it's EOL as of June 2022.<br/>It is advised to use either Debian 12 (bookworm) or Debian 11 (bullseye)[^1].<br/>You can read more on Debian 9 EOL [here](https://wiki.debian.org/LTS).
+**Note:** Although Debian 9 is supported, it reached its End of Life (EOL) in June 2022.
+We recommend using either Debian 12 (Bookworm)[^1] or Debian 11 (Bullseye)
+Learn more about Debian 9 EOL [here](https://wiki.debian.org/LTS).
 
 </div>
 
 ---
 
-## INSTALLATION
+## Installation
 
-### Step 1:
+### Step 1: Elevate to Root
 
-Elevate your bash environment to root and move to the `/root` directory.
+Switch to the root user and navigate to the `/root` directory.
 
 ```bash
 sudo -i
 ```
 
-- Why elevate your bash environment to root?
-	- Because we need to be able to write to the `/root` directory as well as access restricted files and operations. By using `sudo -i` we temporarily elevate our bash environment to complete more sensitive tasks; such as building and configuring nginx, php, etc...
-- If you receive a "sudo: command not found" error, please install sudo.
-	- sudo can be installed with the following command as root:
-		```bash
-		apt-get install -y sudo
-		```
-- Why is sudo not installed?
-	- This is a side-effect of installation parameters from the OS build. If a root password is specified during installation of the OS, sudo is not installed by default. If a root password is not specified during installation of the OS, sudo is installed. This is more commonly seen with local installs, however, some providers may not install sudo by default.
+- **Why elevate to root?**  
+  Root access is required to modify system files, such as those in `/root` and to perform critical tasks like configuring Nginx, PHP, etc.
 
-### Step 2:
+- **Missing sudo?**  
+  If `sudo` is not installed, you can add it with the following command as root:
 
-It's good practice to check your system apt.
+```bash
+apt-get install -y sudo
+```
+
+  - **Why is sudo not installed by default?**  
+    This is usually determined by the OS installation parameters. If a root password is specified during the installation, `sudo` is not installed. If no root password is set, `sudo` is automatically installed. This can also vary by provider.
+
+### Step 2: Update Your System
+
+Ensure your system’s package lists are up to date and install any available upgrades.
 
 ```bash
 apt-get -y update && apt-get -y upgrade
 ```
 
-- Why check your system apt?
-	- Because we need to be able to install packages that are not available in the repositories.
-	- We also need to check for available security updates and be able to install them.
-	- We also need to check for available general updates and be able to install them.
-	- Though QuickBox does it for you on software installs and version updates, it's good practice to check your system apt regularly.
+- **Why update?**  
+  Updating ensures you have the latest software packages and security patches installed. It's a good practice to regularly update your system.
 
-### Step 3:
+### Step 3: Download the Setup Script
 
-Grab the latest setup file.
+Fetch the latest QuickBox Pro setup script.
 
 ```bash
 curl -sL "https://lab.quickbox.io/QuickBox/pro-v3/-/raw/main/qbpro_v3" > qbpro && chmod +x qbpro
 ```
 
-- If you receive a "curl: command not found" error, please install curl.
-	- curl can be installed with the following command:
-		```bash
-		sudo apt-get install -y curl
-		```
-- What is curl?
-	- curl is a command line tool that allows you to retrieve files from the internet.
+- **Curl not found?**  
+  If you receive a "curl: command not found" error, install curl with the following command:
 
-### Step 4:
+```bash
+sudo apt-get install -y curl
+```
 
-Run the installer.
+- **What is curl?**  
+  `curl` is a command-line tool used to download files from the internet.
+
+### Step 4: Run the Installer
+
+Run the setup script, providing your `USERNAME`, `PASSWORD`, and `API_KEY`:
 
 ```bash
 ./qbpro -u USERNAME -p 'PASSWORD' -k 'API_KEY'
 ```
-USERNAME[^2], 'PASSWORD'[^3], 'API_KEY'[^4]
+
+- `USERNAME`: Your desired username.
+- `PASSWORD`: Your desired password.
+- `API_KEY`: Your unique API Key from your QuickBox account.
 
 ---
 
-##### Advanced Usage (Optional)
+### Advanced Usage (Optional)
+
+You can add optional flags to customize your installation:
 
 ```bash
-  -d | --domain DOMAIN
-  -e | --email EMAIL@ADDRESS
+-d | --domain DOMAIN
+-e | --email EMAIL@ADDRESS
 -ftp | --ftp FTP_PORT
 -ssh | --ssh-port SSH_PORT
-  -t | --trackers [allowed | blocked]
+-t | --trackers [allowed | blocked]
 ```
 
-example:
+**Example:**
 
 ```bash
-./qbpro -u USERNAME -p 'PASSWORD' -k 'API_KEY' -d 'DOMAIN' -e 'EMAIL@ADDRESS' -ftp FTP_PORT -ssh SSH_PORT -t blocked
+./qbpro -u USERNAME -p 'PASSWORD' -k 'API_KEY' -d 'mydomain.com' -e 'my@email.com' -ftp 5757 -ssh 4747 -t blocked
 ```
 
-The above example will install QuickBox Pro with the following options:
+This example installs QuickBox Pro with the following options:
 
-- Domain: DOMAIN (the domain name of your server - example: `-d 'mydomain.com'`).
-    - **You must have a valid domain name already registered with your provider and the proper DNS records set up.**<br/>This will set the Dashboard for QuickBox Pro to your domain as well as install a valid SSL certificate.
-- Email: EMAIL@ADDRESS (the email address of your user - example: `-e 'my@email.com'`).
-- FTP Port: FTP_PORT (the port number of your FTP server - example: `-ftp 5757`).
-- SSH Port: SSH_PORT (the port number of your SSH server - example: `-ssh 4747`).
-- Trackers: allowed (allow trackers to be downloaded - example: `-t allowed`).
-- Trackers: blocked (block trackers from being downloaded - example: `-t blocked`).
+- **Domain**: The domain name for your server.  
+    Example: `-d 'mydomain.com'`.  
+    **Important**: Ensure the domain is registered and DNS records are properly configured. This will set up the QuickBox Dashboard on your domain and install an SSL certificate.
+  
+- **Email**: Your email address for notifications.  
+    Example: `-e 'my@email.com'`.
+  
+- **FTP Port**: Custom FTP port.  
+    Example: `-ftp 5757`.
+  
+- **SSH Port**: Custom SSH port.  
+    Example: `-ssh 4747`.
+  
+- **Trackers**: Control tracker downloads.  
+    Example:  
+    - `-t allowed` (allow trackers)  
+    - `-t blocked` (block trackers)
 
-Run in single snippet. Updating username, password, and api_key details as required:
+### Run All in One Command
+
+Update `USERNAME`[^2], `PASSWORD`[^3], and `API_KEY`[^4] as needed, and run everything in one command:
 
 ```bash
 username="ENTER_DESIRED_USERNAME_HERE"
@@ -117,11 +138,11 @@ curl -sL "https://lab.quickbox.io/QuickBox/pro-v3/-/raw/main/qbpro_v3" > qbpro &
 
 ---
 
-### REFERENCES
+### References
 
-[^1]: <mark>Debian 11 (bullseye) is the current recommended Distro for install until further testing of Debian 12 (bookworm) is finalized.</mark>
-[^2]: <mark>Your username is unique to your QuickBox installation and can be whatever you like.</mark>
-[^3]: <mark>Your password is unique to your QuickBox installation and can be whatever you like.</mark>
-[^4]: <mark>Your API Key is unique to your QuickBox account and can be found on [your account](https://quickbox.io/my-account/api-keys).</mark>
+[^1]: Debian 12 (Bookworm) is the recommended distribution.
+[^2]: Choose a unique username for your QuickBox installation.
+[^3]: Choose a unique password for your QuickBox installation.
+[^4]: Your API Key is available in your QuickBox account [here](https://quickbox.io/my-account/api-keys).
 
 ---
