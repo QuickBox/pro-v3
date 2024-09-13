@@ -9,56 +9,56 @@ text="## 3.1.1.4307 (2024-09-13)
 
 ### enhancements (22 changes)
 
-- enh(UI): refactor "get_vnstat_data" to optimize return logic and data handling
+- enh(UI): refactor `get_vnstat_data` to optimize return logic and data handling
 - enh(UI): refactor functions to simplify return logic and improve consistency
-- enh(UI): remove temporary variable assignment in "getMemberGroupName" for simplification
-- enh(UI): remove temporary variable assignment in "getGroupId" for simplification
-- enh(UI): remove temporary variable assignment in "getGroupCount" for simplification
+- enh(UI): remove temporary variable assignment in `getMemberGroupName` for simplification
+- enh(UI): remove temporary variable assignment in `getGroupId` for simplification
+- enh(UI): remove temporary variable assignment in `getGroupCount` for simplification
 - enh(UI): simplify username regex validation by reducing conditional complexity
-- enh(UI): simplify return in "calculateNumActiveUsers" : removed unnecessary variable assignment
+- enh(UI): simplify return in `calculateNumActiveUsers` : removed unnecessary variable assignment
 - enh(api): replace generic exceptions for better error handling
-- enh(UI): reduce returns in "adminEditAccount" to improve code simplicity and maintainability
-- enh(UI): reduce complexity and consolidate return logic in "promoteUserToAdmin"
+- enh(UI): reduce returns in `adminEditAccount` to improve code simplicity and maintainability
+- enh(UI): reduce complexity and consolidate return logic in `promoteUserToAdmin`
 - enh(UI): reduce complexity and improve code structure per wireguard install/reinstall
-- enh(UI): reduce complexity and consolidate return logic in "demoteUserFromAdmin"
+- enh(UI): reduce complexity and consolidate return logic in `demoteUserFromAdmin`
 - enh(UI): reduce session object complexity and improve code structure
 - enh(UI): simplify user registration logic and improve maintainability
 - enh(UI): refactor ssl certificate handling: improved type hinting and cert list retrieval
-- enh(api): refactor "user_create" to reduce complexity and improve maintainability
+- enh(api): refactor `user_create` to reduce complexity and improve maintainability
 - enh(qb): improve API check robustness by adding remote fallback and retries
 - enh(UI): define page-level constants to reduce PHP value duplication
 - enh(UI): define app names and default URL keys with improved override support
 - enh(UI): set override level constants for app URLs (reflected only for new url.override.php)
 - enh(API|UI): Improve api check to validate 200 HTTP status for better accuracy
-- enh(UI): refactor "lastGuestsOnline()" method to loop more than one iteration
+- enh(UI): refactor `lastGuestsOnline()` method to loop more than one iteration
 
 ### fixes (19 changes)
 
 - fix(UI): ensure shell_information is properly cast to integer in account edit methods
-- fix(api): improved "software_status" service name handling and clean output for existing services
-- fix(api): resolve issue with collation handling on "software_list"
+- fix(api): improved `software_status` service name handling and clean output for existing services
+- fix(api): resolve issue with collation handling on `software_list`
 - fix(UI): proper logical operator usage
 - fix(api): ensure correct value types in user and software info methods
 - fix(UI): specify array value types in software update functions to resolve type issues
 - fix(UI): ensure proper initialization of PDO object and add exception handling for Logger
 - fix(software check): ensure phpMyAdmin version check retries until valid value is retrieved
 - fix(UI): prevent division by zero when calculating disk usage percentage
-- fix(UI): secure sql query in "mountMonitorAdd" and handle missing post values
-- fix(UI): reduce complexity of "apiUsage" for better maintainability
-- fix(UI): reduce complexity of "adminEditAccount" for better maintainability
-- fix("qb clean"): correction to user_id set (ownership) per log cleaning
+- fix(UI): secure sql query in `mountMonitorAdd` and handle missing post values
+- fix(UI): reduce complexity of `apiUsage` for better maintainability
+- fix(UI): reduce complexity of `adminEditAccount` for better maintainability
+- fix(`qb clean`): correction to user_id set (ownership) per log cleaning
 - fix(autodl): implement proper autodl install/reinstall completion message
 - fix(multiple apps): set function process check on reinstall/remove to avoid duplicate log entries
 - fix(UI): correction to sub-expressions on PHP Time Zone selection
 - fix(UI): remove useless self-assignment on jdownloader port checker
 - fix(UI): remove useless form object instantiation from registry config editing
-- fix("qb software check"): loosen version pattern matching on checks
+- fix(`qb software check`): loosen version pattern matching on checks
 
 ### tweaks (4 changes)
 
 - tweak(UI): reorder popover CSS selectors for proper organization
 - tweak(UI): set per page level defined constants for repeating values
-- tweak(UI): set "noopener" on url missing attribute
+- tweak(UI): set `noopener` on url missing attribute
 - tweak(UI): remove leftover debug value per wireguard testing
 
 ### translations (2 changes)
