@@ -1,6 +1,12 @@
 CODENAME       | OSARCH       | CATEGORY       | VERSION | FILENAME                                  | NOTES
 ---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
-all            | amd64        | qbittorrent    | 4.6.6   | qbittorrent-nox.qbit4.6.6_lt2.0.10.amd64  | Contains all binary for qbittorrent
+bookworm	   | amd64        | qbittorrent    | 4.6.6   | qbittorrent-nox.qbit4.6.6_lt2.0.10.amd64  | Contains all binary for qbittorrent
+---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
+bullseye	   | amd64        | qbittorrent    | 4.6.6   | qbittorrent-nox.qbit4.6.6_lt1.2.19.amd64  | Contains all binary for qbittorrent
+---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
+buster         | amd64        | qbittorrent    | 4.6.6   | qbittorrent-nox.qbit4.6.6_lt1.2.19.amd64  | Contains all binary for qbittorrent
+---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
+jammy          | amd64        | qbittorrent    | 4.6.6   | qbittorrent-nox.qbit4.6.6_lt2.0.10.amd64  | Contains all binary for qbittorrent
 ---------------|--------------|----------------|---------|-------------------------------------------|----------------------------------------------------
 bookworm       | amd64        | transmission   | 4.0.5   | transmission-4.0.5-complete_amd64.deb     | Contains all binary for transmission
                |              |                |         |                                           | * transmission-cli, transmission-daemon, 
