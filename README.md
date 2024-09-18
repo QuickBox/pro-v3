@@ -10,9 +10,10 @@
 
 ![ubuntu_22.04](https://badgen.net/badge/Ubuntu%2022.04/passing/green)
 
-> [!NOTE]
-> Support for Debian 10 has officially ended as of June 2024, marking its End of Life (EOL). Consequently, some upstream repositories, such as php.sury.org, have retired their sources for Debian 10.
-This may result in installation failures for new setups. Please note that QuickBox is not responsible for the availability or maintenance of third-party repositories.
+> :warning: **Support for Debian 10 has officially ended as of June 2024, marking its End of Life (EOL).**
+> Consequently, some upstream repositories, such as php.sury.org, have retired their sources for Debian 10.
+> This may result in installation failures for new setups.
+> Please note that QuickBox is not responsible for the availability or maintenance of third-party repositories.
 
 We recommend using either Debian 12 (Bookworm)[^1] or Debian 11 (Bullseye)
 Learn more about Debian 10 EOL [here](https://wiki.debian.org/LTS).
