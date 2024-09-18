@@ -6,13 +6,16 @@
 
 ### OS/Distro Support
 
-![debian_12](https://badgen.net/badge/Debian%2012/passing/green) ![debian_11](https://badgen.net/badge/Debian%2011/passing/green) ![debian_10](https://badgen.net/badge/Debian%2010/passing/green) ![debian_9](https://badgen.net/badge/Debian%209/passing/orange)
+![debian_12](https://badgen.net/badge/Debian%2012/passing/green) ![debian_11](https://badgen.net/badge/Debian%2011/passing/green) ![debian_10](https://badgen.net/badge/Debian%2010/EOL/black)
 
-![ubuntu_22.04](https://badgen.net/badge/Ubuntu%2022.04/passing/green) ![ubuntu_20.04](https://badgen.net/badge/Ubuntu%2020.04/testing/purple)
+![ubuntu_22.04](https://badgen.net/badge/Ubuntu%2022.04/passing/green)
 
-**Note:** Although Debian 9 is supported, it reached its End of Life (EOL) in June 2022.
+> [!NOTE]
+> Support for Debian 10 has officially ended as of June 2024, marking its End of Life (EOL). Consequently, some upstream repositories, such as php.sury.org, have retired their sources for Debian 10.
+This may result in installation failures for new setups. Please note that QuickBox is not responsible for the availability or maintenance of third-party repositories.
+
 We recommend using either Debian 12 (Bookworm)[^1] or Debian 11 (Bullseye)
-Learn more about Debian 9 EOL [here](https://wiki.debian.org/LTS).
+Learn more about Debian 10 EOL [here](https://wiki.debian.org/LTS).
 
 </div>
 
