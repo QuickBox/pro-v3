@@ -1,17 +1,9 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.1.1.4342 (2024-09-20)
+text="## 3.1.1.4347 (2024-09-23)
 
-### fixes (4 changes)
+### fixes (2 changes)
 
-- fix(UI): correct display of sonarr --v4 and calibre update links on dashboard
-- fix(software): ensure nvm is sourced properly for node installation
-- fix(UI): correction to mylar3 linking on dashboard service panels
-- fix(UI): correction to qbittorrent linking on dashboard service panels
-
-### tweaks (3 changes)
-
-- tweak(transmission): update binary path to '/usr/local/bin/' for...
-- tweak(transmission): deb location to compiled-packages repo
-- tweak(assets): migrate binary assets to in-house storage from third-party repo"
+- fix(UI): ensure software dropdown displays and pre-selects group options
+- fix(UI): addressed an issue where default apps are not displayed to sub-users"
