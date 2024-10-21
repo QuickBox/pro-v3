@@ -1,17 +1,8 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.1.2.4394 (2024-10-21)
+text="## 3.1.2.4401 (2024-10-21)
 
-### tweaks (1 change)
+### fixes (1 change)
 
-- tweak(requestrr): switch from zip to tar.gz for requestrr package and enhance installation logic
-
-### fixes (2 changes)
-
-- fix(requestrr): update repository url to new fork
-- fix(UI): restrict flood update badge visibility to admin users only
-
-### enhancements (1 change)
-
-- enh(flood): add user-level iteration for flood service control during update"
+- hotfix(requestrr): update version checker URL to new repository"
