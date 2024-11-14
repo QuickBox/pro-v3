@@ -1,32 +1,12 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## 3.1.2.4405 (2024-11-13)
+text="## 3.1.2.4426 (2024-11-14)
 
-### translations (3 changes)
+### enhancements (1 change)
 
-- enh(UI): add translation values per database management - help manual
-- feat(cli): add language translations for database restore messages
-- feat(cli|UI): add '-o 0.10.0' in 'rtorrent' help messaging
+- enh(requestrr): use '--config-dir' flag on service operation - '/home/%i/.config/Requestrr'
 
-### enhancements (4 changes)
+### fixes (1 change)
 
-- enh(core): updated help manuals per CLI and UI
-- enh(autocomplete): add option '-o 0.10.0' to rtorrent tab completion array
-- enh(qbittorrent): introduce version 5.+ support
-- enh(qb): retain last 5 valid db backups per maintenance cycle - reduce backup bloat
-
-### features (2 changes)
-
-- feat(manage): add qb database restore option
-- feat(CLI|UI): support for rtorrent/libtorrent '0.10.0'/'0.14.0'
-
-### tweaks (2 changes)
-
-- tweak(qbittorrent): install gcc deb package if version is under 12
-- tweak(CLI|maintenance):  maintenance message to log only - avoid confusing motd
-
-### fixes (2 changes)
-
-- fix(irssi): update killmode to mixed in the service file for graceful service control
-- fix(UI): correct root mount endpoint for disk space monitoring per netdata v2 release"
+- fix(requestrr): replace hardcoded version in settings.json with dynamic update"
