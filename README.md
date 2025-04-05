@@ -61,7 +61,7 @@ apt-get -y update && apt-get -y upgrade
 Fetch the latest QuickBox Pro setup script.
 
 ```bash
-curl -sL "https://lab.quickbox.io/QuickBox/pro-v3/-/raw/main/qbpro_v3" > qbpro && chmod +x qbpro
+curl -sL "https://github.com/QuickBox/pro-v3/raw/refs/heads/main/qbpro_v3" > qbpro && chmod +x qbpro
 ```
 
 - **Curl not found?**  
@@ -136,7 +136,7 @@ password="ENTER_DESIRED_PASSWORD_HERE"
 api_key="ENTER_API_KEY_HERE"
 
 (apt-get -y update && apt-get -y upgrade && apt -y install curl; \
-curl -sL "https://lab.quickbox.io/QuickBox/pro-v3/-/raw/main/qbpro_v3" > qbpro && chmod +x qbpro; \
+curl -sL "https://github.com/QuickBox/pro-v3/raw/refs/heads/main/qbpro_v3" > qbpro && chmod +x qbpro; \
 ./qbpro -u "${username}" -p "${password}" -k "${api_key}")
 ```
 
