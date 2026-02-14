@@ -1,0 +1,40 @@
+# Nginx Configuration Template for SnappyMail Webmail
+# Replace ${MAIL_HOSTNAME}, ${SSL_CERT_PATH}, and ${SSL_KEY_PATH} with actual values.
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name ${MAIL_HOSTNAME};
+
+    # Redirect to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name ${MAIL_HOSTNAME};
+
+    ssl_certificate ${SSL_CERT_PATH};
+    ssl_certificate_key ${SSL_KEY_PATH};
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+    add_header X-XSS-Protection "1; mode=block";
+
+    location / {
+        proxy_pass http://127.0.0.1:8888;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # Max upload size for attachments
+        client_max_body_size 50M;
+    }
+
+    # Optional: Disable logging for favicon and robots.txt
+    location = /favicon.ico { log_not_found off; access_log off; }
+    location = /robots.txt  { log_not_found off; access_log off; }
+}
