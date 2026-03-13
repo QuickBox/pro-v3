@@ -237,3 +237,7 @@ Supported distributions: Debian 11 (Bullseye), Debian 12 (Bookworm), Debian 13 (
   - Classic Site: https://quickbox.io (to access legacy account features - to be deprecated)
 - **Documentation:** https://v3.quickbox.io/docs
 - **Discord:** https://discord.gg/mca7RSv5pa
+
+## Updates
+
+- Added optimizations and improvements to ensure the highest performance, stability, security and reliability of the platform's core applications and CLI stack.

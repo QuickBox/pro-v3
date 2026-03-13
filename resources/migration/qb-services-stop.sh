@@ -2,6 +2,7 @@
 #shellcheck disable=SC2249
 set -euo pipefail
 
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 # Inputs
 INV="${INV:-$(find ~/quickbox_backup/ -maxdepth 1 -name 'qb_inventory_*.json' -print0 2>/dev/null | xargs -0 ls -t 2>/dev/null | head -n1)}"
 [ -f "${INV}" ] || { echo "Inventory JSON not found. Set INV=/path/to/qb_inventory.json" >&2; exit 1; }
@@ -38,18 +39,14 @@ mapfile -t UA < <(
   ' "${INV}" | sort -u
 )
 
-stop_quiet() {
-  local unit="$1"
-  systemctl stop "${unit}" >/dev/null 2>&1 || true
-}
+echo "[i] Gathering services to stop..."
+declare -a to_stop=()
 
-echo "[i] Stopping dashboard layer..."
-stop_quiet "nginx.service"
+to_stop+=("nginx.service")
 # Stop any php-fpm variants if present
-systemctl list-units --all --type=service 'php*-fpm.service' --no-legend 2>/dev/null \
-  | awk '{print $1}' | while read -r u; do stop_quiet "${u}"; done
+mapfile -O "${#to_stop[@]}" -t php_services < <(systemctl list-units --all --type=service 'php*-fpm.service' --no-legend 2>/dev/null | awk '{print $1}')
+to_stop+=("${php_services[@]}")
 
-echo "[i] Stopping per-user application services..."
 WSD_DONE=0
 for row in "${UA[@]}"; do
   USER="${row%%$'\t'*}"
@@ -62,30 +59,37 @@ for row in "${UA[@]}"; do
   case "${APP_LC}" in
     wsdashboard)
       if (( WSD_DONE == 0 )); then
-        stop_quiet "qbwsd.service"
-        stop_quiet "qbwsd-log-server.service"
+        to_stop+=("qbwsd.service")
+        to_stop+=("qbwsd-log-server.service")
         WSD_DONE=1
       fi
       continue
       ;;
     webconsole)
-      stop_quiet "ttyd@${USER}.service"
-      stop_quiet "ttyd.service"
+      to_stop+=("ttyd@${USER}.service")
+      to_stop+=("ttyd.service")
       continue
       ;;
     deluge)
       # daemon + web (cover templated and singleton)
-      stop_quiet "deluged@${USER}.service"
-      stop_quiet "deluged.service"
-      stop_quiet "deluge-web@${USER}.service"
-      stop_quiet "deluge-web.service"
+      to_stop+=("deluged@${USER}.service")
+      to_stop+=("deluged.service")
+      to_stop+=("deluge-web@${USER}.service")
+      to_stop+=("deluge-web.service")
       continue
       ;;
   esac
 
   # Generic: try templated first, then singleton
-  stop_quiet "${svc}@${USER}.service"
-  stop_quiet "${svc}.service"
+  to_stop+=("${svc}@${USER}.service")
+  to_stop+=("${svc}.service")
 done
 
+if (( ${#to_stop[@]} > 0 )); then
+  echo "[i] Stopping batched services..."
+  mapfile -t unique_to_stop < <(printf "%s\n" "${to_stop[@]}" | sort -u)
+  systemctl stop "${unique_to_stop[@]}" >/dev/null 2>&1 || true
+fi
+
 echo "[✓] Service stop pass complete."
+fi

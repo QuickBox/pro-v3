@@ -52,7 +52,7 @@ if (!file_exists($cli_path)) {
 }
 
 $escaped_args = array_map('escapeshellarg', $args);
-$full_command = 'sudo ' . escapeshellarg($cli_path) . ' ' . $command . ' ' . implode(' ', $escaped_args) . ' 2>&1';
+$full_command = 'sudo ' . escapeshellarg($cli_path) . ' ' . escapeshellarg($command) . ' ' . implode(' ', $escaped_args) . ' 2>&1';
 
 exec($full_command, $output, $return_var);
 
