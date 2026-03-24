@@ -1,0 +1,69 @@
+# The v4 Dashboard Is Here
+
+It's official. After nearly **two years** of development, countless late nights, and more refactoring than I care to admit... the **v4 Dashboard** is live. Today. Right now.
+
+If you've been following along, you know this has been a long road. What started as a plan to modernize the old PHP dashboard turned into a complete ground-up rebuild; a brand new application built on a modern stack that's faster, more capable, and honestly, more fun to use than anything we've ever shipped. This isn't a patch job. This is the real deal.
+
+I'm not going to lie, seeing this finally go live feels surreal. This project has been a labor of love, built piece by piece between everything else that keeps QuickBox running. And now it's yours.
+
+### What's New in v4
+
+I could write a novel about everything that's changed, but here are a few highlights to get you excited:
+
+- **Real-Time System Telemetry** — CPU, memory, network, and disk stats streaming live to your browser. No more SSH-ing in just to check if your server is behaving.
+- **Completely Redesigned Application Management** — Install, update, remove, and configure your applications from a clean, modern interface. Version tracking, update badges, and one-click operations for everything.
+- **Streaming Dashboard** — For those running Emby or Jellyfin and *Plex (coming soon! Follow the [Roadmap](https://v3.quickbox.io/roadmap))*, you now have a dedicated streaming dashboard that shows active sessions, library stats, and stream health, all built right into the dashboard.
+- **Notification System** — Smart notifications for updates, system events, and application status changes. Get notified when something needs your attention, not when it doesn't.
+- **Dark Mode & Multiple Themes** — Four complete theme palettes to choose from. The dashboard finally looks as good as the servers it manages.
+
+And that's just scratching the surface.
+
+### The Update Is Automatic
+
+Here's the important part: **you don't need to do anything special to get v4.** When you run your regular QuickBox updates, the dashboard will automatically migrate from v3 to v4. No manual commands, no extra steps. It just happens.
+
+Your existing credentials carry over. Your settings carry over. Your installed applications... all still there. The transition is seamless.
+
+**One thing to note:** Because this is an entirely new framework, your dashboard URL will change. After the update, you'll access your dashboard at:
+
+```
+https://your-server-or-domain/login
+```
+
+The old PHP dashboard paths (`.php`) will no longer work, so **update your bookmarks** accordingly.
+
+### v3 Core & v4 Dashboard: Separate But United
+
+One of the bigger architectural changes worth knowing about: **the v3 CLI core and the v4 Dashboard are now independent of each other.** They still work together (the CLI manages your server and the dashboard gives you the interface), but they update separately.
+
+What this means for you:
+
+- **Dashboard updates are independent.** When a new dashboard version drops, it updates on its own without touching the core.
+- **Core updates are independent.** CLI improvements and package updates ship on their own schedule.
+- **Running `qb update quickbox` handles everything.** It checks for available updates to both the core and the dashboard and applies whatever's available. If only the dashboard has a new version, only the dashboard updates. If both do, both update. Simple.
+
+This separation gives us the flexibility to ship improvements faster on both sides without one blocking the other.
+
+### Your New Home: v3.quickbox.io
+
+If you haven't already made the move, now's the time. **[v3.quickbox.io](https://v3.quickbox.io)** is the new home for everything QuickBox Pro; account management, subscriptions, documentation, and support.
+
+If you're coming from the old quickbox.io, you can migrate your account, API keys, and order history using our **[Migration Utility](https://v3.quickbox.io/docs/v3-portal/migration-utility)**. It's quick, it's painless, and your existing pricing is grandfathered. You won't pay a cent more.
+
+For the full details on the platform transition, check out our earlier announcement: [QuickBox Pro Platform Evolution: Moving to v3.quickbox.io](https://quickbox.io/announcements/quickbox-pro-platform-evolution-moving-to-v3-quickbox-io/).
+
+### Thank You, All of You
+
+This dashboard is the product of nearly **a decade** of feedback from the QuickBox community. Every feature request, every support ticket, every "wouldn't it be cool if..." conversation in Discord... it all went into shaping what v4 became. The ideas, the patience, the loyalty through every phase of this project; that's what built this.
+
+To the **Beta Squad**, thank you for putting v4 through its paces in the final stretch. Your testing and bug reports in those last months before launch were invaluable. And to **every single user** who has been part of this community over the years, whether you joined last week or you've been here since the beginning, this dashboard exists because of you. Your feedback over the years is what drove every decision behind v4.
+
+Thank you.
+
+### What's Next
+
+This is just the beginning. The v4 dashboard and the new platform give us a foundation we can build on for years to come. There's a lot more in the pipeline, and I can't wait to show you what's next.
+
+Welcome to the new era of QuickBox Pro.
+
+~ JMSolo 💖
