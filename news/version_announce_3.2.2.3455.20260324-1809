@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3455
+---
+type: version
+version: 3.2.2.3455
+date: 2026-03-24 18:09 UTC
+previous: 3.2.2.3074
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3455
 
 ### 🧩 New Features (20)
 - '042a29ee7' feat(update): add conditional dashboard update check to pipeline-dashboard
@@ -102,4 +107,4 @@ text="## QuickBox Pro v3.2.2.3455
 - **📅 Release Date**: 2026-03-24
 - **🏷️ Version**: 3.2.2.3455
 - **📋 Previous Version**: 3.2.2.3074
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
