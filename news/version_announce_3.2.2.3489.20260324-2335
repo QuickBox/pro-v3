@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3489
+---
+type: version
+version: 3.2.2.3489
+date: 2026-03-24 23:35 UTC
+previous: 3.2.2.3455
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3489
 
 ### 🐛 Bug Fixes (9)
 - '058067d99' fix(setup): remove 'ERR' from orchestrator trap that broke fresh installs
@@ -27,4 +32,4 @@ text="## QuickBox Pro v3.2.2.3489
 - **📅 Release Date**: 2026-03-24
 - **🏷️ Version**: 3.2.2.3489
 - **📋 Previous Version**: 3.2.2.3455
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
