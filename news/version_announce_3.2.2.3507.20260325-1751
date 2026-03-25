@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3507
+---
+type: version
+version: 3.2.2.3507
+date: 2026-03-25 17:51 UTC
+previous: 3.2.2.3506
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3507
 
 ### 🧩 New Features (1)
 - 'e86a1025' feat(cli): add 'QBP_API_KEY' env var override for API key limbo recovery
@@ -15,4 +20,4 @@ text="## QuickBox Pro v3.2.2.3507
 - **📅 Release Date**: 2026-03-25
 - **🏷️ Version**: 3.2.2.3507
 - **📋 Previous Version**: 3.2.2.3506
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
