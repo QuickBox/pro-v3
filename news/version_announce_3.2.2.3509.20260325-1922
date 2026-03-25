@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3509
+---
+type: version
+version: 3.2.2.3509
+date: 2026-03-25 19:22 UTC
+previous: 3.2.2.3507
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3509
 
 ### 🐛 Bug Fixes (1)
 - '342ae3c57' fix(cli): harden dual-source API validation for QBP_API_KEY override recovery
@@ -15,4 +20,4 @@ text="## QuickBox Pro v3.2.2.3509
 - **📅 Release Date**: 2026-03-25
 - **🏷️ Version**: 3.2.2.3509
 - **📋 Previous Version**: 3.2.2.3507
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
