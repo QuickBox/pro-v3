@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3504
+---
+type: version
+version: 3.2.2.3504
+date: 2026-03-25 15:42 UTC
+previous: 3.2.2.3496
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3504
 
 ### 🐛 Bug Fixes (3)
 - '04445af25' fix(update): validate bootstrap, use local version, guard missing files
@@ -18,4 +23,4 @@ text="## QuickBox Pro v3.2.2.3504
 - **📅 Release Date**: 2026-03-25
 - **🏷️ Version**: 3.2.2.3504
 - **📋 Previous Version**: 3.2.2.3496
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
