@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3496
+---
+type: version
+version: 3.2.2.3496
+date: 2026-03-25 04:59 UTC
+previous: 3.2.2.3494
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3496
 
 ### 🐛 Bug Fixes (1)
 - '68fd72c29' fix(update): refresh updater lang files during bootstrap download
@@ -16,4 +21,4 @@ text="## QuickBox Pro v3.2.2.3496
 - **📅 Release Date**: 2026-03-24
 - **🏷️ Version**: 3.2.2.3496
 - **📋 Previous Version**: 3.2.2.3494
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
