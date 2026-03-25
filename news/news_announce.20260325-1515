@@ -1,0 +1,3 @@
+# Update in review
+
+We have had several reports with the new update process as well as the new installer. These issues are occurring due to the new modular setup of both of these core utilities. I am currently investigating these issues. I have found some areas of interests and am actively working on a fix for this. I appreciate your patience on this. This is a very large update, so this is in part, expected. I will update this announce as soon as we have stability on **both** utilities.
