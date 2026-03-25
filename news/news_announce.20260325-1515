@@ -1,3 +1,9 @@
 # Update in review
 
+### Update
+
+I have identified an issue where the installer and the updater are only accepting the new v3.quickbox.io API key formats. This is causing issues for users who have not yet updated their API keys to the new format. I am currently working on a fix for this issue to ensure that both the installer and updater can accept both the old and new API key formats. I appreciate your patience as I work on this fix. I will update this announce as soon as we have a solution in place.
+
+---
+
 We have had several reports with the new update process as well as the new installer. These issues are occurring due to the new modular setup of both of these core utilities. I am currently investigating these issues. I have found some areas of interests and am actively working on a fix for this. I appreciate your patience on this. This is a very large update, so this is in part, expected. I will update this announce as soon as we have stability on **both** utilities.
