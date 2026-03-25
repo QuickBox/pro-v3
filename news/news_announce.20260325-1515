@@ -1,9 +1,13 @@
-# Update in review
+# Update resolved
 
 ### Update
 
-I have identified an issue where the installer and the updater are only accepting the new v3.quickbox.io API key formats. This is causing issues for users who have not yet updated their API keys to the new format. I am currently working on a fix for this issue to ensure that both the installer and updater can accept both the old and new API key formats. I appreciate your patience as I work on this fix. I will update this announce as soon as we have a solution in place.
+The installer and updater compatibility issues have been resolved. The core fix addresses glibc compatibility on Debian 11 (bullseye) systems where the SHC-compiled install and update scripts were failing with `GLIBC_2.33`/`GLIBC_2.34` errors. The release pipeline now compiles these scripts inside a Debian 11 container, ensuring the resulting binaries are compatible with all supported distributions (Debian 11+, Ubuntu 22.04+).
+
+Additionally, glibc detection has been added to the v3 update pipeline. Systems running older glibc versions are now automatically identified and flagged for compatibility mode, allowing the v4-dashboard installer to select the correct Node.js builds for the target system.
+
+Both the installer and updater should now function correctly across all supported platforms. If you continue to experience issues, please reach out in the support channel.
 
 ---
 
-We have had several reports with the new update process as well as the new installer. These issues are occurring due to the new modular setup of both of these core utilities. I am currently investigating these issues. I have found some areas of interests and am actively working on a fix for this. I appreciate your patience on this. This is a very large update, so this is in part, expected. I will update this announce as soon as we have stability on **both** utilities.
+We have had several reports with the new update process as well as the new installer. These issues were occurring due to the new modular setup of both of these core utilities. The root cause has been identified and fixed -- the CI release pipeline was compiling encrypted scripts on a system with a newer glibc than what Debian 11 provides, producing binaries that could not load on older systems. Installs and updates should be much more stable now.
