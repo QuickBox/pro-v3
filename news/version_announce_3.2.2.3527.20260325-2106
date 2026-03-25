@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3527
+---
+type: version
+version: 3.2.2.3527
+date: 2026-03-25 21:06 UTC
+previous: 3.2.2.3509
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3527
 
 ### 🧩 New Features (1)
 - 'd7eaefa0f' feat(update): add glibc compatibility detection for v4-dashboard artifacts
@@ -15,4 +20,4 @@ text="## QuickBox Pro v3.2.2.3527
 - **📅 Release Date**: 2026-03-25
 - **🏷️ Version**: 3.2.2.3527
 - **📋 Previous Version**: 3.2.2.3509
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
