@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3545
+---
+type: version
+version: 3.2.2.3545
+date: 2026-03-26 02:16 UTC
+previous: 3.2.2.3527
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3545
 
 ### 🐛 Bug Fixes (3)
 - '5d0a38199' fix(software): fix radarr update pipeline and remap develop to nightly
@@ -17,4 +22,4 @@ text="## QuickBox Pro v3.2.2.3545
 - **📅 Release Date**: 2026-03-25
 - **🏷️ Version**: 3.2.2.3545
 - **📋 Previous Version**: 3.2.2.3527
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
