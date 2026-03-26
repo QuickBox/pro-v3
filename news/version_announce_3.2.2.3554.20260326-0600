@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3554
+---
+type: version
+version: 3.2.2.3554
+date: 2026-03-26 06:00 UTC
+previous: 3.2.2.3553
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3554
 
 ### 🔧 Maintenance (1)
 - '83975ebe' chore(dev): cleanup temp test files
@@ -15,4 +20,4 @@ text="## QuickBox Pro v3.2.2.3554
 - **📅 Release Date**: 2026-03-26
 - **🏷️ Version**: 3.2.2.3554
 - **📋 Previous Version**: 3.2.2.3553
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
