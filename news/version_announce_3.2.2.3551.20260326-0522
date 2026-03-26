@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3551
+---
+type: version
+version: 3.2.2.3551
+date: 2026-03-26 05:22 UTC
+previous: 3.2.2.3549
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3551
 
 ### 🐛 Bug Fixes (2)
 - 'a0267e3d3' fix(system): correct log directory writability check in qb and quickbox module
@@ -17,4 +22,4 @@ text="## QuickBox Pro v3.2.2.3551
 - **📅 Release Date**: 2026-03-26
 - **🏷️ Version**: 3.2.2.3551
 - **📋 Previous Version**: 3.2.2.3549
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
