@@ -34,7 +34,13 @@ elif [ "$(pwd)" != "${MAIL_STACK_DIR}" ] && [ -d "./mail-stack" ]; then
     echo "[i] Copying stack files to ${MAIL_STACK_DIR}..."
     cp -r ./mail-stack/* "${MAIL_STACK_DIR}/"
 fi
-chmod -R 775 "${MAIL_STACK_DIR}"
+
+# Apply granular permissions
+find "${MAIL_STACK_DIR}" -type d -exec chmod 755 {} +
+find "${MAIL_STACK_DIR}" -type f -exec chmod 644 {} +
+for script in deploy.sh manage-mail.sh reload-certs.sh; do
+    [ -f "${MAIL_STACK_DIR}/${script}" ] && chmod 755 "${MAIL_STACK_DIR}/${script}"
+done
 
 # Detect PUID/PGID
 PUID=$(id -u)
@@ -62,6 +68,14 @@ PUID=${PUID}
 PGID=${PGID}
 API_TOKEN=${API_TOKEN}
 EOF
+fi
+
+# Secure .env file
+# 640 and www-data group ownership allows the dashboard API (running as www-data)
+# to read it while preventing other non-root users from seeing the API_TOKEN.
+if [ -f "${MAIL_STACK_DIR}/.env" ]; then
+    chmod 640 "${MAIL_STACK_DIR}/.env"
+    chown :www-data "${MAIL_STACK_DIR}/.env" 2>/dev/null || true
 fi
 
 # Load variables from .env

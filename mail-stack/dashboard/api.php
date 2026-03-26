@@ -10,17 +10,7 @@ header('Content-Type: application/json');
 // We implement a token-based check for management parity and security.
 
 $env_file = dirname(__DIR__) . '/.env';
-$config = [];
-if (file_exists($env_file)) {
-    $lines = file($env_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($lines as $line) {
-        if (strpos(ltrim($line), '#') === 0) continue;
-        $parts = explode('=', $line, 2);
-        if (count($parts) === 2) {
-            $config[trim($parts[0])] = trim($parts[1]);
-        }
-    }
-}
+$config = file_exists($env_file) ? parse_ini_file($env_file) : [];
 
 $api_token = $config['API_TOKEN'] ?? null;
 $provided_token = $_SERVER['HTTP_X_API_TOKEN'] ?? $_REQUEST['token'] ?? null;
@@ -51,10 +41,32 @@ if (!file_exists($cli_path)) {
     $cli_path = dirname(__DIR__) . '/manage-mail.sh';
 }
 
-$escaped_args = array_map('escapeshellarg', $args);
-$full_command = 'sudo ' . escapeshellarg($cli_path) . ' ' . escapeshellarg($command) . ' ' . implode(' ', $escaped_args) . ' 2>&1';
+/**
+ * For security and robustness, we use proc_open with an array of arguments.
+ * This bypasses the shell and mitigates command injection vulnerabilities.
+ * Standard error is redirected to standard output for combined logging.
+ */
+$full_cmd_array = array_merge(['sudo', $cli_path, $command], $args);
+$descriptorspec = [
+    0 => ["pipe", "r"], // stdin
+    1 => ["pipe", "w"], // stdout
+    2 => ["redirect", 1] // stderr to stdout
+];
 
-exec($full_command, $output, $return_var);
+$process = proc_open($full_cmd_array, $descriptorspec, $pipes);
+
+$output = [];
+if (is_resource($process)) {
+    fclose($pipes[0]); // No input needed
+    while ($line = fgets($pipes[1])) {
+        $output[] = rtrim($line);
+    }
+    fclose($pipes[1]);
+    $return_var = proc_close($process);
+} else {
+    $return_var = -1;
+    $output[] = "Failed to execute management command.";
+}
 
 echo json_encode([
     'success' => ($return_var === 0),
