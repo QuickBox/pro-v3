@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3710
+---
+type: version
+version: 3.2.2.3710
+date: 2026-03-26 21:22 UTC
+previous: 3.2.2.3554
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3710
 
 ### 🐛 Bug Fixes (18)
 - '054d9329d' fix(i18n): migrate /srv/quickbox/db/ to /opt/quickbox/db/ in help.sh across 7 locales
@@ -32,4 +37,4 @@ text="## QuickBox Pro v3.2.2.3710
 - **📅 Release Date**: 2026-03-26
 - **🏷️ Version**: 3.2.2.3710
 - **📋 Previous Version**: 3.2.2.3554
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
