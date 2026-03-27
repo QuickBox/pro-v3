@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3858
+---
+type: version
+version: 3.2.2.3858
+date: 2026-03-27 20:21 UTC
+previous: 3.2.2.3710
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3858
 
 ### 🐛 Bug Fixes (5)
 - '30cf0f5d6' fix(setup): graceful fallback to self-signed cert when lecert fails
@@ -22,4 +27,4 @@ text="## QuickBox Pro v3.2.2.3858
 - **📅 Release Date**: 2026-03-27
 - **🏷️ Version**: 3.2.2.3858
 - **📋 Previous Version**: 3.2.2.3710
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
