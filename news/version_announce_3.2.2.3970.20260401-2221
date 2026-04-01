@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3970
+---
+type: version
+version: 3.2.2.3970
+date: 2026-04-01 22:21 UTC
+previous: 3.2.2.3858
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3970
 
 ### 🧩 New Features (5)
 - '44b8e1d10' feat(nginx): add nginx.org stable repo to setup and update pipeline
@@ -42,4 +47,4 @@ text="## QuickBox Pro v3.2.2.3970
 - **📅 Release Date**: 2026-04-01
 - **🏷️ Version**: 3.2.2.3970
 - **📋 Previous Version**: 3.2.2.3858
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
