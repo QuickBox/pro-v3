@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3973
+---
+type: version
+version: 3.2.2.3973
+date: 2026-04-02 02:17 UTC
+previous: 3.2.2.3970
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3973
 
 ### 🐛 Bug Fixes (3)
 - '2bb24e875' fix(nginx): resolve upgrade failures from Debian 'nginx-extras' to nginx.org
@@ -17,4 +22,4 @@ text="## QuickBox Pro v3.2.2.3973
 - **📅 Release Date**: 2026-04-01
 - **🏷️ Version**: 3.2.2.3973
 - **📋 Previous Version**: 3.2.2.3970
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
