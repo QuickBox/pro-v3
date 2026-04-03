@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3975
+---
+type: version
+version: 3.2.2.3975
+date: 2026-04-03 20:59 UTC
+previous: 3.2.2.3973
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3975
 
 ### 🐛 Bug Fixes (5)
 - '0d3cebe44' fix(lecert): smart repair system and soft failure cert loop
@@ -22,4 +27,4 @@ text="## QuickBox Pro v3.2.2.3975
 - **📅 Release Date**: 2026-04-03
 - **🏷️ Version**: 3.2.2.3975
 - **📋 Previous Version**: 3.2.2.3973
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
