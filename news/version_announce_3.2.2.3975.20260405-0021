@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3975
+---
+type: version
+version: 3.2.2.3975
+date: 2026-04-05 00:21 UTC
+previous: 3.2.2.3975
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3975
 
 ### 🐛 Bug Fixes (1)
 - 'e6b60540f' fix(nextcloud): harden php8.4 install, permission model, and 'occ' reliability
@@ -15,4 +20,4 @@ text="## QuickBox Pro v3.2.2.3975
 - **📅 Release Date**: 2026-04-04
 - **🏷️ Version**: 3.2.2.3975
 - **📋 Previous Version**: 3.2.2.3975
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
