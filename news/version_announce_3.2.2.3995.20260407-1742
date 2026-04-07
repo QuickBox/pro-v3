@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3995
+---
+type: version
+version: 3.2.2.3995
+date: 2026-04-07 17:42 UTC
+previous: 3.2.2.3989
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3995
 
 ### 🐛 Bug Fixes (6)
 - '00b27d2cb' fix(devpull): remove 'php8.1-fpm' from service restart array
@@ -20,4 +25,4 @@ text="## QuickBox Pro v3.2.2.3995
 - **📅 Release Date**: 2026-04-07
 - **🏷️ Version**: 3.2.2.3995
 - **📋 Previous Version**: 3.2.2.3989
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
