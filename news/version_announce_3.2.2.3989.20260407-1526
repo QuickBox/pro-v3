@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.3989
+---
+type: version
+version: 3.2.2.3989
+date: 2026-04-07 15:26 UTC
+previous: 3.2.2.3975
+channel: production
+---
+
+## QuickBox Pro v3.2.2.3989
 
 ### 🧩 New Features (2)
 - 'c22425da9' feat(software): integrate packages.lst cache for torrent client version resolution
@@ -25,4 +30,4 @@ text="## QuickBox Pro v3.2.2.3989
 - **📅 Release Date**: 2026-04-07
 - **🏷️ Version**: 3.2.2.3989
 - **📋 Previous Version**: 3.2.2.3975
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
