@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4039
+---
+type: version
+version: 3.2.2.4039
+date: 2026-04-09 04:03 UTC
+previous: 3.2.2.4029
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4039
 
 ### 🧩 New Features (1)
 - '86cfc7f08' feat(lang): rework duplicates_found and mirror backend_skip_symlink
@@ -18,4 +23,4 @@ text="## QuickBox Pro v3.2.2.4039
 - **📅 Release Date**: 2026-04-08
 - **🏷️ Version**: 3.2.2.4039
 - **📋 Previous Version**: 3.2.2.4029
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
