@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4029
+---
+type: version
+version: 3.2.2.4029
+date: 2026-04-09 00:10 UTC
+previous: 3.2.2.4006
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4029
 
 ### 🧩 New Features (4)
 - '58a50dbeb' feat(fix/db): truth-aware 'user_software' duplicate reconciler
@@ -26,4 +31,4 @@ text="## QuickBox Pro v3.2.2.4029
 - **📅 Release Date**: 2026-04-08
 - **🏷️ Version**: 3.2.2.4029
 - **📋 Previous Version**: 3.2.2.4006
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
