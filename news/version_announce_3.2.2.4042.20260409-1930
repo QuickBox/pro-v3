@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4042
+---
+type: version
+version: 3.2.2.4042
+date: 2026-04-09 19:30 UTC
+previous: 3.2.2.4039
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4042
 
 ### 🧩 New Features (1)
 - '90c36c8e1' feat(fix): add '--json' output mode to 'qb fix database'
@@ -18,4 +23,4 @@ text="## QuickBox Pro v3.2.2.4042
 - **📅 Release Date**: 2026-04-09
 - **🏷️ Version**: 3.2.2.4042
 - **📋 Previous Version**: 3.2.2.4039
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
