@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4154
+---
+type: version
+version: 3.2.2.4154
+date: 2026-04-14 00:43 UTC
+previous: 3.2.2.4047
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4154
 
 ### 🧩 New Features (3)
 - '3ddbd3212' feat(lang): translate the new qbittorrent nginx healer messages into six languages
@@ -35,4 +40,4 @@ text="## QuickBox Pro v3.2.2.4154
 - **📅 Release Date**: 2026-04-13
 - **🏷️ Version**: 3.2.2.4154
 - **📋 Previous Version**: 3.2.2.4047
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
