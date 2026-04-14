@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4166
+---
+type: version
+version: 3.2.2.4166
+date: 2026-04-14 06:45 UTC
+previous: 3.2.2.4156
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4166
 
 ### 🐛 Bug Fixes (4)
 - '268f04c76' fix(medusa): resolve install hang on fresh servers
@@ -18,4 +23,4 @@ text="## QuickBox Pro v3.2.2.4166
 - **📅 Release Date**: 2026-04-14
 - **🏷️ Version**: 3.2.2.4166
 - **📋 Previous Version**: 3.2.2.4156
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
