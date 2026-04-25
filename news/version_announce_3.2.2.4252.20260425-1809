@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4252
+---
+type: version
+version: 3.2.2.4252
+date: 2026-04-25 18:09 UTC
+previous: 3.2.2.4178
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4252
 
 ### 🧩 New Features (11)
 - '0485dbcb4' feat(setup): install fancyindex dynamic module on fresh install
@@ -38,4 +43,4 @@ text="## QuickBox Pro v3.2.2.4252
 - **📅 Release Date**: 2026-04-25
 - **🏷️ Version**: 3.2.2.4252
 - **📋 Previous Version**: 3.2.2.4178
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
