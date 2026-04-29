@@ -1,0 +1,31 @@
+# Fresh rTorrent / ruTorrent install — connectivity issue identified
+
+### Status
+
+We have been notified of and have identified an issue affecting **fresh installs** of `rtorrent` and `rutorrent` where ruTorrent fails to connect to rTorrent after install. The fix has been committed and is currently in the **beta channel** undergoing final testing before public release.
+
+If you are an existing rTorrent / ruTorrent user, **you are not affected** — your client connection remains intact and no action is required on your part.
+
+### Scope
+
+- **Affected:** new installs of rTorrent + ruTorrent on a server that has not previously had them installed.
+- **Not affected:** existing installs, reinstalls on top of a working configuration, or any other application in the QuickBox catalog.
+- **Where it surfaces:** ruTorrent loads in the browser but reports it cannot reach rTorrent (no torrents listed, settings panel blank or erroring).
+
+The issue was originally replicated on Debian 13, but the root cause is **not Debian 13 specific** — the fix applies across all supported distributions (Debian 11, 12, 13 and Ubuntu 22.04+).
+
+### What's next
+
+- The fix is in beta and being run through final verification across our supported distribution matrix.
+- Once verification clears, it will roll out as a standard `qb update quickbox` release. No manual intervention will be required — running the update will pick up the corrected install logic for any future rTorrent / ruTorrent installations.
+- Beta squad members can pull the fix now via `betapull`.
+
+### Reference
+
+- Fix commit: `b0bfd72e` — `fix(rtorrent): rutorrent ↔ rtorrent connectivity on Debian 13`
+
+If you have already attempted a fresh install of rTorrent / ruTorrent and run into the connectivity symptom, please reach out in the support channel and we'll get you sorted while the patched release goes through final testing.
+
+---
+
+Thank you for your patience while we get this through QA properly. Catching it in beta before a wider release is exactly what the testing pipeline is for.
