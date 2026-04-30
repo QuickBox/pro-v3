@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4268
+---
+type: version
+version: 3.2.2.4268
+date: 2026-04-30 14:25 UTC
+previous: 3.2.2.4252
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4268
 
 ### 🧩 New Features (1)
 - '8a8da5b20' feat(lang): parity flood scgi-heal key across 6 locales
@@ -25,4 +30,4 @@ text="## QuickBox Pro v3.2.2.4268
 - **📅 Release Date**: 2026-04-30
 - **🏷️ Version**: 3.2.2.4268
 - **📋 Previous Version**: 3.2.2.4252
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production

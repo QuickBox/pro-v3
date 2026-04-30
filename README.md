@@ -2,7 +2,7 @@
 
 [<img width="550" src="https://quickbox.io/files/2018/12/qb_logo_original.png" alt="QuickBox Project Logo">](https://quickbox.io)
 
-![version](https://badgen.net/badge/version/3.2.2.4252/blue)
+![version](https://badgen.net/badge/version/3.2.2.4268/blue)
 
 **QuickBox Pro** is a complete media server management system featuring 60+ applications, a professional dashboard, CLI tools, and multi-user support.
 
