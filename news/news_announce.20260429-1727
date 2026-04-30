@@ -1,5 +1,9 @@
 # Fresh rTorrent / ruTorrent install — connectivity issue identified
 
+### Update
+
+**The fix is now live.** Release `3.2.2.4268` is available in the public channel and includes the corrected install logic. Running `qb update quickbox` will pull it down — no manual intervention required. Fresh installs of rTorrent / ruTorrent will work correctly after updating.
+
 ### Status
 
 We have been notified of and have identified an issue affecting **fresh installs** of `rtorrent` and `rutorrent` where ruTorrent fails to connect to rTorrent after install. The fix has been committed and is currently in the **beta channel** undergoing final testing before public release.
