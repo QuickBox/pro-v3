@@ -1,0 +1,54 @@
+name: Documentation Issue
+description: Report a problem with the QuickBox Pro documentation.
+title: "[Docs]: "
+labels:
+  - "type:docs"
+  - "category:documentation"
+body:
+  - type: input
+    id: doc_url_or_path
+    attributes:
+      label: Where is the problem?
+      description: Paste the URL of the documentation page, or the file path if you know it.
+      placeholder: "Example: https://v3.quickbox.io/docs/applications/sonarr  or  /docs/applications/sonarr"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: What kind of problem is it?
+      options:
+        - "Incorrect / outdated information"
+        - Missing topic
+        - "Confusing / hard to follow"
+        - Broken link
+        - "Typo / formatting"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What is wrong?
+      description: Describe the problem clearly.
+      placeholder: "Example: The Sonarr page says the default port is 8989, but after install it actually runs on 7878."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: What should it say instead?
+      description: Optional. If you know the correct information, share it here.
+      placeholder: "Example: Change the port to 7878 and note that it can be changed in Sonarr's settings."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Optional. Anything else that helps clarify the issue.
+    validations:
+      required: false

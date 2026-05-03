@@ -1,0 +1,87 @@
+name: Feature Request
+description: Suggest a new feature or improvement for QuickBox Pro.
+title: "[Feature]: "
+labels:
+  - "type:feature"
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which part of QuickBox Pro does this feature relate to?
+      options:
+        - Application
+        - WSDashboard
+        - CLI
+        - Bot
+        - Documentation
+        - Infrastructure
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Feature title
+      description: Give your feature a short, clear name (100 characters or fewer).
+      placeholder: "Example: Add support for dark mode in the dashboard"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem_statement
+    attributes:
+      label: What problem does this solve?
+      description: Describe the problem or gap in 1–3 sentences. Focus on the problem, not the solution.
+      placeholder: "Example: When I have many installed apps, it's hard to find the one I'm looking for because the list isn't searchable."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: How would you like it to work?
+      description: Describe your idea. Screenshots, sketches, or links to similar tools are welcome.
+      placeholder: "Example: Add a search bar at the top of the app list that filters by name as you type."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: who_benefits
+    attributes:
+      label: Who benefits most?
+      description: How widely would this feature be useful?
+      options:
+        - Just me
+        - Power users
+        - Most users
+        - New users
+        - Specific persona (describe in additional context)
+    validations:
+      required: true
+
+  - type: textarea
+    id: success_criteria
+    attributes:
+      label: How will we know it's done?
+      description: Optional. What would a complete implementation look like?
+      placeholder: "Example: I can type an app name and the list updates in real time."
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives_considered
+    attributes:
+      label: Alternatives you have tried or seen
+      description: Optional. Have you found any workarounds, or seen this done well elsewhere?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Optional. Screenshots, links, or related feature requests.
+    validations:
+      required: false

@@ -1,0 +1,133 @@
+name: Bug Report
+description: Report something that is not working as expected.
+title: "[Bug]: "
+labels:
+  - "type:bug"
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which part of QuickBox Pro is affected?
+      options:
+        - Application
+        - WSDashboard
+        - CLI
+        - Bot
+        - Installer
+        - Update
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How badly does this bug affect your workflow?
+      options:
+        - "Critical / blocking"
+        - "High / blocks workflow"
+        - "Medium / annoying"
+        - "Low / cosmetic"
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Bug title
+      description: Give the bug a short, clear name (100 characters or fewer).
+      placeholder: "Example: Installing Sonarr fails on Ubuntu 24.04 with a permission error"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe what is wrong in 1–3 sentences.
+      placeholder: "Example: After running `qb install sonarr`, the install fails at the service start step with an error about missing directories."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to reproduce
+      description: List the exact steps needed to trigger the bug.
+      placeholder: |
+        1. Run `qb install sonarr` as a regular user.
+        2. Wait for the install to reach the "Starting service" step.
+        3. Observe the error message in the terminal.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: What should happen
+      description: Describe what you expected to see.
+      placeholder: "Example: The install should complete successfully and the Sonarr service should start."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: What actually happens
+      description: Describe what you saw instead.
+      placeholder: "Example: The install stops with: `Error: cannot create directory /srv/sonarr — permission denied`."
+    validations:
+      required: true
+
+  - type: input
+    id: qb_pro_version
+    attributes:
+      label: QuickBox Pro version
+      description: Run `qb version` to find this.
+      placeholder: "Example: 3.2.2.3107"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os_version
+    attributes:
+      label: Operating system
+      options:
+        - Ubuntu 22.04
+        - Ubuntu 24.04
+        - Debian 11
+        - Debian 12
+        - "Other (describe in additional context)"
+    validations:
+      required: true
+
+  - type: input
+    id: affected_apps
+    attributes:
+      label: Affected applications
+      description: Optional. If the bug is specific to one or more apps, name them here.
+      placeholder: "Example: Sonarr, Radarr"
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs_or_screenshots
+    attributes:
+      label: Logs or screenshots
+      description: Optional. Paste relevant log output inside a code block, or attach screenshots. Check `/opt/quickbox/logs/` for install logs.
+      placeholder: |
+        ```
+        paste log output here
+        ```
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Optional. Anything else that might help the QuickBox Pro team investigate.
+    validations:
+      required: false

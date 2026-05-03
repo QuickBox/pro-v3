@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: QuickBox.IO Community Discord
+    url: https://discord.gg/mca7RSv5pa
+    about: Ask questions, get help, and chat with the community.
+  - name: Browse and vote on feature requests
+    url: https://v3.quickbox.io/dashboard/feature-requests
+    about: See what others have requested and add your vote.

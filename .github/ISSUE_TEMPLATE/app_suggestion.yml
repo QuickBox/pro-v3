@@ -1,0 +1,117 @@
+name: App Suggestion
+description: Suggest a new application for QuickBox Pro to support.
+title: "[App Suggestion]: "
+labels:
+  - "type:app-suggestion"
+  - "category:application"
+body:
+  - type: input
+    id: app_name
+    attributes:
+      label: Application name
+      description: The official name of the application.
+      placeholder: "Example: Prowlarr"
+    validations:
+      required: true
+
+  - type: input
+    id: app_official_url
+    attributes:
+      label: Official website or repository
+      description: Link to the project homepage or source code repository.
+      placeholder: "Example: https://github.com/Prowlarr/Prowlarr"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: app_category
+    attributes:
+      label: Application category
+      description: What type of application is this?
+      options:
+        - "Download client"
+        - "Media server"
+        - "Indexer / *arr"
+        - "Backup / sync"
+        - Networking
+        - Monitoring
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install_method
+    attributes:
+      label: How is it typically installed?
+      options:
+        - "apt package"
+        - "Docker / OCI image"
+        - Static binary
+        - Build from source
+        - "Other (describe in additional context)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install_complexity
+    attributes:
+      label: Installation complexity
+      description: How involved is a typical install of this application?
+      options:
+        - "Simple (single binary, minimal config)"
+        - "Moderate (config files, services)"
+        - "Complex (databases, multi-service)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: why_useful
+    attributes:
+      label: Why should QuickBox Pro support this?
+      description: Explain the value this app would bring to QuickBox Pro users.
+      placeholder: "Example: Prowlarr replaces per-arr indexer config — one setup syncs to all your *arr apps automatically."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: licensing
+    attributes:
+      label: License
+      description: What license does this application use?
+      options:
+        - "Open source (GPL / MIT / Apache / etc.)"
+        - "Free with closed source"
+        - "Paid / commercial"
+        - Unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: subdomain_or_subpath
+    attributes:
+      label: Web access preference
+      description: How should the app be accessed through the reverse proxy?
+      options:
+        - "Subpath (https://example.com/app/)"
+        - "Subdomain (https://app.example.com)"
+        - Either works
+        - Unsure
+    validations:
+      required: true
+
+  - type: input
+    id: similar_existing_apps
+    attributes:
+      label: Similar apps already in QuickBox Pro
+      description: Optional. Are there comparable apps that QuickBox Pro already supports?
+      placeholder: "Example: Jackett does something similar"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Optional. Anything else the QuickBox Pro team should know.
+    validations:
+      required: false
