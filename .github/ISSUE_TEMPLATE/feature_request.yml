@@ -20,6 +20,19 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Which surface does this affect?
+      options:
+        - "CLI Core (qb binary, system scripts)"
+        - "Dashboard (v4 web UI)"
+        - "Both — CLI Core and Dashboard"
+      default: 0
+    validations:
+      required: true
+
   - type: input
     id: title
     attributes:
