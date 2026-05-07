@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4276
+---
+type: version
+version: 3.2.2.4276
+date: 2026-05-07 22:10 UTC
+previous: 3.2.2.4274
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4276
 
 ### 🐛 Bug Fixes (2)
 - '9395bce0' fix(userPermsFix): backfill qbusers ACL on plex config trees
@@ -16,4 +21,4 @@ text="## QuickBox Pro v3.2.2.4276
 - **📅 Release Date**: 2026-05-07
 - **🏷️ Version**: 3.2.2.4276
 - **📋 Previous Version**: 3.2.2.4274
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
