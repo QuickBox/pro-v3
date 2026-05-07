@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4274
+---
+type: version
+version: 3.2.2.4274
+date: 2026-05-07 21:28 UTC
+previous: 3.2.2.4268
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4274
 
 ### 🧩 New Features (1)
 - '3eeceb7d' feat(plex): wrap claim curl in ip netns exec when VPN app-routing active
@@ -30,4 +35,4 @@ text="## QuickBox Pro v3.2.2.4274
 - **📅 Release Date**: 2026-05-07
 - **🏷️ Version**: 3.2.2.4274
 - **📋 Previous Version**: 3.2.2.4268
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
