@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4283
+---
+type: version
+version: 3.2.2.4283
+date: 2026-05-08 07:13 UTC
+previous: 3.2.2.4280
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4283
 
 ### 🐛 Bug Fixes (3)
 - 'b6b6dbcf' fix(plex): pre-create user config dirs before first start to fix reinstall crash
@@ -17,4 +22,4 @@ text="## QuickBox Pro v3.2.2.4283
 - **📅 Release Date**: 2026-05-08
 - **🏷️ Version**: 3.2.2.4283
 - **📋 Previous Version**: 3.2.2.4280
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
