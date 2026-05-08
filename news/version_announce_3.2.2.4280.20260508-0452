@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4280
+---
+type: version
+version: 3.2.2.4280
+date: 2026-05-08 04:52 UTC
+previous: 3.2.2.4276
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4280
 
 ### 🐛 Bug Fixes (3)
 - '71c1585d' fix(plex): strip dead PHP url.override refs and daemon-reload after deb install
@@ -17,4 +22,4 @@ text="## QuickBox Pro v3.2.2.4280
 - **📅 Release Date**: 2026-05-07
 - **🏷️ Version**: 3.2.2.4280
 - **📋 Previous Version**: 3.2.2.4276
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
