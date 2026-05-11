@@ -1,0 +1,35 @@
+# Plex Media Server is now supported in the Streaming Dashboard
+
+### What's new
+
+**Plex Media Server is now a first-class streaming backend in QuickBox Pro**, alongside the existing Emby and Jellyfin integrations. The What's Streaming Dashboard (WSDashboard) auto-detects a Plex install, auto-populates the server URL and token after install, and treats Plex sessions on full parity with the other two media servers - sessions, watch analytics, history, top items, intents, libraries, the per-item detail page, and the admin Playback Mirror all work against Plex out of the box.
+
+This is the single biggest streaming-side expansion since WSDashboard launched.
+
+### Other improvements in this release
+
+- **Rate / vote from item cards.** Mark a five-star rating or heart-toggle a favorite directly from the streaming item card on Emby, Jellyfin, and Plex.
+- **Mark watched / unwatched** from item cards on Emby and Jellyfin.
+- **Responsiveness pass.** Denser layouts, better mobile and tablet behavior, and glassmorphic consistency across the System Dashboard widgets.
+- **History and Analytics polish.** Better contrast on the Watch History title cells, Live TV channel logos render at the correct fit, episode rows now display the show poster instead of per-episode screenshots, and admins can pin which media types appear in their Top Watched panel - saved per user.
+- **Playback Mirror parity.** The admin floating mirror dock now works against all three media servers and pre-rolls the upstream transcoder so the mirror opens in sync with the source user's stream instead of trailing behind.
+
+### How to get it
+
+Run `qb update quickbox` once the next public release is available, or wait for the dashboard auto-update to pick it up.
+
+If you have not installed Plex yet, the canonical install passes the target user (and optionally a [plex.tv claim token](https://plex.tv/claim) for one-step server claim):
+
+```bash
+qb install plex -u username -pct 'claim-xxxxxxxxxxxxxxxxxxxx'
+```
+
+The `-u` flag is required. The `-pct` token is optional but recommended - when present, the CLI reads it from Plex's own `Preferences.xml` after install and writes the resulting `X-Plex-Token` into the dashboard automatically. No settings-page round trip. The full set of install flags (`-u`, `-pct`, `-D` for a custom data directory, `-d` for a reverse-proxy domain) is documented at `https://v3.quickbox.io/docs/applications/media-servers/plex`.
+
+### Where to read more
+
+A full walkthrough of the new Plex support and the rest of the dashboard improvements is being published at `https://v3.quickbox.io/articles/plex-media-server-now-supported-quickbox-wsdashboard` Tuesday morning. Check back then for the deep dive - what works on parity, what is server-specific, and how the new dashboard surfaces fit together.
+
+---
+
+Thank you for sticking with QuickBox Pro. Plex support has been one of the most requested integrations since the Streaming Dashboard shipped, and we are thrilled to finally have it in your hands.
