@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4675
+---
+type: version
+version: 3.2.2.4675
+date: 2026-05-22 18:30 UTC
+previous: 3.2.2.4283
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4675
 
 ### 🧩 New Features (20)
 - '05e7e258' feat(fail2ban): add v4-dashboard login jail, drop legacy v3 dashboard jail
@@ -69,4 +74,4 @@ text="## QuickBox Pro v3.2.2.4675
 - **📅 Release Date**: 2026-05-22
 - **🏷️ Version**: 3.2.2.4675
 - **📋 Previous Version**: 3.2.2.4283
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
