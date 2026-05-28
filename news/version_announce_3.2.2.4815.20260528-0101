@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.4815
+---
+type: version
+version: 3.2.2.4815
+date: 2026-05-28 01:01 UTC
+previous: 3.2.2.4811
+channel: production
+---
+
+## QuickBox Pro v3.2.2.4815
 
 ### 🐛 Bug Fixes (1)
 - 'd46a0de9' fix(quota): correct find depth for php-fpm drop-in self-heal
@@ -15,4 +20,4 @@ text="## QuickBox Pro v3.2.2.4815
 - **📅 Release Date**: 2026-05-27
 - **🏷️ Version**: 3.2.2.4815
 - **📋 Previous Version**: 3.2.2.4811
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
