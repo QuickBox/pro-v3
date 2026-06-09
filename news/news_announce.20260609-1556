@@ -1,0 +1,10 @@
+# Dispatcharr joins the QuickBox Pro lineup
+
+Dispatcharr is now a full member of the QuickBox Pro lineup. It is a self-hosted IPTV proxy that merges your M3U and Xtream Codes sources into one channel lineup, matches EPG guide data, transcodes with FFmpeg, records with a built-in DVR, and presents itself to Plex, Emby, and Jellyfin as an HDHomeRun tuner.
+
+Install and manage it right from the dashboard under Software, the same as the rest of your apps. Every user gets their own fully isolated stack, and the install dialog has options for the beta branch and for publishing on your own subdomain with SSL.
+
+The part most people will care about is Plex. QuickBox does the hard work for you: Dispatcharr channels tune in Plex out of the box, the What's Streaming Dashboard shows the correct guide for every channel automatically, and a built-in self-heal keeps Plex's channel map in sync when you renumber your lineup. Emby and Jellyfin work with no extra steps at all. App-Scoped VPN routing over WireGuard or OpenVPN is built in too.
+
+Read the full announcement, with setup walkthroughs and links to every guide:
+https://v3.quickbox.io/articles/dispatcharr-joins-the-quickbox-pro-lineup
