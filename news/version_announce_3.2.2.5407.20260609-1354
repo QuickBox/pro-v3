@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.5407
+---
+type: version
+version: 3.2.2.5407
+date: 2026-06-09 13:54 UTC
+previous: 3.2.2.4815
+channel: production
+---
+
+## QuickBox Pro v3.2.2.5407
 
 ### 🧩 New Features (20)
 - '037635d63' feat(ssl): accept explicit --dns and --dns-provider flags on plex and seerr
@@ -86,4 +91,4 @@ text="## QuickBox Pro v3.2.2.5407
 - **📅 Release Date**: 2026-06-09
 - **🏷️ Version**: 3.2.2.5407
 - **📋 Previous Version**: 3.2.2.4815
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
