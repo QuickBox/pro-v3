@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.5615
+---
+type: version
+version: 3.2.2.5615
+date: 2026-06-19 13:58 UTC
+previous: 3.2.2.5407
+channel: production
+---
+
+## QuickBox Pro v3.2.2.5615
 
 ### 🧩 New Features (20)
 - '03b3707f0' feat(i18n): add Danish Unmanic translations
@@ -67,4 +72,4 @@ text="## QuickBox Pro v3.2.2.5615
 - **📅 Release Date**: 2026-06-19
 - **🏷️ Version**: 3.2.2.5615
 - **📋 Previous Version**: 3.2.2.5407
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
