@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.5658
+---
+type: version
+version: 3.2.2.5658
+date: 2026-06-20 19:19 UTC
+previous: 3.2.2.5615
+channel: production
+---
+
+## QuickBox Pro v3.2.2.5658
 
 ### 🐛 Bug Fixes (3)
 - '5de07216f' fix(user-perms): home root qbusers ACL to traverse+read, not group-write
@@ -20,4 +25,4 @@ text="## QuickBox Pro v3.2.2.5658
 - **📅 Release Date**: 2026-06-20
 - **🏷️ Version**: 3.2.2.5658
 - **📋 Previous Version**: 3.2.2.5615
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
