@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.5704
+---
+type: version
+version: 3.2.2.5704
+date: 2026-07-09 15:00 UTC
+previous: 3.2.2.5658
+channel: production
+---
+
+## QuickBox Pro v3.2.2.5704
 
 ### 🧩 New Features (6)
 - '436b636d2' feat(fail2ban): managed transfer-peer allowlist mechanism
@@ -33,4 +38,4 @@ text="## QuickBox Pro v3.2.2.5704
 - **📅 Release Date**: 2026-07-09
 - **🏷️ Version**: 3.2.2.5704
 - **📋 Previous Version**: 3.2.2.5658
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
