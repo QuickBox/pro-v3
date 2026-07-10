@@ -1,0 +1,24 @@
+# Inter-Instance Transfer and the Telemetry History Store
+
+📦 **New: move files between your own servers, and keep your metric history for good**
+
+Two new tools are live in the dashboard, and both fix something that used to send you back to the terminal.
+
+**Inter-Instance Transfer.** If you run more than one QuickBox Pro server, you can now move a whole folder tree straight from one to another, right from the dashboard. No SSH, no `rsync` to babysit, no third-party relay. You find it in the sidebar under **Transfer**. Pick a folder on one server, choose which of your own servers it goes to, and say whether you are migrating everything or spreading the load. The receiving server reviews the offer and, once you approve it, pulls the data across - resumable if the connection drops, and checksum-verified when it lands. There is also a live cockpit on the **System Dashboard** with a sender-to-receiver map and a row per transfer, so you can watch it all move.
+
+It is built to be private. Transfers only happen between servers on your own account, the authorization is a signed, single-use grant that expires in 12 hours, the two servers verify each other with mutual TLS, and no server's address is ever shown anywhere in the dashboard. One straight answer, because we would rather tell you than have you wonder: because the servers talk directly, the receiving machine does learn the address it dials - that is the trade for having no relay in the middle. What is guaranteed is that the other person never sees an address in the interface, and an intercepted grant is useless without the receiver's key.
+
+It ships off by default, and it is an administrator feature - an admin turns it on once under **Settings > General**.
+
+**The Telemetry History Store.** Ever opened your system charts after a restart and found the history gone? Not anymore. The System Dashboard now keeps a durable, on-server record of your metrics, so the CPU, memory, network, and disk history charts stay gap-free across restarts, dashboard updates, and even a reinstall. It tracks nine metrics, keeps them at four resolutions (raw for 48 hours, per-minute for 30 days, per-hour for a year, per-day for as long as you want), and gives you a card per metric showing exactly how much history you are holding. When you want to start fresh, there is a clear-history button behind a confirm.
+
+Worth being clear on one thing: this store lives entirely on your server and never sends anything anywhere. It is your box keeping its own records for you, separate from the account telemetry that reports to your dashboard.
+
+Both of these are fully written up. The deep dive covers the whole transfer workflow, the security model, and every part of the history store:
+
+**Read the full article:** https://v3.quickbox.io/articles/inter-instance-transfer-and-telemetry-store
+
+Docs:
+- Inter-Instance Transfer: https://v3.quickbox.io/docs/dashboard/system-admin/transfers
+- System Dashboard (cockpit and history store): https://v3.quickbox.io/docs/dashboard/system-monitoring
+- CLI reference: https://v3.quickbox.io/docs/cli-reference/transfer
