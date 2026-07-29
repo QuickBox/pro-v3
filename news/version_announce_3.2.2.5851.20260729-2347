@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.5851
+---
+type: version
+version: 3.2.2.5851
+date: 2026-07-29 23:47 UTC
+previous: 3.2.2.5704
+channel: production
+---
+
+## QuickBox Pro v3.2.2.5851
 
 ### 🧩 New Features (5)
 - '2530aeac5' feat(i18n): add the nginx signing key skip message for every language
@@ -53,4 +58,4 @@ text="## QuickBox Pro v3.2.2.5851
 - **📅 Release Date**: 2026-07-29
 - **🏷️ Version**: 3.2.2.5851
 - **📋 Previous Version**: 3.2.2.5704
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
