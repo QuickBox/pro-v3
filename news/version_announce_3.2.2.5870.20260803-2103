@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.5870
+---
+type: version
+version: 3.2.2.5870
+date: 2026-08-03 21:03 UTC
+previous: 3.2.2.5851
+channel: production
+---
+
+## QuickBox Pro v3.2.2.5870
 
 ### 🧩 New Features (1)
 - '4d566694e' feat(jellyfin): show service journal on startup-config failure
@@ -26,4 +31,4 @@ text="## QuickBox Pro v3.2.2.5870
 - **📅 Release Date**: 2026-08-03
 - **🏷️ Version**: 3.2.2.5870
 - **📋 Previous Version**: 3.2.2.5851
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
