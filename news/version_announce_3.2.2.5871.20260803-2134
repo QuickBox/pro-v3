@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.5871
+---
+type: version
+version: 3.2.2.5871
+date: 2026-08-03 21:34 UTC
+previous: 3.2.2.5870
+channel: production
+---
+
+## QuickBox Pro v3.2.2.5871
 
 ### 🐛 Bug Fixes (1)
 - '3571be613' fix(installer): point install summary at the correct dashboard URL
@@ -15,4 +20,4 @@ text="## QuickBox Pro v3.2.2.5871
 - **📅 Release Date**: 2026-08-03
 - **🏷️ Version**: 3.2.2.5871
 - **📋 Previous Version**: 3.2.2.5870
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
