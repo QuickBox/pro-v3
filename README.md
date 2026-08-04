@@ -24,7 +24,7 @@
 
 ## Quick Install
 
-**Requirements:** Root access, `curl`, a supported OS (Debian 11–13 or Ubuntu 22.04).
+**Requirements:** Root access, `curl`, a supported OS (Debian 12–13 or Ubuntu 22.04/24.04).
 
 > [!IMPORTANT]
 > **Fresh Installation Required:** QuickBox Pro should be installed on a fresh, minimal server installation for optimal compatibility and security. Installing on existing systems with pre-configured services is not recommended and may cause conflicts.
@@ -54,11 +54,14 @@ curl -sL "https://github.com/QuickBox/pro-v3/raw/refs/heads/main/qbpro_v3" > qbp
 | --- | --- | --- |
 | ✅ Recommended | Debian 13 (Trixie) | Best experience, current default |
 | ✅ Recommended | Debian 12 (Bookworm) | Stable, long-term choice |
-| ✅ Supported | Debian 11 (Bullseye) | Maintained, but older |
+| ✅ Supported | Ubuntu 24.04 LTS | Works out of the box, but does contain bloat |
 | ✅ Supported | Ubuntu 22.04 LTS | Works out of the box, but does contain bloat |
+| ⛔ Retired | Debian 11 (Bullseye) | EOL; the installer no longer accepts it — [upgrade to Debian 12](https://v3.quickbox.io/articles/upgrade-debian-11-bullseye-to-debian-12-bookworm) |
 | ⛔ Deprecated | Debian 10 (Buster) | EOL; installs may fail |
 
 > [!WARNING]
+> Debian 11 has reached End of Life and is no longer accepted by the installer. [Upgrade to Debian 12 (Bookworm)](https://v3.quickbox.io/articles/upgrade-debian-11-bullseye-to-debian-12-bookworm) to stay on a supported release.
+>
 > Debian 10 reached End of Life in June 2024. Upstream repos (e.g., php.sury.org) have been retired, causing fresh installs to fail. Use Debian 12 or 13.
 
 ---
@@ -193,7 +196,7 @@ Domain must be a valid FQDN. Ensure DNS records point to your server before usin
 
 ### "Distro not supported"
 
-Supported distributions: Debian 11 (Bullseye), Debian 12 (Bookworm), Debian 13 (Trixie), Ubuntu 22.04 (Jammy).
+Supported distributions: Debian 12 (Bookworm), Debian 13 (Trixie), Ubuntu 22.04 (Jammy), Ubuntu 24.04 (Noble).
 
 ---
 
