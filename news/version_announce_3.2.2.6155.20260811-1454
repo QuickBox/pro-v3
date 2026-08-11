@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.6155
+---
+type: version
+version: 3.2.2.6155
+date: 2026-08-11 14:54 UTC
+previous: 3.2.2.5871
+channel: production
+---
+
+## QuickBox Pro v3.2.2.6155
 
 ### 🧩 New Features (20)
 - '0cd7d677d' feat(software): add rtorrent 0.15.5/0.15.6/0.15.7/0.16.11 seed rows
@@ -82,4 +87,4 @@ text="## QuickBox Pro v3.2.2.6155
 - **📅 Release Date**: 2026-08-11
 - **🏷️ Version**: 3.2.2.6155
 - **📋 Previous Version**: 3.2.2.5871
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
