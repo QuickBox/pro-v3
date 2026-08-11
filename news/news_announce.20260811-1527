@@ -1,0 +1,18 @@
+# Take control of the restricted shell, and hello Ubuntu 24.04
+
+🛡️ **New: edit the restricted shell from your dashboard, with Fail2Ban watching its back - plus Ubuntu 24.04 support**
+
+Every standard user on your server runs inside a restricted shell that keeps them to their own files and torrents without letting them roam the machine. It has always been there doing its job quietly in the background. What is new is that you can now shape it yourself, right from the dashboard, instead of hand-editing a config file over SSH and losing your work on the next update.
+
+You will find it under **Settings > Security > Restricted Shell**. Tune the allowed and forbidden commands, over-SSH access, file transfer, warnings, the process cap, and the login banner, all as guarded form fields. Every change gets a preview before it lands, you can revert any single field back to the default, and the security-critical settings stay locked so a stray edit can never break the sandbox. Best of all, your policy is stored in the database and survives every `qb update`, where a hand-edited config would have been overwritten.
+
+It also ties into **Fail2Ban**. If you have Fail2Ban installed, QuickBox ships two shell-confinement jails that read the restricted-shell log and turn repeated abuse into a ban - a forgiving everyday jail that never punishes a single fat-fingered command, and a strict one that bans on a genuine kick or a fork bomb the first time it sees it. You arm them per jail from the Fail2Ban tab under Settings > Security, and they stay off by default until you decide.
+
+And a bit of platform news to go with it: QuickBox Pro now installs on **Ubuntu 24.04 LTS (Noble Numbat)**, joining Debian 13, Debian 12, and Ubuntu 22.04 in the supported lineup. Fresh installs only, as always.
+
+**Read the full article:** https://v3.quickbox.io/articles/restricted-shell-editor-and-ubuntu-24-support
+
+Docs:
+- Restricted Shell Policy: https://v3.quickbox.io/docs/dashboard/settings/security/restricted-shell
+- Fail2Ban, including the shell-confinement jails: https://v3.quickbox.io/docs/applications/utilities/fail2ban
+- Getting Started (now with Ubuntu 24.04): https://v3.quickbox.io/docs/getting-started
