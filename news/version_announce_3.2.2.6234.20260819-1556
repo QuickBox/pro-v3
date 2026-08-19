@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.6234
+---
+type: version
+version: 3.2.2.6234
+date: 2026-08-19 15:56 UTC
+previous: 3.2.2.6155
+channel: production
+---
+
+## QuickBox Pro v3.2.2.6234
 
 ### 🧩 New Features (1)
 - 'dc5eee736' feat(telemetry): carry latest network speedtest in the heartbeat body
@@ -38,4 +43,4 @@ text="## QuickBox Pro v3.2.2.6234
 - **📅 Release Date**: 2026-08-19
 - **🏷️ Version**: 3.2.2.6234
 - **📋 Previous Version**: 3.2.2.6155
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
