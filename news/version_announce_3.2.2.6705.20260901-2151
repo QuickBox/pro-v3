@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.6705
+---
+type: version
+version: 3.2.2.6705
+date: 2026-09-01 21:51 UTC
+previous: 3.2.2.6234
+channel: production
+---
+
+## QuickBox Pro v3.2.2.6705
 
 ### 🧩 New Features (20)
 - '048a7d086' feat(delete-safety): forward per-app threshold args through the manage module
@@ -82,4 +87,4 @@ text="## QuickBox Pro v3.2.2.6705
 - **📅 Release Date**: 2026-09-01
 - **🏷️ Version**: 3.2.2.6705
 - **📋 Previous Version**: 3.2.2.6234
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
