@@ -1,0 +1,25 @@
+# A More Accessible QuickBox Pro
+
+♿ **This release is about making QuickBox Pro comfortable for everyone to use**
+
+Most releases lead with a feature. This one leads with a principle. We spent the cycle making the whole product easier to actually use - easier to read, easier to drive from the keyboard, and easier to run from the terminal. Two features came along for the ride, and both are worth your time.
+
+**Accessibility, across the dashboard.** We went surface by surface. Text contrast is up to the readable floor everywhere, including the faint labels, the input placeholders, and the red danger text that were the hardest to read. Every control shows a clear focus ring when you reach it with the keyboard, dialog close buttons included, and there is a skip-to-content link at the top of every page. Confirm dialogs now open focused on Cancel, so a stray Enter can never fire something destructive. The icon-only buttons that run your apps carry proper names now, so screen readers announce what they do.
+
+**Search that takes you straight there.** Press Cmd or Ctrl and K anywhere in the dashboard and search now reaches everything - not just pages, but the settings and controls inside them. Each result is grouped under its real page, and picking one scrolls you straight to that exact section, whether it is on the page you are already on or clear across the dashboard. It is keyboard-first and respects your reduced-motion setting.
+
+**Application Control, rebuilt.** The App Dashboard's Application Control view - the default view where you run your installed software - got the most visible share of this work. Cleaner rows, unmistakable status, controls that announce themselves, and on a phone each app becomes a real touch card instead of a table squeezed onto a small screen.
+
+**The full `qb` menu.** For everyone who lives over SSH: run `qb` with no arguments and you now get a full interactive menu instead of memorizing flags. Nine categories, and you only see the ones your account can use. Pick an action and it walks you through it - choose the user, then the app, then the operation, all as real lists. Destructive actions ask you to confirm first, it is gated by role the whole way, and it is translated across all seven languages. The System category even pulls live dashboard data - telemetry and streaming analytics - straight into the terminal.
+
+**Delete Protection.** Deleting a very large file could once pin a CPU in the kernel and take the whole box down until a hard reboot. Delete Protection paces those large deletes so your server stays responsive the entire time. It is opt-in - an admin turns it on with the Delete Protection switch under Settings > General, which starts protecting your media and download apps and reveals the Delete Protection page. There you get a server-wide switch, a live counter of large deletes safely handled, and a per-app size threshold so a heavy deleter and a lighter app can each carry their own floor. It is on the CLI too, under Manage in the new menu.
+
+The full walkthrough covers all of it - the accessibility work, the rebuilt Application Control panel, the whole `qb` menu, and Delete Protection end to end:
+
+**Read the full article:** https://v3.quickbox.io/articles/a-more-accessible-quickbox-pro
+
+Docs:
+- App Dashboard and Application Control: https://v3.quickbox.io/docs/dashboard/app-management
+- Delete Protection: https://v3.quickbox.io/docs/dashboard/system-admin/delete-protection
+- Delete Protection troubleshooting: https://v3.quickbox.io/docs/troubleshooting/delete-protection
+- CLI reference: https://v3.quickbox.io/docs/cli-reference
