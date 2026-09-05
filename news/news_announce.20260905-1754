@@ -1,0 +1,22 @@
+# Hardware Health, and a Sharper System Dashboard
+
+🩺 **The System Dashboard just got a lot better at telling you how your server is doing**
+
+The System Dashboard is the admin page where you check on the box - it lives at the top of the sidebar under Dashboard > System Dashboard. This release sharpens it end to end: a brand-new hardware panel, a faster and more readable page that finally works on a phone, and real improvements to the two places you go to keep the server current.
+
+**Hardware Health, at a glance.** A new panel on the System Dashboard reads your CPU, memory, and firmware straight from the kernel - temperatures, fans, throttling, online cores, microcode, CPU vulnerabilities, ECC memory counters, and your installed modules. It needs nothing installed, it rolls everything up into one clear status, and it is honest about what it cannot measure - on a virtual machine it says so instead of faking a green light. It grew out of a real diagnosis where a single failing CPU core could only be found by hand-mining kernel logs. Now it is a panel.
+
+**A dashboard that works everywhere.** The whole page got the polish it deserved. No more sideways scrolling on a phone, no more labels cut off mid-word, panel headers that stack sensibly, and status colors tuned so a warning reads clearly on every theme. Diagnostics opens ready to use, so grabbing a snapshot for support is one glance.
+
+**Every update in one place.** The Updates Available table now shows your APT packages and QuickBox's own updates - QuickBox CLI (the core engine) and QuickBox Dashboard (the web interface) - together, each with installed versus available. Filter by source, jump straight to the changelog from either QuickBox row, and the Update APT Dependencies button applies to APT rows only, and says so.
+
+**A changelog that knows Core from Dashboard.** The changelog now tells the CLI core (3.x) apart from the Dashboard (4.x) - separate current and latest markers per component, never mixed, and the combined view sorts by real release date so both interleave in the order they shipped. And if you are a few versions behind, it gathers every pending release under Available in your next update so you can read exactly what is coming before you download it.
+
+The full walkthrough covers all of it - the Hardware Health panel end to end, the responsive rework, the two-source updates table, and the smarter changelog:
+
+**Read the full article:** https://v3.quickbox.io/articles/hardware-health-and-system-dashboard
+
+Docs:
+- System Monitoring (the System Dashboard and Hardware Health): https://v3.quickbox.io/docs/dashboard/system-monitoring
+- Updates and Changelog: https://v3.quickbox.io/docs/dashboard/system-admin/updates
+- CLI reference (`qb update quickbox`, `qb update dashboard`): https://v3.quickbox.io/docs/cli-reference
