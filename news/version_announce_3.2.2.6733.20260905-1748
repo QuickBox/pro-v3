@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.6733
+---
+type: version
+version: 3.2.2.6733
+date: 2026-09-05 17:48 UTC
+previous: 3.2.2.6705
+channel: production
+---
+
+## QuickBox Pro v3.2.2.6733
 
 ### 🐛 Bug Fixes (6)
 - '27d608074' fix(setup): export GIT_TERMINAL_PROMPT=0 so no git op can hang on a prompt
@@ -20,4 +25,4 @@ text="## QuickBox Pro v3.2.2.6733
 - **📅 Release Date**: 2026-09-05
 - **🏷️ Version**: 3.2.2.6733
 - **📋 Previous Version**: 3.2.2.6705
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
