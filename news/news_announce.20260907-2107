@@ -1,0 +1,15 @@
+# A Reel Media Nerd Hangout: #watch-recommendations and the Reel Riddle
+
+🎬 **A Reel Media Nerd Hangout: say hello to #watch-recommendations, and the Reel Riddle**
+
+If you run a media server, you probably have opinions about what to watch next. We built a place for them. **#watch-recommendations** is a new channel in the QuickBox Discord, open to our verified members, for movie and TV talk - what you are watching, what everyone else should queue up this weekend, and a resident film nerd in QBXWatcher who talks back.
+
+Here is the short version. `/rec search` any title and you get a full card with the poster, cast, ratings, and links, plus 👍 and 👎 so the community can vote titles up or down; `/rec top` keeps a running board of what this community actually likes. @-mention QBXWatcher and it chats films and TV with you in plain prose and follows the conversation. And then there is **Reel Riddle**: typically once a day the bot hides a movie or show behind four clues that unlock over a few hours, you guess it from the card, and the fewer clues you needed the more points you score - with streaks, a new **🎬 Reel Riddle** board on `/leaderboard`, four badges to earn, and a reveal that names the solvers and kicks off the trivia.
+
+Verify your license if you have not yet, come find the channel, and come argue about movies with us. The full write-up covers every command, how a round works, and how the scoring shakes out:
+
+**Read the full article:** https://v3.quickbox.io/articles/watch-recommendations-reel-riddle
+
+Docs:
+- Command reference (`/rec`, `/rec riddle`, `/leaderboard`): https://v3.quickbox.io/docs/discord-bot/commands
+- QBXWatcher overview: https://v3.quickbox.io/docs/discord-bot
