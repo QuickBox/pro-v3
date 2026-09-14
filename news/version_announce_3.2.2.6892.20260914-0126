@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.6892
+---
+type: version
+version: 3.2.2.6892
+date: 2026-09-14 01:26 UTC
+previous: 3.2.2.6733
+channel: production
+---
+
+## QuickBox Pro v3.2.2.6892
 
 ### 🧩 New Features (12)
 - '0aa1e863a' feat(iptvboss): complete CLI autocomplete, TUI menu and lecert surfaces
@@ -66,4 +71,4 @@ text="## QuickBox Pro v3.2.2.6892
 - **📅 Release Date**: 2026-09-13
 - **🏷️ Version**: 3.2.2.6892
 - **📋 Previous Version**: 3.2.2.6733
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
