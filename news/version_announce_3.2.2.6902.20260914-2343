@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.6902
+---
+type: version
+version: 3.2.2.6902
+date: 2026-09-14 23:43 UTC
+previous: 3.2.2.6892
+channel: production
+---
+
+## QuickBox Pro v3.2.2.6902
 
 ### 🧩 New Features (2)
 - '90c769979' feat(update): run core-first when the CLI is behind on 'qb update dashboard'
@@ -20,4 +25,4 @@ text="## QuickBox Pro v3.2.2.6902
 - **📅 Release Date**: 2026-09-14
 - **🏷️ Version**: 3.2.2.6902
 - **📋 Previous Version**: 3.2.2.6892
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
