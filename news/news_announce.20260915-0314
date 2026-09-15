@@ -1,0 +1,16 @@
+# Writeback Cleanup, and Native IPTVBoss Support
+
+🧰 **Two additions: a one-click fix for a wedged server, and IPTVBoss as a native app**
+
+**Writeback cleanup.** Ever had your load average slowly climb over hours or days while the box stays responsive and nothing you're running is obviously busy? That's often a kernel writeback livelock - a control group dies, the kernel gets stuck re-homing its cached inodes, and two kernel workers spin without the backlog ever draining. It's an upstream Linux 6.12 regression. There's now a **Writeback cleanup** card on the System Dashboard's Hardware Health panel that catches it. Open the card and it runs a read-only check and gives you a plain verdict; when it finds a livelock, one button releases the unreferenced inodes so the drain finishes - no reboot, and it never touches a file that's in use. It's the dashboard face of `qb fix writeback`, so the terminal and the browser do the same thing.
+
+**Native IPTVBoss support.** IPTVBoss is now a first-class QuickBox app. Install it from the dashboard, and QuickBox runs it as a single always-on Xtream Codes server that keeps your playlists and EPG in sync on its own schedule - reverse-proxied, with optional subdomain SSL, and nothing to keep open on a desktop. Your license stays entirely yours; QuickBox never stores or automates it. Manage it right from the App Dashboard row: apply and reload after a settings change, watch what synced and when, back it up, and reach the editor over a desktop remote. And if you want IPTVBoss to pull its sources through a VPN, app-scoped routing on the VPN Control page will send only its traffic through the tunnel while the rest of your server stays put.
+
+**Read the full article:** https://v3.quickbox.io/articles/writeback-cleanup-and-iptvboss
+
+Docs:
+- Writeback cleanup (System Monitoring): https://v3.quickbox.io/docs/dashboard/system-monitoring#writeback-cleanup
+- Writeback livelock troubleshooting: https://v3.quickbox.io/docs/troubleshooting
+- `qb fix writeback` (CLI reference): https://v3.quickbox.io/docs/cli-reference/fix
+- IPTVBoss: https://v3.quickbox.io/docs/applications/media-servers/iptvboss
+- VPN Control and app-scoped routing: https://v3.quickbox.io/docs/dashboard/system-admin/vpn#app-scoped-vpn-routing
