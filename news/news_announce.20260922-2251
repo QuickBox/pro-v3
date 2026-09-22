@@ -1,0 +1,22 @@
+# Your Dashboard, Your Language
+
+🌍 **Your dashboard, your language: translations are back, and now they're per user**
+
+**Seven languages, one click away.** The QuickBox Pro dashboard now speaks English, Deutsch, Dansk, Español, Français, Português (Brasil) and 简体中文. Click the globe in the top bar, pick your language, and the page switches on the spot. The sign-in page has the same globe, so you can sign in in your own language too.
+
+**Every user picks their own.** One person can run the dashboard in German while another reads it in Chinese, on the same server at the same time. Open your **Profile** and the **Language** card lets you keep a language for this session only, or save it to your account so it follows you to every browser. Admins can set a **Dashboard fallback language** under **Settings > General Settings > Timezone & Locale** for anyone who hasn't picked one.
+
+**The CLI keeps its own language.** `qb manage lang -o ` still sets the server-wide language for `qb` output and the system locale, and it's now fully separate from the dashboard. Change one and the other stays put, so the server can stay in English for your logs while your users read the dashboard in theirs.
+
+**Help us get the wording right.** English is the source, and the other six are first drafts we built and reviewed internally, not yet by native speakers. If something reads oddly in your language, tell us in Discord or on GitHub and point us to the page.
+
+**Also in this release:** rTorrent 0.16.23 with automatic `.rtorrent.rc` conversion (and back again on a downgrade), exact-version installs for qBittorrent and Transmission, admin-only updates for torrent clients that share a binary, newer PHP for new installs, IPTVBoss updates from its own signed repository, steadier Emby websocket connections, and a round of more accurate update notices.
+
+**Read the full article:** https://v3.quickbox.io/articles/your-dashboard-your-language
+
+Docs:
+- Dashboard language: https://v3.quickbox.io/docs/dashboard/language
+- Your Profile: https://v3.quickbox.io/docs/dashboard/profile
+- General Settings (dashboard fallback language): https://v3.quickbox.io/docs/dashboard/settings/general
+- `qb manage lang` (CLI reference): https://v3.quickbox.io/docs/cli-reference/manage#language-configuration
+- rTorrent: https://v3.quickbox.io/docs/applications/download-clients/rtorrent
