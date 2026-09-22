@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.7114
+---
+type: version
+version: 3.2.2.7114
+date: 2026-09-22 22:33 UTC
+previous: 3.2.2.6902
+channel: production
+---
+
+## QuickBox Pro v3.2.2.7114
 
 ### 🧩 New Features (12)
 - '105f44e76' feat(software): detect build-rev rebuilds of compiled .deb apps as updates
@@ -54,4 +59,4 @@ text="## QuickBox Pro v3.2.2.7114
 - **📅 Release Date**: 2026-09-22
 - **🏷️ Version**: 3.2.2.7114
 - **📋 Previous Version**: 3.2.2.6902
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
