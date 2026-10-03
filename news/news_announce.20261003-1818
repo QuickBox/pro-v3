@@ -1,0 +1,24 @@
+# xTeVe is deprecated. Move your Live TV to Dispatcharr.
+
+📺 **xTeVe is deprecated in QuickBox Pro. If you use it for Live TV, it is time to move to Dispatcharr.**
+
+xTeVe has not had a code change or a release since March 2021. That means no security fixes, and we only want to ship applications that are actively maintained and secure. So we have retired it.
+
+**What changes.** New xTeVe installs are blocked, in the dashboard and in the `qb` CLI. xTeVe is no longer offered for install anywhere, the details popover and `qb help xteve` mark it as deprecated, and both point you to Dispatcharr.
+
+**Move to Dispatcharr.** Dispatcharr does the job xTeVe did, and more. It merges your M3U and Xtream Codes sources, manages your EPG, and shows up in Plex, Emby and Jellyfin as an HDHomeRun tuner. Unlike xTeVe, it is actively developed. Here is the move:
+
+1. Install Dispatcharr from **App Dashboard > Package Management**, or run `qb install dispatcharr -u username`. The very first Dispatcharr install on a server has to be done by an admin.
+2. Add your M3U or Xtream Codes sources and your EPG inside Dispatcharr.
+3. In Plex, Emby or Jellyfin, swap the xTeVe tuner for the Dispatcharr tuner. The Dispatcharr docs walk through each media server.
+4. Once your channels and guide look right, remove xTeVe from the dashboard, or run `qb remove xteve -u username`.
+
+**Want to edit your playlists and guide too?** IPTVBoss is also available. It is a playlist and EPG manager that serves your sources through its own Xtream Codes server.
+
+Docs:
+- Dispatcharr: https://v3.quickbox.io/docs/applications/media-servers/dispatcharr
+- Connect Dispatcharr to Plex, Emby or Jellyfin: https://v3.quickbox.io/docs/applications/media-servers/dispatcharr#connect-plex-emby-or-jellyfin
+- IPTVBoss: https://v3.quickbox.io/docs/applications/media-servers/iptvboss
+- xTeVe (deprecation notice and removal): https://v3.quickbox.io/docs/applications/media-servers/xteve
+
+If you get stuck on the move, come say hello on Discord and our staff will help you out.
