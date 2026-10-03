@@ -1,7 +1,12 @@
-#!/bin/bash
-declare -g title text
-title="An update is available!"
-text="## QuickBox Pro v3.2.2.7323
+---
+type: version
+version: 3.2.2.7323
+date: 2026-10-03 17:34 UTC
+previous: 3.2.2.7114
+channel: production
+---
+
+## QuickBox Pro v3.2.2.7323
 
 ### 🧩 New Features (8)
 - '074474489' feat(rtorrent): grant SCGI socket access by inherited ACL not group
@@ -56,4 +61,4 @@ text="## QuickBox Pro v3.2.2.7323
 - **📅 Release Date**: 2026-10-03
 - **🏷️ Version**: 3.2.2.7323
 - **📋 Previous Version**: 3.2.2.7114
-- **🔄 Release Type**: production"
+- **🔄 Release Type**: production
