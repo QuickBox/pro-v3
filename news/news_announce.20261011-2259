@@ -1,0 +1,24 @@
+# The New quickbox.io: A Rebuilt Dashboard, stackU, and Easier Docs
+
+🚀 **Everything QuickBox now lives at quickbox.io, and it got a lot better on the way**
+
+The classic site is retired and the whole platform runs on [quickbox.io](https://quickbox.io) now: sign in, dashboard, pricing, articles and docs. Old `v3.quickbox.io` links still work and forward you to the same page. Here is what is new.
+
+**A dashboard that tells you where you stand.** Sign in and one row shows your licenses, servers (used, online and free slots), API keys, your next renewal and your Rewards points, and each one links to the page behind it. If something needs you, like a failed payment, a license ending soon without auto-renew, or no two-factor on your account, a short list says so, and it stays out of the way when there is nothing to flag. Licenses and API keys share one page, your servers sit in a clear table, and every invoice and receipt lives under **Billing > Invoices**, ready to print, download as a PDF or pay.
+
+**stackU: learn QuickBox inside out, and get rewarded for it.** stackU turns the docs into a learning path. Read a page, pass a short quiz or do a quick check on your own account, then sit the level exam. Level 101, Foundations, is open now and pays 225 Rewards points and a badge when you pass. The full path, ending in QB University, pays 1,500 points, and the next levels are on the way. Find it in your dashboard under **stackU and rewards**. The leaderboard is opt-in, so nobody shows up on it unless they switch it on.
+
+**Docs that are easier to read.** You told us the docs could read better, so we reworked them: a cleaner sidebar, search in the top bar, a copy button on every code block, one-click copy for paths and URLs, alerts you will not miss, and tables that fit on your phone.
+
+**A QuickBox Pro update lands next week.** Most of it is under the hood: accounts on a shared server are closed off from each other, more apps sit behind nginx only, updates no longer break when GitHub is unreachable, app builds can no longer eat all of your server's memory, and the Download Activity panel got a proper upgrade. The release notes will have the full list.
+
+The full tour, with screenshots of everything above:
+
+**Read the full article:** https://quickbox.io/articles/the-new-quickbox-io
+
+Docs:
+- QuickBox docs: https://quickbox.io/docs
+- Getting started: https://quickbox.io/docs/getting-started
+- stackU: https://quickbox.io/stacku
+
+Questions or something looks off? Come find us on [Discord](https://discord.gg/mca7RSv5pa). Thank you for being here. Long live QuickBox.IO ❤️
