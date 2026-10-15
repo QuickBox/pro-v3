@@ -1,0 +1,80 @@
+---
+type: version
+version: 3.2.2.9055
+date: 2026-10-15 20:52 UTC
+previous: 3.2.2.7323
+channel: production
+---
+
+## QuickBox Pro v3.2.2.9055
+
+### 🧩 New Features (15)
+- '0040e5e72' feat(software): add a shared helper that stops every instance of an app service
+- '12c2f20b1' feat(downloads): follow download folder changes made in each client automatically
+- '299f80b64' feat(lang): translate the web server pass-through warning
+- '3da6f10b3' feat(users): add 'qb user pyloadpasswd' to set and reveal the pyLoad login password
+- '46a3aa1ea' feat(mflibs): add quickbox::user helpers that run file work as the account
+- '52362e46a' feat(software): let FileBot update in place and keep its license
+- '541aef249' feat(users): let limited-shell accounts reach their own app folder
+- '90e485f5b' feat(update): apply the '/opt/<account>' access model to every account on update
+- '91f0916cc' feat(users): apply the '/opt/<account>' access model on account creation and permission fix
+- 'c9fd97c6d' feat(users): add a shared helper that closes '/opt/<account>' to other accounts
+- 'd1faa5a15' feat(permissions): grant www-data its served paths by named ACL entries
+- 'dc5f7007d' feat(xteve): retire xTeVe on every update and keep each account's settings
+- 'de3ae465a' feat(software): give each account its own TheLounge address
+- 'e1f840b68' feat(users): accept the password on stdin so it never appears in the command line
+- 'fc60cce6f' feat(telemetry): report the installed dashboard version with license activation and heartbeat
+
+### 🐛 Bug Fixes (20)
+- '00efcc09f' fix(xteve): stop only the unit's own process
+- '01bcfc5ac' fix(flaresolverr): remove the empty backup folders when a run is refused
+- '01ec839a5' fix(mflibs): build the per-user backup tree as the account
+- '045cab3dc' fix(software): stop waiting forever for Lidarr, Readarr and Prowlarr config permissions
+- '053278c1b' fix(software): silence nzbget version probe in update check
+- '05898708f' fix(permissions): repair www-data's named access on every update
+- '05b3ff039' fix(software): keep setuptools importable in more app venvs
+- '066670098' fix(software): bound the install clone of five apps and give the git helper a root mode
+- '0681897d4' fix(permissions): keep the www-data traverse repair to folders the account owns
+- '070a3dbbe' fix(credentials): keep passwords off the command line and close database copies in the 755 pass
+- '078ad9184' fix(software): remove each app's systemd drop-ins with the app
+- '08d33b5f1' fix(software): pin Python apps to the interpreter QuickBox ships
+- '0bc261590' fix(pyload): replace the public default password on existing installs during a QuickBox update
+- '0d05849e3' fix(permissions): set the OpenVPN profile mode through a handle that never follows a link
+- '0d5903243' fix(software): keep finished torrent downloads on remove and restore the Usenet default folders
+- '0f0a6d55a' fix(system): rebuild certificate bundles and edit client ports as the account
+- '13c83e353' fix(i18n): translate the ruTorrent theme update warning
+- '1522a2181' fix(software): show each account its own FileBrowser login and stop only its own server
+- '16defecd6' fix(software): finish the as-account pass for Resilio Sync, Calibre, Deluge, Dispatcharr, Duplicati and Emby
+- '18a164ccb' fix(software): size each on-box build limit to the app and keep Duplicati data private
+
+### 🔧 Code Refactoring (1)
+- '80c248b5a' refactor(devpull): drop the private WireGuard cron append in favour of the shared finalizer
+
+### 📚 Documentation (2)
+- '922f4aa52' docs(permissions): describe www-data access without account group membership
+- '96179b888' docs(vpn): name the gateway-mode finalizer under its current namespace
+
+### 🔧 Maintenance (3)
+- '48582fb0d' chore(rutorrent): drop the retired lab.quickbox.io theme repository branch
+- '8c57efc33' chore(i18n): remove the unused 'rutorrent::legacy_repo_switch' lang function
+- 'f5a2383d6' chore(setup): remove the unused 2.x to 3.x migration actions tree
+
+### 🧪 Tests (7)
+- '148d5d90b' test(permissions): expect the OpenVPN archive's named www-data read entry
+- '66f8870cd' test(users): cover line-break passwords and the single chpasswd feed
+- '2b8ea8d14' test(permissions): cover the private mode repair of app secret files
+- '9d1b5c4f5' test(update): cover retired bin files and the runtime parts of bin
+- '5974db68e' test(update): cover the retired config file removal and its update finalizer
+- '768b0aa6f' test(novnc): cover the shared key removal and its update finalizer
+- '5ed93dc14' test(mflibs): run the user-helper refusal tests against throwaway homes
+
+### 📝 General Changes (1)
+- 'eb5b97b17' skip ci[meta] version 3.2.2.7323 released upstream - eta ~10 minutes
+
+---
+
+**Release Information**:
+- **📅 Release Date**: 2026-10-15
+- **🏷️ Version**: 3.2.2.9055
+- **📋 Previous Version**: 3.2.2.7323
+- **🔄 Release Type**: production
