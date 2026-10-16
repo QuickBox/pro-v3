@@ -1,0 +1,22 @@
+# Sonarr 5 and Radarr 7: QuickBox now stays on the version you run
+
+🛠️ **Sonarr 5 and Radarr 7 are safe to update in-app. QuickBox will no longer roll them back.**
+
+Sonarr 5.0 beta and Radarr 7 recently arrived on their develop and nightly branches, and both can update themselves from inside the app. A user in our Discord spotted a problem: once Sonarr updated itself to 5.0, QuickBox still only knew about Sonarr 4. It offered 4.0.20 as an "update", and running it moved Sonarr back to 4 on a database that 5.0 had already changed. Thank you for the report. This update fixes it, and it covers Radarr too.
+
+**What changes:**
+
+- **QuickBox follows the major version you have installed.** If Sonarr is on 5, QuickBox checks for and installs Sonarr 5 releases. If it is on 4, it stays on 4. The same goes for Sonarr4K.
+- **No more older versions shown as updates.** The update check for Sonarr, Radarr, Lidarr and Prowlarr only offers a version that is actually newer than the one you run.
+- **No downgrade across a major version.** If you switch Sonarr or Radarr back to a branch that only has an older major version (for example Radarr 7 back to `master`), QuickBox will not install it. It tells you why, changes nothing, and leaves the app running.
+- **A failed update no longer leaves the app stopped.** If the download fails part way, Sonarr, Radarr, Lidarr and Prowlarr start back up instead of staying down.
+
+All of the new messages are translated into every language QuickBox supports.
+
+**If you already ran a QuickBox update on Sonarr 5** and ended up back on Sonarr 4, open Sonarr, go to **System > Updates** and install 5.0 again. We tested this and it comes back clean.
+
+**One heads-up for anyone moving to Sonarr 5:** Sonarr 5 turns on a login by itself. If you see a login page, the username is `sonarr` and the password is in Sonarr's log file, `/home//.config/Sonarr/logs/sonarr.txt` (search for "created 'sonarr'"). Sign in, then change it under **Settings > General**. Radarr 7 does not do this.
+
+Docs:
+- Sonarr: https://quickbox.io/docs/applications/media-management/sonarr
+- Radarr: https://quickbox.io/docs/applications/media-management/radarr
