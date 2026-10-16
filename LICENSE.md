@@ -1,29 +1,18 @@
-BSD 3-Clause License
+QuickBox Pro
+Copyright (c) 2019-2026 QuickBox.IO. All rights reserved.
 
-Copyright (c) 2019-2022, QuickBox.IO
-All rights reserved.
+This software is proprietary and is NOT open source.
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
+Use of this software is governed by the QuickBox Pro License Agreement:
+https://quickbox.io/license
 
-* Redistributions of source code must retain the above copyright notice, this
-  list of conditions and the following disclaimer.
+It is licensed, not sold, and may be used only with an active QuickBox Pro subscription, on the
+number of servers that subscription covers. You may not copy, modify, redistribute, sublicense,
+reverse engineer, or circumvent its licensing, except as that agreement or applicable law allows.
 
-* Redistributions in binary form must reproduce the above copyright notice,
-  this list of conditions and the following disclaimer in the documentation
-  and/or other materials provided with the distribution.
+This software installs and works with open-source components that are licensed under their own
+terms. See https://quickbox.io/third-party-notices. Nothing in the QuickBox Pro License Agreement limits your rights
+under those licenses.
 
-* Neither the name of the copyright holder nor the names of its
-  contributors may be used to endorse or promote products derived from
-  this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+Releases before October 16, 2026 were distributed with a BSD 3-Clause notice. Releases from that
+date onward are licensed only under the QuickBox Pro License Agreement.

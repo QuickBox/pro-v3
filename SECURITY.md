@@ -14,7 +14,7 @@ Security reports and subsequent patches are issued on a rolling basis. All activ
 
 Security is a top priority. If you discover a vulnerability or suspect a potential security issue in QuickBox Pro, **please report it directly and privately** via email:
 
-📧 **sec@quickbox.io**
+📧 **echo@quickbox.io** (start the subject with `[Security]`)
 
 Do **not** open public GitHub issues to report security vulnerabilities.
 
@@ -30,7 +30,7 @@ Once received, I will, under good faith, take the following actions:
 
 To help us quickly assess and respond to your report, please include:
 
-- A clear and descriptive subject line.
+- A subject line that starts with `[Security]`, followed by a short description.
 - Your name and affiliation or company (if applicable).
 - Steps to reproduce the issue.
 - Description of the vulnerability's impact on QuickBox and any relevant hardware/software configurations.
