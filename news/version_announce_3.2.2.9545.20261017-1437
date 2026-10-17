@@ -1,0 +1,30 @@
+---
+type: version
+version: 3.2.2.9545
+date: 2026-10-17 14:37 UTC
+previous: 3.2.2.9511
+channel: production
+---
+
+## QuickBox Pro v3.2.2.9545
+
+### 🧩 New Features (1)
+- '179b5f2dd' feat(sonarr): install the branch's newest major and set the login from the account
+
+### 🐛 Bug Fixes (5)
+- '1992f3bcf' fix(sonarr): keep a login the account chose on update
+- '1c049f902' fix(filebrowser): log in with the account's own QuickBox password
+- '278d9d466' fix(sonarr): offer and update to the branch's newest major
+- '7d82ef9b8' fix(filebrowser): repair padded logins on update and warn for any failed account
+- '91bcd0671' fix(sonarr): wait for the generated API key before setting the login
+
+### 📝 General Changes (1)
+- '6ce79c29a' skip ci[meta] version 3.2.2.9511 released upstream - eta ~10 minutes
+
+---
+
+**Release Information**:
+- **📅 Release Date**: 2026-10-17
+- **🏷️ Version**: 3.2.2.9545
+- **📋 Previous Version**: 3.2.2.9511
+- **🔄 Release Type**: production
