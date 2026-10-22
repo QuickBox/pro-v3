@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  mailserver:
+    image: docker.io/mailserver/docker-mailserver:14
+    container_name: mailserver
+    hostname: ${MAIL_HOSTNAME:-mail.example.com}
+    ports:
+      - "25:25"
+      - "143:143"
+      - "465:465"
+      - "587:587"
+      - "993:993"
+    volumes:
+      - ./mail-data:/var/mail
+      - ./mail-state:/var/mail-state
+      - ./mail-config:/tmp/docker-mailserver
+      - /etc/localtime:/etc/localtime:ro
+      - ${SSL_CERT_PATH:-/etc/letsencrypt/live/mail.example.com/fullchain.pem}:/etc/letsencrypt/live/mailserver/fullchain.pem:ro
+      - ${SSL_KEY_PATH:-/etc/letsencrypt/live/mail.example.com/privkey.pem}:/etc/letsencrypt/live/mailserver/privkey.pem:ro
+    environment:
+      - ENABLE_SPAMASSASSIN=1
+      - ENABLE_CLAMAV=0
+      - ENABLE_FAIL2BAN=1
+      - SSL_TYPE=manual
+      - SSL_CERT_PATH=/etc/letsencrypt/live/mailserver/fullchain.pem
+      - SSL_KEY_PATH=/etc/letsencrypt/live/mailserver/privkey.pem
+      - ONE_DIR=1
+      - DMS_DEBUG=0
+    cap_add:
+      - NET_ADMIN
+      - SYS_PTRACE
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G
+
+  snappymail:
+    image: rjrivero/snappymail:latest
+    container_name: snappymail
+    ports:
+      - "8888:80"
+    volumes:
+      - ./snappymail-data:/var/www/snappymail/data
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+networks:
+  default:
+    name: mail_network
