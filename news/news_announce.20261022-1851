@@ -1,0 +1,43 @@
+# PHP Security Fixes: Your Apps Now Stay Current Automatically
+
+🔒 **PHP security fixes: one command now, and every update keeps PHP current from here on**
+
+PHP's maintainers have released fixes for two critical remote code execution vulnerabilities, CVE-2026-109618 and CVE-2026-109619. They affect PHP running behind a web server, PHP-FPM included, so they matter to any server that serves PHP pages.
+
+On a QuickBox server that means three applications: ruTorrent, phpMyAdmin and Nextcloud. Each one runs in its own PHP-FPM pool. The v4 dashboard uses no PHP at all, and nothing else we ship needs it.
+
+The fixed PHP builds are 8.2.35, 8.3.36, 8.4.27 and 8.5.12. PHP 8.1 is past its end of life upstream, so there is no 8.1 release from the PHP project; the fixed 8.1 build QuickBox looks for is the 8.1.34-9 package. That is also why we are moving your apps off 8.1 (see below).
+
+**What to do.** Run an update, then check where you stand:
+
+```
+qb update quickbox
+qb fix php --security --check
+```
+
+Or skip the update and fix PHP right now:
+
+```
+qb fix php --security
+```
+
+That brings the PHP of each of your PHP applications up to the fixed build. It only touches the PHP version each application already runs on and never moves one to another, it restarts only the PHP-FPM service that needs it, and a PHP version that is already fixed is left alone, so running it twice changes nothing. If your package source has not published a fixed build for your release yet, the command says so, changes nothing and exits with code 3. Run it again later.
+
+**From now on this happens by itself.** Every QuickBox update runs `qb fix php`, clears old PHP holds and applies the fix, and installing or updating ruTorrent, phpMyAdmin or Nextcloud applies it too.
+
+**We stopped holding PHP packages.** Older releases put an apt hold on PHP, and a held package never receives a security fix. That is the wrong trade, especially because each application already runs in its own pool and keeps its own PHP version without any hold. The `--hold` option is gone from `qb fix php`, the update removes the holds that earlier releases left on your server, and `qb fix php [VERSION] --remove-hold` is still there if you find one by hand.
+
+**Apps still on PHP 8.1 move to PHP 8.4 by themselves.** PHP 8.1 is past its upstream end of life, so ruTorrent, phpMyAdmin and Nextcloud are moved up to the newest PHP they support, 8.4 today, when you update or run `qb fix php`. Nextcloud's range now starts at 8.3. Nothing is moved unchecked. The new pool is built next to the old one, it has to answer the app's page the way the old one did, and nginx has to serve the page through it before the old pool is removed. If the installed release of an app does not support the newer PHP, if the check cannot run, or if any step fails, the app stays on its current PHP and keeps working. You get one warning that names the step, and the next run tries again. Updating the app is what lets it move in the first case.
+
+**`qb fix php` does more on its own now.** Run without options it moves each app to its supported PHP, then repairs the PHP-FPM pool of each PHP application (it installs a missing PHP package and restarts that PHP version only when something changed), then retires the system PHP nothing uses. It is quiet when there is nothing to do, and the repair part does not refresh your package lists or upgrade anything unasked.
+
+**One more cleanup, on servers running the v4 dashboard.** Nothing on the server needs a system-wide PHP, so the update retires the leftover one. On the default site, a `.php` request that no application handles now gets a 404 instead of being run or sent as source. PHP versions that no application and none of your own nginx sites use are removed, which takes PHP 8.1 and 8.3 off a server once its apps have moved, and the `php` command follows the PHP version ruTorrent runs on, because its plugins call it.
+
+Worth knowing: QuickBox does not provide PHP for sites you add yourself, and the update does not touch them. Only QuickBox's own default site has its catch-all `.php` handler replaced with a 404 (the original is saved next to it as `/etc/nginx/sites-available/default.php-retire.<time>.bak`). Your own nginx sites are left exactly as they are, and a PHP version one of them still uses is kept.
+
+Docs:
+- Fix PHP, the security floor, exit codes and `--check`: https://quickbox.io/docs/cli-reference/fix#fix-php
+- What an update does for PHP: https://quickbox.io/docs/cli-reference/update
+- Nextcloud: https://quickbox.io/docs/applications/file-management/nextcloud
+- phpMyAdmin: https://quickbox.io/docs/applications/utilities/phpmyadmin
+- ruTorrent: https://quickbox.io/docs/applications/download-clients/rutorrent

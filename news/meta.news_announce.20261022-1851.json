@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "category": "security",
+  "level": "critical",
+  "slug": "php-security-fixes",
+  "description": "PHP fixed two critical remote code execution flaws. One command brings ruTorrent, phpMyAdmin and Nextcloud up to the fixed PHP, and every QuickBox update now keeps it current."
+}
