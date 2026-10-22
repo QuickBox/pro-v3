@@ -15,7 +15,7 @@ All of the new messages are translated into every language QuickBox supports.
 
 **If you already ran a QuickBox update on Sonarr 5** and ended up back on Sonarr 4, open Sonarr, go to **System > Updates** and install 5.0 again. We tested this and it comes back clean.
 
-**One heads-up for anyone moving to Sonarr 5:** Sonarr 5 turns on a login by itself. If you see a login page, the username is `sonarr` and the password is in Sonarr's log file, `/home//.config/Sonarr/logs/sonarr.txt` (search for "created 'sonarr'"). Sign in, then change it under **Settings > General**. Radarr 7 does not do this.
+**One heads-up for anyone moving to Sonarr 5:** Sonarr 5 turns on a login by itself. If you see a login page, the username is `sonarr` and the password is in Sonarr's log file, `/home/<username>/.config/Sonarr/logs/sonarr.txt` (search for "created 'sonarr'"). Sign in, then change it under **Settings > General**. Radarr 7 does not do this.
 
 Docs:
 - Sonarr: https://quickbox.io/docs/applications/media-management/sonarr
