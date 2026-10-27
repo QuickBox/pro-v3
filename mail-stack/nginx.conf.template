@@ -1,0 +1,31 @@
+# QuickBox Mail Stack Nginx Configuration
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name {{MAIL_HOSTNAME}};
+
+    # SnappyMail Webmail
+    location / {
+        proxy_pass http://127.0.0.1:8888;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # Admin interface is at /?admin
+    }
+
+    # Management API / Dashboard
+    location /manage/ {
+        alias /opt/quickbox/mail-stack/dashboard/;
+        index api.php;
+
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/var/run/php/php-fpm.sock;
+            fastcgi_param SCRIPT_FILENAME $request_filename;
+            include fastcgi_params;
+        }
+    }
+}
