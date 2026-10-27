@@ -2,6 +2,7 @@
 # shellcheck disable=SC2249
 set -euo pipefail
 
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 # Inputs
 INV="${INV:-$(find ~/quickbox_backup/ -maxdepth 1 -type f -name 'qb_inventory_*.json' -print0 2>/dev/null | xargs -0 stat --format '%Y %n' 2>/dev/null | sort -nr | head -n1 | cut -d' ' -f2-)}"
 [ -f "${INV}" ] || { echo "Inventory JSON not found. Set INV=/path/to/qb_inventory.json" >&2; exit 1; }
@@ -51,10 +52,10 @@ mapfile -t UA < <(
     .data
     | to_entries[]
     | .value as $v
-    | $v.user_information.username as ${USER}
+    | $v.user_information.username as $user
     | ($v.installed_software // $v.user_information.installed_software)
     | keys[]? as $app
-    | [${USER}, $app]
+    | [$user, $app]
     | @tsv
   ' "${INV}" | sort -u
 )
@@ -130,3 +131,4 @@ done
 
 echo
 echo "# Start one unit at a time from the list above, verify behind nginx, then proceed to the next."
+fi
