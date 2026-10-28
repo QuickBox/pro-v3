@@ -1,60 +1,56 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## QuickBox Pro v3.2.2.9974
+text="## QuickBox Pro v3.2.2.10407
 
-### 🧩 New Features (9)
-- '556833f29' feat(fix): add 'qb fix libcurl' for the rTorrent 0.16 libcurl floor
-- '55980958c' feat(php): retire the leftover system PHP that no app uses
-- '56fb635fe' feat(news): translate the 'qb news' category and level badge labels
-- '6fae10a27' feat(php): keep every app PHP at its security floor and stop holding PHP
-- '722372eea' feat(php): move each PHP app up to the newest PHP it supports on update
-- '759ff7f38' feat(rutorrent): install and update the club-QuickBox theme from tagged releases
-- 'a4b3e3f89' feat(news): show the announcement category and level as a badge line
-- 'f04fc44cb' feat(i18n): translate the rTorrent libcurl floor and qb fix libcurl strings
-- 'f2f29f321' feat(rtorrent): add a shared libcurl floor check and apply for rTorrent 0.16
+### 🧩 New Features (7)
+- '1ef25f442' feat(lang): add the refused secret message in every language
+- '4f94616e8' feat(lang): add the rclone config write failure message in every language
+- '79743ff33' feat(lang): add the MariaDB repair messages in every language
+- '8cff58e87' feat(lang): add the database conversion check messages in every language
+- 'c1364cfdb' feat(transmission): install the QuickBox web interface from verified releases
+- 'd3f7ff0f2' feat(mflibs): select one release asset by exact name in the release resolver
+- 'ea9ce19a9' feat(lang): add the Nextcloud trimmed admin password warning in every language
 
 ### 🐛 Bug Fixes (20)
-- '063c52ef6' fix(users): return a stored password that contains a colon in full
-- '08c7c21b8' fix(permissions): keep home folders from turning group-writable
-- '0c11036fe' fix(rtorrent): keep other accounts' settings when one account installs rTorrent
-- '0e34a23bb' fix(licence): treat heartbeat refusals as revocations and bind the last two status readers
-- '0f5f90b53' fix(database): keep v3 on the v4 database and turn a stale copy into the link
-- '110634cf3' fix(php): restart and extend the PHP of each app instead of a fixed PHP 8.1
-- '14b2b90d7' fix(update): restart only the php-fpm majors the app pools use after a dev or beta update
-- '14eb06df1' fix(i18n): translate the PHP app move messages in every CLI language
-- '158da4bc4' fix(licence): bind status grants to this server and quote the remaining licence writes
-- '1a89f7f5c' fix(software): read readiness probes inside the unit's network namespace
-- '1a92c4dec' fix(php): treat a FastCGI client that cannot run as missing
-- '1fd06e4c0' fix(permissions): close a home that is a link to relocated storage
-- '27267244a' fix(php): keep a retried PHP app move quiet until its outcome changes
-- '290d7504e' fix(licence): report a licence as active in 'qb generate' only when its reply verifies
-- '2a70575a0' fix(rtorrent): compare every published build name when looking for a rebuilt pair
-- '2c2c3e6cb' fix(update): retry only the failed File Browser accounts in the password repair
-- '2dc7dc0b9' fix(update): reset padded File Browser logins once on every update channel
-- '2de533d9f' fix(licence): verify qb.web licence response signatures
-- '305bf44ec' fix(rtorrent): read the libcurl version from builds that only carry 'libcurl X.Y.Z'
-- '33966a16b' fix(rtorrent): make a failed backports refresh fail the update step
+- '023906856' fix(sudo): give each account drop-in a unique, valid command alias
+- '0cb5ad6d2' fix(rtorrent): mark rTorrent and ruTorrent as per-account apps in the catalog
+- '120fe98cb' fix(rclone): keep reauth and provider switch secrets out of process arguments
+- '1c995b6f4' fix(transmission): clean install output and make remove purge the package
+- '1e8dbe5f6' fix(lang): point the migration help link at the moved docs page
+- '1fbf0994e' fix(i18n): translate the sudoers write warning into the six non-English locales
+- '1fdff7819' fix(update): skip the ruTorrent plugin vault copy when the vault is missing
+- '2774a845a' fix(transmission): serve the same web UI after a package update with no new release
+- '36585d9c2' fix(update): check the catalog seed before replacing it, so a missing seed never empties the catalog
+- '3835520ef' fix(update): keep the license key off the 'betapull' command line
+- '3c83f4c58' fix(database): match cut text rows on a unique key and test the MariaDB repair
+- '43f49cb1b' fix(database): convert SQLite to MariaDB without truncating values
+- '444cf11ea' fix(plex): also read the claim token from 'QB_SECRET_PLEX_CLAIM_TOKEN'
+- '481bd6384' fix(rutorrent): reload php-fpm after an update replaces the files
+- '4a23bf593' fix(phpmyadmin): read the MariaDB credentials without passing them through 'xargs'
+- '4c6ac23cf' fix(software): gate shared-binary updates on the account running qb, not the -u account
+- '4f17e5dbd' fix(database): return the real query status from 'quickbox::database'
+- '50ca20b69' fix(rclone): answer a refused secret as JSON on the web path
+- '52bd67fab' fix(rtorrent): gate only updates to admins, matching qBittorrent and Transmission
+- '57d8e035a' fix(sudo): give accounts with a dot in the name a drop-in sudo reads
 
-### 🔧 Code Refactoring (3)
-- '4e30c983a' refactor(php): take each PHP app's packages and tuning from one place
-- 'a5d7b8e14' refactor(php): move the PHP app move and the PHP retirement into 'qb fix php'
-- 'ad10f5a81' refactor(php): edit the default site without a single-pass loop
+### 🔧 Code Refactoring (2)
+- 'a156dda9e' refactor(rtorrent): follow the account, shared packages installed once
+- '8b7d66190' refactor(rutorrent): follow the account, shared application installed once
 
-### 📚 Documentation (2)
-- '0794622fe' docs(legal): drop the Netdata sentence from the third-party notices
-- '3489cae37' docs(database): sync the generated 'quickbox' library doc with its source version
-
-### 🔧 Maintenance (1)
-- '23993ebc2' chore(i18n): remove an unused database migration message in every CLI language
+### 🧪 Tests (4)
+- '9d334b0c0' test(download): give the remove sandbox the account helpers the prune calls
+- 'bfbda66e6' test(database): a repair run that changes nothing reports no restored values
+- '7a3d5812a' test(secrets): assert no password, token or client secret reaches a process command line
+- 'b4148b06c' test(download): load the user helpers the extracted download functions call
 
 ### 📝 General Changes (1)
-- 'c3dcf204b' skip ci[meta] version 3.2.2.9545 released upstream - eta ~10 minutes
+- '27dad0b8f' skip ci[meta] version 3.2.2.9974 released upstream - eta ~10 minutes
 
 ---
 
 **Release Information**:
-- **📅 Release Date**: 2026-10-22
-- **🏷️ Version**: 3.2.2.9974
-- **📋 Previous Version**: 3.2.2.9545
+- **📅 Release Date**: 2026-10-28
+- **🏷️ Version**: 3.2.2.10407
+- **📋 Previous Version**: 3.2.2.9974
 - **🔄 Release Type**: production"
