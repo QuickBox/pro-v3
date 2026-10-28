@@ -1,0 +1,37 @@
+# Node.js Security Fix, rTorrent Only Where You Want It, and a New Transmission Interface
+
+🔒 **A Node.js security fix, rTorrent only where you want it, and a QuickBox interface for Transmission**
+
+This release is a big one. Here is what you need to know.
+
+**Update with Update QuickBox this time.** Go to **System > Changelog** and click **Update QuickBox**, or run:
+
+```bash
+qb update quickbox
+```
+
+Please don't use the **Update dashboard** button for this one. The dashboard you run today can't switch its own Node.js runtime, so that path rolls back and leaves you where you are. If you already pressed it, run `qb update quickbox` and it completes normally. From this release on, the dashboard-only update handles runtime changes by itself.
+
+**Node.js 22.23.4.** The dashboard's bundled Node.js moves from 22.14.0 to 22.23.4, the October 21 security release. That fixes CVE-2026-111497, a High-rated Brotli decoder flaw, plus the other fixes Node.js shipped for the 22 line. The dashboard never unpacks Brotli data sent to it, so the risk was low, but you should take the update. Updates now move Node.js together with the release and put it back if an update rolls back.
+
+**Apps that bring their own Node.js get the fix too.** Seerr, The Lounge, Dispatcharr and Audiobookshelf each install a private Node.js, separate from the dashboard's, so the dashboard update alone didn't reach them. Seerr, The Lounge and Dispatcharr move from older 22.x builds to 22.23.4. Audiobookshelf moves from Node 20, which is end of life and got no fix, to 22.23.4 and is rebuilt. Every QuickBox update does this for you, restarts only the apps it moved or that still run an old copy, and keeps the old Node.js if anything fails. QuickBox's own shared Node.js, used to build apps, moves to 22.23.4 too, and the old versions it no longer needs are removed. One exception: Flood ships as a single program with its own Node.js built in, and its latest release is on 22.23.2. Update Flood (`qb update flood -u username`, or the **Update** badge in the App Dashboard) as soon as its developers publish a release on a patched Node.js.
+
+**Tighter walls between accounts.** sudo rules are written root-owned and read-only and repaired on every update, each account's ruTorrent profile folder and `.rtorrent.rc` are closed to the other accounts, and the dashboard's own account no longer joins each account's media server group.
+
+**rTorrent is no longer forced on new accounts.** New accounts no longer get rTorrent, ruTorrent and AutoDL automatically. rTorrent and ruTorrent now work per account, like qBittorrent: the program is installed once and shared, and installing it for another account only stages that account's own config, folders, service, socket and web route. Remove takes away only that account's setup and keeps its downloads. On a server you already run, nothing is taken away: every account that has rTorrent today keeps it, and you can remove it from just the accounts that never wanted it with `qb remove rtorrent -u username`.
+
+**New rules for shared torrent clients.** rTorrent, ruTorrent, qBittorrent, Transmission and Deluge each run one version per server. Installs use that version, only an administrator's update changes it, and software jobs now wait in line instead of running over each other.
+
+**Install requests.** When the server doesn't have one of those clients yet, a regular user can click **Request install** in Package Management. Every administrator is notified, and approves it with the version they pick or denies it from the new **Install requests** table.
+
+**Transmission gets the QuickBox interface.** Transmission's web UI is rewritten to match your dashboard, like club-QuickBox for ruTorrent: four themes that follow your dashboard, a fast list for thousands of torrents, a full details drawer, phone layouts, keyboard and screen reader support, and seven complete languages. It talks to your Transmission and nothing else. New installs get it automatically; on an existing server, an administrator runs `qb update transmission -u username` once. It is open source under MIT for any Transmission 2.94 or newer.
+
+Plus secrets kept off command lines, fixes for MariaDB conversions (long values are no longer cut, and earlier conversions are repaired on update), usernames with a dot, safer updates and rollbacks, and translations.
+
+**Read the full article:** https://quickbox.io/articles/node-security-and-the-transmission-interface
+
+Docs:
+- Updating QuickBox: https://quickbox.io/docs/cli-reference/update
+- rTorrent per-account setup: https://quickbox.io/docs/applications/download-clients/rtorrent#per-account-setup
+- Install requests: https://quickbox.io/docs/dashboard/app-management#install-requests
+- Transmission: https://quickbox.io/docs/applications/download-clients/transmission

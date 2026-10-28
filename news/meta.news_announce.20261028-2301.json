@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "category": "security",
+  "level": "important",
+  "slug": "node-security-rtorrent-per-account-transmission",
+  "description": "The dashboard and every app with its own Node.js move to the patched 22.23.4, rTorrent is no longer forced on new accounts, and Transmission gets a QuickBox interface. Update with Update QuickBox this time."
+}
