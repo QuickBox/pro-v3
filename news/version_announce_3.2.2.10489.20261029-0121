@@ -1,0 +1,26 @@
+---
+type: version
+version: 3.2.2.10489
+date: 2026-10-29 01:21 UTC
+previous: 3.2.2.10476
+channel: production
+---
+
+## QuickBox Pro v3.2.2.10489
+
+### 🐛 Bug Fixes (4)
+- '11509ef86' fix(rutorrent): keep the server's security headers on ruTorrent responses
+- '2d73f5495' fix(rutorrent): send ruTorrent files with no-cache and clear stale browser copies once per update
+- '6ae5c24cc' fix(rutorrent): keep plugin scripts executable after a plugin reinstall
+- 'e98653aa5' fix(rutorrent): keep the rTorrent scripts and profile folders usable after closing the profiles
+
+### 📝 General Changes (1)
+- '2de1e9d0c' skip ci[meta] version 3.2.2.10476 released upstream - eta ~10 minutes
+
+---
+
+**Release Information**:
+- **📅 Release Date**: 2026-10-28
+- **🏷️ Version**: 3.2.2.10489
+- **📋 Previous Version**: 3.2.2.10476
+- **🔄 Release Type**: production

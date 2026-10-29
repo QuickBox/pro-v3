@@ -1,23 +1,21 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## QuickBox Pro v3.2.2.10476
+text="## QuickBox Pro v3.2.2.10489
 
-### 🐛 Bug Fixes (6)
-- '348ab4721' fix(software): clear a stale stop record and match only the app's own Node.js copy
-- '75bf283fa' fix(software): keep the managed nvm tree on the Node.js security floor
-- 'badc6781d' fix(software): stop installing an unused Node.js 18 for Transmission and Headphones
-- 'cfb14e68c' fix(software): keep each app's own Node.js at the security floor
-- 'da5a4720a' fix(software): recover an interrupted Node.js rebuild and tighten the floor rules
-- 'e3af97c39' fix(software): restart an app still on a replaced Node.js and move odd majors up
+### 🐛 Bug Fixes (4)
+- '11509ef86' fix(rutorrent): keep the server's security headers on ruTorrent responses
+- '2d73f5495' fix(rutorrent): send ruTorrent files with no-cache and clear stale browser copies once per update
+- '6ae5c24cc' fix(rutorrent): keep plugin scripts executable after a plugin reinstall
+- 'e98653aa5' fix(rutorrent): keep the rTorrent scripts and profile folders usable after closing the profiles
 
 ### 📝 General Changes (1)
-- '0264a715d' skip ci[meta] version 3.2.2.10407 released upstream - eta ~10 minutes
+- '2de1e9d0c' skip ci[meta] version 3.2.2.10476 released upstream - eta ~10 minutes
 
 ---
 
 **Release Information**:
 - **📅 Release Date**: 2026-10-28
-- **🏷️ Version**: 3.2.2.10476
-- **📋 Previous Version**: 3.2.2.10407
+- **🏷️ Version**: 3.2.2.10489
+- **📋 Previous Version**: 3.2.2.10476
 - **🔄 Release Type**: production"
