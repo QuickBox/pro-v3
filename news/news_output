@@ -1,21 +1,55 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## QuickBox Pro v3.2.2.10489
+text="## QuickBox Pro v3.2.2.10933
 
-### 🐛 Bug Fixes (4)
-- '11509ef86' fix(rutorrent): keep the server's security headers on ruTorrent responses
-- '2d73f5495' fix(rutorrent): send ruTorrent files with no-cache and clear stale browser copies once per update
-- '6ae5c24cc' fix(rutorrent): keep plugin scripts executable after a plugin reinstall
-- 'e98653aa5' fix(rutorrent): keep the rTorrent scripts and profile folders usable after closing the profiles
+### 🧩 New Features (2)
+- '07e15eb11' feat(rclone): report the cloud drive size in the '-o web' status
+- '6145470dc' feat(software): deprecate Autoscan for new installs
+
+### 🐛 Bug Fixes (20)
+- '0058926ab' fix(lang): translate the '--dispatcharr', '--ombi' and '--unmanic' lines of 'qb help lecert'
+- '03a75ad14' fix(fail2ban): warn when an app's log never appears after install
+- '04bf56d9f' fix(dlindex): drop the false "default served instead" notice
+- '05f4b37ee' fix(rclone): mount cloud drives as root so accounts cannot share FUSE mounts
+- '29df93a15' fix(rclone): strip setuid FUSE mounters on install and before they arrive
+- '2bd638a4f' fix(lecert): make '--dry-run' fail when a challenge fails and clean up after itself
+- '2fe72755b' fix(rutorrent): stop an install or update when the release download fails
+- '35d00a7fa' fix(lang): add the missing rclone options and notes to the six other 'qb help' locales
+- '367329048' fix(lecert): pair each app flag with the -d that follows it
+- '36b4982f1' fix(fail2ban): load the app jail after an install or reinstall has started the app
+- '3c67c3c34' fix(dlindex): refuse a shared folder that holds another account's files
+- '419a86c94' fix(lecert): show the completion line for Dispatcharr, IPTVBoss and Ombi certificates
+- '456c6be5f' fix(novnc): keep another account's VNC up when a rowless account reinstalls
+- '46c52496a' fix(dlindex): recheck download folders when a disk is mounted below them
+- '4784e3d09' fix(users): write the per-account web login files as 'root:www-data' 0640
+- '493455b92' fix(rclone): let the mount helper start with current rclone releases
+- '555155f0e' fix(rclone): exit non-zero on failure and repair the '/etc/htpasswd.d' folder
+- '58d0ff0cc' fix(lang): translate the lecert dry-run, staging and HTTP challenge messages
+- '5b943572f' fix(rclone): strip setuid FUSE mounters and keep mount units consistent
+- '5c4eef6ed' fix(rclone): end mount templates with a newline and keep the shared folder lookup
+
+### 🔧 Code Refactoring (3)
+- '88fa259dd' refactor(mflibs): group the dependency, template and instance helpers in 'software'
+- 'f04fad64f' refactor(mflibs): read the 'quickbox' module load order from 'quickbox.d/index'
+- '741f29858' refactor(mflibs): split the 'quickbox' library into an entry and 'quickbox.d/' modules
+
+### 📚 Documentation (1)
+- 'b22e2046f' docs(mflibs): describe what the library restore puts back and when it runs
+
+### 🔧 Maintenance (1)
+- '55f8ca672' chore(readme): record the build number after the rclone mount changes
+
+### 🧪 Tests (1)
+- 'a9166a188' test(help): cover the general help screen, command topics and routing
 
 ### 📝 General Changes (1)
-- '2de1e9d0c' skip ci[meta] version 3.2.2.10476 released upstream - eta ~10 minutes
+- '2d5f9d356' skip ci[meta] version 3.2.2.10489 released upstream - eta ~10 minutes
 
 ---
 
 **Release Information**:
-- **📅 Release Date**: 2026-10-28
-- **🏷️ Version**: 3.2.2.10489
-- **📋 Previous Version**: 3.2.2.10476
+- **📅 Release Date**: 2026-11-02
+- **🏷️ Version**: 3.2.2.10933
+- **📋 Previous Version**: 3.2.2.10489
 - **🔄 Release Type**: production"
