@@ -1,0 +1,35 @@
+# Safer Cloud Drives, Stronger Walls Between Accounts, and a qb help That Helps
+
+🔒 **Safer cloud drives, stronger walls between accounts, and a qb help that helps**
+
+This release is mostly about safety, and you should take it. Go to **System > Changelog** and click **Update QuickBox**, or run:
+
+```bash
+qb update quickbox
+```
+
+Everything below happens on its own during the update.
+
+**Cloud drives mount the safe way.** Your rclone drive now mounts as root in a root-owned folder outside your home, and `~/rclone` links to it, so every path you use today keeps working. The system-wide FUSE option that let any account make mounts the web server would read is now off. That closes a way one account could hang the web server for everyone on a shared box.
+
+**Switch cloud providers without the pain.** The new provider is set up and checked first, encryption is kept, and if anything fails your old setup comes back. Your files are not moved. Admins can now do it from the dashboard: **Cloud Sync** row on the Storage card, **Manage**, then **Switch provider**. The Cloud Sync row also shows how much of your drive is used.
+
+**A stalled cloud drive no longer holds anything up.** The dashboard's disk checks, the download index and `qb` disk scans no longer wait on a cloud mount that stopped answering.
+
+**Stronger walls between accounts.** Web login files are locked to `root:www-data` 0640, removing an app for an account that doesn't have it is refused, and noVNC stays up for everyone else when one account removes or reinstalls it.
+
+**Download folders.** Homes moved to another disk and linked back into `/home` now work, and shared disks under `/mnt` and `/media` are only served to the account that owns them.
+
+**Fail2Ban app jails** turn on only once the app has written its log, so one missing log can't stop all your jails.
+
+**SSL certificates and qb help.** Each `lecert` app flag now takes its own `-d`, so several certificates go in one command, renew handles every domain, and dry runs fail honestly. A bare `qb help` now shows every command with links to the docs, in all seven languages.
+
+Plus safer ruTorrent updates, updates that swap the core library in one step, dashboard dependency security fixes, and Autoscan is retired for new installs.
+
+**Read the full article:** https://quickbox.io/articles/safer-cloud-drives-and-stronger-account-walls
+
+Docs:
+- rclone and switching providers: https://quickbox.io/docs/applications/file-management/rclone
+- Download folders: https://quickbox.io/docs/dashboard/app-management#download-folders-per-client
+- Auto-protect apps on install: https://quickbox.io/docs/dashboard/settings/security#auto-protect-apps-on-install
+- SSL Control: https://quickbox.io/docs/dashboard/system-admin/ssl

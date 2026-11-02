@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "category": "security",
+  "level": "important",
+  "slug": "safer-cloud-drives-stronger-account-walls",
+  "description": "Cloud drives mount in a way no account can abuse, a paused drive no longer freezes your server, admins can switch cloud providers from the dashboard, and SSL certificates and qb help get a cleanup."
+}
