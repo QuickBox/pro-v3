@@ -16,6 +16,7 @@
 - [Supported Operating Systems](#supported-operating-systems)
 - [Where to Get Your API Key](#where-to-get-your-api-key)
 - [CLI Options](#cli-options)
+- [Mail Stack](#mail-stack)
 - [Step-by-Step Installation](#step-by-step-installation)
 - [Troubleshooting](#troubleshooting)
 - [Support](#support)
@@ -123,6 +124,38 @@ You need a valid API key to install QuickBox Pro.
 
 ---
 
+## Mail Stack
+
+QuickBox Pro includes a fully integrated Mail Stack featuring a secure mail server and webmail interface.
+
+### Features
+- **docker-mailserver:** A full-stack but simple-to-use mail server (SMTP, IMAP, Antispam, Antivirus).
+- **SnappyMail:** A modern, fast, and secure webmail interface.
+- **Unified Management:** Manage mailboxes via CLI or the Dashboard.
+
+### Management via CLI
+You can manage your mail accounts using the `qb` command or the direct management script:
+
+```bash
+# List all mail accounts
+sudo /opt/quickbox/mail-stack/manage-mail.sh list
+
+# Add a new account
+sudo /opt/quickbox/mail-stack/manage-mail.sh add user@example.com 'mypassword'
+
+# Change password
+sudo /opt/quickbox/mail-stack/manage-mail.sh passwd user@example.com 'newpassword'
+
+# Set quota
+sudo /opt/quickbox/mail-stack/manage-mail.sh quota user@example.com 2G
+```
+
+### Accessing Webmail
+Webmail is accessible at `http://mail.yourdomain.com` (or your configured mail hostname).
+The administration interface for SnappyMail is available at `http://mail.yourdomain.com/?admin`.
+
+---
+
 ## Step-by-Step Installation
 
 ### 1. Switch to Root
@@ -207,3 +240,7 @@ Supported distributions: Debian 12 (Bookworm), Debian 13 (Trixie), Ubuntu 22.04 
   - Classic Site: https://quickbox.io (to access legacy account features - to be deprecated)
 - **Documentation:** https://v3.quickbox.io/docs
 - **Discord:** https://discord.gg/mca7RSv5pa
+
+## Updates
+
+- Added optimizations and improvements to ensure the highest performance, stability, security and reliability of the platform's core applications and CLI stack.
