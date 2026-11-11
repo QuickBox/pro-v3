@@ -1,0 +1,17 @@
+[Unit]
+Description=QuickBox Mail Stack (Docker Compose)
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/quickbox/mail-stack
+# Use docker compose up without -d so systemd can track the process
+ExecStart=/usr/bin/docker compose up
+ExecStop=/usr/bin/docker compose down
+Restart=always
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
