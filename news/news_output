@@ -1,50 +1,95 @@
 #!/bin/bash
 declare -g title text
 title="An update is available!"
-text="## QuickBox Pro v3.2.2.11264
+text="## QuickBox Pro v3.2.2.13113
+
+### 🧩 New Features (20)
+- '00a714046' feat(lang): translate the Ombi and phpMyAdmin help changes
+- '01875fa47' feat(apps): own passwords for the Servarr apps, Sportarr and qBittorrent
+- '12f4b284d' feat(nginx): offer the web login switch for apps that have their own login
+- '1d95fc25e' feat(sportarr): update check, help topic and completion
+- '251a7f8d5' feat(users): 'qb user apppasswd' and password re-apply for installed apps
+- '295abf1b6' feat(apps): own passwords for SickGear, ZNC, TheLounge and Autobrr
+- '334b646c5' feat(nginx): web login switch over every site an app has, and first-run apps sealed earlier
+- '411b850b2' feat(nginx): check the nginx render before a reinstall removes the app
+- '4de9d407d' feat(users): app password hooks for web-login-bound and unknown logins
+- '52f13d6cf' feat(sportarr): add Sportarr as a per account app
+- '547ead9ee' feat(apps): give Lidarr, Radarr and Prowlarr their own login like Sonarr
+- '5acfa8e45' feat(users): messages for 'qb user apppasswd' in every language
+- '5d6a1faa6' feat(apps): own passwords for Seerr, Listenarr, Dispatcharr and Ombi
+- '63a7088a3' feat(api): non-interactive activate and deactivate for the dashboard
+- '6440ef50f' feat(users): translate the web-login and unknown-password app notices
+- '6b0c9b637' feat(ombi): move a new install to MySQL when '--ombi2mysql' is given
+- '7a75be242' feat(users): list 'qb user apppasswd' in help, the menu, completion and the man page
+- '807a34657' feat(qbittorrent): serve each account's qBittorrent at its own address with its own login
+- '8604fe3ca' feat(lang): translate the Sportarr messages and help topic
+- '8b09b5ead' feat(apps): own passwords for FlexGet, Airsonic, Subsonic, Duplicati, Requestrr and Notifiarr
 
 ### 🐛 Bug Fixes (20)
-- '003633f59' fix(release): retry a TLS connect error instead of treating it as a certificate failure
-- '02e07f05a' fix(listenarr): refuse a release tag that is not plain ASCII
-- '05fcf6f76' fix(ombi): stop the MySQL move when its Python tool cannot run
-- '0bbfe977a' fix(software): gate every box-wide app update behind the admin check
-- '0c26799da' fix(flood): install the Flood binary and shim owned by root
-- '135f0f780' fix(jellyfin): read the routed upstream from a real directive only
-- '15c076dad' fix(apps): leave nginx files the port reader cannot follow, refresh CORS origins
-- '166ee379e' fix(rclone): keep 'user_allow_other' on while an account mount needs it
-- '1fd8a11b5' fix(rclone): trust only paths root alone can change for 'user_allow_other'
-- '2b15a7267' fix(apps): accept any working loopback nginx route on update
-- '318a037f1' fix(apps): put back a missing Servarr nginx file on update instead of stopping the app
-- '3a099e775' fix(rtorrent): remove the old libtorrent package whatever version it is
-- '3a3deec2a' fix(software): list and run box-wide app updates for admins only
-- '3e26c550e' fix(release): check release tags and versions as ASCII in every locale
-- '40c675714' fix(ombi): put Ombi back on SQLite when the MySQL move fails and fail the update
-- '4914011be' fix(rtorrent): install mktorrent from the distro package
-- '4a2787531' fix(thelounge): install the release the engines pin was read from
-- '4d3554565' fix(ombi): fetch the MySQL migration tool through the release resolver
-- '4e36de2dc' fix(vpn): make OpenVPN and WireGuard server changes admin-only
-- '6039cde1c' fix(software): check versions with the shared ASCII predicates
+- '00dec191c' fix(wireguard): restore the previous VPN state when a new config will not start
+- '01b04db21' fix(qbpermmon): the dashboard log folder and fail2ban rows are applied
+- '02d697d1c' fix(completion): app flag rows match what each installer parses
+- '02f127c17' fix(apps): app updates keep the Sportarr and Servarr login settings
+- '05eb62662' fix(backup): wait up to 3 minutes for an app to answer after a rollback
+- '060329a68' fix(nginx): a reinstall also stops when nginx already fails its own test
+- '0765cbe8f' fix(apps): an interrupted Node app update restores the earlier build
+- '08d47e35a' fix(setup): the iris clone and refresh use the bounded git helper
+- '08dc8bf1b' fix(nzbget): new installs require a login on the local address too
+- '094d50355' fix(database): finish the MariaDB switch and remove it cleanly on failure
+- '0958d4719' fix(autobrr): a reinstall downloads the release before removing the install
+- '09b9903f5' fix(nginx): app API paths of six apps match exactly or below '/api/'
+- '0a6ffbc63' fix(permmon): Syncthing, SickChill and SickGear config folders keep the closed mode
+- '0c4cc2ee8' fix(jdownloader): the jar is downloaded over HTTPS
+- '0ccb2ec88' fix(software): Ombi, Tautulli and four more apps check nginx before a reinstall
+- '0d368f243' fix(users): let create roll back and delete clean up a case-split account row
+- '0de0f6ef0' fix(apps): the Duplicati update keeps the Microsoft source while another package uses it
+- '0e51f4d06' fix(wireguard): the failed-start cleanup only deletes the config's own interface
+- '0ec299049' fix(database): put back an earlier MariaDB's /etc/mysql safely on removal
+- '0eddea761' fix(qbpermmon): a closed config folder opened to its group is closed again
 
-### 🔧 Code Refactoring (2)
-- 'aea83c83c' refactor(servarr): resolve Servarr and Listenarr releases through the release resolver
-- '199f12f4b' refactor(update): share the certificate store refresh with the installer
+### 🔧 Code Refactoring (6)
+- '7373170af' refactor(software): Python and Java apps load helpers for the encrypted build
+- 'dc78cd544' refactor(software): web apps and lecert load helpers for the encrypted build
+- 'c135c708f' refactor(software): media and Servarr apps load helpers for the encrypted build
+- 'aa7c44060' refactor(software): torrent clients and quota load helpers for the encrypted build
+- '538e6d60a' refactor(software): drop the FlareSolverr unit name that the shared step already supplies
+- 'b2f2981b2' refactor(nginx): one shared exit for a refused reinstall pre-check
 
-### 📚 Documentation (1)
-- 'c9e88b3a0' docs(menu): state the flag matrix rules in plain words
+### 📚 Documentation (6)
+- '3aed1634c' docs(meta): directory map drops the retired WSD plugin and editor folders
+- '3d4dfd33d' docs(apps): directory map lists every installable app
+- '427f8100d' docs(man): software tables list every installable app
+- '4a2eb4f80' docs(rutorrent): correct what the plugin fetch comment says ends a stalled connect
+- '974de01c4' docs(help): Ombi and rclone argument lines describe what each flag does
+- 'd040ea431' docs(api): document the non-interactive activate and deactivate in the man page
 
-### 🔧 Maintenance (1)
-- '353a9045b' chore(betapull): rebuild the beta launcher with the shared librespeed installer
+### 🔧 Maintenance (5)
+- '2fa8fe1ae' chore(release): update the build number in the README
+- '30cc8965e' chore(lang): drop the unused Ombi pip3 message
+- '7e903520b' chore(bin): encrypt two run-only tools and remove dead and duplicate files
+- '9d82d0ae6' chore(unpackerr): the service description names Sportarr
+- 'd3432f4a8' chore(support): keep the plaintext source of the licence recovery helper
 
-### 🧪 Tests (1)
-- '222a2df26' test(servarr): use fixture versions that do not read as addresses
+### 🎨 Style Changes (1)
+- '58f63180e' style(lang): remove the stray blank line left by the vnstat string removal
 
-### 📝 General Changes (1)
-- '656c2cbe2' skip ci[meta] version 3.2.2.10933 released upstream - eta ~10 minutes
+### 🧪 Tests (3)
+- '5e6de3a10' test(update): follow the finalizers binary and the direct rclone helper form
+- '53c4524c5' test(nginx): cases for the dated copy and the kept mode of a replaced app nginx file
+- '0e16612bf' test(software): Sportarr joins every app map and two stale suites follow the product
+
+### 📝 General Changes (6)
+- '9009c4e05' build(config): strip comments from shipped shell libraries and helpers
+- '8962b3574' build(software): strip comments by default from encrypted scripts (4 of 4)
+- 'f5680aa31' build(software): strip comments by default from encrypted scripts (3 of 4)
+- 'd29bca0d0' build(software): strip comments by default from encrypted scripts (2 of 4)
+- 'd35c96d12' build(software): strip comments by default from encrypted scripts (1 of 4)
+- '58f3a6a0a' skip ci[meta] version 3.2.2.11264 released upstream - eta ~10 minutes
 
 ---
 
 **Release Information**:
-- **📅 Release Date**: 2026-11-03
-- **🏷️ Version**: 3.2.2.11264
-- **📋 Previous Version**: 3.2.2.10933
+- **📅 Release Date**: 2026-11-13
+- **🏷️ Version**: 3.2.2.13113
+- **📋 Previous Version**: 3.2.2.11264
 - **🔄 Release Type**: production"
