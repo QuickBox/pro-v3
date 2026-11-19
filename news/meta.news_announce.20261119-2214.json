@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "category": "security",
+  "level": "important",
+  "slug": "nginx-security-fixes-and-a-smoother-dashboard",
+  "description": "nginx 1.30.7 security fixes with an automatic nginx restart, sign out other sessions, bulk notification actions, suggested streaming Server URLs and app fixes."
+}

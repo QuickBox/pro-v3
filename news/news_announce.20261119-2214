@@ -1,0 +1,37 @@
+# nginx Security Fixes, Sign Out Other Sessions, and a Smoother Dashboard
+
+🔒 **nginx security fixes, sign out other sessions, and a smoother dashboard**
+
+This release leads with security, so please take it. Go to **System > Changelog** and click **Update QuickBox**, or run:
+
+```bash
+qb update quickbox
+```
+
+**nginx 1.30.7.** nginx fixed ten security issues, including the HTTP/2 one (CVE-2026-123633) a lot of you asked about. Four touch features QuickBox uses, and the update brings you 1.30.7 from nginx.org. A Debian 13 server set up before April runs Debian's own nginx instead, and the update installs Debian's build with the HTTP/2 fix (1.26.3-3+deb13u11).
+
+**The update now restarts nginx for you.** A package update could leave the old nginx running behind the new one. The update now catches that and restarts nginx onto the new version once the config test passes. If you turned HTTP/2 off on a site, it stays off, but that was never the fix: it only covers the main site. Updating is the fix.
+
+**Sign out other sessions.** Under **Profile > Sessions** you can now sign out one other session, or every other session at once.
+
+**Notification Center.** **Dismiss read** now clears all your read notifications, and you can select rows to mark read, unread or dismiss them in one go.
+
+**Streaming Server URLs.** The Emby, Jellyfin and Plex cards in the Streaming Dashboard settings now suggest the Server URLs that work, best first, with a **Use** button. The settings panel also asks before it throws away unsaved changes.
+
+**Config editor.** Regular accounts only open their own app files now, and their own nginx config opens read-only. Shared system files, like the global ruTorrent config, stay with admins.
+
+**App fixes.**
+- **Jellyfin:** a domain install now really sets up its subdomain, and the `/username/jellyfin` path keeps working. `qb update jellyfin` repairs earlier domain installs.
+- **Seerr:** an update whose new build crashes right after it starts rolls back to the one that worked.
+- **Seerr and Audiobookshelf:** installs no longer fail on a database module that won't load, and a failed Audiobookshelf install cleans up so you can retry.
+- **Dispatcharr:** installs and updates keep working when upstream changes, and an update never moves you to an older version.
+
+Plus the update clears duplicate entries nginx warns about (like SeedCross's `text/html`), clearer errors when a job can't start, Package Management filters that work in every language, smoother keyboard navigation, a user panel that fits a phone, language cards on your Profile, translated delete safety messages, corrected app details, and dependency updates.
+
+Thanks to 👑FÜLLER👑, the community member who raised the nginx issue in our Discord with a careful write-up.
+
+Docs:
+- Updating QuickBox: https://quickbox.io/docs/dashboard/system-admin/updates
+- Profile and sessions: https://quickbox.io/docs/dashboard/profile
+- Streaming Dashboard settings: https://quickbox.io/docs/dashboard/streaming/settings
+- Jellyfin: https://quickbox.io/docs/applications/media-servers/jellyfin
